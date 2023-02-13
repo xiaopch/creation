@@ -12,19 +12,19 @@
         <meta name="author" content="xiaopch">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.10">
     
     
       
-        <title>文案 一杯茶 - 光尘</title>
+        <title>用Python调用OpenAI API做有趣的事 - 光尘</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
         
       
       
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#pythonopenai-api" class="md-skip">
           跳转至
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="光尘" class="md-header__button md-logo" aria-label="光尘" data-md-component="logo">
+    <a href=".." title="光尘" class="md-header__button md-logo" aria-label="光尘" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              文案 一杯茶
+              用Python调用OpenAI API做有趣的事
             
           </span>
         </div>
@@ -178,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="光尘" class="md-nav__button md-logo" aria-label="光尘" data-md-component="logo">
+    <a href=".." title="光尘" class="md-nav__button md-logo" aria-label="光尘" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -209,7 +209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Home
       </a>
     </li>
@@ -224,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-11_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2022/" class="md-nav__link">
+      <a href="../2-11_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2022/" class="md-nav__link">
         常用的思维模型
       </a>
     </li>
@@ -239,7 +239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-12_%E5%86%99%E5%87%BA%E6%88%91%E5%BF%83%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%86%99%E4%BD%9C%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1/" class="md-nav__link">
+      <a href="../2-12_%E5%86%99%E5%87%BA%E6%88%91%E5%BF%83%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%86%99%E4%BD%9C%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1/" class="md-nav__link">
         2 12 写出我心：普通人如何通过写作表达自己
       </a>
     </li>
@@ -254,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-12_%E5%AF%B9%E8%AF%9D%E4%BD%93%E5%86%99%E4%BD%9C-2023/" class="md-nav__link">
+      <a href="../2-12_%E5%AF%B9%E8%AF%9D%E4%BD%93%E5%86%99%E4%BD%9C-2023/" class="md-nav__link">
         2 12 对话体写作 2023
       </a>
     </li>
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-12_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2023/" class="md-nav__link">
+      <a href="../2-12_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2023/" class="md-nav__link">
         2 12 常用的思维模型2023
       </a>
     </li>
@@ -284,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-13_Python%E8%B0%83%E7%94%A8chatgpt/" class="md-nav__link">
+      <a href="../2-13_Python%E8%B0%83%E7%94%A8chatgpt/" class="md-nav__link">
         2 13 Python调用chatgpt
       </a>
     </li>
@@ -299,7 +299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-13_%E7%81%B5%E6%84%9F%E6%B5%81%E6%B7%8C%E7%9A%84%E5%86%99%E4%BD%9C/" class="md-nav__link">
+      <a href="../2-13_%E7%81%B5%E6%84%9F%E6%B5%81%E6%B7%8C%E7%9A%84%E5%86%99%E4%BD%9C/" class="md-nav__link">
         2 13 灵感流淌的写作
       </a>
     </li>
@@ -312,11 +312,156 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../2-13_%E7%94%A8Python%E8%B0%83%E7%94%A8OpenAI_API%E5%81%9A%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BA%8B/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          用Python调用OpenAI API做有趣的事
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         用Python调用OpenAI API做有趣的事
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    获取 API KEY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openai" class="md-nav__link">
+    OpenAI 文本编写
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    故事创作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    完整的调用代码：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    餐厅评论
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    头脑风暴
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    广告文案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    论文大纲
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    学习笔记
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    创建食谱
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    推荐书单
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    产品名称
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    电子邮件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openai_1" class="md-nav__link">
+    OpenAI 代码续写
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenAI 代码续写">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    Go代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -329,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-14_%E6%89%93%E5%85%AB%E6%AE%B5%E9%94%A6%E6%9C%89%E6%84%9F/" class="md-nav__link">
+      <a href="../2-14_%E6%89%93%E5%85%AB%E6%AE%B5%E9%94%A6%E6%9C%89%E6%84%9F/" class="md-nav__link">
         2 14 打八段锦有感
       </a>
     </li>
@@ -344,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-14_%E6%AF%8F%E5%A4%A9%E7%BB%83%E5%85%AB%E6%AE%B5%E9%94%A6%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+      <a href="../2-14_%E6%AF%8F%E5%A4%A9%E7%BB%83%E5%85%AB%E6%AE%B5%E9%94%A6%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
         2 14 每天练八段锦的好处
       </a>
     </li>
@@ -359,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-1%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/" class="md-nav__link">
+      <a href="../2-1%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/" class="md-nav__link">
         2 1思维模型故事和案例 2023
       </a>
     </li>
@@ -400,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2023/2-9_%E4%BA%BA%E7%B1%BB%E6%80%9D%E7%BB%B4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1%EF%BC%8C%E4%BD%A0%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%B1%82%E6%AC%A1/" class="md-nav__link">
+      <a href="../2023/2-9_%E4%BA%BA%E7%B1%BB%E6%80%9D%E7%BB%B4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1%EF%BC%8C%E4%BD%A0%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%B1%82%E6%AC%A1/" class="md-nav__link">
         2 9 人类思维的4个层次，你在哪个层次
       </a>
     </li>
@@ -420,14 +565,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
       
       
       
@@ -450,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../KK-%E5%BF%85%E7%84%B6-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/KK-%E5%BF%85%E7%84%B6-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         KK 必然 读书笔记
       </a>
     </li>
@@ -464,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95/" class="md-nav__link">
         东菱面包机标准面包做法
       </a>
     </li>
@@ -478,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E4%BA%BA%E7%94%9F%E5%A6%82%E8%8C%B6/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E4%BA%BA%E7%94%9F%E5%A6%82%E8%8C%B6/" class="md-nav__link">
         人生如茶
       </a>
     </li>
@@ -492,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%86%A5%E6%83%B3%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%86%A5%E6%83%B3%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F/" class="md-nav__link">
         冥想有什么作用呢？
       </a>
     </li>
@@ -504,48 +647,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          文案 一杯茶
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%96%87%E6%A1%88_%E4%B8%80%E6%9D%AF%E8%8C%B6/" class="md-nav__link">
         文案 一杯茶
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    文案:一杯茶
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -557,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         查理芒格的100个思维模型
       </a>
     </li>
@@ -571,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95-%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95-%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA/" class="md-nav__link">
         标准面包做法 东菱面包机
       </a>
     </li>
@@ -585,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%AD%8C%E8%AF%8D_%E4%BA%91%E6%B8%B8%E4%BE%A0/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%AD%8C%E8%AF%8D_%E4%BA%91%E6%B8%B8%E4%BE%A0/" class="md-nav__link">
         歌词 云游侠
       </a>
     </li>
@@ -599,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
         物理学概论
       </a>
     </li>
@@ -613,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E9%81%93%E5%BE%B7%E7%BB%8F%E6%96%87/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E9%81%93%E5%BE%B7%E7%BB%8F%E6%96%87/" class="md-nav__link">
         道德经文
       </a>
     </li>
@@ -653,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B9%BD%E9%BB%98/%E5%B9%BD%E9%BB%98%E5%A4%B8%E4%BA%BA%E7%9A%84%E5%8F%A5%E5%AD%90%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E5%B9%BD%E9%BB%98%E5%A4%B8%E4%BA%BA%E7%9A%84%E5%8F%A5%E5%AD%90%E5%A4%A7%E5%85%A8/" class="md-nav__link">
         幽默夸人的句子大全
       </a>
     </li>
@@ -667,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B9%BD%E9%BB%98/%E6%88%91%E5%A6%88%E4%B8%89%E5%A4%A9%E6%B2%A1%E6%89%93%E6%88%91%E5%95%A6/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E6%88%91%E5%A6%88%E4%B8%89%E5%A4%A9%E6%B2%A1%E6%89%93%E6%88%91%E5%95%A6/" class="md-nav__link">
         我妈三天没打我啦
       </a>
     </li>
@@ -681,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B9%BD%E9%BB%98/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%AD%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%AD%E5%8F%A5%E5%AD%90/" class="md-nav__link">
         有趣的短句子
       </a>
     </li>
@@ -695,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B9%BD%E9%BB%98/%E9%80%97%E4%BA%BA%E5%BC%80%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%9A%84%E6%96%87%E6%A1%88/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E9%80%97%E4%BA%BA%E5%BC%80%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%9A%84%E6%96%87%E6%A1%88/" class="md-nav__link">
         逗人开心可以发朋友圈的文案
       </a>
     </li>
@@ -709,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B9%BD%E9%BB%98/%E9%A3%8E%E8%B6%A3%E5%B9%BD%E9%BB%98%E7%9A%84%E5%A4%B8%E4%BA%BA%E8%AF%84%E8%AF%AD/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E9%A3%8E%E8%B6%A3%E5%B9%BD%E9%BB%98%E7%9A%84%E5%A4%B8%E4%BA%BA%E8%AF%84%E8%AF%AD/" class="md-nav__link">
         风趣幽默的夸人评语
       </a>
     </li>
@@ -723,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B9%BD%E9%BB%98/%E9%AB%98%E6%83%85%E5%95%86%E5%A4%B8%E4%BA%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E9%AB%98%E6%83%85%E5%95%86%E5%A4%B8%E4%BA%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E5%8F%A5%E5%AD%90/" class="md-nav__link">
         高情商夸人漂亮的句子
       </a>
     </li>
@@ -770,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%91%98%E5%BD%95-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%91%98%E5%BD%95-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
         摘录 人间草木
       </a>
     </li>
@@ -784,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%91%98%E5%BD%95-%E8%A5%BF%E5%B1%B1%E5%AE%A2%E8%AF%9D/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%91%98%E5%BD%95-%E8%A5%BF%E5%B1%B1%E5%AE%A2%E8%AF%9D/" class="md-nav__link">
         摘录 西山客话
       </a>
     </li>
@@ -798,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%96%87%E6%A1%88-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%96%87%E6%A1%88-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
         文案 人间草木
       </a>
     </li>
@@ -812,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%96%87%E6%A1%88-%E6%98%86%E6%98%8E%E7%9A%84%E9%9B%A8/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%96%87%E6%A1%88-%E6%98%86%E6%98%8E%E7%9A%84%E9%9B%A8/" class="md-nav__link">
         文案 昆明的雨
       </a>
     </li>
@@ -826,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%B1%AA%E6%9B%BE%E7%A5%BA/" class="md-nav__link">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%B1%AA%E6%9B%BE%E7%A5%BA/" class="md-nav__link">
         汪曾祺
       </a>
     </li>
@@ -864,6 +970,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -872,9 +980,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    文案:一杯茶
+  <a href="#api-key" class="md-nav__link">
+    获取 API KEY
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openai" class="md-nav__link">
+    OpenAI 文本编写
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    故事创作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    完整的调用代码：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    餐厅评论
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    头脑风暴
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    广告文案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    论文大纲
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    学习笔记
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    创建食谱
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    推荐书单
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    产品名称
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    电子邮件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openai_1" class="md-nav__link">
+    OpenAI 代码续写
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenAI 代码续写">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    Go代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -893,13 +1105,107 @@
                   
 
 
-  <h1>文案 一杯茶</h1>
+<h1 id="pythonopenai-api">用Python调用OpenAI API做有趣的事</h1>
+<p>GPT 迭代过程概要表：</p>
+<p>版本  发布时间    训练方案    参数量 是否开放接口</p>
+<p>GPT(GPT-1)  2018 年 6 月  无监督学习   1.17 亿  是</p>
+<p>GPT-2   2019 年 2 月  多任务学习   15 亿    是</p>
+<p>GPT-3   2020 年 5 月  海量参数    1,750 亿 是</p>
+<p>ChatGPT(GPT-3.5)    2022 年 12 月 针对对话场景优化    1,750 亿 否</p>
+<p>GPT-4   未发布 万亿参数    100万亿   否</p>
+<p>这篇文章描述的是，如何对接 GPT-3 的开放 API，它是目前 OpenAI 开放接口的最新版本。</p>
+<h4 id="api-key">获取 API KEY</h4>
+<p>首先需要 可以开全局的梯子，选择日本或韩国节点，可以通过 ipinfo 检查当前 IP 地址是否为日本或韩国地区，然后访问 OpenAI 网站注册账号并完成认证。</p>
+<p>如果自己完成账号认证的成本太高，可以在某宝直接购买一个已经通过认证的 OpenAI 账号</p>
+<p>获得可用 OpenAI 账号后，访问 View API keys -&gt; API Keys 页面，点击 Create new secret key 获取一个 openai.api_key 再继续后面的内容。</p>
+<p>使用 Python 调用 OpenAI API 的方式非常便捷，只需安装 OpenAI 提供的 openai 库就可以调用其 API 服务：</p>
+<pre><code>pip install openai
+</code></pre>
+<h4 id="openai">OpenAI 文本编写</h4>
+<p>调用 openai.Completion.create 函数需要了解几个基本参数：</p>
+<p>model: 要使用的模型的 ID，访问 OpenAI Docs Models 页面可以查看全部可用的模型</p>
+<p>prompt: 生成结果的提示文本，即你想要得到的内容描述</p>
+<p>max_tokens: 生成结果时的最大 tokens 数，不能超过模型的上下文长度，可以把结果内容复制到 OpenAI Tokenizer 来了解 tokens 的计数方式</p>
+<p>temperature: 控制结果的随机性，如果希望结果更有创意可以尝试 0.9，或者希望有固定结果可以尝试 0.0</p>
+<p>top_p: 一个可用于代替 temperature 的参数，对应机器学习中 nucleus sampling，如果设置 0.1 意味着只考虑构成前 10% 概率质量的 tokens</p>
+<p>frequency_penalty: [控制字符的重复度] -2.0 ~ 2.0 之间的数字，正值会根据新 tokens 在文本中的现有频率对其进行惩罚，从而降低模型逐字重复同一行的可能性</p>
+<p><code>presence_penalty</code>: [控制主题的重复度] <em>-2.0 ~ 2.0</em> 之间的数字，正值会根据到目前为止是否出现在文本中来惩罚新 <strong>tokens</strong>，从而增加模型谈论新主题的可能性（以云课堂的广告文案为例）</p>
+<p>stop: 最大长度为 4 的字符串列表，一旦生成的 tokens 包含其中的内容，将停止生成并返回结果</p>
+<h4 id="_1">故事创作</h4>
+<p>输入 prompt 内容：</p>
+<p>主题: 早餐 风
+        两句话的恐怖故事:</p>
+<h4 id="_2">完整的调用代码：</h4>
+<pre><code>import openai
+openai.api_key = 'xx-xxxxxxxx'
 
-<h2 id="_1">文案:一杯茶</h2>
-<p><img alt="一杯茶" src="../%E4%B8%80%E6%9D%AF%E8%8C%B6.jpg" /></p>
-<p>​   南隐是日本明治时代的一位禅师。有一天，有位大学教授特来向他问禅，他只以茶相待。他将茶水注入这位教授的杯中，直到注满，而后又继续注入。</p>
-<p>​   这位教授眼睁睁地望着茶水不息地溢出杯外，直到再也不能沉默下去了，终于说道：“大师,   水已经漫出来了，不要再倒了！”</p>
-<p>​   南隐答道:  “ 你就像这只杯子一样，里面装满了你自己的看法和想法。你不先把你自己的杯子空掉，叫我如何对你说禅？”</p>
+response = openai.Completion.create(
+  model='text-davinci-003',
+  prompt='主题: 早餐 风\n两句话的恐怖故事:',
+  temperature=0.8,
+  max_tokens=120,
+  top_p=1.0,
+  frequency_penalty=0.5,
+  presence_penalty=0.0,
+)
+
+print(response.choices[0].text)
+</code></pre>
+<h3 id="_3">餐厅评论</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>根据这些笔记写一篇餐厅评论
+名称：大头鱼烧烤
+茄子很棒，很吵，服务态度好，价格便宜。
+评论：
+</code></pre>
+<h3 id="_4">头脑风暴</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>集思广益，提出一些结合AI和自动化测试的想法：
+</code></pre>
+<h3 id="_5">广告文案</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>为以下产品写一则创意广告，在微博上针对家长进行宣传：
+产品：云课堂是一个网络平台，帮助从幼儿园到高中的学生在学校表现出色。
+</code></pre>
+<h3 id="_6">论文大纲</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>为一篇关于《浮士德》中魔鬼形象及其矛盾性的文章创建一个大纲
+</code></pre>
+<h3 id="_7">学习笔记</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>研究中国古代文论时我应该知道的5个要点是什么？
+</code></pre>
+<h3 id="_8">创建食谱</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>根据这些食材编写食谱：黑椒蛋炒饭
+食材：黑胡椒 农家土鸡蛋 隔夜的木桶饭 切小块的香肠 葱花
+食谱：
+</code></pre>
+<h3 id="_9">推荐书单</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>推荐10本育儿方面的书：
+</code></pre>
+<h3 id="_10">产品名称</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>根据下面的描述想几个产品名称
+产品描述：夜灯
+种子词：适合婴儿 可以啃咬 续航整晚 小巧
+产品名称：
+</code></pre>
+<h3 id="_11">电子邮件</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>帮我给张三写一封邮件，祝他生日快乐，同时祝贺他获得晋升。
+</code></pre>
+<h2 id="openai_1">OpenAI 代码续写</h2>
+<h3 id="go">Go代码</h3>
+<p>输入 <code>prompt</code> 内容：</p>
+<pre><code>/*
+Go 语言
+创建动物列表
+创建城市列表
+生成关于我在每个城市的动物园看到的故事列表
+*/
+</code></pre>
 
 
 
@@ -922,10 +1228,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
     
   </body>
