@@ -259,8 +259,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.6%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
-        3.6催眠体验R1
+      <a href="../3.6_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
+        3.6 催眠体验R1
       </a>
     </li>
   
@@ -289,8 +289,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.7_%E5%A4%A7%E8%87%AA%E7%84%B6%E5%86%A5%E6%83%B3_%E8%87%AA%E6%88%91%E5%82%AC%E7%9C%A0/" class="md-nav__link">
-        3.7 大自然冥想 自我催眠
+      <a href="../3.7_%E5%82%AC%E7%9C%A0%E7%BC%93%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%84%A6%E8%99%91%E5%92%8C%E5%8E%8B%E5%8A%9B/" class="md-nav__link">
+        3.7 催眠缓解你的焦虑和压力
       </a>
     </li>
   
@@ -304,8 +304,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.7%E5%82%AC%E7%9C%A0%E7%BC%93%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%84%A6%E8%99%91%E5%92%8C%E5%8E%8B%E5%8A%9B/" class="md-nav__link">
-        3.7催眠缓解你的焦虑和压力
+      <a href="../3.7_%E5%A4%A7%E8%87%AA%E7%84%B6%E5%86%A5%E6%83%B3_%E8%87%AA%E6%88%91%E5%82%AC%E7%9C%A0/" class="md-nav__link">
+        3.7 大自然冥想 自我催眠
       </a>
     </li>
   
@@ -1819,38 +1819,13 @@
                   
 
 
-<div align="center">
-<img width="450px" src="https://tva1.sinaimg.cn/large/006908GAly1gqg5fvxuutj30dw0dwt99.jpg"/>
-</div>
-
 <h1 align="center">TikTokDownload</h1>
 
 <p align="center">✨ 抖音去水印视频下载 ✨</p>
 
-<p align="center">
-<a href="https://github.com/Johnserf-Seed/TikTokDownload/blob/main/LICENSE">
-<img src="https://img.shields.io/github/license/johnserf-seed/tiktokdownload">
-</a>
-<a href="https://github.com/Johnserf-Seed/TikTokDownload">
-<img src="https://img.shields.io/badge/python-v3.11.1-orange">
-</a>
-<a href="https://github.com/Johnserf-Seed/TikTokDownload">
-<img src="https://img.shields.io/github/stars/johnserf-seed/tiktokdownload?style=social">
-</a>
-<a href="https://github.com/Johnserf-Seed/TikTokDownload">
-<img src="https://img.shields.io/github/forks/johnserf-seed/tiktokdownload?style=social">
-</a>
-<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PFZTVFJPWU5aEU9ZWVh8WlNEUV1VUBJfU1E" style="text-decoration:none;">
-<img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_11.png"/>
-</a>
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FJohnserf-Seed%2FTikTokDownload&count_bg=%235FFFFF&title_bg=%23FB1953&icon=tiktok.svg&icon_color=%23250C1F&title=view&edge_flat=false"/>
-</a>
-</p>
-
-<p><a href="README-EN.md">English</a>   <a href="README.md">简体中文</a></p>
 <h2 id="_1">使用教程</h2>
 <ol>
-<li>运行软件前先打开目录下<code>conf.ini</code> 文件按照要求进行配置</li>
+<li>运行软件前先打开目录下conf.ini 文件按照要求进行配置</li>
 </ol>
 <p>批量下载使用<a href="https://github.com/Johnserf-Seed/TikTokDownload/releases/tag/v1.3.0-beta">TikTokTool</a>，直接修改配置文件；单一视频下载推荐<a href="https://github.com/Johnserf-Seed/TikTokWeb">TikTokWeb</a>项目在线解析；<strong>TikTokMulti不再维护</strong>。</p>
 <table>
@@ -1862,41 +1837,35 @@
    **包使用方法：**
 
 
-<pre><code class="language-python"># example.py
+<pre><code># example.py
+
 import TikTokDownload as TK
 import Util
-
 # 单视频下载
 # TK.video_download(*TK.main())
-
 # 批量下载
 if __name__ == '__main__':
     # 获取命令行参数
-    cmd = Util.Command()
+​    cmd = Util.Command()
     # 获取用户主页数据
-    profile = Util.Profile()
+​    profile = Util.Profile()
     # 使用参数，没有则使用默认参数并下载
-    profile.getProfile(cmd.setting())
+​    profile.getProfile(cmd.setting())
     # 如果需要定时下载则注释这个input
-    input('[  完成  ]:已完成批量下载，输入任意键后退出:')
+​    input('[  完成  ]:已完成批量下载，输入任意键后退出:')
+
 </code></pre>
 
 
-
-
-
-
-   ***``example.py``需确保``Util``目录与``TikTokDownload.py``文件都在相同目录中***
-   ***``example.py``需确保``Util``目录与``TikTokDownload.py``文件都在相同目录中***
-   ***``example.py``需确保``Util``目录与``TikTokDownload.py``文件都在相同目录中***
-
-
+  ***example.py需确保Util目录与TikTokDownload.py文件都在相同目录中***
+   ***example.py需确保Util目录与TikTokDownload.py文件都在相同目录中***
+   ***example.py需确保Util目录与TikTokDownload.py文件都在相同目录中***
 
 #### **重要的话说三遍**
 
 2. 如何编译
 
-   运行根目录下```build.bat```文件按控制台提示即可，生成的```exe```在```./dist```目录中
+   运行根目录下build.bat文件按控制台提示即可，生成的exe在./dist目录中
 
 3. 批量保存
 
@@ -1913,9 +1882,7 @@ if __name__ == '__main__':
 4. issues反馈
     如有您有任何bug或者意见反馈请在 https://github.com/Johnserf-Seed/TikTokDownload/issues 发起
 
-5. 单一下载模式 ``TikTokDownload``;批量下载模式``TikTokMulti``;图文下载 ``TikTokPic``;测试版图形界面 ``TikTokMultiGUI``
-
-
+5. 单一下载模式 TikTokDownload;批量下载模式TikTokMulti;图文下载 TikTokPic;测试版图形界面 TikTokMultiGUI
 
 **注意（常见错误）：**
 
@@ -1925,15 +1892,11 @@ if __name__ == '__main__':
 
    - ***出现报用户昵称错误的情况需要在主页发布一条视频，原因见 [获取用户昵称失败————主页若空作品则无法下载喜欢页](https://github.com/Johnserf-Seed/TikTokDownload/issues/236)***
 
-2. 配置文件一定要注意编码格式（推荐Notepad++）
-
-   挺抽风的，另存为的UTF-8居然不可以会闪退，玄学
+2. 配置文件一定要注意编码格式（推荐Notepad++）,挺抽风的，另存为的UTF-8居然不可以会闪退，玄学
 
 3. 如果出现长时间的api抓取可能是姿势不对（抖音api服务器会抽）
 
 4. 现在新增了日志功能，可以在logs中找到所有的日志文件，汇报issue的时候可以附上
-
-
 
 #### ToDo
 
