@@ -1853,66 +1853,12 @@ if __name__ == '__main__':
 ​    profile.getProfile(cmd.setting())
     # 如果需要定时下载则注释这个input
 ​    input('[  完成  ]:已完成批量下载，输入任意键后退出:')
-
 </code></pre>
 
 
   ***example.py需确保Util目录与TikTokDownload.py文件都在相同目录中***
    ***example.py需确保Util目录与TikTokDownload.py文件都在相同目录中***
    ***example.py需确保Util目录与TikTokDownload.py文件都在相同目录中***
-
-#### **重要的话说三遍**
-
-2. 如何编译
-
-   运行根目录下build.bat文件按控制台提示即可，生成的exe在./dist目录中
-
-3. 批量保存
-
-   - 下载录制
-- 直播推流
-
-- 跳过已下载
-
-- 图文下载
-
-- 全部下载
-
-- 资源文件夹
-4. issues反馈
-    如有您有任何bug或者意见反馈请在 https://github.com/Johnserf-Seed/TikTokDownload/issues 发起
-
-5. 单一下载模式 TikTokDownload;批量下载模式TikTokMulti;图文下载 TikTokPic;测试版图形界面 TikTokMultiGUI
-
-**注意（常见错误）：**
-
-1. 单个视频链接与用户主页链接要分清，软件闪退可以通过终端运行查看报错信息（一般是链接弄错的问题）
-
-   链接一定要输入仔细,配置文件只支持***用户主页***
-
-   - ***出现报用户昵称错误的情况需要在主页发布一条视频，原因见 [获取用户昵称失败————主页若空作品则无法下载喜欢页](https://github.com/Johnserf-Seed/TikTokDownload/issues/236)***
-
-2. 配置文件一定要注意编码格式（推荐Notepad++）,挺抽风的，另存为的UTF-8居然不可以会闪退，玄学
-
-3. 如果出现长时间的api抓取可能是姿势不对（抖音api服务器会抽）
-
-4. 现在新增了日志功能，可以在logs中找到所有的日志文件，汇报issue的时候可以附上
-
-#### ToDo
-
-- [x] 无水印图集下载功能
-- [x] 可视化界面
-- [x] 直播推流保存
-- [ ] 支持多平台视频解析
-- [ ] 记录作品详细信息到本地数据库
-- [ ] 本地服务检测抖音关注用户作品的更新情况 ***(并推送)***
-- [ ] 所有已关注用户主页的视频批量下载的可选功能
-- [ ] 收藏作品与搜索作品下载
-- [ ] 制作本地接口解析服务
-
-#### Web版项目
-
-[Johnserf-Seed/TikTokWeb](https://github.com/Johnserf-Seed/TikTokWeb)
 
 
 
