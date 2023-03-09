@@ -13,17 +13,17 @@
       
       
       
-        <link rel="prev" href="../3.3_%E5%BF%83%E6%B5%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <link rel="prev" href="../3.8_%E5%85%B3%E4%BA%8E%E6%B6%8C%E7%8E%B0/">
       
       
-        <link rel="next" href="../3.7_%E4%B8%8E%E6%BD%9C%E6%84%8F%E8%AF%86%E5%AF%B9%E8%AF%9D/">
+        <link rel="next" href="../3.8_%E8%81%8C%E4%B8%9A%E5%82%AC%E7%9C%A0%E5%B8%88%E5%B8%A6%E4%BD%A0%E4%BD%93%E9%AA%8C%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%82%AC%E7%9C%A0%E2%80%94%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E5%89%8D%E4%B8%96/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>3.6催眠体验R1 - 光尘</title>
+        <title>汉字简繁转换 - 光尘</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.6催眠体验R1
+              汉字简繁转换
             
           </span>
         </div>
@@ -257,48 +257,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.6催眠体验R1
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.6%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
         3.6催眠体验R1
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    催眠体验一
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -399,11 +362,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.8_%E6%B1%89%E5%AD%97%E7%AE%80%E7%B9%81%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         汉字简繁转换
       </a>
+      
     </li>
   
 
@@ -1775,21 +1748,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    催眠体验一
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1804,62 +1764,21 @@
                   
 
 
-  <h1>3.6催眠体验R1</h1>
+<h1 id="_1">汉字简繁转换</h1>
+<pre><code>from zhconv import convert
 
-<h2 id="_1">催眠体验一</h2>
-<p>By douyin + whisper asr</p>
-<pre><code>今天我用2分钟的时间给大家带来一个真正的催眠体验
-在开始催眠体验前有三个注意事项:
-1 接下来的体验绝对安全,你可以完全相信我
-2 催眠是和潜意识沟通的绝佳机会,如果因为你自己的抗拒而无法进入到放松状态,请你离开本视频
-3 进入到催眠状态后,你会感到非常的放松,所以请在一个安静舒适的环境下进行
+src = 'Python是一种动态的、面向对象的脚本语言'
+result = convert(src, 'zh-hant')
+print(src,'-&gt;\n',result)
 
-下面正式进入到我们的放松催眠
-首先请你找一个你最舒服的姿势
-坐着躺着都可以
-现在闭上眼睛做两个深呼吸
-接下来我会数五个数
-我每数一个数你都会感觉到自己越来越放松
-1 你感觉头部非常的放松
-2 现在在你的身体也跟着放松下来
-3 一直到你的腹部
-4 你的丹田位置很放松
-5 现在你浑身都已经放松下来
+src = 'Python是一種動態的、面向對象的腳本語言'
+result = convert(src, 'zh-cn')
+print(src,'-&gt;\n',result)
 
-你感觉非常的轻松
-再做两个深呼吸
-观察一下你自己的吸气和呼气
-现在我们做一个非常简单的敏感小测试
-你只要跟着我的引导就可以
-现在你的面前出现了一个苹果
-你仔细观察这个苹果
-它到底是什么颜色的
-它的大小又怎样
-请你在催眠体验结束后
-告诉我你看到的苹果是什么样子的
-现在我给你一把小小的水果刀
-你可以切开你面前的这个苹果
-看一下它的侧切面是什么颜色的
-它的果实 果肉 果皮
-拿起一片苹果放到你的嘴里
-感受一下它的果汁
-是甜 是酸
-现在请你分成两口把苹果汁
-咽入你的喉咙
-每一口都带给你无比的滋润和轻松
-现在再做两个深呼吸
-给你15秒钟的时间
-去感受这份宁静和放松
-当我数到3
-你会回到我们的现实中来
-你会感觉到神清气爽
-浑身充满了精神和力量
-一 二 三
-慢慢睁开眼睛
-OK 如果你感觉已经放松下来了
-请你收藏本视频
-我是C
-一个普通的催眠治疗师
+## pip install zhconv
+## zh-cn 大陆简体
+## zh-hant 繁體
+
 </code></pre>
 
 
