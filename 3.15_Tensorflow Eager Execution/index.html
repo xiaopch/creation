@@ -13,17 +13,17 @@
       
       
       
-        <link rel="prev" href="../3.12_TensorFlowTTS%E7%AE%80%E4%BB%8B/">
+        <link rel="prev" href="../3.13_%E4%BD%BF%E7%94%A8MelGAN%E8%BF%9B%E8%A1%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/">
       
       
-        <link rel="next" href="../3.13_English%20Text%20to%20speech%20with%20TensorFlowTTS/">
+        <link rel="next" href="../3.15_%E4%B8%AD%E5%BA%B8/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>3.12 python录音和播放音乐 - 光尘</title>
+        <title>Tensorflow Eager Execution - 光尘</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#tensorflow-eager-execution" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.12 python录音和播放音乐
+              Tensorflow Eager Execution
             
           </span>
         </div>
@@ -332,48 +332,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.12 python录音和播放音乐
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.12_python%E5%BD%95%E9%9F%B3%E5%92%8C%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90/" class="md-nav__link">
         3.12 python录音和播放音乐
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    python录音和播放音乐
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -414,11 +377,168 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.15_Tensorflow%20Eager%20Execution/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tensorflow Eager Execution
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Tensorflow Eager Execution
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    设置和基本用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    动态控制流
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eager" class="md-nav__link">
+    Eager 训练
+  </a>
+  
+    <nav class="md-nav" aria-label="Eager 训练">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    计算梯度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    训练模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    变量和优化器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    基于对象的保存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    面向对象的指标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorboard" class="md-nav__link">
+    摘要和 TensorBoard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    自动微分高级主题
+  </a>
+  
+    <nav class="md-nav" aria-label="自动微分高级主题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    动态模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    自定义梯度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    性能
+  </a>
+  
+    <nav class="md-nav" aria-label="性能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    基准
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    使用函数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2008,6 +2128,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2016,8 +2138,124 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    python录音和播放音乐
+  <a href="#_1" class="md-nav__link">
+    设置和基本用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    动态控制流
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eager" class="md-nav__link">
+    Eager 训练
+  </a>
+  
+    <nav class="md-nav" aria-label="Eager 训练">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    计算梯度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    训练模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    变量和优化器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    基于对象的保存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    面向对象的指标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorboard" class="md-nav__link">
+    摘要和 TensorBoard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    自动微分高级主题
+  </a>
+  
+    <nav class="md-nav" aria-label="自动微分高级主题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    动态模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    自定义梯度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    性能
+  </a>
+  
+    <nav class="md-nav" aria-label="性能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    基准
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    使用函数
   </a>
   
 </li>
@@ -2037,89 +2275,448 @@
                   
 
 
-  <h1>3.12 python录音和播放音乐</h1>
+<h1 id="tensorflow-eager-execution">Tensorflow Eager Execution</h1>
+<table>
+<thead>
+<tr>
+<th><a href="https://colab.research.google.com/github/tensorflow/docs-l10n/blob/master/site/zh-cn/guide/eager.ipynb?hl=zh-cn"><img alt="img" src="https://tensorflow.google.cn/images/colab_logo_32px.png?hl=zh-cn" />在 Google Colab 中运行</a></th>
+<th><a href="https://github.com/tensorflow/docs-l10n/blob/master/site/zh-cn/guide/eager.ipynb"><img alt="img" src="https://tensorflow.google.cn/images/GitHub-Mark-32px.png?hl=zh-cn" />在 GitHub 上查看源代码</a></th>
+<th><a href="https://storage.googleapis.com/tensorflow_docs/docs-l10n/site/zh-cn/guide/eager.ipynb"><img alt="img" src="https://tensorflow.google.cn/images/download_logo_32px.png?hl=zh-cn" />下载笔记本</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>TensorFlow 的 Eager Execution 是一种命令式编程环境，可立即评估运算，无需构建计算图：运算会返回具体的值，而非构建供稍后运行的计算图。这样能使您轻松入门 TensorFlow 并调试模型，同时也减少了样板代码。要跟随本指南进行学习，请在交互式 <code>python</code> 解释器中运行以下代码示例。</p>
+<p>Eager Execution 是用于研究和实验的灵活机器学习平台，具备以下特性：</p>
+<ul>
+<li><em>直观的界面</em> - 自然地组织代码结构并使用 Python 数据结构。快速迭代小模型和小数据。</li>
+<li><em>更方便的调试功能</em> - 直接调用运算以检查正在运行的模型并测试更改。使用标准 Python 调试工具立即报告错误。</li>
+<li><em>自然的控制流</em> - 使用 Python 而非计算图控制流，简化了动态模型的规范。</li>
+</ul>
+<p>Eager Execution 支持大部分 TensorFlow 运算和 GPU 加速。</p>
+<p>注：启用 Eager Execution 后可能会增加某些模型的开销。我们正在持续改进其性能，如果您遇到问题，请<a href="https://github.com/tensorflow/tensorflow/issues">提交错误报告</a>并分享您的基准。</p>
+<h2 id="_1">设置和基本用法</h2>
+<pre><code class="language-python">import os
 
-<h2 id="python">python录音和播放音乐</h2>
-<pre><code>pip  install pyaudio
+import tensorflow as tf
 
-#linux下安装pyaudio,如果遇到 PortAudio 开发包错误，请安装
-
-sudo apt-get install portaudio19-dev
-
-pip install pygame
-</code></pre>
-<pre><code>import pyaudio
-import wave
-audio_file_name = &quot;audio.wav&quot;
-def start_audio(time = 10,save_file=&quot;test.wav&quot;):
-    input('&lt;Enter&gt;开始录音10s')
-    CHUNK = 1024
-    FORMAT = pyaudio.paInt16
-    CHANNELS = 2
-    RATE = 16000
-    RECORD_SECONDS = time  #需要录制的时间
-    WAVE_OUTPUT_FILENAME = save_file    #保存的文件名
-
-    p = pyaudio.PyAudio()    #初始化
-    print(&quot;&gt;&gt;&gt;&gt;&gt;&quot;)
-
-    stream = p.open(format=FORMAT,
-                    channels=CHANNELS,
-                    rate=RATE,
-                    input=True,
-                        frames_per_buffer=CHUNK)#创建录音文件
-    frames = []
-
-    for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-        data = stream.read(CHUNK)
-        frames.append(data)#开始录音
-
-    print(&quot;录音结束&quot;)
-
-    stream.stop_stream()
-    stream.close()
-    p.terminate()
-
-    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')    #保存
-    wf.setnchannels(CHANNELS)
-    wf.setsampwidth(p.get_sample_size(FORMAT))
-    wf.setframerate(RATE)
-    wf.writeframes(b''.join(frames))
-    wf.close()
-
-
-
-
-def play(audio_file_name):
-
-    audio = pyaudio.PyAudio()  # 新建一个PyAudio对象
-    # wave.open跟python内置的open有点类似，从wf中可以获取音频基本信息
-    with wave.open(audio_file_name, &quot;rb&quot;) as wf:
-        stream = audio.open(format=pyaudio.paInt16,  # 指定数据类型是int16，也就是一个数据点占2个字节；paInt16=8，paInt32=2，不明其含义，先不管
-                            channels=wf.getnchannels(),  # 声道数，1或2
-                            rate=wf.getframerate(),  # 采样率，44100或16000居多
-                            frames_per_buffer=1024,  # 每个块包含多少帧，详见下文解释
-                            output=True)  # 表示这是一个输出流，要对外播放的
-        # getnframes获取整个文件的帧数，readframes读取n帧，两者结合就是读取整个文件所有帧
-        stream.write(wf.readframes(wf.getnframes()))  # 把数据写进流对象
-        stream.stop_stream()  # stop后在start_stream()之前不可再read或write
-        stream.close()  # 关闭这个流对象
-    audio.terminate()  # 关闭PyAudio对象
-
-
-import pygame
-def pygame_play(audio_file_name):
-    pygame.mixer.init()
-    pygame.mixer.music.load(audio_file_name)
-    pygame.mixer.music.play(1)
-    while pygame.mixer.music.get_busy():  # 在音频播放为完成之前不退出程序
-        pass
-
-start_audio(10,audio_file_name)
-pygame_play(audio_file_name)
-
+import cProfile
 
 </code></pre>
+<p>在 Tensorflow 2.0 中，默认启用 Eager Execution。</p>
+<pre><code class="language-python">tf.executing_eagerly()
+True
+</code></pre>
+<p>现在您可以运行 TensorFlow 运算，结果将立即返回：</p>
+<pre><code class="language-python">x = [[2.]]
+m = tf.matmul(x, x)
+print(&quot;hello, {}&quot;.format(m))
+hello, [[4.]]
+</code></pre>
+<p>启用 Eager Execution 会改变 TensorFlow 运算的行为方式 - 现在它们会立即评估并将值返回给 Python。<a href="https://tensorflow.google.cn/api_docs/python/tf/Tensor?hl=zh-cn"><code>tf.Tensor</code></a> 对象会引用具体值，而非指向计算图中节点的符号句柄。由于无需构建计算图并稍后在会话中运行，可以轻松使用 <code>print()</code> 或调试程序检查结果。评估、输出和检查张量值不会中断计算梯度的流程。</p>
+<p>Eager Execution 可以很好地配合 <a href="http://www.numpy.org/">NumPy</a> 使用。NumPy 运算接受 <a href="https://tensorflow.google.cn/api_docs/python/tf/Tensor?hl=zh-cn"><code>tf.Tensor</code></a> 参数。TensorFlow <a href="https://tensorflow.google.cn/api_docs/python/tf/math?hl=zh-cn"><code>tf.math</code></a> 运算会将 Python 对象和 NumPy 数组转换为 <a href="https://tensorflow.google.cn/api_docs/python/tf/Tensor?hl=zh-cn"><code>tf.Tensor</code></a> 对象。<code>tf.Tensor.numpy</code> 方法会以 NumPy <code>ndarray</code> 的形式返回该对象的值。</p>
+<pre><code class="language-python">a = tf.constant([[1, 2],
+                 [3, 4]])
+print(a)
+tf.Tensor(
+[[1 2]
+ [3 4]], shape=(2, 2), dtype=int32)
+# Broadcasting support
+b = tf.add(a, 1)
+print(b)
+tf.Tensor(
+[[2 3]
+ [4 5]], shape=(2, 2), dtype=int32)
+# Operator overloading is supported
+print(a * b)
+tf.Tensor(
+[[ 2  6]
+ [12 20]], shape=(2, 2), dtype=int32)
+# Use NumPy values
+import numpy as np
+
+c = np.multiply(a, b)
+print(c)
+[[ 2  6]
+ [12 20]]
+# Obtain numpy value from a tensor:
+print(a.numpy())
+# =&gt; [[1 2]
+#     [3 4]]
+[[1 2]
+ [3 4]]
+</code></pre>
+<h2 id="_2">动态控制流</h2>
+<p>Eager Execution 的一个主要优势是，在执行模型时，主机语言的所有功能均可用。因此，编写 <a href="https://en.wikipedia.org/wiki/Fizz_buzz">fizzbuzz</a> 之类的代码会很容易：</p>
+<pre><code class="language-python">def fizzbuzz(max_num):
+  counter = tf.constant(0)
+  max_num = tf.convert_to_tensor(max_num)
+  for num in range(1, max_num.numpy()+1):
+    num = tf.constant(num)
+    if int(num % 3) == 0 and int(num % 5) == 0:
+      print('FizzBuzz')
+    elif int(num % 3) == 0:
+      print('Fizz')
+    elif int(num % 5) == 0:
+      print('Buzz')
+    else:
+      print(num.numpy())
+    counter += 1
+fizzbuzz(15)
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+</code></pre>
+<p>这段代码具有依赖于张量值的条件语句并会在运行时输出这些值。</p>
+<h2 id="eager">Eager 训练</h2>
+<h3 id="_3">计算梯度</h3>
+<p><a href="https://en.wikipedia.org/wiki/Automatic_differentiation">自动微分</a>对实现机器学习算法（例如用于训练神经网络的<a href="https://en.wikipedia.org/wiki/Backpropagation">反向传播</a>）十分有用。在 Eager Execution 期间，请使用 <a href="https://tensorflow.google.cn/api_docs/python/tf/GradientTape?hl=zh-cn"><code>tf.GradientTape</code></a> 跟踪运算以便稍后计算梯度。</p>
+<p>您可以在 Eager Execution 中使用 <a href="https://tensorflow.google.cn/api_docs/python/tf/GradientTape?hl=zh-cn"><code>tf.GradientTape</code></a> 来训练和/或计算梯度。这对复杂的训练循环特别有用。</p>
+<p>由于在每次调用期间都可能进行不同运算，所有前向传递的运算都会记录到“条带”中。要计算梯度，请反向播放条带，然后丢弃。特定 <a href="https://tensorflow.google.cn/api_docs/python/tf/GradientTape?hl=zh-cn"><code>tf.GradientTape</code></a> 只能计算一个梯度；后续调用会引发运行时错误。</p>
+<pre><code class="language-python">w = tf.Variable([[1.0]])
+with tf.GradientTape() as tape:
+  loss = w * w
+
+grad = tape.gradient(loss, w)
+print(grad)  # =&gt; tf.Tensor([[ 2.]], shape=(1, 1), dtype=float32)
+tf.Tensor([[2.]], shape=(1, 1), dtype=float32)
+</code></pre>
+<h3 id="_4">训练模型</h3>
+<p>以下示例创建了一个多层模型，该模型会对标准 MNIST 手写数字进行分类。示例演示了在 Eager Execution 环境中构建可训练计算图的优化器和层 API。</p>
+<pre><code class="language-python"># Fetch and format the mnist data
+(mnist_images, mnist_labels), _ = tf.keras.datasets.mnist.load_data()
+
+dataset = tf.data.Dataset.from_tensor_slices(
+  (tf.cast(mnist_images[...,tf.newaxis]/255, tf.float32),
+   tf.cast(mnist_labels,tf.int64)))
+dataset = dataset.shuffle(1000).batch(32)
+# Build the model
+mnist_model = tf.keras.Sequential([
+  tf.keras.layers.Conv2D(16,[3,3], activation='relu',
+                         input_shape=(None, None, 1)),
+  tf.keras.layers.Conv2D(16,[3,3], activation='relu'),
+  tf.keras.layers.GlobalAveragePooling2D(),
+  tf.keras.layers.Dense(10)
+])
+</code></pre>
+<p>即使没有训练，也可以在 Eager Execution 中调用模型并检查输出：</p>
+<pre><code class="language-python">for images,labels in dataset.take(1):
+  print(&quot;Logits: &quot;, mnist_model(images[0:1]).numpy())
+Logits:  [[ 0.0270367  -0.01142959 -0.04025798 -0.04152567  0.06224848  0.04886491
+   0.03862026 -0.06363453 -0.04545979  0.04428613]]
+</code></pre>
+<p>虽然 Keras 模型有内置训练循环（使用 <code>fit</code> 方法），但有时您需要进行更多自定义。下面是一个使用 Eager Execution 实现训练循环的示例：</p>
+<pre><code class="language-python">optimizer = tf.keras.optimizers.Adam()
+loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+
+loss_history = []
+</code></pre>
+<p>注：请在 <a href="https://tensorflow.google.cn/api_docs/python/tf/debugging?hl=zh-cn"><code>tf.debugging</code></a> 中使用断言函数检查条件是否成立。这在 Eager Execution 和计算图执行中均有效。</p>
+<pre><code class="language-python">def train_step(images, labels):
+  with tf.GradientTape() as tape:
+    logits = mnist_model(images, training=True)
+
+    # Add asserts to check the shape of the output.
+    tf.debugging.assert_equal(logits.shape, (32, 10))
+
+    loss_value = loss_object(labels, logits)
+
+  loss_history.append(loss_value.numpy().mean())
+  grads = tape.gradient(loss_value, mnist_model.trainable_variables)
+  optimizer.apply_gradients(zip(grads, mnist_model.trainable_variables))
+def train(epochs):
+  for epoch in range(epochs):
+    for (batch, (images, labels)) in enumerate(dataset):
+      train_step(images, labels)
+    print ('Epoch {} finished'.format(epoch))
+train(epochs = 3)
+WARNING:tensorflow:5 out of the last 5 calls to &lt;function _BaseOptimizer._update_step_xla at 0x7f090003d670&gt; triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to &lt;function _BaseOptimizer._update_step_xla at 0x7f090003d670&gt; triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+Epoch 0 finished
+Epoch 1 finished
+Epoch 2 finished
+import matplotlib.pyplot as plt
+
+plt.plot(loss_history)
+plt.xlabel('Batch #')
+plt.ylabel('Loss [entropy]')
+Text(0, 0.5, 'Loss [entropy]')
+</code></pre>
+<p><img alt="png" src="https://tensorflow.google.cn/static/guide/eager_files/output_5vG5ql_2vYB5_1.png?hl=zh-cn" /></p>
+<h3 id="_5">变量和优化器</h3>
+<p><a href="https://tensorflow.google.cn/api_docs/python/tf/Variable?hl=zh-cn"><code>tf.Variable</code></a> 对象会存储在训练期间访问的可变、类似于 <a href="https://tensorflow.google.cn/api_docs/python/tf/Tensor?hl=zh-cn"><code>tf.Tensor</code></a> 的值，以更简单地实现自动微分。</p>
+<p>变量的集合及其运算方法可以封装到层或模型中。有关详细信息，请参阅<a href="https://render.githubusercontent.com/view/keras/custom_layers_and_models.ipynb">自定义 Keras 层和模型</a>。层和模型之间的主要区别在于模型添加了如下方法：<a href="https://tensorflow.google.cn/api_docs/python/tf/keras/Model?hl=zh-cn#fit"><code>Model.fit</code></a>、<a href="https://tensorflow.google.cn/api_docs/python/tf/keras/Model?hl=zh-cn#evaluate"><code>Model.evaluate</code></a> 和 <a href="https://tensorflow.google.cn/api_docs/python/tf/keras/Model?hl=zh-cn#save"><code>Model.save</code></a>。</p>
+<p>例如，上面的自动微分示例可以改写为：</p>
+<pre><code class="language-python">class Linear(tf.keras.Model):
+  def __init__(self):
+    super(Linear, self).__init__()
+    self.W = tf.Variable(5., name='weight')
+    self.B = tf.Variable(10., name='bias')
+  def call(self, inputs):
+    return inputs * self.W + self.B
+# A toy dataset of points around 3 * x + 2
+NUM_EXAMPLES = 2000
+training_inputs = tf.random.normal([NUM_EXAMPLES])
+noise = tf.random.normal([NUM_EXAMPLES])
+training_outputs = training_inputs * 3 + 2 + noise
+
+# The loss function to be optimized
+def loss(model, inputs, targets):
+  error = model(inputs) - targets
+  return tf.reduce_mean(tf.square(error))
+
+def grad(model, inputs, targets):
+  with tf.GradientTape() as tape:
+    loss_value = loss(model, inputs, targets)
+  return tape.gradient(loss_value, [model.W, model.B])
+</code></pre>
+<p>下一步：</p>
+<ol>
+<li>创建模型。</li>
+<li>损失函数对模型参数的导数。</li>
+<li>基于导数的变量更新策略。</li>
+</ol>
+<pre><code class="language-python">model = Linear()
+optimizer = tf.keras.optimizers.SGD(learning_rate=0.01)
+
+print(&quot;Initial loss: {:.3f}&quot;.format(loss(model, training_inputs, training_outputs)))
+
+steps = 300
+for i in range(steps):
+  grads = grad(model, training_inputs, training_outputs)
+  optimizer.apply_gradients(zip(grads, [model.W, model.B]))
+  if i % 20 == 0:
+    print(&quot;Loss at step {:03d}: {:.3f}&quot;.format(i, loss(model, training_inputs, training_outputs)))
+Initial loss: 68.058
+Loss at step 000: 65.445
+Loss at step 020: 30.118
+Loss at step 040: 14.165
+Loss at step 060: 6.954
+Loss at step 080: 3.691
+Loss at step 100: 2.213
+Loss at step 120: 1.542
+Loss at step 140: 1.238
+Loss at step 160: 1.100
+Loss at step 180: 1.037
+Loss at step 200: 1.009
+Loss at step 220: 0.996
+Loss at step 240: 0.990
+Loss at step 260: 0.987
+Loss at step 280: 0.986
+print(&quot;Final loss: {:.3f}&quot;.format(loss(model, training_inputs, training_outputs)))
+Final loss: 0.985
+print(&quot;W = {}, B = {}&quot;.format(model.W.numpy(), model.B.numpy()))
+W = 3.010180711746216, B = 2.00154972076416
+</code></pre>
+<p>注：变量将一直存在，直至删除对 Python 对象的最后一个引用，并删除该变量。</p>
+<h3 id="_6">基于对象的保存</h3>
+<p><a href="https://tensorflow.google.cn/api_docs/python/tf/keras/Model?hl=zh-cn"><code>tf.keras.Model</code></a> 包括一个方便的 <code>save_weights</code> 方法，您可以通过该方法轻松创建检查点：</p>
+<pre><code class="language-python">model.save_weights('weights')
+status = model.load_weights('weights')
+</code></pre>
+<p>您可以使用 <a href="https://tensorflow.google.cn/api_docs/python/tf/train/Checkpoint?hl=zh-cn"><code>tf.train.Checkpoint</code></a> 完全控制此过程。</p>
+<p>本部分是<a href="https://render.githubusercontent.com/view/checkpoint.ipynb">检查点训练指南</a>的缩略版。</p>
+<pre><code class="language-python">x = tf.Variable(10.)
+checkpoint = tf.train.Checkpoint(x=x)
+x.assign(2.)   # Assign a new value to the variables and save.
+checkpoint_path = './ckpt/'
+checkpoint.save('./ckpt/')
+'./ckpt/-1'
+x.assign(11.)  # Change the variable after saving.
+
+# Restore values from the checkpoint
+checkpoint.restore(tf.train.latest_checkpoint(checkpoint_path))
+
+print(x)  # =&gt; 2.0
+&lt;tf.Variable 'Variable:0' shape=() dtype=float32, numpy=2.0&gt;
+</code></pre>
+<p>要保存和加载模型，<a href="https://tensorflow.google.cn/api_docs/python/tf/train/Checkpoint?hl=zh-cn"><code>tf.train.Checkpoint</code></a> 会存储对象的内部状态，而无需隐藏变量。要记录 <code>model</code>、<code>optimizer</code> 和全局步骤的状态，请将它们传递到 <a href="https://tensorflow.google.cn/api_docs/python/tf/train/Checkpoint?hl=zh-cn"><code>tf.train.Checkpoint</code></a>：</p>
+<pre><code class="language-python">model = tf.keras.Sequential([
+  tf.keras.layers.Conv2D(16,[3,3], activation='relu'),
+  tf.keras.layers.GlobalAveragePooling2D(),
+  tf.keras.layers.Dense(10)
+])
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
+checkpoint_dir = 'path/to/model_dir'
+if not os.path.exists(checkpoint_dir):
+  os.makedirs(checkpoint_dir)
+checkpoint_prefix = os.path.join(checkpoint_dir, &quot;ckpt&quot;)
+root = tf.train.Checkpoint(optimizer=optimizer,
+                           model=model)
+
+root.save(checkpoint_prefix)
+root.restore(tf.train.latest_checkpoint(checkpoint_dir))
+&lt;tensorflow.python.checkpoint.checkpoint.CheckpointLoadStatus at 0x7f0908cea490&gt;
+</code></pre>
+<p>注：在许多训练循环中，会在调用 <a href="https://tensorflow.google.cn/api_docs/python/tf/train/Checkpoint?hl=zh-cn#restore"><code>tf.train.Checkpoint.restore</code></a> 后创建变量。这些变量将在创建后立即恢复，并且可以使用断言来确保检查点已完全加载。有关详细信息，请参阅<a href="https://render.githubusercontent.com/view/checkpoint.ipynb">检查点训练指南</a>。</p>
+<h3 id="_7">面向对象的指标</h3>
+<p><a href="https://tensorflow.google.cn/api_docs/python/tf/keras/metrics?hl=zh-cn"><code>tf.keras.metrics</code></a> 会被存储为对象。可以通过将新数据传递给可调用对象来更新指标，并使用 <code>tf.keras.metrics.result</code> 方法检索结果，例如：</p>
+<pre><code class="language-python">m = tf.keras.metrics.Mean(&quot;loss&quot;)
+m(0)
+m(5)
+m.result()  # =&gt; 2.5
+m([8, 9])
+m.result()  # =&gt; 5.5
+&lt;tf.Tensor: shape=(), dtype=float32, numpy=5.5&gt;
+</code></pre>
+<h3 id="tensorboard">摘要和 TensorBoard</h3>
+<p><a href="https://tensorflow.google.cn/tensorboard?hl=zh-cn">TensorBoard</a> 是一种可视化工具，用于了解、调试和优化模型训练过程。它使用在执行程序时编写的摘要事件。</p>
+<p>您可以在 Eager Execution 中使用 <a href="https://tensorflow.google.cn/api_docs/python/tf/summary?hl=zh-cn"><code>tf.summary</code></a> 记录变量摘要。例如，要每 100 个训练步骤记录一次 <code>loss</code> 的摘要，请运行以下代码：</p>
+<pre><code class="language-python">logdir = &quot;./tb/&quot;
+writer = tf.summary.create_file_writer(logdir)
+
+steps = 1000
+with writer.as_default():  # or call writer.set_as_default() before the loop.
+  for i in range(steps):
+    step = i + 1
+    # Calculate loss with your real train function.
+    loss = 1 - 0.001 * step
+    if step % 100 == 0:
+      tf.summary.scalar('loss', loss, step=step)
+ls tb/
+events.out.tfevents.1671056534.kokoro-gcp-ubuntu-prod-129375217.162107.0.v2
+</code></pre>
+<h2 id="_8">自动微分高级主题</h2>
+<h3 id="_9">动态模型</h3>
+<p><a href="https://tensorflow.google.cn/api_docs/python/tf/GradientTape?hl=zh-cn"><code>tf.GradientTape</code></a> 也可以用于动态模型。下面这个<a href="https://wikipedia.org/wiki/Backtracking_line_search">回溯线搜索</a>算法示例看起来就像普通的 NumPy 代码，但它的控制流比较复杂，存在梯度且可微分：</p>
+<pre><code class="language-python">def line_search_step(fn, init_x, rate=1.0):
+  with tf.GradientTape() as tape:
+    # Variables are automatically tracked.
+    # But to calculate a gradient from a tensor, you must `watch` it.
+    tape.watch(init_x)
+    value = fn(init_x)
+  grad = tape.gradient(value, init_x)
+  grad_norm = tf.reduce_sum(grad * grad)
+  init_value = value
+  while value &gt; init_value - rate * grad_norm:
+    x = init_x - rate * grad
+    value = fn(x)
+    rate /= 2.0
+  return x, value
+</code></pre>
+<h3 id="_10">自定义梯度</h3>
+<p>自定义梯度是重写梯度的一种简单方法。在前向函数中，定义相对于输入、输出或中间结果的梯度。例如，下面是在后向传递中裁剪梯度范数的一种简单方法：</p>
+<pre><code class="language-python">@tf.custom_gradient
+def clip_gradient_by_norm(x, norm):
+  y = tf.identity(x)
+  def grad_fn(dresult):
+    return [tf.clip_by_norm(dresult, norm), None]
+  return y, grad_fn
+</code></pre>
+<p>自定义梯度通常用来为运算序列提供数值稳定的梯度：</p>
+<pre><code class="language-python">def log1pexp(x):
+  return tf.math.log(1 + tf.exp(x))
+
+def grad_log1pexp(x):
+  with tf.GradientTape() as tape:
+    tape.watch(x)
+    value = log1pexp(x)
+  return tape.gradient(value, x)
+# The gradient computation works fine at x = 0.
+grad_log1pexp(tf.constant(0.)).numpy()
+0.5
+# However, x = 100 fails because of numerical instability.
+grad_log1pexp(tf.constant(100.)).numpy()
+nan
+</code></pre>
+<p>在此例中，<code>log1pexp</code> 函数可以通过自定义梯度进行分析简化。下面的实现重用了在前向传递期间计算的 <a href="https://tensorflow.google.cn/api_docs/python/tf/math/exp?hl=zh-cn"><code>tf.exp(x)</code></a> 值，通过消除冗余计算使其变得更加高效：</p>
+<pre><code class="language-python">@tf.custom_gradient
+def log1pexp(x):
+  e = tf.exp(x)
+  def grad(dy):
+    return dy * (1 - 1 / (1 + e))
+  return tf.math.log(1 + e), grad
+
+def grad_log1pexp(x):
+  with tf.GradientTape() as tape:
+    tape.watch(x)
+    value = log1pexp(x)
+  return tape.gradient(value, x)
+# As before, the gradient computation works fine at x = 0.
+grad_log1pexp(tf.constant(0.)).numpy()
+0.5
+# And the gradient computation also works at x = 100.
+grad_log1pexp(tf.constant(100.)).numpy()
+1.0
+</code></pre>
+<h2 id="_11">性能</h2>
+<p>在 Eager Execution 期间，计算会自动分流到 GPU。如果想控制计算运行的位置，可将其放在 <code>tf.device('/gpu:0')</code> 块（或 CPU 等效块）中：</p>
+<pre><code class="language-python">import time
+
+def measure(x, steps):
+  # TensorFlow initializes a GPU the first time it's used, exclude from timing.
+  tf.matmul(x, x)
+  start = time.time()
+  for i in range(steps):
+    x = tf.matmul(x, x)
+  # tf.matmul can return before completing the matrix multiplication
+  # (e.g., can return after enqueing the operation on a CUDA stream).
+  # The x.numpy() call below will ensure that all enqueued operations
+  # have completed (and will also copy the result to host memory,
+  # so we're including a little more than just the matmul operation
+  # time).
+  _ = x.numpy()
+  end = time.time()
+  return end - start
+
+shape = (1000, 1000)
+steps = 200
+print(&quot;Time to multiply a {} matrix by itself {} times:&quot;.format(shape, steps))
+
+# Run on CPU:
+with tf.device(&quot;/cpu:0&quot;):
+  print(&quot;CPU: {} secs&quot;.format(measure(tf.random.normal(shape), steps)))
+
+# Run on GPU, if available:
+if tf.config.experimental.list_physical_devices(&quot;GPU&quot;):
+  with tf.device(&quot;/gpu:0&quot;):
+    print(&quot;GPU: {} secs&quot;.format(measure(tf.random.normal(shape), steps)))
+else:
+  print(&quot;GPU: not found&quot;)
+Time to multiply a (1000, 1000) matrix by itself 200 times:
+CPU: 0.4679419994354248 secs
+GPU: 0.06870079040527344 secs
+</code></pre>
+<p>可以将 <a href="https://tensorflow.google.cn/api_docs/python/tf/Tensor?hl=zh-cn"><code>tf.Tensor</code></a> 对象复制到不同设备来执行其运算：</p>
+<pre><code class="language-python">if tf.config.experimental.list_physical_devices(&quot;GPU&quot;):
+  x = tf.random.normal([10, 10])
+
+  x_gpu0 = x.gpu()
+  x_cpu = x.cpu()
+
+  _ = tf.matmul(x_cpu, x_cpu)    # Runs on CPU
+  _ = tf.matmul(x_gpu0, x_gpu0)  # Runs on GPU:0
+WARNING:tensorflow:From /tmpfs/tmp/ipykernel_162107/1929933290.py:4: _EagerTensorBase.gpu (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.identity instead.
+WARNING:tensorflow:From /tmpfs/tmp/ipykernel_162107/1929933290.py:5: _EagerTensorBase.cpu (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.identity instead.
+</code></pre>
+<h3 id="_12">基准</h3>
+<p>对于计算量繁重的模型（如在 GPU 上训练的 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/eager/python/examples/resnet50">ResNet50</a>），Eager Execution 性能与 <a href="https://tensorflow.google.cn/api_docs/python/tf/function?hl=zh-cn"><code>tf.function</code></a> 执行相当。但是对于计算量较小的模型来说，这种性能差距会越来越大，并且在为有大量小运算的模型优化热代码路径方面，其性能还有待提升。</p>
+<h2 id="_13">使用函数</h2>
+<p>虽然 Eager Execution 增强了开发和调试的交互性，但 TensorFlow 1.x 样式的计算图执行在分布式训练、性能优化和生产部署方面具有优势。为了弥补这一差距，TensorFlow 2.0 通过 <a href="https://tensorflow.google.cn/api_docs/python/tf/function?hl=zh-cn"><code>tf.function</code></a> API 引入了 <code>function</code>。有关详细信息，请参阅 <a href="https://render.githubusercontent.com/view/function.ipynb">tf.function</a> 指南。</p>
+<p>如未另行说明，那么本页面中的内容已根据<a href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 许可</a>获得了许可，并且代码示例已根据 <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 许可</a>获得了许可。有关详情，请参阅 <a href="https://developers.google.cn/site-policies?hl=zh-cn">Google 开发者网站政策</a>。Java 是 Oracle 和/或其关联公司的注册商标。</p>
+<p>最后更新时间 (UTC)：2023-01-11。</p>
 
 
 
