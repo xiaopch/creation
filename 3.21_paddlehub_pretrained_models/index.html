@@ -1,0 +1,2962 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技术分享">
+      
+      
+        <meta name="author" content="xiaopch">
+      
+      
+      
+        <link rel="prev" href="../3.20_%E7%94%A8python%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E7%A8%8B%E5%BA%8F/">
+      
+      
+        <link rel="next" href="../3.21_%E9%80%9A%E8%BF%87%E8%AF%AD%E9%9F%B3%E5%92%8Cchatgpt%E5%AF%B9%E8%AF%9D%E7%9A%84python%E7%A8%8B%E5%BA%8F/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>3.21 paddlehub pretrained models - 光尘</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#paddlehub" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="光尘" class="md-header__button md-logo" aria-label="光尘" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            光尘
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.21 paddlehub pretrained models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://gitee.com/xiaopch/xiaopch.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gitee
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="光尘" class="md-nav__button md-logo" aria-label="光尘" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    光尘
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://gitee.com/xiaopch/xiaopch.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gitee
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1_%E6%88%91%E5%85%81%E8%AE%B8-%E6%B5%B7%E7%81%B5%E6%A0%BC/" class="md-nav__link">
+        3.1 我允许 海灵格
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20_KK%E7%9A%84%E3%80%8A%E5%A4%B1%E6%8E%A7%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 KK的《失控》这本书主要讲了什么
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20_%E7%94%A8python%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        3.20 用python实现chatgpt对话程序
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.21 paddlehub pretrained models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3.21 paddlehub pretrained models
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paddlehub" class="md-nav__link">
+    PaddleHub预训练模型库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    百度飞桨独有优势特色模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    图像
+  </a>
+  
+    <nav class="md-nav" aria-label="图像">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    图像分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    目标检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    图像分割
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    关键点检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    图像生成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    文本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    中文词法分析与词向量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    情感分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    文本相似度计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    文本审核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    语义表示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    视频
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.21_%E9%80%9A%E8%BF%87%E8%AF%AD%E9%9F%B3%E5%92%8Cchatgpt%E5%AF%B9%E8%AF%9D%E7%9A%84python%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        3.21 通过语音和chatgpt对话的python程序
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          2023
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          2023
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/03.21.12_%E5%AE%9E%E7%8E%B0%E6%B0%91%E4%B8%BB%E6%9C%80%E5%A5%BD%E7%9A%84%E9%80%94%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        03.21.12 实现民主最好的途径是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.01%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/" class="md-nav__link">
+        2.01思维模型故事和案例 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.07_x86%E6%9E%B6%E6%9E%84%E4%B8%8B%E4%BD%BF%E7%94%A8Genymotion%E8%99%9A%E6%8B%9F%E5%8C%96%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%85%BC%E5%AE%B9arm%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        2.07 x86架构下使用Genymotion虚拟化设备并兼容arm架构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.07_%E4%B8%AA%E6%80%A7%E5%8C%96%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%BB%BC%E8%BF%B0/" class="md-nav__link">
+        个性化推荐系统综述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.07_%E5%BF%85%E7%84%B6/" class="md-nav__link">
+        2.07 必然
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.07_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        2.07 查理芒格的100个思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.07_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        2.07 物理学概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.08_%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        2.08 自私的基因 读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.09_%E4%BA%BA%E7%B1%BB%E6%80%9D%E7%BB%B4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1%EF%BC%8C%E4%BD%A0%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%B1%82%E6%AC%A1/" class="md-nav__link">
+        2.09 人类思维的4个层次，你在哪个层次
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.11_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2022/" class="md-nav__link">
+        常用的思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.12_%E5%86%99%E5%87%BA%E6%88%91%E5%BF%83%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%86%99%E4%BD%9C%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1/" class="md-nav__link">
+        2.12 写出我心：普通人如何通过写作表达自己
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.12_%E5%AF%B9%E8%AF%9D%E4%BD%93%E5%86%99%E4%BD%9C-2023/" class="md-nav__link">
+        2.12 对话体写作 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.12_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2023/" class="md-nav__link">
+        2.12 常用的思维模型2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.13_Python%E8%B0%83%E7%94%A8chatgpt/" class="md-nav__link">
+        2.13 Python调用chatgpt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.13_%E7%81%B5%E6%84%9F%E6%B5%81%E6%B7%8C%E7%9A%84%E5%86%99%E4%BD%9C/" class="md-nav__link">
+        2.13 灵感流淌的写作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.13_%E7%94%A8Python%E8%B0%83%E7%94%A8OpenAI_API%E5%81%9A%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BA%8B/" class="md-nav__link">
+        用Python调用OpenAI API做有趣的事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.14_%E5%86%99%E4%B8%80%E9%A6%96%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%97/" class="md-nav__link">
+        2.14 写一首情人节的诗
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.14_%E5%AE%89%E8%A3%85linux%E7%89%88%E6%9C%AC%E7%9A%84Clash%20for%20Windows/" class="md-nav__link">
+        2.14 安装linux版本的Clash for Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.14_%E6%80%8E%E6%A0%B7%E5%92%8C%E8%87%AA%E5%B7%B1%E5%92%8C%E8%A7%A3/" class="md-nav__link">
+        2.14 怎样和自己和解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.14_%E6%89%93%E5%85%AB%E6%AE%B5%E9%94%A6%E6%9C%89%E6%84%9F/" class="md-nav__link">
+        2.14 打八段锦有感
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.14_%E6%9C%AA%E6%9D%A5%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%BB%E8%A6%81%E8%B6%8B%E5%8A%BF%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.14 未来科学的主要趋势有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.14_%E6%AF%8F%E5%A4%A9%E7%BB%83%E5%85%AB%E6%AE%B5%E9%94%A6%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+        2.14 每天练八段锦的好处
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.14_%E7%BB%84%E5%90%88%E5%88%9B%E6%96%B0%E7%9A%84%E6%AD%A5%E9%AA%A4%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.14 组合创新的步骤有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.15_%E5%86%99%E4%BD%9C%E7%9A%84%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.15 写作的常用的结构有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.15_%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%80%E5%8F%91%E6%9C%88%E7%90%83%E5%91%A2/" class="md-nav__link">
+        2.15 怎么利用人工智能开发月球呢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.15_%E6%80%8E%E6%A0%B7%E5%BF%AB%E9%80%9F%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" class="md-nav__link">
+        2.15 怎样快速提升自己的认知能力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.16_mkdocs%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        2.16 mkdocs生成项目文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.16_python%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%8E%9F%E6%96%87%E4%BB%B6%E5%90%8D/" class="md-nav__link">
+        2.16 python实现网络文件下载并保存为原文件名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.16_python%E6%93%8D%E4%BD%9Cmongodb/" class="md-nav__link">
+        2.16 python操作mongodb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.16_%E5%90%AB%E6%9C%89%E8%8A%B1%E9%9D%92%E7%B4%A0%E7%9A%84%E6%B0%B4%E6%9E%9C%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.16 含有花青素的水果有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.17_%E8%87%AA%E5%AA%92%E4%BD%93%E5%86%99%E4%BD%9C-%E4%BB%8E%E5%9F%BA%E6%9C%AC%E5%8A%9F%E5%88%B0%E5%AE%9E%E6%88%98%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        自媒体写作， 从基本功到实战方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.20_%E6%A0%87%E9%A2%98%E7%9A%84%E5%86%99%E6%B3%95/" class="md-nav__link">
+        2.20 标题的写法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF-%E6%AF%8F%E6%97%A5%E5%8F%8D%E6%80%9D%E6%A8%A1%E7%89%88/" class="md-nav__link">
+        2.20 高效能人士七个习惯 每日反思模版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.21_python%E8%BD%AC%E6%8D%A2%E9%9F%B3%E9%A2%91%E9%87%87%E6%A0%B7%E7%8E%87/" class="md-nav__link">
+        2.21 python转换音频采样率
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.21_%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E7%BE%8E%E9%A3%9F%E7%9F%AD%E8%A7%86%E9%A2%91%E5%8D%9A%E4%B8%BB%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%92%8C%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        2.21 成为一名美食短视频博主的步骤和建议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.22_deepin%E5%AE%89%E8%A3%85Python3.7.4%E5%92%8CPostman/" class="md-nav__link">
+        deepin安装Python3.7.4和Postman
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.22_vscode%E6%80%8E%E6%A0%B7%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        2.22 vscode怎样配置python开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/2.26_python%E5%AE%9E%E7%8E%B0%E9%9F%B3%E9%A2%91%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        2.26 python实现音频格式转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.10_%E4%B8%87%E8%83%BD%E6%89%A6%E6%8F%92%E6%B3%95-%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E4%B8%80%E6%8B%9B%E6%90%9E%E5%AE%9A/" class="md-nav__link">
+        3.10 万能扦插法 植物扦插一招搞定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.10_%E5%82%AC%E7%9C%A0%E5%87%8F%E5%8E%8B%E7%BC%93%E8%A7%A3%E7%96%B2%E5%8A%B3%E6%B7%B1%E5%BA%A6%E7%9D%A1%E7%9C%A0/" class="md-nav__link">
+        3.10 催眠减压缓解疲劳深度睡眠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.10_%E5%82%AC%E7%9C%A0%E6%88%98%E8%83%9C%E6%BD%9C%E6%84%8F%E8%AF%86%E4%B8%AD%E7%9A%84%E6%81%90%E6%83%A7/" class="md-nav__link">
+        3.10 催眠战胜潜意识中的恐惧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.10_%E6%97%A9%E9%A4%90%E8%AF%95%E8%AF%95%E8%BF%99%E4%B8%AA%E8%94%AC%E8%8F%9C%E9%A5%BC/" class="md-nav__link">
+        3.10 早餐试试这个蔬菜饼
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.11_%E4%B8%80%E8%A1%8C%E7%A6%85%E5%B8%88%E7%9A%8432%E4%B8%AA%E6%AD%A3%E5%BF%B5%E7%9A%84%E7%BB%83%E4%B9%A0/" class="md-nav__link">
+        3.11 一行禅师的32个正念的练习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.11_%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC/" class="md-nav__link">
+        3.11 海市蜃楼
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.12_TensorFlowTTS%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        TensorFlowTTS简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.12_python%E5%BD%95%E9%9F%B3%E5%92%8C%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90/" class="md-nav__link">
+        3.12 python录音和播放音乐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.13_English%20Text%20to%20speech%20with%20TensorFlowTTS/" class="md-nav__link">
+        English Text to speech with TensorFlowTTS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.13_%E4%BD%BF%E7%94%A8MelGAN%E8%BF%9B%E8%A1%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        使用MelGAN进行文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.15_Midjourney%20Discord%20Interface/" class="md-nav__link">
+        3.15 Midjourney Discord Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.15_Tensorflow%20Eager%20Execution/" class="md-nav__link">
+        3.15 Tensorflow Eager Execution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.15_%E5%85%B3%E4%BA%8E%E4%B8%AD%E5%BA%B8/" class="md-nav__link">
+        3.15 关于中庸
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.16_python%E5%AE%9A%E6%97%B6%E6%8A%93%E5%8F%96zhihu%E5%92%8C%E7%99%BE%E5%BA%A6%E7%9A%84%E7%83%AD%E7%82%B9/" class="md-nav__link">
+        3.16 python定时抓取zhihu和百度的热点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.16_python%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        3.16 python循环执行模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.16_%E6%96%B0%E5%BF%85%E5%BA%94%EF%BC%88New%20Bing%EF%BC%89%E5%9B%BD%E5%86%85%E7%94%B3%E8%AF%B7%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        新必应（New Bing）国内申请与使用教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.19_%E4%BD%BF%E7%94%A8%20Python%20%E8%B0%83%E7%94%A8%20ChatGPT-3.5-API/" class="md-nav__link">
+        使用 Python 调用 ChatGPT-3.5-API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.19_%E8%AF%B7%E9%97%AE%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1chatgpt%E7%9A%84prompt/" class="md-nav__link">
+        3.19 请问怎么设计chatgpt的prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.1_%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%80%E5%8D%8A%E7%83%9F%E7%81%AB%EF%BC%8C%E4%B8%80%E5%8D%8A%E6%B8%85%E6%AC%A2/" class="md-nav__link">
+        生活，一半烟火，一半清欢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.1_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        3.1 高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.20.%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+        3.20.微生物和果皮怎么制作酵素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.20_122549.%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+        3.20 122549.微生物和果皮怎么制作酵素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.20_133033.%E5%86%A5%E6%83%B3%E5%92%8C%E6%AD%A3%E5%BF%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 133033.冥想和正念之间的关系是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.20_134541.%E3%80%8A%E5%BF%83%E6%B5%81%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 134541.《心流》这本书主要讲了什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.21_TensorFlow%20Hub%20%E5%BA%93%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        TensorFlow Hub 库概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.21_python%E9%80%9A%E8%BF%87google%E5%9C%A8%E7%BA%BF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        3.21 python通过google在线实现语音识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.21_%E8%B0%83%E7%94%A8google%20API%E8%AF%86%E5%88%AB%E9%BA%A6%E5%85%8B%E9%A3%8E%E7%9A%84%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.21 调用google API识别麦克风的语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.2_%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%84%E5%85%BB%E6%8A%A4%E6%8A%80%E5%B7%A7%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        康乃馨的养护技巧是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.2_%E8%8A%B1%E7%9B%86%E9%87%8C%E5%85%BB%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%844%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+        3.2 花盆里养康乃馨的4个小技巧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.2_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        高效能人士七个习惯的反思日记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.3_openai%E7%9A%84ASR%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABWhisper/" class="md-nav__link">
+        openai的ASR语音识别Whisper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.3_%E5%BF%83%E6%B5%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        3.3 心流 学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.4_%E5%A4%A7%E9%B1%BC-%E6%AD%8C%E8%AF%8D/" class="md-nav__link">
+        3.4 大鱼 歌词
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.5_%E6%8E%A8%E8%8D%905%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+        推荐5款开源免费音频处理软件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.8_python%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABwhisper%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        python语音识别whisper的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.8_%E5%85%B3%E4%BA%8E%E6%B6%8C%E7%8E%B0/" class="md-nav__link">
+        3.8 关于涌现
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.8_%E6%B1%89%E5%AD%97%E7%AE%80%E7%B9%81%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        汉字简繁转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.9_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%BC%BA%E5%A4%A7%E5%86%85%E5%BF%83%E5%85%8B%E6%9C%8D%E8%AE%A8%E5%A5%BD%E4%BA%BA%E6%A0%BC/" class="md-nav__link">
+        3.9 5分钟催眠体验强大内心克服讨好人格
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.9_TikTokDownload%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.9 TikTokDownload使用教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.9_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%87%8F%E5%8E%8B%E6%8E%A5%E7%BA%B3%E8%87%AA%E5%B7%B1_5%E5%88%86%E9%92%9F/" class="md-nav__link">
+        3.9 催眠体验减压接纳自己 5分钟
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          催眠
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          催眠
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.26_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E6%AD%A3%E8%A7%81/" class="md-nav__link">
+        2.26 从今天开始的每一天.正见
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.27_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+        2.27 5分钟催眠引导
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.27_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E7%A5%9D%E7%A6%8F/" class="md-nav__link">
+        2.27 从今天开始的每一天.祝福
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.27_%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC%E4%B8%8E%E8%BA%AB%E4%BD%93%E5%AF%B9%E8%AF%9D%E5%85%A8%E9%9D%A2%E4%BF%AE%E5%A4%8D%E8%BA%AB%E4%BD%93/" class="md-nav__link">
+        2.27 催眠引导与身体对话全面修复身体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.27_%E5%82%AC%E7%9C%A0%E8%AF%B1%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+        2.27 催眠诱导语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.28_%E5%A6%82%E4%BD%95%E8%AE%A9%E6%94%B9%E5%8F%98%E5%8F%91%E7%94%9F/" class="md-nav__link">
+        如何让改变发生
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.28_%E6%88%91%E4%BB%AC%E6%97%A0%E6%B3%95%E6%8E%A7%E5%88%B6%E5%92%8C%E9%9C%80%E8%A6%81%E6%8E%A5%E5%8F%97%E7%9A%84%204%20%E4%BB%B6%E4%BA%8B/" class="md-nav__link">
+        我们无法控制和需要接受的 4 件事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.28_%E7%94%9F%E5%91%BD%E5%B0%B1%E6%98%AF%E6%97%A0%E6%95%B0%E4%B8%AA%E7%88%B1%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%BA%E4%BC%9A%E2%80%94%E2%80%94%E9%9C%B2%E6%98%93%E4%B8%9D%C2%B7%E6%B5%B7/" class="md-nav__link">
+        生命就是无数个爱自己的机会——露易丝·海
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/2.28_%E8%AE%A9%E4%BA%BA%E5%8F%98%E5%BF%AB%E4%B9%90%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AD%97%E2%80%9C%E5%BA%A6%E2%80%9D%E5%92%8C%E2%80%9C%E6%94%BE%E2%80%9D/" class="md-nav__link">
+        2.28 让人变快乐的两个字“度”和“放”
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/3.6_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
+        3.6 催眠体验R1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/3.7_%E4%B8%8E%E6%BD%9C%E6%84%8F%E8%AF%86%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+        3.7 与潜意识对话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/3.7_%E5%82%AC%E7%9C%A0%E7%BC%93%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%84%A6%E8%99%91%E5%92%8C%E5%8E%8B%E5%8A%9B/" class="md-nav__link">
+        3.7 催眠缓解你的焦虑和压力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/3.7_%E5%A4%A7%E8%87%AA%E7%84%B6%E5%86%A5%E6%83%B3_%E8%87%AA%E6%88%91%E5%82%AC%E7%9C%A0/" class="md-nav__link">
+        3.7 大自然冥想 自我催眠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/3.8_%E5%82%AC%E7%9C%A0%E9%87%8A%E6%94%BE%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E5%86%85%E7%96%9A%E6%83%85%E7%BB%AA/" class="md-nav__link">
+        3.8 催眠释放对他人的内疚情绪
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/3.8_%E8%81%8C%E4%B8%9A%E5%82%AC%E7%9C%A0%E5%B8%88%E5%B8%A6%E4%BD%A0%E4%BD%93%E9%AA%8C%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%82%AC%E7%9C%A0%E2%80%94%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E5%89%8D%E4%B8%96/" class="md-nav__link">
+        3.8 职业催眠师带你体验真正的催眠—看到你的前世
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/3.9_%E5%82%AC%E7%9C%A0%E5%85%A5%E7%9D%A1%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+        3.9 催眠入睡引导
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%82%AC%E7%9C%A0/%E5%82%AC%E7%9C%A0%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%BC%95%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+        催眠渐进式引导语
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          生活
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          生活
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/2.26_5%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/" class="md-nav__link">
+        5款开源免费音频处理软件推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/3.6_%E4%B8%A4%E7%A7%8D%E8%87%AA%E5%88%B6%E7%94%9F%E6%A0%B9%E7%B2%89%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        两种自制生根粉的方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/3.6_%E6%B0%B4%E6%9D%A8%E9%85%B8%E7%9A%84%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        3.6 水杨酸的提取方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/KK-%E5%BF%85%E7%84%B6-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        KK 必然 读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        东菱面包机标准面包做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E4%B8%B4%E6%B1%9F%E4%BB%99%C2%B7%E5%A4%9C%E9%A5%AE%E4%B8%9C%E5%9D%A1%E9%86%92%E5%A4%8D%E9%86%89/" class="md-nav__link">
+        临江仙·夜饮东坡醒复醉
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E4%BA%BA%E7%94%9F%E5%A6%82%E8%8C%B6/" class="md-nav__link">
+        人生如茶
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%86%A5%E6%83%B3%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F/" class="md-nav__link">
+        冥想有什么作用呢？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        常用的思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%972023/" class="md-nav__link">
+        情人节的诗2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%96%87%E6%A1%88_%E4%B8%80%E6%9D%AF%E8%8C%B6/" class="md-nav__link">
+        文案 一杯茶
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        查理芒格的100个思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95-%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA/" class="md-nav__link">
+        标准面包做法 东菱面包机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%AD%8C%E8%AF%8D_%E4%BA%91%E6%B8%B8%E4%BE%A0/" class="md-nav__link">
+        歌词 云游侠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        物理学概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E9%81%93%E5%BE%B7%E7%BB%8F%E6%96%87/" class="md-nav__link">
+        道德经文
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_18" id="__nav_9_18_label" tabindex="0">
+          幽默
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_18">
+          <span class="md-nav__icon md-icon"></span>
+          幽默
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E5%B9%BD%E9%BB%98%E5%A4%B8%E4%BA%BA%E7%9A%84%E5%8F%A5%E5%AD%90%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+        幽默夸人的句子大全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E6%88%91%E5%A6%88%E4%B8%89%E5%A4%A9%E6%B2%A1%E6%89%93%E6%88%91%E5%95%A6/" class="md-nav__link">
+        我妈三天没打我啦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%AD%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+        有趣的短句子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E9%80%97%E4%BA%BA%E5%BC%80%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%9A%84%E6%96%87%E6%A1%88/" class="md-nav__link">
+        逗人开心可以发朋友圈的文案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E9%A3%8E%E8%B6%A3%E5%B9%BD%E9%BB%98%E7%9A%84%E5%A4%B8%E4%BA%BA%E8%AF%84%E8%AF%AD/" class="md-nav__link">
+        风趣幽默的夸人评语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E5%B9%BD%E9%BB%98/%E9%AB%98%E6%83%85%E5%95%86%E5%A4%B8%E4%BA%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+        高情商夸人漂亮的句子
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_19" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_19" id="__nav_9_19_label" tabindex="0">
+          汪曾祺
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_19">
+          <span class="md-nav__icon md-icon"></span>
+          汪曾祺
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%91%98%E5%BD%95-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+        摘录 人间草木
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%91%98%E5%BD%95-%E8%A5%BF%E5%B1%B1%E5%AE%A2%E8%AF%9D/" class="md-nav__link">
+        摘录 西山客话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%96%87%E6%A1%88-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+        文案 人间草木
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%96%87%E6%A1%88-%E6%98%86%E6%98%8E%E7%9A%84%E9%9B%A8/" class="md-nav__link">
+        文案 昆明的雨
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E6%B4%BB/%E6%B1%AA%E6%9B%BE%E7%A5%BA/%E6%B1%AA%E6%9B%BE%E7%A5%BA/" class="md-nav__link">
+        汪曾祺
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paddlehub" class="md-nav__link">
+    PaddleHub预训练模型库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    百度飞桨独有优势特色模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    图像
+  </a>
+  
+    <nav class="md-nav" aria-label="图像">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    图像分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    目标检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    图像分割
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    关键点检测
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    图像生成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    文本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    中文词法分析与词向量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    情感分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    文本相似度计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    文本审核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    语义表示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    视频
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>3.21 paddlehub pretrained models</h1>
+
+<p>PaddlePaddle 提供了丰富的模型，使得用户可以采用模块化的方法解决各种学习问题。本文，我们将整体介绍PaddleHub中已经准备好的丰富的预训练模型。</p>
+<ul>
+<li>
+<p>如果是想了解具体预训练模型的使用可以继续学习本课程，也可以参考 <a href="https://www.paddlepaddle.org.cn/hublist">PaddleHub预训练模型库</a>。</p>
+</li>
+<li>
+<p>如果想了解更多模型组网网络结构源代码请参考 <a href="https://github.com/PaddlePaddle/models">飞桨模型库</a>。</p>
+</li>
+</ul>
+<h2 id="paddlehub">PaddleHub预训练模型库</h2>
+<ul>
+<li><a href="#百度飞桨独有优势特色模型">飞桨优势特色模型</a></li>
+<li><a href="#图像">图像</a></li>
+<li><a href="#图像分类">图像分类</a></li>
+<li><a href="#目标检测">目标检测</a></li>
+<li><a href="#图像分割">图像分割</a></li>
+<li><a href="#关键点检测">关键点检测</a></li>
+<li><a href="#图像生成">图像生成</a></li>
+<li><a href="#文本">文本</a></li>
+<li><a href="#中文词法分析与词向量">中文词法分析与词向量</a></li>
+<li><a href="#情感分析">情感分析</a></li>
+<li><a href="#文本相似度计算">文本相似度计算</a></li>
+<li><a href="#语义表示">语义表示</a></li>
+<li><a href="#视频">视频</a></li>
+</ul>
+<h2 id="_1">百度飞桨独有优势特色模型</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"><strong>模型名称</strong></th>
+<th><strong>Master模型推荐辞</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图像分类</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=resnet50_vd_dishes&amp;en_category=ImageClassification">菜品识别</a></td>
+<td>私有数据集训练，支持8416种菜品的分类识别，适合进一步菜品方向微调</td>
+</tr>
+<tr>
+<td>图像分类</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=resnet50_vd_animals&amp;en_category=ImageClassification">动物识别</a></td>
+<td>私有数据集训练，支持7978种动物的分类识别，适合进一步动物方向微调</td>
+</tr>
+<tr>
+<td>目标检测</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=yolov3_darknet53_coco2017&amp;en_category=ObjectDetection">YOLOv3</a></td>
+<td>实现精度相比原作者<strong>提高5.9 个绝对百分点</strong>，性能极致优化。</td>
+</tr>
+<tr>
+<td>人脸检测</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=pyramidbox_lite_server&amp;en_category=FaceDetection">人脸检测</a></td>
+<td>百度自研，18年3月WIDER Face 数据集<strong>冠军模型</strong>，</td>
+</tr>
+<tr>
+<td>人脸检测</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=pyramidbox_lite_server_mask&amp;en_category=FaceDetection">口罩人脸检测与识别</a></td>
+<td>业界<strong>首个开源口罩人脸检测与识别模型</strong>，引起广泛关注。</td>
+</tr>
+<tr>
+<td>目标检测</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=yolov3_darknet53_pedestrian&amp;en_category=ObjectDetection">行人检测</a></td>
+<td>百度自研模型，海量私有数据集训练，可以应用于智能视频监控，人体行为分析，客流统计系统，智能交通等领域</td>
+</tr>
+<tr>
+<td>目标检测</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=yolov3_darknet53_vehicles&amp;en_category=ObjectDetection">车辆检测</a></td>
+<td>百度自研模型，支持car (汽车)，truck (卡车)，bus (公交车)，motorbike (摩托车)，tricycle (三轮车)等车型的识别</td>
+</tr>
+<tr>
+<td>语义分割</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=deeplabv3p_xception65_humanseg&amp;en_category=ImageSegmentation">人像分割</a></td>
+<td>百度<strong>自建数据集</strong>训练，人像分割效果卓越。</td>
+</tr>
+<tr>
+<td>语义分割</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=ace2p&amp;en_category=ImageSegmentation">人体解析</a></td>
+<td>CVPR2019 LIP挑战赛中<strong>满贯三冠王</strong>。人体解析任务必选。</td>
+</tr>
+<tr>
+<td>语义分割</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=Pneumonia_CT_LKM_PP&amp;en_category=ImageSegmentation">肺炎CT影像分析</a></td>
+<td>助力连心医疗开源<strong>业界首个</strong>肺炎CT影像分析模型</td>
+</tr>
+<tr>
+<td>GAN</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=stylepro_artistic&amp;en_category=GANs">风格迁移</a></td>
+<td>百度自研风格迁移模型，趣味模型，<strong>推荐尝试</strong></td>
+</tr>
+<tr>
+<td>OCR</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=chinese_ocr_db_crnn_mobile&amp;en_category=TextRecognition">超轻量中英文OCR文字识别</a></td>
+<td>业界开源最小，8.6M超轻量中英文识别模型。支持中英文识别；支持倾斜、竖排等多种方向文字识别，<strong>强力推荐</strong></td>
+</tr>
+<tr>
+<td>视频分类</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=videotag_tsn_lstm&amp;en_category=VideoClassification">超大规模视频分类</a></td>
+<td>百度自研模型，基于千万短视频预训练的视频分类模型，可直接预测短视频的中文标签</td>
+</tr>
+<tr>
+<td>词法分析</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=lac&amp;en_category=LexicalAnalysis">LAC </a></td>
+<td>百度<strong>自研中文特色</strong>模型词法分析任务。</td>
+</tr>
+<tr>
+<td>情感分析</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=lac&amp;en_category=LexicalAnalysis">Senta</a></td>
+<td>百度自研情感分析模型，海量中文数据训练。</td>
+</tr>
+<tr>
+<td>情绪识别</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=emotion_detection_textcnn&amp;en_category=SentimentAnalysis">emotion_detection</a></td>
+<td>百度自研对话识别模型，海量中文数据训练。</td>
+</tr>
+<tr>
+<td>文本相似度</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=simnet_bow&amp;en_category=SemanticModel">simnet</a></td>
+<td>百度自研短文本相似度模型，海量中文数据训练。</td>
+</tr>
+<tr>
+<td>文本审核</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=porn_detection_gru&amp;en_category=TextCensorship">porn_detection</a></td>
+<td>百度自研色情文本审核模型，海量中文数据训练。</td>
+</tr>
+<tr>
+<td>语义模型</td>
+<td align="left"><a href="https://www.paddlepaddle.org.cn/hubdetail?name=ERNIE&amp;en_category=SemanticModel">ERNIE</a></td>
+<td><strong>SOTA语义模型，中文任务全面优于BERT</strong>。</td>
+</tr>
+<tr>
+<td>语音合成</td>
+<td align="left">WaveFlow（即将开源）</td>
+<td>百度自研模型，海量私有数据集训练</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">图像</h2>
+<h4 id="_3">图像分类</h4>
+<p>图像分类是根据图像的语义信息对不同类别图像进行区分，是计算机视觉中重要的基础问题，是物体检测、图像分割、物体跟踪、行为分析、人脸识别等其他高层视觉任务的基础，在许多领域都有着广泛的应用。如：安防领域的人脸识别和智能视频分析等，交通领域的交通场景识别，互联网领域基于内容的图像检索和相册自动归类，医学领域的图像识别等。</p>
+<p><strong>注：</strong> <strong>如果你是资深开发者，那可以随意按需使用</strong>，<strong>假如你是新手，服务器端优先选择Resnet50，移动端优先选择MobileNetV2</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>模型名称</strong></th>
+<th><strong>模型简介</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=alexnet_imagenet&amp;en_category=ImageClassification">AlexNet</a></td>
+<td>首次在 CNN 中成功的应用了 ReLU, Dropout 和 LRN，并使用 GPU 进行运算加速</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=vgg19_imagenet&amp;en_category=ImageClassification">VGG19</a></td>
+<td>在 AlexNet 的基础上使用 3*3 小卷积核，增加网络深度，具有很好的泛化能力</td>
+</tr>
+<tr>
+<td><a href="https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/image_classification">GoogLeNet</a></td>
+<td>在不增加计算负载的前提下增加了网络的深度和宽度，性能更加优越</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=resnet_v2_50_imagenet&amp;en_category=ImageClassification">ResNet50</a></td>
+<td>Residual Network，引入了新的残差结构，解决了随着网络加深，准确率下降的问题</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=inception_v4_imagenet&amp;en_category=ImageClassification">Inceptionv4</a></td>
+<td>将 Inception 模块与 Residual Connection 进行结合，通过ResNet的结构极大地加速训练并获得性能的提升</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=mobilenet_v2_imagenet&amp;en_category=ImageClassification">MobileNetV2</a></td>
+<td>MobileNet结构的微调，直接在 thinner 的 bottleneck层上进行 skip learning 连接以及对 bottleneck layer 不进行 ReLu 非线性处理可取得更好的结果</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=se_resnext50_32x4d_imagenet&amp;en_category=ImageClassification">se_resnext50</a></td>
+<td>在ResNeXt 基础、上加入了 SE(Sequeeze-and-Excitation) 模块，提高了识别准确率，在 ILSVRC 2017 的分类项目中取得了第一名</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=shufflenet_v2_imagenet&amp;en_category=ImageClassification">ShuffleNetV2</a></td>
+<td>ECCV2018，轻量级 CNN 网络，在速度和准确度之间做了很好地平衡。在同等复杂度下，比 ShuffleNet 和 MobileNetv2 更准确，更适合移动端以及无人车领域</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=efficientnetb7_imagenet&amp;en_category=ImageClassification">efficientNetb7</a></td>
+<td>同时对模型的分辨率，通道数和深度进行缩放，用极少的参数就可以达到SOTA的精度。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=xception71_imagenet&amp;en_category=ImageClassification">xception71</a></td>
+<td>对inception-v3的改进，用深度可分离卷积代替普通卷积，降低参数量同时提高了精度。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=dpn107_imagenet&amp;en_category=ImageClassification">dpn107</a></td>
+<td>融合了densenet和resnext的特点。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=darknet53_imagenet&amp;en_category=ImageClassification">DarkNet53</a></td>
+<td>检测框架yolov3使用的backbone，在分类和检测任务上都有不错表现。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=densenet161_imagenet&amp;en_category=ImageClassification">DenseNet161</a></td>
+<td>提出了密集连接的网络结构，更加有利于信息流的传递。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=resnext152_64x4d_imagenet&amp;en_category=ImageClassification">ResNeXt152_vd</a></td>
+<td>提出了cardinatity的概念，用于作为模型复杂度的另外一个度量，有效地提升模型精度。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_4">目标检测</h4>
+<p>目标检测任务的目标是给定一张图像或是一个视频帧，让计算机找出其中所有目标的位置，并给出每个目标的具体类别。对于计算机而言，能够“看到”的是图像被编码之后的数字，但很难解图像或是视频帧中出现了人或是物体这样的高层语义概念，也就更加难以定位目标出现在图像中哪个区域。目标检测模型请参考 (https://github.com/PaddlePaddle/PaddleDetection)</p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>模型简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=ssd_mobilenet_v1_pascal&amp;en_category=ObjectDetection">SSD</a></td>
+<td>很好的继承了 MobileNet 预测速度快，易于部署的特点，能够很好的在多种设备上完成图像目标检测任务</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=faster_rcnn_coco2017&amp;en_category=ObjectDetection">Faster-RCNN</a></td>
+<td>创造性地采用卷积网络自行产生建议框，并且和目标检测网络共享卷积网络，建议框数目减少，质量提高</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=yolov3_darknet53_coco2017&amp;en_category=ObjectDetection">YOLOv3</a></td>
+<td>速度和精度均衡的目标检测网络，相比于原作者 darknet 中的 YOLO v3 实现，PaddlePaddle 实现增加了 mixup，label_smooth 等处理，精度 (mAP(0.50: 0.95)) 相比于原作者提高了 4.7 个绝对百分点，在此基础上加入 synchronize batch normalization, 最终精度相比原作者提高 5.9 个绝对百分点。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=pyramidbox_lite_server&amp;en_category=FaceDetection">人脸检测</a></td>
+<td><strong>PyramidBox</strong> <strong>模型是百度自主研发的人脸检测模型</strong>，利用上下文信息解决困难人脸的检测问题，网络表达能力高，鲁棒性强。于18年3月份在 WIDER Face 数据集上取得第一名</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=ultra_light_fast_generic_face_detector_1mb_640&amp;en_category=FaceDetection">超轻量人脸检测</a></td>
+<td>Ultra-Light-Fast-Generic-Face-Detector-1MB是针对边缘计算设备或低算力设备(如用ARM推理)设计的实时超轻量级通用人脸检测模型，可以在低算力设备中如用ARM进行实时的通用场景的人脸检测推理。该PaddleHub Module的预训练数据集为WIDER FACE数据集，可支持预测，在预测时会将图片输入缩放为640 * 480。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=pyramidbox_lite_server_mask&amp;en_category=FaceDetection">口罩人脸检测与识别</a></td>
+<td>基于PyramidBox而研发的轻量级模型，对于光照、口罩遮挡、表情变化、尺度变化等常见问题具有很强的鲁棒性。基于WIDER FACE数据集和百度自采人脸数据集进行训练，支持预测，可用于检测人脸是否佩戴口罩。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5">图像分割</h4>
+<p>图像语义分割顾名思义是将图像像素按照表达的语义含义的不同进行分组/分割，图像语义是指对图像内容的理解，例如，能够描绘出什么物体在哪里做了什么事情等，分割是指对图片中的每个像素点进行标注，标注属于哪一类别。近年来用在无人车驾驶技术中分割街景来避让行人和车辆、医疗影像分析中辅助诊断等。
+图像语义分割模型请参考语义分割库<a href="https://github.com/PaddlePaddle/PaddleSeg">PaddleSeg</a></p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>模型简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=deeplabv3p_xception65_humanseg&amp;en_category=ImageSegmentation">deeplabv3</a></td>
+<td>DeepLabv3+ 作者通过encoder-decoder进行多尺度信息的融合，同时保留了原来的空洞卷积和ASSP层， 其骨干网络使用了Xception模型，提高了语义分割的健壮性和运行速率，在 PASCAL VOC 2012 dataset取得新的state-of-art performance。本Module使用百度自建数据集进行训练，可用于人像分割，支持任意大小的图片输入。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=ace2p&amp;en_category=ImageSegmentation">ACE2P</a></td>
+<td>人体解析(Human Parsing)是细粒度的语义分割任务，其旨在识别像素级别的人类图像的组成部分（例如，身体部位和服装）。ACE2P通过融合底层特征，全局上下文信息和边缘细节，端到端地训练学习人体解析任务。该结构针对Intersection over Union指标进行针对性的优化学习，提升准确率。以ACE2P单人人体解析网络为基础的解决方案在CVPR2019第三届LIP挑战赛中赢得了全部三个人体解析任务的第一名。该PaddleHub Module采用ResNet101作为骨干网络，接受输入图片大小为473x473x3。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=Pneumonia_CT_LKM_PP&amp;en_category=ImageSegmentation">Pneumonia_CT_LKM_PP</a></td>
+<td>肺炎CT影像分析模型（Pneumonia-CT-LKM-PP）可以高效地完成对患者CT影像的病灶检测识别、病灶轮廓勾画，通过一定的后处理代码，可以分析输出肺部病灶的数量、体积、病灶占比等全套定量指标。值得强调的是，该系统采用的深度学习算法模型充分训练了所收集到的高分辨率和低分辨率的CT影像数据，能极好地适应不同等级CT影像设备采集的检查数据，有望为医疗资源受限和医疗水平偏低的基层医院提供有效的肺炎辅助诊断工具。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_6">关键点检测</h4>
+<p>人体骨骼关键点检测 (Pose Estimation) 主要检测人体的一些关键点，如关节，五官等，通过关键点描述人体骨骼信息。人体骨骼关键点检测对于描述人体姿态，预测人体行为至关重要。是诸多计算机视觉任务的基础，例如动作分类，异常行为检测，以及自动驾驶等等。</p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>模型简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=human_pose_estimation_resnet50_mpii&amp;en_category=KeyPointDetection">Pose Estimation</a></td>
+<td>人体骨骼关键点检测(Pose Estimation) 是计算机视觉的基础性算法之一，在诸多计算机视觉任务起到了基础性的作用，如行为识别、人物跟踪、步态识别等相关领域。具体应用主要集中在智能视频监控，病人监护系统，人机交互，虚拟现实，人体动画，智能家居，智能安防，运动员辅助训练等等。 该模型的论文《Simple Baselines for Human Pose Estimation and Tracking》由 MSRA 发表于 ECCV18，使用 MPII 数据集训练完成。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_7">图像生成</h4>
+<p>图像生成是指根据输入向量，生成目标图像。这里的输入向量可以是随机的噪声或用户指定的条件向量。具体的应用场景有：手写体生成、人脸合成、风格迁移、图像修复等。<a href="https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/gan">gan</a> 包含和图像生成相关的多个模型。</p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>模型简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=cyclegan_cityscapes&amp;en_category=GANs">CycleGAN</a></td>
+<td>图像翻译，可以通过非成对的图片将某一类图片转换成另外一类图片，可用于风格迁移，支持图片从实景图转换为语义分割结果，也支持从语义分割结果转换为实景图。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=stargan_celeba&amp;en_category=GANs">StarGAN</a></td>
+<td>多领域属性迁移，引入辅助分类帮助单个判别器判断多个属性，可用于人脸属性转换。该 PaddleHub Module 使用 Celeba 数据集训练完成，目前支持 "Black_Hair", "Blond_Hair", "Brown_Hair", "Female", "Male", "Aged" 这六种人脸属性转换。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=attgan_celeba&amp;en_category=GANs">AttGAN</a></td>
+<td>利用分类损失和重构损失来保证改变特定的属性，可用于13种人脸特定属性转换。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=stgan_celeba&amp;en_category=GANs">STGAN</a></td>
+<td>人脸特定属性转换，只输入有变化的标签，引入 GRU 结构，更好的选择变化的属性，支持13种属性转换。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_8">文本</h4>
+<p>PaddleNLP 是基于 PaddlePaddle 深度学习框架开发的自然语言处理 (NLP) 工具，算法，模型和数据的开源项目。百度在 NLP 领域十几年的深厚积淀为 PaddleNLP 提供了强大的核心动力。</p>
+<h4 id="_9">中文词法分析与词向量</h4>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=lac&amp;en_category=LexicalAnalysis">LAC 中文词法分析</a></td>
+<td>Lexical Analysis of Chinese，简称LAC，是百度自主研发中文特色模型词法分析任务，集成了中文分词、词性标注和命名实体识别任务。输入是一个字符串，而输出是句子中的词边界和词性、实体类别。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=word2vec_skipgram&amp;en_category=SemanticModel">word2vec词向量</a></td>
+<td>Word2vec是常用的词嵌入（word embedding）模型。该PaddleHub Module基于Skip-gram模型，在海量百度搜索数据集下预训练得到中文单词预训练词嵌入。其支持Fine-tune。Word2vec的预训练数据集的词汇表大小为1700249，word embedding维度为128。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_10">情感分析</h4>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=lac&amp;en_category=LexicalAnalysis">Senta</a></td>
+<td>情感倾向分析（Sentiment Classification，简称Senta）针对带有主观描述的中文文本，可自动判断该文本的情感极性类别并给出相应的置信度，能够帮助企业理解用户消费习惯、分析热点话题和危机舆情监控，为企业提供有利的决策支持。该模型基于一个双向LSTM结构，情感类型分为积极、消极。该PaddleHub Module支持预测和Fine-tune。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=emotion_detection_textcnn&amp;en_category=SentimentAnalysis">emotion_detection</a></td>
+<td>对话情绪识别（Emotion Detection，简称EmoTect）专注于识别智能对话场景中用户的情绪，针对智能对话场景中的用户文本，自动判断该文本的情绪类别并给出相应的置信度，情绪类型分为积极、消极、中性。该模型基于TextCNN（多卷积核CNN模型），能够更好地捕捉句子局部相关性。该PaddleHub Module预训练数据集为百度自建数据集，支持预测和Fine-tune。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_11">文本相似度计算</h4>
+<p><a href="https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleNLP/similarity_net">SimNet</a> (Similarity Net) 是一个计算短文本相似度的框架，主要包括 BOW、CNN、RNN、MMDNN 等核心网络结构形式。SimNet 框架在百度各产品上广泛应用，提供语义相似度计算训练和预测框架，适用于信息检索、新闻推荐、智能客服等多个应用场景，帮助企业解决语义匹配问题。</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=simnet_bow&amp;en_category=SemanticModel">simnet_bow</a></td>
+<td>SimNet是一个计算短文本相似度的模型，可以根据用户输入的两个文本，计算出相似度得分。该PaddleHub Module基于百度海量搜索数据进行训练，支持命令行和Python接口进行预测</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_12">文本审核</h4>
+<p>文本审核也是NLP方向的一个常用任务，可以广泛应用在各种信息分发平台、论坛、讨论区的文本审核中。</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=porn_detection_gru&amp;en_category=TextCensorship">porn_detection_gru</a></td>
+<td>色情检测模型可自动判别文本是否涉黄并给出相应的置信度，对文本中的色情描述、低俗交友、污秽文爱进行识别。porn_detection_gru采用GRU网络结构并按字粒度进行切词。该模型最大句子长度为256字，仅支持预测。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_13">语义表示</h4>
+<p>通过在大规模语料上训练得到的通用的语义表示模型，可以助益其他自然语言处理任务，是通用预训练 + 特定任务精调范式的体现。PaddleLARK 集成了 ELMO，BERT，ERNIE 1.0，ERNIE 2.0，XLNet 等热门中英文预训练模型。</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=ERNIE&amp;en_category=SemanticModel">ERNIE</a></td>
+<td>ERNIE通过建模海量数据中的词、实体及实体关系，学习真实世界的语义知识。相较于BERT学习原始语言信号，ERNIE直接对先验语义知识单元进行建模，增强了模型语义表示能力，以Transformer为网络基本组件，以Masked Bi-Language Model和Next Sentence Prediction为训练目标，通过预训练得到通用语义表示，再结合简单的输出层，应用到下游的NLP任务，在多个任务上取得了SOTA的结果。其可用于文本分类、序列标注、阅读理解等任务。预训练数据集为百科类、资讯类、论坛对话类数据等中文语料。该PaddleHub Module可支持Fine-tune。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=bert_multi_uncased_L-12_H-768_A-12&amp;en_category=SemanticModel">BERT</a></td>
+<td>一个迁移能力很强的通用语义表示模型， 以 Transformer 为网络基本组件，以双向 Masked Language Model和 Next Sentence Prediction 为训练目标，通过预训练得到通用语义表示，再结合简单的输出层，应用到下游的 NLP 任务，在多个任务上取得了 SOTA 的结果。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=rbtl3&amp;en_category=SemanticModel">RoBERTa</a></td>
+<td>RoBERTa (a Robustly Optimized BERT Pretraining Approach) 是BERT通用语义表示模型的一个优化版，它在BERT模型的基础上提出了Dynamic Masking方法、去除了Next Sentence Prediction目标，同时在更多的数据上采用更大的batch size训练更长的时间，在多个任务中做到了SOTA。rbtl3以roberta_wwm_ext_chinese_L-24_H-1024_A-16模型参数初始化前三层Transformer以及词向量层并在此基础上继续训练了1M步，在仅损失少量效果的情况下大幅减少参数量，得到推断速度的进一步提升。当该PaddleHub Module用于Fine-tune时，其输入是单文本（如Fine-tune的任务为情感分类等）或文本对（如Fine-tune任务为文本语义相似度匹配等），可用于文本分类、序列标注、阅读理解等任务。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=chinese-bert-wwm&amp;en_category=SemanticModel">chinese-bert</a></td>
+<td>chinese_bert_wwm是支持中文的BERT模型，它采用全词遮罩（Whole Word Masking）技术，考虑到了中文分词问题。预训练数据集为中文维基百科。该PaddleHub Module只支持Fine-tune。当该PaddleHub Module用于Fine-tune时，其输入是单文本（如Fine-tune的任务为情感分类等）或文本对（如Fine-tune任务为文本语义相似度匹配等），可用于文本分类、序列标注、阅读理解等任务。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_14">视频</h2>
+<p>视频数据包含语音、图像等多种信息，因此理解视频任务不仅需要处理语音和图像，还需要提取视频帧时间序列中的上下文信息。视频分类模型提供了提取全局时序特征的方法，主要方式有卷积神经网络 (C3D, I3D, C2D等)，神经网络和传统图像算法结合 (VLAD 等)，循环神经网络等建模方法。视频动作定位模型需要同时识别视频动作的类别和起止时间点，通常采用类似于图像目标检测中的算法在时间维度上进行建模。</p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>模型简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>videotag_tsn_lstm</td>
+<td>videotag_tsn_lstm是一个基于千万短视频预训练的视频分类模型，可直接预测短视频的中文标签。模型分为视频特征抽取和序列建模两个阶段，前者使用TSN网络提取视频特征，后者基于前者输出使用AttentionLSTM网络进行序列建模实现分类。模型基于百度实际短视频场景中的大规模数据训练得到，在实际业务中取得89.9%的Top-1精度，同时具有良好的泛化能力，适用于多种短视频中文标签分类场景。该PaddleHub Module可支持预测。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=tsn_kinetics400&amp;en_category=VideoClassification">TSN</a></td>
+<td>TSN（Temporal Segment Network）是视频分类领域经典的基于2D-CNN的解决方案。该方法主要解决视频的长时间行为判断问题，通过稀疏采样视频帧的方式代替稠密采样，既能捕获视频全局信息，也能去除冗余，降低计算量。最终将每帧特征平均融合后得到视频的整体特征，并用于分类。TSN的训练数据采用由DeepMind公布的Kinetics-400动作识别数据集。该PaddleHub Module可支持预测。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=tsn_kinetics400&amp;en_category=VideoClassification">Non-Local</a></td>
+<td>Non-local Neural Networks是由Xiaolong Wang等研究者在2017年提出的模型，主要特点是通过引入Non-local操作来描述距离较远的像素点之间的关联关系。其借助于传统计算机视觉中的non-local mean的思想，并将该思想扩展到神经网络中，通过定义输出位置和所有输入位置之间的关联函数，建立全局关联特性。Non-local模型的训练数据采用由DeepMind公布的Kinetics-400动作识别数据集。该PaddleHub Module可支持预测。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=stnet_kinetics400&amp;en_category=VideoClassification">StNet</a></td>
+<td>StNet模型框架为ActivityNet Kinetics Challenge 2018中夺冠的基础网络框架，是基于ResNet50实现的。该模型提出super-image的概念，在super-image上进行2D卷积，建模视频中局部时空相关性。另外通过temporal modeling block建模视频的全局时空依赖，最后用一个temporal Xception block对抽取的特征序列进行长时序建模。StNet的训练数据采用由DeepMind公布的Kinetics-400动作识别数据集。该PaddleHub Module可支持预测。</td>
+</tr>
+<tr>
+<td><a href="https://www.paddlepaddle.org.cn/hubdetail?name=tsm_kinetics400&amp;en_category=VideoClassification">TSM</a></td>
+<td>TSM（Temporal Shift Module）是由MIT和IBM Watson AI Lab的JiLin，ChuangGan和SongHan等人提出的通过时间位移来提高网络视频理解能力的模块。TSM的训练数据采用由DeepMind公布的Kinetics-400动作识别数据集。该PaddleHub Module可支持预测。</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+<hr>
+<h2 align="center">  <a href="mailto:xiaopch@163.com">Copyright@Xiaopch 2023</a></h2>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+    
+  </body>
+</html>
