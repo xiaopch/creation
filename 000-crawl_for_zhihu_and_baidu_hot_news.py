@@ -42,17 +42,17 @@ def get_billboard(url,filter_name,filter_attrs,frame_name='body',frame_attrs='')
         line = '- '+div.text+'\n'
         print(line)
         text_list.append(line)
-    
+
     return text_list
-        
+
 def getHotNews():
     global text_list
     text_list = []
     get_billboard("https://www.zhihu.com/billboard",'div',{"class":"HotList-itemTitle"})
     get_billboard("https://top.baidu.com/board?tab=realtime",'div',{"class":"c-single-text-ellipsis"})
-    
+
     # get_weibo_top('https://s.weibo.com/top/summary','div',{"class":"data"})
-    
+
     file_name = datetime.now().strftime('%m.%d_新闻.md')
     with open(file_name,'w',encoding='utf-8') as fh:
         fh.writelines(text_list)
@@ -64,13 +64,13 @@ import time
 schedule.every(3600).seconds.do(getHotNews)
 while True:
   schedule.run_pending()
-  time.sleep(1)    
-# 
+  time.sleep(1)
+#
 
 
 
 
-# 
+#
 # get_billboard("http://top.baidu.com/buzz?b=2",'a',{"class":"list-title"})
 # get_billboard("http://top.baidu.com/buzz?b=3",'a',{"class":"list-title"})
 # get_billboard("http://top.baidu.com/buzz?b=4",'a',{"class":"list-title"})
