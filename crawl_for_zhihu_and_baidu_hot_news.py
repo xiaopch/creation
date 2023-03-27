@@ -58,14 +58,14 @@ def getHotNews():
         fh.writelines(text_list)
 getHotNews()
 
-import schedule
-import time
-# 循环执行模块 定时获取热搜内容
-schedule.every(3600).seconds.do(getHotNews)
-while True:
-  schedule.run_pending()
-  time.sleep(1)
-#
+# import schedule
+# import time
+# # 循环执行模块 定时获取热搜内容
+# schedule.every(3600).seconds.do(getHotNews)
+# while True:
+#   schedule.run_pending()
+#   time.sleep(1)
+# #
 
 
 
