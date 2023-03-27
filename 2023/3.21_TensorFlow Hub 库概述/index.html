@@ -23,7 +23,7 @@
     
     
       
-        <title>TensorFlow Hub 库概述 - 光尘</title>
+        <title>3.21 TensorFlow Hub 库概述 - 光尘</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TensorFlow Hub 库概述
+              3.21 TensorFlow Hub 库概述
             
           </span>
         </div>
@@ -328,48 +328,6 @@
           2023
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03.23_%E6%96%B0%E9%97%BB/" class="md-nav__link">
-        03.23 新闻
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03.24_%E6%96%B0%E9%97%BB/" class="md-nav__link">
-        03.24 新闻
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
-        03.27 新闻
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -1265,16 +1223,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          TensorFlow Hub 库概述
+          3.21 TensorFlow Hub 库概述
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        TensorFlow Hub 库概述
+        3.21 TensorFlow Hub 库概述
       </a>
       
         
@@ -1283,14 +1239,19 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tensorflow-hub" class="md-nav__link">
+    TensorFlow Hub 库概述
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
@@ -1426,8 +1387,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../3.23_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.23 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../3.24_PaddleNLP_taskflow/" class="md-nav__link">
         3.24 PaddleNLP taskflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.24_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.24 新闻
       </a>
     </li>
   
@@ -1456,6 +1445,20 @@
     <li class="md-nav__item">
       <a href="../3.26_%E4%BD%BF%E7%94%A8%20PythonMagick%20%E7%94%9F%E6%88%90%20icon%20%E5%9B%BE%E6%A0%87/" class="md-nav__link">
         3.26 使用 PythonMagick 生成 icon 图标
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.27 新闻
       </a>
     </li>
   
@@ -1511,7 +1514,7 @@
   
     <li class="md-nav__item">
       <a href="../3.3_openai%E7%9A%84ASR%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABWhisper/" class="md-nav__link">
-        openai的ASR语音识别Whisper
+        3.3 openai的ASR语音识别Whisper
       </a>
     </li>
   
@@ -2477,14 +2480,19 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tensorflow-hub" class="md-nav__link">
+    TensorFlow Hub 库概述
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
@@ -2536,7 +2544,9 @@
                   
 
 
-<h1 id="tensorflow-hub">TensorFlow Hub 库概述</h1>
+  <h1>3.21 TensorFlow Hub 库概述</h1>
+
+<h2 id="tensorflow-hub">TensorFlow Hub 库概述</h2>
 <p>借助 <a href="https://github.com/tensorflow/hub"><code>tensorflow_hub</code></a> 库，您能够以最少的代码量在 TensorFlow 程序中下载并重用经过训练的模型。加载训练的模型的主要方式是使用 <a href="https://www.tensorflow.org/hub/api_docs/python/hub/KerasLayer?hl=zh-cn"><code>hub.KerasLayer</code></a> API。</p>
 <pre><code class="language-python">import tensorflow_hub as hub
 
