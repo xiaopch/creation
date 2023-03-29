@@ -13,17 +13,17 @@
       
       
       
-        <link rel="prev" href="../03.28am_%E6%96%B0%E9%97%BB/">
+        <link rel="prev" href="../3.28_sqlite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8Cpandas%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/">
       
       
-        <link rel="next" href="../3.1_%E6%88%91%E5%85%81%E8%AE%B8-%E6%B5%B7%E7%81%B5%E6%A0%BC/">
+        <link rel="next" href="../3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>03.28pm 新闻 - 随遇而安</title>
+        <title>PaddleNLP分类任务指南 - 随遇而安</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-" class="md-skip">
+        <a href="#paddlenlp" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              03.28pm 新闻
+              PaddleNLP分类任务指南
             
           </span>
         </div>
@@ -259,55 +259,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          03.28pm 新闻
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../03.28pm_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         03.28pm 新闻
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    知乎热榜 - 知乎
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    百度热搜
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -423,11 +379,147 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          PaddleNLP分类任务指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         PaddleNLP分类任务指南
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 二分类/多分类简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 快速开始
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 运行环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 代码结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 数据准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 模型训练
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 模型训练">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    2.4.1 预训练模型微调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242" class="md-nav__link">
+    2.4.2 训练评估
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    2.4.3 模型裁剪(可选)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 模型预测
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 模型预测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    可配置参数说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    2.6 模型效果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2570,6 +2662,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2578,16 +2672,104 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    知乎热榜 - 知乎
+  <a href="#1" class="md-nav__link">
+    1. 二分类/多分类简介
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    百度热搜
+  <a href="#2" class="md-nav__link">
+    2. 快速开始
   </a>
+  
+    <nav class="md-nav" aria-label="2. 快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 运行环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 代码结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 数据准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 模型训练
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 模型训练">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    2.4.1 预训练模型微调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242" class="md-nav__link">
+    2.4.2 训练评估
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    2.4.3 模型裁剪(可选)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 模型预测
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 模型预测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    可配置参数说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    2.6 模型效果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2606,95 +2788,409 @@
                   
 
 
-  <h1>03.28pm 新闻</h1>
+<h1 id="paddlenlp">PaddleNLP分类任务指南</h1>
+<p><strong>目录</strong></p>
+<ul>
+<li><a href="#二分类/多分类简介">1. 二分类/多分类简介</a></li>
+<li><a href="#快速开始">2. 快速开始</a><ul>
+<li><a href="#运行环境">2.1 运行环境</a></li>
+<li><a href="#代码结构">2.2 代码结构</a></li>
+<li><a href="#数据准备">2.3 数据准备</a></li>
+<li><a href="#模型训练">2.4 模型训练</a></li>
+<li><a href="#模型预测">2.5 模型预测</a></li>
+<li><a href="#模型效果">2.6 模型效果</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="二分类/多分类简介"></a></p>
+<h2 id="1">1. 二分类/多分类简介</h2>
+<p>本项目提供通用场景下<strong>基于预训练模型微调的二分类/多分类端到端应用方案</strong>，打通数据标注-模型训练-模型调优-模型压缩-预测部署全流程，有效缩短开发周期，降低AI开发落地门槛。</p>
+<p>二分类/多分类数据集的标签集含有两个或两个以上的类别，所有输入句子/文本有且只有一个标签。在文本多分类场景中，我们需要预测<strong>输入句子/文本最可能来自 <code>n</code> 个标签类别中的哪一个类别</strong>。在本项目中二分类任务被视为多分类任务中标签集包含两个类别的情况，以下统一称为多分类任务。以下图为例，该新闻文本的最可能的标签为 <code>娱乐</code>。多分类任务在商品分类、网页标签、新闻分类、医疗文本分类等各种现实场景中具有广泛的适用性。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/187588832-daa4294e-248e-4c69-9a4b-1cf8f25a2fcc.png width="550"/>
+</div>
+<p><br></p>
+<p><strong>方案亮点：</strong></p>
+<ul>
+<li><strong>效果领先🏃：</strong> 使用在中文领域内模型效果和模型计算效率有突出效果的ERNIE 3.0 轻量级系列模型作为训练基座，ERNIE 3.0 轻量级系列提供多种尺寸的预训练模型满足不同需求，具有广泛成熟的实践应用性。</li>
+<li><strong>高效调优✊：</strong> 文本分类应用依托<a href="https://github.com/PaddlePaddle/TrustAI">TrustAI</a>可信增强能力和<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/docs/dataaug.md">数据增强API</a>，提供模型分析模块助力开发者实现模型分析，并提供稀疏数据筛选、脏数据清洗、数据增强等多种解决方案。</li>
+<li><strong>简单易用👶：</strong> 开发者<strong>无需机器学习背景知识</strong>，仅需提供指定格式的标注分类数据，一行命令即可开启文本分类训练，轻松完成上线部署，不再让技术成为文本分类的门槛。</li>
+</ul>
+<p><strong>更多选择：</strong></p>
+<p>对于大多数多分类任务，我们推荐使用预训练模型微调作为首选的文本分类方案，多分类项目中还提供通用文本分类(UTC)和语义索引的两种方案满足不同开发者需求，更多技术细节请参见<a href="../README.md">文本分类技术特色介绍</a>。</p>
+<ul>
+<li>
+<p>【零样本、小样本场景】 👉 <a href="../../zero_shot_text_classification">通用文本分类(UTC)方案</a></p>
+</li>
+<li>
+<p>【标签类别不固定、标签类别众多】 👉 <a href="./retrieval_based">语义索引分类方案</a></p>
+</li>
+</ul>
+<p><a name="快速开始"></a></p>
+<h2 id="2">2. 快速开始</h2>
+<p>接下来我们将以CBLUE公开数据集KUAKE-QIC任务为示例，演示多分类全流程方案使用。下载数据集：</p>
+<pre><code class="language-shell">wget https://paddlenlp.bj.bcebos.com/datasets/KUAKE_QIC.tar.gz
+tar -zxvf KUAKE_QIC.tar.gz
+mv KUAKE_QIC data
+rm -rf KUAKE_QIC.tar.gz
+</code></pre>
+<div align="center">
+    <img width="900" alt="image" src="https://user-images.githubusercontent.com/63761690/187828356-e2f4f627-f5fe-4c83-8879-ed6951f7511e.png">
+</div>
+<div align="center">
+    <font size ="2">
+    多分类数据标注-模型训练-模型分析-模型压缩-预测部署流程图
+     </font>
+</div>
 
-<h2 id="-">知乎热榜 - 知乎</h2>
+<p><a name="运行环境"></a></p>
+<h3 id="21">2.1 运行环境</h3>
 <ul>
-<li>如何看待「韦神」出的数学题初二生给出标准答案？该题难度如何？</li>
-<li>江苏淮安等 3 地推行，未满 14 岁怀孕，就诊时医院系统将强制报告给公安，如何看待这一举措？</li>
-<li>2023 年 1-2 月份全国规模以上工业企业利润下降 22.9% ，传达出哪些信息？如何解读？</li>
-<li>我国房贷利率持续降低，目前处于怎样的水平？当前是出手买房的好时机吗？</li>
-<li>「一」和「衣」、「五」和「舞」的发音是不是并不一样？</li>
-<li>新加坡宣布「李显龙今日起将访华，为期 6 天」，有哪些信息值得关注？</li>
-<li>男网红合成自己与女星接吻视频被粉丝报复，如何看待此事？AI 换脸视频的法律界限在哪里？</li>
-<li>IGN 公布了游戏《鸣潮》 11 分钟实机演示视频，看后你有什么想说的，有哪些期待？</li>
-<li>圆锥曲线有没有统一的方程？</li>
-<li>如何做到「偷偷搞钱惊艳所有人」？</li>
-<li>如何看待 B 站下架新海诚动画《你的名字》？</li>
-<li>为什么练武身体要放松，放松了以后发力要怎么发呢？</li>
-<li>孩子间差距的真正原因是什么？</li>
-<li>上班带饭早上做还是晚上做比较好？</li>
-<li>杭州除了西湖、灵隐寺、雷峰塔等知名景点外，还有什么地方好玩？</li>
-<li>毕业工作一年给家里七万块，父亲认为孝顺儿女应该是全部工资上交，也就是我得给十几万，怎么办?</li>
-<li>如何看待刘宇宁在直播中回应「姐弟婚姻」传闻，称「我曾经结过婚没有孩子」？</li>
-<li>考研建议自学吗？</li>
-<li>国企待了 10 年，35 岁了想辞职，工作还好找吗？</li>
-<li>湖北一团伙流窜 8 省盗窃 26 起发视频炫耀，揣巨款大喊「哥们，没毛病」，该团伙会收到怎样的处罚？</li>
-<li>当发现自己相亲被「二选一」的时候，你会怎么做？</li>
-<li>阿里巴巴创始人马云已回国，如何看待当前阿里巴巴发展现状及前景？还有哪些信息值得关注？</li>
-<li>天赋和努力哪个更重要啊?</li>
-<li>鸡走路为什么总是不停地点头？</li>
-<li>大 S 索讨 750 万元新台币生活费，台北法院判汪小菲败诉，如何从法律角度解读？</li>
-<li>儿时农村跳蚤很多，现在感觉已绝迹了，是使用含磷洗衣粉造成的吗？</li>
-<li>成龙哽咽称「市场不需要动作演员了，多好的功夫没用，一定要长得好看」，如何看待此观点？动作演员处境如何？</li>
-<li>为什么大雄的父母愿意养活哆啦 A 梦？</li>
-<li>普京称俄中未建立「军事同盟」，两国没有威胁任何国家，有哪些信息值得关注？</li>
-<li>2023LPL 春季赛已结束，怎么评价 theshy 选手的人气?</li>
-<li>如果不考虑钱，你最想做什么？</li>
-<li>x86（AMD64）架构能否砍掉一些古老的指令集来提高能效比？</li>
-<li>如何评价《原神》3.5 版本下半的神里 \ 申鹤卡池的流水逼近历史新高？</li>
-<li>有些迷茫，请问一下读很多书真的有用吗？</li>
-<li>化妆品一定要买很贵的吗？</li>
-<li>新学期，孩子做什么都拖拖拉拉，要怎么改变这坏习惯？</li>
-<li>最近一直在考虑引力的来源问题，但都在推导引力公式的过程中被 pass，除了质量还有什么原因能影响引力?</li>
-<li>程序员这个职业会在 10 年内被 AI 淘汰吗？</li>
-<li>如何评价孔大山执导的科幻喜剧《宇宙探索编辑部》？</li>
-<li>选择相爱的人在新城市重新开始，还是选择舒适的生活失去相爱的人？</li>
-<li>国内智能驾驶发展到什么阶段了？与国外车企相比之下处在什么水平？</li>
-<li>想给上大学的大侄女买一个电脑，应该买台式还是笔记本呢？</li>
-<li>《他是谁》第 18 集拍得怎么样？有哪些值得关注的剧情点？</li>
-<li>《崩坏: 星穹铁道》和《重返未来 1999》都是玩法相似的回合制手游，哪个游戏更值得推荐长期玩下去？</li>
-<li>科技部启动「人工智能驱动的科学研究」专项部署工作，释放了哪些信号？</li>
-<li>美国联邦存款保险公司称，第一公民银行将承担硅谷银行的所有存款和贷款，哪些信息值得关注？</li>
-<li>有哪些一眼万年的神仙诗词?</li>
-<li>一个人独处做什么?</li>
-<li>路飞未来会跟谁结婚？</li>
-<li>工资 6000 元 / 月，劳动合同签订是 1650 元 / 月，辞退后，经济补偿金该怎样补偿?</li>
+<li>python &gt;= 3.6</li>
+<li>paddlepaddle &gt;= 2.3</li>
+<li>paddlenlp &gt;= 2.5.1</li>
+<li>scikit-learn &gt;= 1.0.2</li>
 </ul>
-<h2 id="_1">百度热搜</h2>
+<p><strong>安装PaddlePaddle：</strong></p>
+<p>环境中paddlepaddle-gpu或paddlepaddle版本应大于或等于2.3, 请参见<a href="https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/install/pip/linux-pip.html">飞桨快速安装</a>根据自己需求选择合适的PaddlePaddle下载命令。</p>
+<p><strong>安装PaddleNLP：</strong></p>
+<pre><code class="language-shell">pip install --upgrade paddlenlp
+</code></pre>
+<p><strong>安装sklearn：</strong></p>
+<pre><code class="language-shell">pip install scikit-learn
+</code></pre>
+<p><a name="代码结构"></a></p>
+<h3 id="22">2.2 代码结构</h3>
+<pre><code class="language-text">multi_class/
+├── few-shot # 小样本学习方案
+├── retrieval_based # 语义索引方案
+├── analysis # 分析模块
+├── deploy # 部署
+│   ├── simple_serving # SimpleServing服务化部署
+│   └── triton_serving # Triton服务化部署
+├── train.py # 训练、评估、裁剪脚本
+├── utils.py # 工具函数脚本
+└── README.md # 多分类使用说明
+</code></pre>
+<p><a name="数据准备"></a></p>
+<h3 id="23">2.3 数据准备</h3>
+<p>训练需要准备指定格式的本地数据集,如果没有已标注的数据集，可以参考<a href="../doccano.md">文本分类任务doccano数据标注使用指南</a>进行文本分类数据标注。指定格式本地数据集目录结构：</p>
+<pre><code class="language-text">data/
+├── train.txt # 训练数据集文件
+├── dev.txt # 开发数据集文件
+└── label.txt # 分类标签文件
+</code></pre>
+<p><strong>训练、开发、测试数据集</strong> 文件中文本与标签类别名用tab符<code>'\t'</code>分隔开，文本中避免出现tab符<code>'\t'</code>。</p>
 <ul>
-<li>为全球发展凝聚共识 </li>
-<li>5名美公司员工被拘留?外交部回应 </li>
-<li>多地现不明飞行物:闪光时黑夜变白昼 </li>
-<li>牢牢把住粮食安全主动权 </li>
-<li>校方通报女生戴假发进男浴室偷拍 </li>
-<li>深圳暴雨致航班取消 旅客跪求起飞 </li>
-<li>最“丑”绿色车牌或在2年内取消 </li>
-<li>哈尔滨爆炸事故原因初查系人为 </li>
-<li>恋爱中的大学生抑郁得分最低 </li>
-<li>淮安未满14岁怀孕医院将强制报告 </li>
-<li>首个国产新冠药停产 </li>
-<li>外国政要“排队”访华 释放什么信号 </li>
-<li>浙商去世儿子继母上演百亿夺权大战 </li>
-<li>女员工请假做试管婴儿被拒遭辞退 </li>
-<li>孩子给离世父亲发短信新机主回复 </li>
-<li>男子2天喝4顿后死亡起诉店家获赔 </li>
-<li>工作人员回应马云现身 </li>
-<li>血脂检测为何有必要从娃娃抓起 </li>
-<li>男子割破手贴上创可贴后昏倒 </li>
-<li>新加坡总理李显龙抵广州开启中国行 </li>
-<li>石家庄地标胜利之城雕塑疑遭抄袭 </li>
-<li>日方呼吁释放被拘捕日男子 中方回应 </li>
-<li>女子吃自助餐将店内甲鱼煮食 </li>
-<li>东南亚出游降温：机票降幅达40％ </li>
-<li>女子提离职其男友被一并开除 </li>
-<li>男子放巨型风筝反被带上天 </li>
-<li>女子在卫生巾中发现大量发黑虫卵 </li>
-<li>男子凌晨发现一女孩赤脚睡楼梯间 </li>
-<li>“村BA”的热闹，姚明都慕了 </li>
-<li>大S索讨离婚后生活费 汪小菲败诉 </li>
-<li>女生从俄罗斯花2分钟回国 </li>
+<li>train.txt/dev.txt/test.txt 文件格式：</li>
 </ul>
+<pre><code class="language-text">&lt;文本&gt;'\t'&lt;标签&gt;
+&lt;文本&gt;'\t'&lt;标签&gt;
+...
+</code></pre>
+<ul>
+<li>train.txt/dev.txt/test.txt 文件样例：</li>
+</ul>
+<pre><code class="language-text">25岁已经感觉脸部松弛了怎么办 治疗方案
+小孩的眉毛剪了会长吗？ 其他
+172的身高还能长高吗？    其他
+冻疮用三金冻疮酊有效果么？   功效作用
+...
+</code></pre>
+<p><strong>分类标签</strong></p>
+<p>label.txt(分类标签文件)记录数据集中所有标签集合，每一行为一个标签名。
+- label.txt 文件格式：</p>
+<pre><code class="language-text">&lt;标签&gt;
+&lt;标签&gt;
+...
+</code></pre>
+<ul>
+<li>label.txt 文件样例：</li>
+</ul>
+<pre><code class="language-text">病情诊断
+治疗方案
+病因分析
+指标解读
+就医建议
+...
+</code></pre>
+<p><a name="模型训练"></a></p>
+<h3 id="24">2.4 模型训练</h3>
+<p>我们推荐使用 Trainer API 对模型进行微调。只需输入模型、数据集等就可以使用 Trainer API 高效快速地进行预训练、微调和模型压缩等任务，可以一键启动多卡训练、混合精度训练、梯度累积、断点重启、日志显示等功能，Trainer API 还针对训练过程的通用训练配置做了封装，比如：优化器、学习率调度等。</p>
+<h4 id="241">2.4.1 预训练模型微调</h4>
+<p>使用CPU/GPU训练，默认为GPU训练。使用CPU训练只需将设备参数配置改为<code>--device cpu</code>，可以使用<code>--device gpu:0</code>指定GPU卡号：</p>
+<pre><code class="language-shell">python train.py \
+    --do_train \
+    --do_eval \
+    --do_export \
+    --model_name_or_path ernie-3.0-tiny-medium-v2-zh \
+    --output_dir checkpoint \
+    --device gpu \
+    --num_train_epochs 100 \
+    --early_stopping True \
+    --early_stopping_patience 5 \
+    --learning_rate 3e-5 \
+    --max_length 128 \
+    --per_device_eval_batch_size 32 \
+    --per_device_train_batch_size 32 \
+    --metric_for_best_model accuracy \
+    --load_best_model_at_end \
+    --logging_steps 5 \
+    --evaluation_strategy epoch \
+    --save_strategy epoch \
+    --save_total_limit 1
+</code></pre>
+<p>如果在GPU环境中使用，可以指定<code>gpus</code>参数进行多卡分布式训练。使用多卡训练可以指定多个GPU卡号，例如 --gpus 0,1。如果设备只有一个GPU卡号默认为0，可使用<code>nvidia-smi</code>命令查看GPU使用情况:</p>
+<pre><code class="language-shell">unset CUDA_VISIBLE_DEVICES
+python -m paddle.distributed.launch --gpus 0,1 train.py \
+    --do_train \
+    --do_eval \
+    --do_export \
+    --model_name_or_path ernie-3.0-tiny-medium-v2-zh \
+    --output_dir checkpoint \
+    --device gpu \
+    --num_train_epochs 100 \
+    --early_stopping True \
+    --early_stopping_patience 5 \
+    --learning_rate 3e-5 \
+    --max_length 128 \
+    --per_device_eval_batch_size 32 \
+    --per_device_train_batch_size 32 \
+    --metric_for_best_model accuracy \
+    --load_best_model_at_end \
+    --logging_steps 5 \
+    --evaluation_strategy epoch \
+    --save_strategy epoch \
+    --save_total_limit 1
+</code></pre>
+<p>主要的配置的参数为：
+- <code>do_train</code>: 是否进行训练。
+- <code>do_eval</code>: 是否进行评估。
+- <code>debug</code>: 与<code>do_eval</code>配合使用，是否开启debug模型，对每一个类别进行评估。
+- <code>do_export</code>: 训练结束后是否导出静态图。
+- <code>do_compress</code>: 训练结束后是否进行模型裁剪。
+- <code>model_name_or_path</code>: 内置模型名，或者模型参数配置目录路径。默认为<code>ernie-3.0-tiny-medium-v2-zh</code>。
+- <code>output_dir</code>: 模型参数、训练日志和静态图导出的保存目录。
+- <code>device</code>: 使用的设备，默认为<code>gpu</code>。
+- <code>num_train_epochs</code>: 训练轮次，使用早停法时可以选择100。
+- <code>early_stopping</code>: 是否使用早停法，也即一定轮次后评估指标不再增长则停止训练。
+- <code>early_stopping_patience</code>: 在设定的早停训练轮次内，模型在开发集上表现不再上升，训练终止；默认为4。
+- <code>learning_rate</code>: 预训练语言模型参数基础学习率大小，将与learning rate scheduler产生的值相乘作为当前学习率。
+- <code>max_length</code>: 最大句子长度，超过该长度的文本将被截断，不足的以Pad补全。提示文本不会被截断。
+- <code>per_device_train_batch_size</code>: 每次训练每张卡上的样本数量。可根据实际GPU显存适当调小/调大此配置。
+- <code>per_device_eval_batch_size</code>: 每次评估每张卡上的样本数量。可根据实际GPU显存适当调小/调大此配置。
+- <code>max_length</code>: 最大句子长度，超过该长度的文本将被截断，不足的以Pad补全。提示文本不会被截断。
+- <code>train_path</code>: 训练集路径，默认为"./data/train.txt"。
+- <code>dev_path</code>: 开发集集路径，默认为"./data/dev.txt"。
+- <code>test_path</code>: 测试集路径，默认为"./data/dev.txt"。
+- <code>label_path</code>: 标签路径，默认为"./data/label.txt"。
+- <code>bad_case_path</code>: 错误样本保存路径，默认为"./data/bad_case.txt"。
+- <code>width_mult_list</code>：裁剪宽度（multi head）保留的比例列表，表示对self_attention中的 <code>q</code>、<code>k</code>、<code>v</code> 以及 <code>ffn</code> 权重宽度的保留比例，保留比例乘以宽度（multi haed数量）应为整数；默认是None。
+训练脚本支持所有<code>TraingArguments</code>的参数，更多参数介绍可参考<a href="https://paddlenlp.readthedocs.io/zh/latest/trainer.html#trainingarguments">TrainingArguments 参数介绍</a>。</p>
+<p>程序运行时将会自动进行训练，评估。同时训练过程中会自动保存开发集上最佳模型在指定的 <code>output_dir</code> 中，保存模型文件结构如下所示：</p>
+<pre><code class="language-text">checkpoint/
+├── export # 静态图模型
+├── config.json # 模型配置文件
+├── model_state.pdparams # 模型参数文件
+├── tokenizer_config.json # 分词器配置文件
+├── vocab.txt
+└── special_tokens_map.json
+</code></pre>
+<p><strong>NOTE:</strong>
+* 中文训练任务（文本支持含部分英文）推荐使用"ernie-1.0-large-zh-cw"、"ernie-3.0-tiny-base-v2-zh"、"ernie-3.0-tiny-medium-v2-zh"、"ernie-3.0-tiny-micro-v2-zh"、"ernie-3.0-tiny-mini-v2-zh"、"ernie-3.0-tiny-nano-v2-zh"、"ernie-3.0-tiny-pico-v2-zh"。
+* 英文训练任务推荐使用"ernie-3.0-tiny-mini-v2-en"、 "ernie-2.0-base-en"、"ernie-2.0-large-en"。
+* 英文和中文以外语言的文本分类任务，推荐使用基于96种语言（涵盖法语、日语、韩语、德语、西班牙语等几乎所有常见语言）进行预训练的多语言预训练模型"ernie-m-base"、"ernie-m-large"，详情请参见<a href="https://arxiv.org/pdf/2012.15674.pdf">ERNIE-M论文</a>。</p>
+<h4 id="242">2.4.2 训练评估</h4>
+<p>训练后的模型我们可以开启<code>debug</code>模式，对每个类别分别进行评估，并打印错误预测样本保存在<code>bad_case.txt</code>。默认在GPU环境下使用，在CPU环境下修改参数配置为<code>--device "cpu"</code>:</p>
+<pre><code class="language-shell">python train.py \
+    --do_eval \
+    --debug True \
+    --device gpu \
+    --model_name_or_path checkpoint \
+    --output_dir checkpoint \
+    --per_device_eval_batch_size 32 \
+    --max_length 128 \
+    --test_path './data/dev.txt'
+</code></pre>
+<p>输出打印示例：</p>
+<pre><code class="language-text">[2023-02-14 12:35:03,470] [    INFO] - -----Evaluate model-------
+[2023-02-14 12:35:03,471] [    INFO] - Dev dataset size: 1955
+[2023-02-14 12:35:03,471] [    INFO] - Accuracy in dev dataset: 81.74%
+[2023-02-14 12:35:03,471] [    INFO] - Macro average | precision: 77.39 | recall: 79.89 | F1 score 78.32
+[2023-02-14 12:35:03,471] [    INFO] - Class name: 病情诊断
+[2023-02-14 12:35:03,471] [    INFO] - Evaluation examples in dev dataset: 288(14.7%) | precision: 85.22 | recall: 86.11 | F1 score 85.66
+[2023-02-14 12:35:03,471] [    INFO] - ----------------------------
+[2023-02-14 12:35:03,471] [    INFO] - Class name: 治疗方案
+[2023-02-14 12:35:03,471] [    INFO] - Evaluation examples in dev dataset: 676(34.6%) | precision: 91.72 | recall: 90.09 | F1 score 90.90
+...
+</code></pre>
+<p>文本分类预测过程中常会遇到诸如"模型为什么会预测出错误的结果"，"如何提升模型的表现"等问题。<a href="./analysis">Analysis模块</a> 提供了<strong>可解释性分析、数据优化</strong>等功能，旨在帮助开发者更好地分析文本分类模型预测结果和对模型效果进行优化。</p>
+<h4 id="243">2.4.3 模型裁剪(可选)</h4>
+<p>如果有模型部署上线的需求，需要进一步压缩模型体积，可以使用 PaddleNLP 的 <a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/docs/compression.md">压缩API</a>, 一行命令即可启动模型裁剪。</p>
+<p>使用裁剪功能需要安装 paddleslim：</p>
+<pre><code class="language-shell">pip install paddleslim == 2.4.1
+</code></pre>
+<p>开始模型裁剪训练，默认为GPU训练，使用CPU训练只需将设备参数配置改为<code>--device "cpu"</code>：</p>
+<pre><code class="language-shell">python train.py \
+    --do_compress \
+    --device gpu \
+    --data_dir data \
+    --model_name_or_path checkpoint \
+    --output_dir checkpoint/prune \
+    --learning_rate 3e-5 \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --num_train_epochs 1 \
+    --max_length 128 \
+    --logging_steps 5 \
+    --save_steps 100 \
+    --width_mult_list '3/4' '2/3' '1/2'
+</code></pre>
+<p>保存模型文件结构如下所示：</p>
+<pre><code class="language-text">checkpoint/prune/
+├── width_mult_0.75
+│   ├── pruned_model.pdiparams
+│   ├── pruned_model.pdiparams.info
+│   ├── pruned_model.pdmodel
+│   ├── model_state.pdparams
+│   └── config.json
+└── ...
+</code></pre>
+<p><strong>NOTE:</strong></p>
+<ol>
+<li>
+<p>目前支持的裁剪策略需要训练，训练时间视下游任务数据量而定，且和微调的训练时间是一个量级。 裁剪类似蒸馏过程，方便起见，可以直接使用微调时的超参。为了进一步提升精度，可以对 <code>per_device_train_batch_size</code>、<code>learning_rate</code>、<code>max_length</code> 等超参进行网格搜索（grid search）。</p>
+</li>
+<li>
+<p>模型裁剪主要用于推理部署，因此裁剪后的模型都是静态图模型，只可用于推理部署。</p>
+</li>
+<li>
+<p>ERNIE Base、Medium、Mini、Micro、Nano的模型宽度（multi head数量）为12，ERNIE Xbase、Large 模型宽度（multi head数量）为16，保留比例<code>width_mult</code>乘以宽度（multi haed数量）应为整数。</p>
+</li>
+</ol>
+<p><a name="模型预测"></a></p>
+<h3 id="25">2.5 模型预测</h3>
+<p>我们推荐使用taskflow进行模型预测，请保证paddlenlp版本大于2.5.1。</p>
+<pre><code>from paddlenlp import Taskflow
+
+# 模型预测
+cls = Taskflow(&quot;text_classification&quot;, task_path='checkpoint/export', is_static_model=True)
+cls([&quot;黑苦荞茶的功效与作用及食用方法&quot;,&quot;幼儿挑食的生理原因是&quot;])
+# [{'predictions': [{'label': '功效作用', 'score': 0.9683999621710758}], 'text': '黑苦荞茶的功效与作用及食用方法'}, {'predictions': [{'label': '病因分析', 'score': 0.5204789523701855}], 'text': '幼儿挑食的生理原因是'}]
+
+# 裁剪模型预测
+cls = Taskflow(&quot;text_classification&quot;, task_path='checkpoint/prune/width_mult_0.67', is_static_model=True)
+cls([&quot;黑苦荞茶的功效与作用及食用方法&quot;,&quot;幼儿挑食的生理原因是&quot;])
+# [{'predictions': [{'label': '功效作用', 'score': 0.964693000149321}], 'text': '黑苦荞茶的功效与作用及食用方法'}, {'predictions': [{'label': '病因分析', 'score': 0.4915921440237312}], 'text': '幼儿挑食的生理原因是'}]
+</code></pre>
+<h4 id="_1">可配置参数说明</h4>
+<ul>
+<li><code>task_path</code>：自定义任务路径，默认为None。</li>
+<li><code>is_static_model</code>：task_path中是否为静态图模型参数，默认为False。</li>
+<li><code>max_length</code>：最长输入长度，包括所有标签的长度，默认为512。</li>
+<li><code>batch_size</code>：批处理大小，请结合机器情况进行调整，默认为1。</li>
+<li><code>id2label</code>：标签映射字典，如果<code>task_path</code>中包含id2label.json或加载动态图参数无需定义。</li>
+<li><code>precision</code>：选择模型精度，默认为<code>fp32</code>，可选有<code>fp16</code>和<code>fp32</code>。<code>fp16</code>推理速度更快。如果选择<code>fp16</code>，请先确保机器正确安装NVIDIA相关驱动和基础软件，<strong>确保CUDA&gt;=11.2，cuDNN&gt;=8.1.1</strong>，初次使用需按照提示安装相关依赖。其次，需要确保GPU设备的CUDA计算能力（CUDA Compute Capability）大于7.0，典型的设备包括V100、T4、A10、A100、GTX 20系列和30系列显卡等。更多关于CUDA Compute Capability和精度支持情况请参考NVIDIA文档：<a href="https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-840-ea/support-matrix/index.html#hardware-precision-matrix">GPU硬件与支持精度对照表</a>。</li>
+</ul>
+<p>在线服务化部署搭建请参考：
+- 【简单易用】 👉 <a href="deploy/simple_serving">Simple Serving部署指南</a>
+- 【低时延】 👉 <a href="deploy/triton_serving">Triton部署指南</a>。</p>
+<p><a name="模型效果"></a></p>
+<h3 id="26">2.6 模型效果</h3>
+<p>PaddleNLP提供ERNIE 3.0 全系列轻量化模型，对于中文训练任务可以根据需求选择不同的预训练模型参数进行训练，我们评测了不同预训练模型在KUAKE-QIC任务的表现，测试配置如下：</p>
+<ol>
+<li>
+<p>数据集：CBLUE数据集中医疗搜索检索词意图分类(KUAKE-QIC)任务开发集</p>
+</li>
+<li>
+<p>物理机环境</p>
+<p>系统: CentOS Linux release 7.7.1908 (Core)</p>
+<p>GPU: Tesla V100-SXM2-32GB</p>
+<p>CPU: Intel(R) Xeon(R) Gold 6271C CPU @ 2.60GHz</p>
+<p>CUDA: 11.2</p>
+<p>cuDNN: 8.1.0</p>
+<p>Driver Version: 460.27.04</p>
+<p>内存: 630 GB</p>
+</li>
+<li>
+<p>PaddlePaddle 版本：2.3.0</p>
+</li>
+<li>
+<p>PaddleNLP 版本：2.3.1</p>
+</li>
+<li>
+<p>性能数据指标：latency。latency 测试方法：固定 batch size 为 32，GPU部署运行时间 total_time，计算 latency = total_time / total_samples</p>
+</li>
+<li>
+<p>精度评价指标：Accuracy</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>model_name</th>
+<th>模型结构</th>
+<th>Accuracy(%)</th>
+<th>latency(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERNIE 1.0 Large Cw</td>
+<td>24-layer, 1024-hidden, 20-heads</td>
+<td>82.30</td>
+<td>5.62</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Base</td>
+<td>12-layer, 768-hidden, 12-heads</td>
+<td>82.25</td>
+<td>2.07</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Medium</td>
+<td>6-layer, 768-hidden, 12-heads</td>
+<td>81.79</td>
+<td>1.07</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Mini</td>
+<td>6-layer, 384-hidden, 12-heads</td>
+<td>79.80</td>
+<td>0.38</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Micro</td>
+<td>4-layer, 384-hidden, 12-heads</td>
+<td>79.80</td>
+<td>0.26</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Nano</td>
+<td>4-layer, 312-hidden, 12-heads</td>
+<td>78.57</td>
+<td>0.22</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Medium + 裁剪(保留比例3/4)</td>
+<td>6-layer, 768-hidden, 9-heads</td>
+<td>81.79</td>
+<td>0.83</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Medium + 裁剪(保留比例2/3)</td>
+<td>6-layer, 768-hidden, 8-heads</td>
+<td>81.07</td>
+<td>0.79</td>
+</tr>
+<tr>
+<td>ERNIE 3.0 Medium + 裁剪(保留比例1/2)</td>
+<td>6-layer, 768-hidden, 6-heads</td>
+<td>81.07</td>
+<td>0.64</td>
+</tr>
+</tbody>
+</table>
 
 
 
