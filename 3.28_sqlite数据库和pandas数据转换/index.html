@@ -420,7 +420,7 @@
         
           <li class="md-nav__item">
   <a href="#mysqlsqlite3" class="md-nav__link">
-    MySQL数据插入sqlite3
+    MySQL数据导入sqlite3
   </a>
   
 </li>
@@ -441,15 +441,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dataframesqlite" class="md-nav__link">
-    保存DataFrame数据到sqlite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sqlite3" class="md-nav__link">
-    sqlite3数据库创建数据表
+  <a href="#pandasdataframe" class="md-nav__link">
+    合并多个pandas的dataframe数据
   </a>
   
 </li>
@@ -468,15 +461,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dataframesqlite_1" class="md-nav__link">
-    将dataframe数据插入到sqlite数据库
+  <a href="#dataframesqlite" class="md-nav__link">
+    将dataframe数据按行插入到sqlite数据库
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pickle" class="md-nav__link">
-    读取pickle文件
+  <a href="#paddlenlp" class="md-nav__link">
+    生成paddlenlp数据集
   </a>
   
 </li>
@@ -2669,7 +2662,7 @@
         
           <li class="md-nav__item">
   <a href="#mysqlsqlite3" class="md-nav__link">
-    MySQL数据插入sqlite3
+    MySQL数据导入sqlite3
   </a>
   
 </li>
@@ -2690,15 +2683,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dataframesqlite" class="md-nav__link">
-    保存DataFrame数据到sqlite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sqlite3" class="md-nav__link">
-    sqlite3数据库创建数据表
+  <a href="#pandasdataframe" class="md-nav__link">
+    合并多个pandas的dataframe数据
   </a>
   
 </li>
@@ -2717,15 +2703,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dataframesqlite_1" class="md-nav__link">
-    将dataframe数据插入到sqlite数据库
+  <a href="#dataframesqlite" class="md-nav__link">
+    将dataframe数据按行插入到sqlite数据库
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pickle" class="md-nav__link">
-    读取pickle文件
+  <a href="#paddlenlp" class="md-nav__link">
+    生成paddlenlp数据集
   </a>
   
 </li>
@@ -2758,8 +2744,8 @@
   <h1>3.28 sqlite数据库和pandas数据转换</h1>
 
 <h2 id="sqlitepandas">sqlite数据库和pandas数据转换</h2>
-<h4 id="mysqlsqlite3">MySQL数据插入sqlite3</h4>
-<pre><code class="language-python">### MySQL数据导入sqlite3
+<h4 id="mysqlsqlite3">MySQL数据导入sqlite3</h4>
+<pre><code>### MySQL数据导入sqlite3
 import pandas as pd
 import sqlite3
 #connect to the database
@@ -2786,7 +2772,7 @@ for tbn in table_name:
 mysql_conn.close()
 conn.close()
 </code></pre>
-<h4 id="_1">列出一些重点方法</h4>
+<h3 id="_1">列出一些重点方法</h3>
 <pre><code>pandas.read_sql(sql, conn, index_col=None, coerce_float=True, params=None, parse_dates=None, columns=None, chunksize=None)
 
 DataFrame.to_sql(name, conn, flavor=None, schema=None, if_exists='fail', index=True, index_label=None, chunksize=None, dtype=None)
@@ -2796,11 +2782,12 @@ if_exists='append'，如果存在指定表(name)，则追加。
 if_exists='fail'，如果存在指定表(name)，则写入失败。
 chunksize，例如chunksize = 1000，每次处理1000条，避免数据量过大。
 
-cx = sqlite3.connect(&quot;E:/test.db&quot;)：建立与数据库的连接，如果数据库不存在则建立数据库
-con = sqlite3.connect(&quot;:memory:&quot;)：将数据库建在内存中
+conn = sqlite3.connect(&quot;test.db&quot;)：建立与数据库的连接，如果数据库不存在则建立数据库
+conn = sqlite3.connect(&quot;:memory:&quot;)：将数据库建在内存中
 </code></pre>
 <h3 id="csv">读取csv文件</h3>
-<pre><code class="language-python">import pandas as pd
+<p>In [ ]:</p>
+<pre><code>import pandas as pd
 df_all=None
 try:
     df_all = pd.read_csv('./simplifyweibo_4_moods/simplifyweibo_4_moods.csv')
@@ -2811,25 +2798,98 @@ except Exception as err:
 df_all['emotion'] = df_all['label'].map({0:&quot;喜悦&quot;, 1:&quot;愤怒&quot;, 2:&quot;厌恶&quot;, 3:&quot;低落&quot;})
 df_all.drop(labels='label',axis=1,inplace=True)
 df_all.rename(columns = {'review':'text','emotion':'label'}, inplace = True)
+df_all.to_csv('simplifyweibo_4_moods_ds.csv')
 df_all.sample(10)
-
 </code></pre>
-<h4 id="dataframesqlite">保存DataFrame数据到sqlite</h4>
-<pre><code class="language-python">#!/usr/bin/python
+<p>In [ ]:</p>
+<pre><code>import pandas as pd
+df_all = pd.read_csv('./OCEMOTION.csv')
+df_all
+</code></pre>
+<p>In [ ]:</p>
+<pre><code># # df_all['label'].replace(0, '喜悦', inplace=True)
+df_all['label'] = df_all['emotion'].map({'happiness':'幸福','sadness':'悲伤','disgust':'厌恶','anger':'愤怒','like':'喜欢','surprise':'惊喜','fear':'恐惧'})
+df_all.drop(labels='emotion',axis=1,inplace=True)
+# df_all.rename(columns = {'review':'text','emotion':'label'}, inplace = True)
+df_all.to_csv('OCEMOTION_ds.csv')
+df_all.sample(100)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>import pandas as pd
+df_all=None
+try:
+    df_all = pd.read_csv('./data/usual_eval_labeled.csv')
+except Exception as err:
+    print(str(err))
+
+# # # df_all['label'].replace(0, '喜悦', inplace=True)
+df_all['label'] = df_all['情绪标签'].map({'happy':'幸福','sad':'悲伤','angry':'愤怒','neutral':'中性','surprise':'惊喜','fear':'恐惧'})
+df_all.drop(labels='情绪标签',axis=1,inplace=True)
+df_all.rename(columns = {'文本':'text'}, inplace = True)
+df_all.to_csv('usual_eval_labeled.csv')
+df_all.sample(100)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>import pandas as pd
+import json
+
+df_all=None
+try:
+    lines = open('./emotion/valid.txt',encoding='utf-8').readlines()
+    # for line in lines:
+    #      print(json.loads(line))
+    lines = [json.loads(i) for i in lines]
+
+    df_all = pd.DataFrame(lines)
+except Exception as err:
+    print(str(err))
+
+# # # # df_all['label'].replace(0, '喜悦', inplace=True)
+# df_all['label'] = df_all['情绪标签'].map({'happy':'幸福','sad':'悲伤','angry':'愤怒','neutral':'中性','surprise':'惊喜','fear':'恐惧'})
+df_all['label'] = df_all['label'].map({'happiness':'幸福','sadness':'悲伤','disgust':'厌恶','anger':'愤怒','like':'喜欢','surprise':'惊喜','fear':'恐惧'})
+
+# df_all.drop(labels='情绪标签',axis=1,inplace=True)
+df_all.rename(columns = {'content':'text'}, inplace = True)
+df_all.to_csv('valid.txt.ds.csv')
+df_all.sample(100)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all['label'].value_counts()
+# df_all.columns
+# df_all[['text', 'label']].to_csv('emotion_catalog_dataset.csv')
+</code></pre>
+<h4 id="pandasdataframe">合并多个pandas的dataframe数据</h4>
+<p>In [ ]:</p>
+<pre><code>import os
+df_lst=[]
+for f in os.listdir('./source/'):
+    f = './source/'+f
+    print(f)
+    df = pd.read_csv(f)
+    df_lst.append(df)
+    print(df)
+df_all = pd.concat(df_lst)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>#!/usr/bin/python
+
 import sqlite3
+table_name = 'simplifyweibo_4_moods'
 conn = sqlite3.connect('sqlite_dt.db')
 # 保存DataFrame数据到sqlite
-df_all.to_sql('DataSet',conn,schema=None,if_exists='replace',index=True,index_label=None, chunksize=None, dtype=None)
-# 读取sqlite表格数据到DataFrame
-df2=pd.read_sql_query(&quot;select * from {}&quot;.format('DataSet'), conn)
+df_all.to_sql(table_name,conn,schema=None,if_exists='replace',index=True,index_label=None, chunksize=None, dtype=None)
+# # 读取sqlite表格数据到DataFrame
+# df2=pd.read_sql_query(&quot;select * from {}&quot;.format(table_name), conn)
 conn.close()
-df2
 </code></pre>
-<pre><code class="language-python">df_all.columns
+<p>In [ ]:</p>
+<pre><code>df_all.columns
 </code></pre>
-<h4 id="sqlite3">sqlite3数据库创建数据表</h4>
-<pre><code class="language-python">#!/usr/bin/python
+<p>In [ ]:</p>
+<pre><code>#!/usr/bin/python
+
 import sqlite3
+
 conn = sqlite3.connect('sqlite_dt.db')
 print (&quot;数据库打开成功&quot;)
 c = conn.cursor()
@@ -2843,10 +2903,9 @@ print (&quot;数据表创建成功&quot;)
 conn.commit()
 conn.close()
 </code></pre>
-<pre><code class="language-python">df_all['label'].value_counts()
-</code></pre>
 <h3 id="sqlitepandasdataframe">将sqlite数据导入到pandas的DataFrame</h3>
-<pre><code class="language-python">'''### 将sqlite数据导入到pandas的DataFrame'''
+<p>In [ ]:</p>
+<pre><code>'''### 将sqlite数据导入到pandas的DataFrame'''
 import pandas as pd
 import sqlite3
 conn = sqlite3.connect('sqlite_dt3.db')
@@ -2857,14 +2916,15 @@ cur = conn.cursor()
 results = cur.execute(&quot;SELECT * FROM DataSet LIMIT 5&quot;).fetchall()
 df2 = pd.DataFrame(results)
 conn.close()
-
 </code></pre>
-<pre><code class="language-python">'''读取dedao的csv数据文件'''
+<p>In [ ]:</p>
+<pre><code>'''读取dedao的csv数据文件'''
 import pandas as pd
 dedao_df = pd.read_table('Dataset/DeDao_DS.csv',sep='\t')
 </code></pre>
-<h4 id="dataframesqlite_1">将dataframe数据插入到sqlite数据库</h4>
-<pre><code class="language-python">'''将dataframe数据插入到sqlite数据库'''
+<h4 id="dataframesqlite">将dataframe数据按行插入到sqlite数据库</h4>
+<p>In [ ]:</p>
+<pre><code>'''将dataframe数据插入到sqlite数据库'''
 #!/usr/bin/python
 import sqlite3
 
@@ -2894,12 +2954,57 @@ conn.commit()
 print (&quot;&gt;&gt;&gt;数据插入成功&quot;)
 conn.close()
 </code></pre>
-<h4 id="pickle">读取pickle文件</h4>
-<pre><code class="language-python">'''将catalog数据保存到pickle文件里'''
+<p>In [ ]:</p>
+<pre><code>'''读取pickle文件的参数'''
 import pickle
 with open('catalog.pkl','rb') as fh:
-   catalog_pk = pickle.load(fh)
-catalog_pk
+   catalog_pkl = pickle.load(fh)
+len(catalog_pkl),catalog_pkl
+</code></pre>
+<h4 id="paddlenlp">生成paddlenlp数据集</h4>
+<p>In [ ]:</p>
+<pre><code>import pandas as pd
+df_all=None
+try:
+    df_all = pd.read_csv('emotion_catalog_dataset.csv')
+except Exception as err:
+    print(str(err))
+df_all=df_all[['text','label']]
+df_all
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all['label'].value_counts()
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all['label'].replace('低落','悲伤',inplace=True)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all[df_all['label'] == '厌恶']
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all.describe()
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all=df_all.dropna()
+df_all=df_all.sample(frac=1).reset_index(drop=True)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all.to_csv('emotion_catalog_dataset.csv',index=None)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all['label'].value_counts().index.tolist()
+labels = [i+'\n' for i in df_all['label'].value_counts().index.tolist()]
+with open('label.txt','w',encoding='utf-8') as fhd:
+    fhd.writelines(labels)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all=df_all.sample(frac=1).reset_index(drop=True)
+df_all[['text','label']][:100].to_csv('test.txt',sep='\t',header=None,index=None)
+df_all[['text','label']][100:100000].to_csv('train.txt',sep='\t',header=None,index=None)
+df_all[['text','label']][100000:110000].to_csv('dev.txt',sep='\t',header=None,index=None)
+</code></pre>
+<p>In [ ]:</p>
+<pre><code>df_all.sample(100)
 </code></pre>
 
 
