@@ -1842,15 +1842,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#webrtcvad-whl" class="md-nav__link">
-    编译webrtcvad 的whl文件时出现
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#microsoft-visual-c-140-or-greater-is-required" class="md-nav__link">
-    Microsoft Visual C++ 14.0 or greater is required的解决方法
+  <a href="#webrtcvad-whlmicrosoft-visual-c-140-or-greater-is-required" class="md-nav__link">
+    编译webrtcvad 的whl文件时出现:Microsoft Visual C++ 14.0 or greater is required的解决方法
   </a>
   
 </li>
@@ -1863,8 +1856,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#typeguard" class="md-nav__link">
-    typeguard问题的解决办法
+  <a href="#importerror-cannot-import-name-check_argument_types-from-typeguard" class="md-nav__link">
+    ImportError: cannot import name 'check_argument_types' from 'typeguard'问题的解决办法
   </a>
   
 </li>
@@ -2774,15 +2767,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#webrtcvad-whl" class="md-nav__link">
-    编译webrtcvad 的whl文件时出现
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#microsoft-visual-c-140-or-greater-is-required" class="md-nav__link">
-    Microsoft Visual C++ 14.0 or greater is required的解决方法
+  <a href="#webrtcvad-whlmicrosoft-visual-c-140-or-greater-is-required" class="md-nav__link">
+    编译webrtcvad 的whl文件时出现:Microsoft Visual C++ 14.0 or greater is required的解决方法
   </a>
   
 </li>
@@ -2795,8 +2781,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#typeguard" class="md-nav__link">
-    typeguard问题的解决办法
+  <a href="#importerror-cannot-import-name-check_argument_types-from-typeguard" class="md-nav__link">
+    ImportError: cannot import name 'check_argument_types' from 'typeguard'问题的解决办法
   </a>
   
 </li>
@@ -2862,16 +2848,22 @@ print(result)
 <h4 id="ffmpeg">ffmpeg转换音频的采样率</h4>
 <pre><code>ffmpeg -y -i input.wav  -ac 1 -ar 16000  -b:a 16k  output.wav
 </code></pre>
-<h4 id="webrtcvad-whl">编译webrtcvad 的whl文件时出现</h4>
-<h4 id="microsoft-visual-c-140-or-greater-is-required">Microsoft Visual C++ 14.0 or greater is required的解决方法</h4>
+<h4 id="webrtcvad-whlmicrosoft-visual-c-140-or-greater-is-required">编译webrtcvad 的whl文件时出现:Microsoft Visual C++ 14.0 or greater is required的解决方法</h4>
 <ul>
 <li>下载并安装Microsoft C++ 生成工具</li>
 </ul>
 <p>https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/</p>
 <ul>
-<li>选择-&gt;使用C++的桌面开发</li>
-<li>选择<strong>MSVC  V142 VS2019 C++ X64/X86 XXXXXX</strong>和<strong>Windows 10 SDK (XXXXXX) </strong></li>
+<li>
+<p>选择-&gt;<strong>使用C++的桌面开发</strong></p>
+</li>
+<li>
+<p>选择-&gt;</p>
+</li>
 </ul>
+<pre><code>  - MSVC  V142 VS2019 C++ X64/X86 XXXXXX
+  - Windows 10 SDK (XXXXXX) 
+</code></pre>
 <h4 id="from-timer-import-timer">from timer import timer 问题的解决办法</h4>
 <ul>
 <li>删除旧的timer.pyd文件</li>
@@ -2884,7 +2876,7 @@ print(result)
 <pre><code>pip install codetiming 
 ## from codetiming import Timer
 </code></pre>
-<h4 id="typeguard">typeguard问题的解决办法</h4>
+<h4 id="importerror-cannot-import-name-check_argument_types-from-typeguard">ImportError: cannot import name 'check_argument_types' from 'typeguard'问题的解决办法</h4>
 <pre><code>#降低typeguard的版本
 pip install typeguard==2.1.4
 </code></pre>
