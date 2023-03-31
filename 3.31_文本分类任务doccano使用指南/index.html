@@ -13,17 +13,17 @@
       
       
       
-        <link rel="prev" href="../3.28_python%E7%9A%84%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0sqlite/">
+        <link rel="prev" href="../3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/">
       
       
-        <link rel="next" href="../3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/">
+        <link rel="next" href="../2023/03.28_am_%E6%96%B0%E9%97%BB/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>3.28 sqlite数据库和pandas数据转换 - 随遇而安</title>
+        <title>3.31 文本分类任务doccano使用指南 - 随遇而安</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sqlitepandas" class="md-skip">
+        <a href="#doccano" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.28 sqlite数据库和pandas数据转换
+              3.31 文本分类任务doccano使用指南
             
           </span>
         </div>
@@ -261,68 +261,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.21_paddlehub_pretrained_models/" class="md-nav__link">
-        3.21 paddlehub pretrained models
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.23_Midjourney%20Quick%20Start/" class="md-nav__link">
-        3.23 Midjourney Quick Start
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.27_ERNIE%203.0%E5%AE%9E%E6%88%98%E6%B3%95%E5%BE%8B%E6%96%87%E6%9C%AC%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
-        3.27 ERNIE 3.0实战法律文本多标签分类
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.27_awesome-chatgpt-prompts/" class="md-nav__link">
-        3.27 awesome chatgpt prompts
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.28_python%E7%9A%84%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0sqlite/" class="md-nav__link">
-        3.28 python的实现chatgpt对话并保存到sqlite
+      <a href="../3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        3.29 PaddleNLP文本分类应用
       </a>
     </li>
   
@@ -344,12 +284,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.28 sqlite数据库和pandas数据转换
+          3.31 文本分类任务doccano使用指南
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        3.28 sqlite数据库和pandas数据转换
+        3.31 文本分类任务doccano使用指南
       </a>
       
         
@@ -366,38 +306,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sqlitepandas" class="md-nav__link">
-    sqlite数据库和pandas数据转换
+  <a href="#doccano" class="md-nav__link">
+    文本分类任务doccano使用指南
   </a>
   
-    <nav class="md-nav" aria-label="sqlite数据库和pandas数据转换">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 项目创建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 数据上传
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 标签构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 任务标注
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 数据导出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.数据转换
+  </a>
+  
+    <nav class="md-nav" aria-label="7.数据转换">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mysqlsqlite3" class="md-nav__link">
-    MySQL数据导入sqlite3
+  <a href="#71" class="md-nav__link">
+    7.1 多分类任务
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    列出一些重点方法
+  <a href="#72" class="md-nav__link">
+    7.2 多标签任务
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#csv" class="md-nav__link">
-    读取csv文件
-  </a>
-  
-    <nav class="md-nav" aria-label="读取csv文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pandasdataframe" class="md-nav__link">
-    合并多个pandas的dataframe数据
+  <a href="#73" class="md-nav__link">
+    7.3 层次分类任务
   </a>
   
 </li>
@@ -406,36 +387,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#sqlitepandasdataframe" class="md-nav__link">
-    将sqlite数据导入到pandas的DataFrame
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
   </a>
-  
-    <nav class="md-nav" aria-label="将sqlite数据导入到pandas的DataFrame">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dataframesqlite" class="md-nav__link">
-    将dataframe数据按行插入到sqlite数据库
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#paddlenlp" class="md-nav__link">
-    生成paddlenlp数据集
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -454,143 +410,23 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/" class="md-nav__link">
-        3.29 PaddleNLP分类任务指南
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/" class="md-nav__link">
-        3.29 PaddleNLP文本分类应用
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.29_TensorFlow%202.0%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%95%99%E7%A8%8B/" class="md-nav__link">
-        3.29 TensorFlow 2.0初学者的教程
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.30_windows%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8Cpath%E7%8E%AF%E5%A2%83%E5%90%8E%E5%8D%B3%E6%97%B6%E7%94%9F%E6%95%88/" class="md-nav__link">
-        3.30 windows配置环境变量和path环境后即时生效
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.31_google%E5%9C%A8%E7%BA%BFtts%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
-        3.31 google在线tts文字转语音
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.31_pygame%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
-        3.31 pygame播放音频文件
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.31_window%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8paddlespeech%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%92%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
-        3.31 window系统使用paddlespeech进行语音识别和文字转语音
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.31_%E6%80%8E%E6%A0%B7%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%A2%84%E6%B5%8B%E5%9F%BA%E9%87%91%E8%B6%8B%E5%8A%BF/" class="md-nav__link">
-        3.31 怎样用人工智能预测基金趋势
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
       
-        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           2023
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_18">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           2023
         </label>
@@ -1470,8 +1306,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../2023/3.12_TensorFlowTTS%E7%AE%80%E4%BB%8B/" class="md-nav__link">
-        TensorFlowTTS简介
+      <a href="../2023/3.12_TensorFlowTTS%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.12 TensorFlowTTS文字转语音
       </a>
     </li>
   
@@ -1513,7 +1349,7 @@
   
     <li class="md-nav__item">
       <a href="../2023/3.13_%E4%BD%BF%E7%94%A8MelGAN%E8%BF%9B%E8%A1%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
-        使用MelGAN进行文字转语音
+        3.13 使用MelGAN进行文字转语音
       </a>
     </li>
   
@@ -1722,6 +1558,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023/3.21_paddlehub_pretrained_models/" class="md-nav__link">
+        3.21 paddlehub pretrained models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2023/3.21_python%E9%80%9A%E8%BF%87google%E5%9C%A8%E7%BA%BF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
         3.21 python通过google在线实现语音识别
       </a>
@@ -1780,6 +1630,20 @@
     <li class="md-nav__item">
       <a href="../2023/3.22_%E6%96%B0%E9%97%BB_2023/" class="md-nav__link">
         3.22 新闻 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.23_Midjourney%20Quick%20Start/" class="md-nav__link">
+        3.23 Midjourney Quick Start
       </a>
     </li>
   
@@ -1890,8 +1754,162 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023/3.27_ERNIE%203.0%E5%AE%9E%E6%88%98%E6%B3%95%E5%BE%8B%E6%96%87%E6%9C%AC%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        3.27 ERNIE 3.0实战法律文本多标签分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.27_awesome-chatgpt-prompts/" class="md-nav__link">
+        3.27 awesome chatgpt prompts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2023/3.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         3.27 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.28_python%E7%9A%84%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0sqlite/" class="md-nav__link">
+        3.28 python的实现chatgpt对话并保存到sqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.28_sqlite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8Cpandas%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        3.28 sqlite数据库和pandas数据转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        3.29 PaddleNLP分类任务指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.29_TensorFlow%202.0%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.29 TensorFlow 2.0初学者的教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.30_windows%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8Cpath%E7%8E%AF%E5%A2%83%E5%90%8E%E5%8D%B3%E6%97%B6%E7%94%9F%E6%95%88/" class="md-nav__link">
+        3.30 windows配置环境变量和path环境后即时生效
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.31_google%E5%9C%A8%E7%BA%BFtts%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.31 google在线tts文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.31_pygame%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        3.31 pygame播放音频文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.31_window%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8paddlespeech%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%92%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.31 window系统使用paddlespeech进行语音识别和文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/3.31_%E6%80%8E%E6%A0%B7%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%A2%84%E6%B5%8B%E5%9F%BA%E9%87%91%E8%B6%8B%E5%8A%BF/" class="md-nav__link">
+        3.31 怎样用人工智能预测基金趋势
       </a>
     </li>
   
@@ -1917,17 +1935,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
       
-        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           催眠
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_19">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           催眠
         </label>
@@ -2190,17 +2208,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           生活
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_20">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           生活
         </label>
@@ -2497,17 +2515,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_21" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_21" >
       
       
       
-        <label class="md-nav__link" for="__nav_20_21" id="__nav_20_21_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_8_21" id="__nav_8_21_label" tabindex="0">
           幽默
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_21_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_20_21">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_21_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_21">
           <span class="md-nav__icon md-icon"></span>
           幽默
         </label>
@@ -2615,17 +2633,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_22" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_22" >
       
       
       
-        <label class="md-nav__link" for="__nav_20_22" id="__nav_20_22_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
           汪曾祺
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_22_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_20_22">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_22">
           <span class="md-nav__icon md-icon"></span>
           汪曾祺
         </label>
@@ -2739,38 +2757,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sqlitepandas" class="md-nav__link">
-    sqlite数据库和pandas数据转换
+  <a href="#doccano" class="md-nav__link">
+    文本分类任务doccano使用指南
   </a>
   
-    <nav class="md-nav" aria-label="sqlite数据库和pandas数据转换">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 项目创建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 数据上传
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 标签构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 任务标注
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 数据导出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.数据转换
+  </a>
+  
+    <nav class="md-nav" aria-label="7.数据转换">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mysqlsqlite3" class="md-nav__link">
-    MySQL数据导入sqlite3
+  <a href="#71" class="md-nav__link">
+    7.1 多分类任务
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    列出一些重点方法
+  <a href="#72" class="md-nav__link">
+    7.2 多标签任务
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#csv" class="md-nav__link">
-    读取csv文件
-  </a>
-  
-    <nav class="md-nav" aria-label="读取csv文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pandasdataframe" class="md-nav__link">
-    合并多个pandas的dataframe数据
+  <a href="#73" class="md-nav__link">
+    7.3 层次分类任务
   </a>
   
 </li>
@@ -2779,36 +2838,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#sqlitepandasdataframe" class="md-nav__link">
-    将sqlite数据导入到pandas的DataFrame
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
   </a>
-  
-    <nav class="md-nav" aria-label="将sqlite数据导入到pandas的DataFrame">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dataframesqlite" class="md-nav__link">
-    将dataframe数据按行插入到sqlite数据库
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#paddlenlp" class="md-nav__link">
-    生成paddlenlp数据集
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2827,271 +2861,192 @@
                   
 
 
-  <h1>3.28 sqlite数据库和pandas数据转换</h1>
+  <h1>3.31 文本分类任务doccano使用指南</h1>
 
-<h2 id="sqlitepandas">sqlite数据库和pandas数据转换</h2>
-<h4 id="mysqlsqlite3">MySQL数据导入sqlite3</h4>
-<pre><code>### MySQL数据导入sqlite3
-import pandas as pd
-import sqlite3
-#connect to the database
-conn = sqlite3.connect('mysql_sync.db')
+<h2 id="doccano">文本分类任务doccano使用指南</h2>
+<p><strong>目录</strong></p>
+<ul>
+<li><a href="#安装">1. 安装</a></li>
+<li><a href="#项目创建">2. 项目创建</a></li>
+<li><a href="#数据上传">3. 数据上传</a></li>
+<li><a href="#标签构建">4. 标签构建</a></li>
+<li><a href="#任务标注">5. 任务标注</a></li>
+<li><a href="#数据导出">6. 数据导出</a></li>
+<li><a href="#数据转换">7. 数据转换</a></li>
+</ul>
+<p><a name="安装"></a></p>
+<h2 id="1">1. 安装</h2>
+<p><strong>以下标注示例用到的环境配置：</strong></p>
+<ul>
+<li>Python 3.8+</li>
+<li>doccano 1.6.2+</li>
+</ul>
+<p>在终端(terminal)使用pip安装doccano：</p>
+<pre><code class="language-shell">pip install doccano
+</code></pre>
+<p>安装完成后，运行以下命令行：</p>
+<pre><code class="language-shell"># Initialize database.
+doccano init
+# Create a super user.
+doccano createuser --username admin --password admin
+# Start a web server.
+doccano webserver --port 8000
+</code></pre>
+<p>在新的终端(terminal)运行如下命令行：</p>
+<pre><code class="language-shell"># Start the task queue to handle file upload/download.
+doccano task
+</code></pre>
+<p>在浏览器打开<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>，输入用户名和密码登录，开始使用doccano进行标注。doccano支持中文版本，可以点击右上角选择ZH(中文)。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176856052-bde31dd7-6317-49d9-8ae6-572c821f4e3d.png height=230 hspace='15'/>
+</div>
 
-# 导入pymysql模块
-import pymysql
+<p>doccano还支持PostgreSQL、Docker、Docker Compose等安装方式，详情请参考<a href="https://github.com/doccano/doccano">doccano官方文档</a> 完成doccano的安装与初始配置。</p>
+<p><a name="项目创建"></a></p>
+<h2 id="2">2. 项目创建</h2>
+<p>文本分类支持多分类、多标签、层次分类三种类型的文本分类任务。</p>
+<p>点击创建（Create）开始创建一个新的项目，选择文本分类，然后填写项目名称、描述、Tags等项目信息。如果是多分类任务或者是单路径层次分类任务，勾选 <code>Allow single label</code> ，勾选后标签标注只允许选择一个标签进行标注。点击创建成功创建一个doccano项目。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176857646-b324d075-e281-4e9f-9f42-50fa2645b271.png height=400 hspace='15'/>
+</div>
 
-# 连接mysql database
-mysql_conn = pymysql.connect(
-    host= 'rm-123.mysql.rds.aliyuncs.com',
-    user= 'root',password= '',
-    database= 'ziys',
-    charset='utf8')
-table_name=['user_information','user','video','user_behavior','long_video']
+<p><a name="数据上传"></a></p>
+<h2 id="3">3. 数据上传</h2>
+<p>点击数据集-操作-导入数据集，开始导入本地待标注数据集：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176858888-79b781f9-2ce0-4348-ba14-faac19031867.png height=300 hspace='15'/>
+</div>
+<p>doccano支持<code>TextFile</code>、<code>TextLine</code>、<code>JSONL</code>和<code>CoNLL</code>四种数据上传格式，文本分类本地数据集定制训练中<strong>统一使用TextLine</strong>这一文件格式，即上传的文件需要为txt等格式，且在数据标注时，该文件的每一行待标注文本显示为一页内容。
+上传的文件为txt等格式，每一行为一条待标注文本，示例:</p>
+<pre><code class="language-text">黑苦荞茶的功效与作用及食用方法
+交界痣会凸起吗
+检查是否能怀孕挂什么科
+鱼油怎么吃咬破吃还是直接咽下去
+幼儿挑食的生理原因是
+...
+</code></pre>
+<p>上传数据类型<strong>选择TextLine</strong>，选择待标注文本或拖拽文本导入doccano项目中，点击导入，导入待标注数据集。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176859861-b790288f-32d7-4ab0-8b5f-b30e97f8c306.png height=300 hspace='15'/>
+</div>
 
-# df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
-for tbn in table_name:
-    df=pd.read_sql_query(&quot;select * from {}&quot;.format(tbn), mysql_conn)
-    df.to_sql(tbn,conn,schema=None,if_exists='replace',index=True,index_label=None, chunksize=None, dtype=None)
+<p><a name="标签构建"></a></p>
+<h2 id="4">4. 标签构建</h2>
+<p>点击标签-操作-创建标签，开始添加分类类别标签：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176860972-eb9cacf1-199a-4cec-9940-6858434cfb94.png height=300 hspace='15'/>
+</div>
+<p>填入分类类别标签，选择标签颜色，建议不同标签选择不同颜色，最后点击保存或保存并添加下一个，保存标签：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176860977-55292e2a-8bf8-4316-a0f8-b925872e5023.png height=300 hspace='15'/>
+</div>
+<p>文本分类标签构建示例：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176860996-542cd1f7-9770-4b22-9586-a5bf0e802970.png height=300 hspace='15'/>
+</div>
 
-# df_user_behavior.to_sql('user_behavior',conn,schema=None,if_exists='replace',index=True,index_label=None, chunksize=None, dtype=None)
-#close out the connection
-mysql_conn.close()
-conn.close()
-</code></pre>
-<h3 id="_1">列出一些重点方法</h3>
-<pre><code>pandas.read_sql(sql, conn, index_col=None, coerce_float=True, params=None, parse_dates=None, columns=None, chunksize=None)
+<p><strong>NOTE:</strong>
+我们默认层次分类标签不同层的标签之间具有关联性，以下图为例一个样本具有标签美短虎斑，我们默认还包含美国短毛猫和猫两个标签。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/175248039-ce1673f1-9b03-4804-b1cb-29e4b4193f86.png height=300 hspace='15'/>
+</div>
 
-DataFrame.to_sql(name, conn, flavor=None, schema=None, if_exists='fail', index=True, index_label=None, chunksize=None, dtype=None)
+<p>对于层次分类任务的分类标签我们建议使用标签层次结构中<strong>叶结点标签路径作为标签</strong>，以上图的标签结构为例，我们建议使用<code>##</code>作为分隔符，分隔不同层之间的标签：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/177095794-0acb9665-3862-4de9-8771-8f424fd4f7b0.png height=300 hspace='15'/>
+</div>
+<p><a name="任务标注"></a></p>
+<h2 id="5">5. 任务标注</h2>
+<p>标注示例，选择对应的分类类别标签，输入回车（Enter）键确认：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176872684-4a19f592-be5c-4b86-8adf-eb0a7d7aa375.png height=200 hspace='10'/>
+</div>
 
-if_exists='replace'，如果存在指定表(name)，则替换。
-if_exists='append'，如果存在指定表(name)，则追加。
-if_exists='fail'，如果存在指定表(name)，则写入失败。
-chunksize，例如chunksize = 1000，每次处理1000条，避免数据量过大。
+<p><a name="数据导出"></a></p>
+<h2 id="6">6. 数据导出</h2>
+<p>选择数据集-操作-导出数据集，将标注好的数据导出，我们默认所有数据集已经标注完成且正确：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176874195-d21615f4-8d53-4033-8f53-2106ebdf21f8.png height=250 hspace='20'/>
+</div>
 
-conn = sqlite3.connect(&quot;test.db&quot;)：建立与数据库的连接，如果数据库不存在则建立数据库
-conn = sqlite3.connect(&quot;:memory:&quot;)：将数据库建在内存中
-</code></pre>
-<h3 id="csv">读取csv文件</h3>
-<p>In [ ]:</p>
-<pre><code>import pandas as pd
-df_all=None
-try:
-    df_all = pd.read_csv('./simplifyweibo_4_moods/simplifyweibo_4_moods.csv')
-except Exception as err:
-    print(str(err))
+<p>选择导出的文件类型为<code>JSONL</code>，导出数据：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176873347-fd995e4e-5baf-4d13-92b9-800cabd1f0b1.png height=300 hspace='20'/>
+</div>
 
-# df_all['label'].replace(0, '喜悦', inplace=True)
-df_all['emotion'] = df_all['label'].map({0:&quot;喜悦&quot;, 1:&quot;愤怒&quot;, 2:&quot;厌恶&quot;, 3:&quot;低落&quot;})
-df_all.drop(labels='label',axis=1,inplace=True)
-df_all.rename(columns = {'review':'text','emotion':'label'}, inplace = True)
-df_all.to_csv('simplifyweibo_4_moods_ds.csv')
-df_all.sample(10)
+<p>导出数据示例：</p>
+<pre><code class="language-text">{&quot;id&quot;: 23, &quot;data&quot;: &quot;黑苦荞茶的功效与作用及食用方法&quot;, &quot;label&quot;: [&quot;功效作用&quot;]}
+{&quot;id&quot;: 24, &quot;data&quot;: &quot;交界痣会凸起吗&quot;, &quot;label&quot;: [&quot;疾病表述&quot;]}
+{&quot;id&quot;: 25, &quot;data&quot;: &quot;检查是否能怀孕挂什么科&quot;, &quot;label&quot;: [&quot;就医建议&quot;]}
+{&quot;id&quot;: 26, &quot;data&quot;: &quot;鱼油怎么吃咬破吃还是直接咽下去&quot;, &quot;label&quot;: [&quot;其他&quot;]}
+{&quot;id&quot;: 27, &quot;data&quot;: &quot;幼儿挑食的生理原因是&quot;, &quot;label&quot;: [&quot;病因分析&quot;]}
 </code></pre>
-<p>In [ ]:</p>
-<pre><code>import pandas as pd
-df_all = pd.read_csv('./OCEMOTION.csv')
-df_all
+<p>标注数据保存在同一个文本文件中，每条样例占一行且存储为<code>jsonl</code>格式，其包含以下字段
+- <code>id</code>: 样本在数据集中的唯一标识ID。
+- <code>data</code>: 原始文本数据。
+- <code>label</code>: 文本对应类别标签。</p>
+<p><a name="数据转换"></a></p>
+<h2 id="7">7.数据转换</h2>
+<p>该章节详细说明如何通过<code>doccano.py</code>脚本对doccano平台导出的标注数据进行转换，一键生成训练/验证/测试集。当标注完成后，在 doccano 平台上导出 <code>JSON</code> 形式的文件，并将其重命名为 <code>doccano.jsonl</code>。</p>
+<h3 id="71">7.1 多分类任务</h3>
+<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="multi_class/README.md">多分类文本任务指南</a>中固定格式进行相应模型训练。</p>
+<p>数据标注转化运行：</p>
+<pre><code class="language-shell">python doccano.py \
+    --doccano_file doccano.jsonl \
+    --save_dir ./data \
+    --splits 0.8 0.1 0.1 \
+    --task_type &quot;multi_class&quot;
 </code></pre>
-<p>In [ ]:</p>
-<pre><code># # df_all['label'].replace(0, '喜悦', inplace=True)
-df_all['label'] = df_all['emotion'].map({'happiness':'幸福','sadness':'悲伤','disgust':'厌恶','anger':'愤怒','like':'喜欢','surprise':'惊喜','fear':'恐惧'})
-df_all.drop(labels='emotion',axis=1,inplace=True)
-# df_all.rename(columns = {'review':'text','emotion':'label'}, inplace = True)
-df_all.to_csv('OCEMOTION_ds.csv')
-df_all.sample(100)
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="multi_class/analysis/README.md">多分类训练评估与模型优化指南</a></p>
+<h3 id="72">7.2 多标签任务</h3>
+<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="multi_label/README.md">多标签文本分类任务指南</a>中固定格式进行相应模型训练。</p>
+<p>数据标注转化运行：</p>
+<pre><code class="language-shell">python doccano.py \
+    --doccano_file doccano.jsonl \
+    --save_dir ./data \
+    --splits 0.8 0.1 0.1 \
+    --task_type &quot;multi_label&quot;
 </code></pre>
-<p>In [ ]:</p>
-<pre><code>import pandas as pd
-df_all=None
-try:
-    df_all = pd.read_csv('./data/usual_eval_labeled.csv')
-except Exception as err:
-    print(str(err))
-
-# # # df_all['label'].replace(0, '喜悦', inplace=True)
-df_all['label'] = df_all['情绪标签'].map({'happy':'幸福','sad':'悲伤','angry':'愤怒','neutral':'中性','surprise':'惊喜','fear':'恐惧'})
-df_all.drop(labels='情绪标签',axis=1,inplace=True)
-df_all.rename(columns = {'文本':'text'}, inplace = True)
-df_all.to_csv('usual_eval_labeled.csv')
-df_all.sample(100)
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="multi_label/analysis/README.md">多标签训练评估与模型优化指南</a></p>
+<h3 id="73">7.3 层次分类任务</h3>
+<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="hierarchical/README.md">层次文本分类任务指南</a>中固定格式进行相应模型训练。</p>
+<p>数据标注转化运行：</p>
+<pre><code class="language-shell">python doccano.py \
+    --doccano_file doccano.jsonl \
+    --save_dir ./data \
+    --splits 0.8 0.2 \
+    --task_type &quot;hierarchical&quot;
 </code></pre>
-<p>In [ ]:</p>
-<pre><code>import pandas as pd
-import json
-
-df_all=None
-try:
-    lines = open('./emotion/valid.txt',encoding='utf-8').readlines()
-    # for line in lines:
-    #      print(json.loads(line))
-    lines = [json.loads(i) for i in lines]
-
-    df_all = pd.DataFrame(lines)
-except Exception as err:
-    print(str(err))
-
-# # # # df_all['label'].replace(0, '喜悦', inplace=True)
-# df_all['label'] = df_all['情绪标签'].map({'happy':'幸福','sad':'悲伤','angry':'愤怒','neutral':'中性','surprise':'惊喜','fear':'恐惧'})
-df_all['label'] = df_all['label'].map({'happiness':'幸福','sadness':'悲伤','disgust':'厌恶','anger':'愤怒','like':'喜欢','surprise':'惊喜','fear':'恐惧'})
-
-# df_all.drop(labels='情绪标签',axis=1,inplace=True)
-df_all.rename(columns = {'content':'text'}, inplace = True)
-df_all.to_csv('valid.txt.ds.csv')
-df_all.sample(100)
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="hierarchical/analysis/README.md">层次分类训练评估与模型优化指南</a>
+可配置参数说明：</p>
+<ul>
+<li><code>doccano_file</code>: 从doccano导出的数据标注文件。</li>
+<li><code>save_dir</code>: 训练数据的保存目录，默认存储在<code>data</code>目录下。</li>
+<li><code>splits</code>: 划分数据集时训练集、验证集所占的比例。默认为[0.8, 0.2]表示按照<code>8:2</code>的比例将数据划分为训练集、验证集。</li>
+<li><code>task_type</code>: 可选，选择任务类型,有多分类，多标签，层次分类三种类型的任务。</li>
+<li><code>is_shuffle</code>: 是否对数据集进行随机打散，默认为True。</li>
+<li><code>seed</code>: 随机种子，默认为1000.</li>
+<li><code>separator</code>: 不同层标签之间的分隔符，该参数只对层次文本分类任务有效。默认为"##"。</li>
+<li><code>valid</code>: 是否为稀疏数据筛选的有效标注数据，默认为False.</li>
+<li><code>dirty</code>: 是否为脏数据清洗策略标注数据，默认为False.</li>
+</ul>
+<p>转化后的doccano标注数据目录结构如下：</p>
+<pre><code class="language-text">data/
+├── train.txt # 训练数据集文件
+├── dev.txt # 开发数据集文件
+├── test.txt # 测试训练集文件（可选，数据划分为 train/dev/test 数据集）
+├── label.txt # 分类标签文件
+└── data.txt # 待预测数据文件
 </code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all['label'].value_counts()
-# df_all.columns
-# df_all[['text', 'label']].to_csv('emotion_catalog_dataset.csv')
-</code></pre>
-<h4 id="pandasdataframe">合并多个pandas的dataframe数据</h4>
-<p>In [ ]:</p>
-<pre><code>import os
-df_lst=[]
-for f in os.listdir('./source/'):
-    f = './source/'+f
-    print(f)
-    df = pd.read_csv(f)
-    df_lst.append(df)
-    print(df)
-df_all = pd.concat(df_lst)
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>#!/usr/bin/python
-
-import sqlite3
-table_name = 'simplifyweibo_4_moods'
-conn = sqlite3.connect('sqlite_dt.db')
-# 保存DataFrame数据到sqlite
-df_all.to_sql(table_name,conn,schema=None,if_exists='replace',index=True,index_label=None, chunksize=None, dtype=None)
-# # 读取sqlite表格数据到DataFrame
-# df2=pd.read_sql_query(&quot;select * from {}&quot;.format(table_name), conn)
-conn.close()
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all.columns
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>#!/usr/bin/python
-
-import sqlite3
-
-conn = sqlite3.connect('sqlite_dt.db')
-print (&quot;数据库打开成功&quot;)
-c = conn.cursor()
-c.execute('''CREATE TABLE if not exists DataSet
-       (id INTEGER PRIMARY KEY AUTOINCREMENT,
-       Text             TEXT    NOT NULL,
-       Label             CHAR(10) NOT NULL,
-       Source            CHAR(50),
-       Note              TEXT);''')
-print (&quot;数据表创建成功&quot;)
-conn.commit()
-conn.close()
-</code></pre>
-<h3 id="sqlitepandasdataframe">将sqlite数据导入到pandas的DataFrame</h3>
-<p>In [ ]:</p>
-<pre><code>'''### 将sqlite数据导入到pandas的DataFrame'''
-import pandas as pd
-import sqlite3
-conn = sqlite3.connect('sqlite_dt3.db')
-# First pattern - turn query directly into dataframe:
-df1 = pd.read_sql_query(&quot;SELECT * FROM DataSet&quot;, conn)
-# Second pattern - get row-level data, but no column names
-cur = conn.cursor()
-results = cur.execute(&quot;SELECT * FROM DataSet LIMIT 5&quot;).fetchall()
-df2 = pd.DataFrame(results)
-conn.close()
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>'''读取dedao的csv数据文件'''
-import pandas as pd
-dedao_df = pd.read_table('Dataset/DeDao_DS.csv',sep='\t')
-</code></pre>
-<h4 id="dataframesqlite">将dataframe数据按行插入到sqlite数据库</h4>
-<p>In [ ]:</p>
-<pre><code>'''将dataframe数据插入到sqlite数据库'''
-#!/usr/bin/python
-import sqlite3
-
-conn = sqlite3.connect('sqlite_dt3.db')
-c = conn.cursor()
-print (&quot;&gt;&gt;&gt;数据库打开成功&quot;)
-
-# 创建数据表
-c.execute('''CREATE TABLE if not exists DeDao_DS
-       (id INTEGER PRIMARY KEY AUTOINCREMENT,
-       Text             TEXT    NOT NULL,
-       Label             CHAR(20) NOT NULL,
-       Source            CHAR(50),
-       Note              TEXT);''')
-print (&quot;&gt;&gt;&gt;数据表创建成功&quot;)
-conn.commit()
-# 插入数据
-for index,row in dedao_df[:].iterrows():
-    try:
-        text=row['text'].replace('\'','')### 替换掉单引号,防止SQL插入失败
-        label=row['label'].replace('\'','')
-#     print(&quot;INSERT INTO DataSet (Text,Label) VALUES ({},{})&quot;.format(row['text'],row['label']))
-        c.execute(&quot;INSERT INTO DeDao_DS (Text,Label) VALUES ('{}','{}')&quot;.format(text,label))
-    except Exception as err:
-        print(index,str(err))
-conn.commit()
-print (&quot;&gt;&gt;&gt;数据插入成功&quot;)
-conn.close()
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>'''读取pickle文件的参数'''
-import pickle
-with open('catalog.pkl','rb') as fh:
-   catalog_pkl = pickle.load(fh)
-len(catalog_pkl),catalog_pkl
-</code></pre>
-<h4 id="paddlenlp">生成paddlenlp数据集</h4>
-<p>In [ ]:</p>
-<pre><code>import pandas as pd
-df_all=None
-try:
-    df_all = pd.read_csv('emotion_catalog_dataset.csv')
-except Exception as err:
-    print(str(err))
-df_all=df_all[['text','label']]
-df_all
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all['label'].value_counts()
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all['label'].replace('低落','悲伤',inplace=True)
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all[df_all['label'] == '厌恶']
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all.describe()
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all=df_all.dropna()
-df_all=df_all.sample(frac=1).reset_index(drop=True)
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all.to_csv('emotion_catalog_dataset.csv',index=None)
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all['label'].value_counts().index.tolist()
-labels = [i+'\n' for i in df_all['label'].value_counts().index.tolist()]
-with open('label.txt','w',encoding='utf-8') as fhd:
-    fhd.writelines(labels)
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all=df_all.sample(frac=1).reset_index(drop=True)
-df_all[['text','label']][:100].to_csv('test.txt',sep='\t',header=None,index=None)
-df_all[['text','label']][100:100000].to_csv('train.txt',sep='\t',header=None,index=None)
-df_all[['text','label']][100000:110000].to_csv('dev.txt',sep='\t',header=None,index=None)
-</code></pre>
-<p>In [ ]:</p>
-<pre><code>df_all.sample(100)
-</code></pre>
+<p>备注：
+- 默认情况下 <a href="./doccano.py">doccano.py</a> 脚本会按照比例将数据划分成train/dev 数据集，也可以划分为 train/dev/test 数据集。
+- 脚本会自动生成data.txt，如果数据划分为 train/dev/test 数据集，data.txt则为test数据集无标签数据；如果数据划分为 train/dev 数据集，data.txt为无标签数据。<strong>如果有未标注数据，则用未标注数据文件替换data.txt</strong>
+- 每次执行 <a href="./doccano.py">doccano.py</a> 脚本，将会覆盖已有的同名数据文件
+- 对于从doccano导出的文件，默认文件中的每条数据都是经过人工正确标注的。</p>
+<h2 id="references">References</h2>
+<ul>
+<li><strong><a href="https://github.com/doccano/doccano">doccano</a></strong></li>
+</ul>
 
 
 
