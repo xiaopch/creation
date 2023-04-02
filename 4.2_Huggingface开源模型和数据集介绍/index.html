@@ -446,6 +446,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指定模型的下载位置：
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2891,6 +2898,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指定模型的下载位置：
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3023,6 +3037,24 @@ a model on a SQuAD task, you may leverage the `run_squad.py`.
 
 print(nlp(question=&quot;What is extractive question answering?&quot;, context=context))
 print(nlp(question=&quot;What is a good example of a question answering dataset?&quot;, context=context))
+</code></pre>
+<ul>
+<li>用中文对话情绪语料训练的模型，2分类：乐观和悲观。</li>
+</ul>
+<pre><code class="language-python">from transformers import AutoModelForSequenceClassification , AutoTokenizer, pipeline
+
+model_name = &quot;liam168/c2-roberta-base-finetuned-dianping-chinese&quot;
+class_num = 2
+ts_texts = [&quot;我喜欢下雨。&quot;, &quot;我讨厌他.&quot;]
+model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=class_num)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+classifier = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
+classifier(ts_texts[0])
+classifier(ts_texts[1])
+</code></pre>
+<h4 id="_4">指定模型的下载位置：</h4>
+<pre><code>import os
+os.environ['TRANSFORMERS_CACHE'] = './model'
 </code></pre>
 
 

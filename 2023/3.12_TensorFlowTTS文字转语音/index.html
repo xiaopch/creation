@@ -3390,21 +3390,26 @@ tensorflow-tts-normalize --rootdir ./dump_[ljspeech/kss/baker/libritts/thorsten/
 <p>All models on this repo are trained based-on <strong>GanBasedTrainer</strong> (see <a href="https://github.com/tensorspeech/TensorFlowTTS/blob/master/examples/melgan/train_melgan.py">train_melgan.py</a>, <a href="https://github.com/tensorspeech/TensorFlowTTS/blob/master/examples/melgan.stft/train_melgan_stft.py">train_melgan_stft.py</a>, <a href="https://github.com/tensorspeech/TensorFlowTTS/blob/master/examples/multiband_melgan/train_multiband_melgan.py">train_multiband_melgan.py</a>) and <strong>Seq2SeqBasedTrainer</strong> (see <a href="https://github.com/tensorspeech/TensorFlowTTS/blob/master/examples/tacotron2/train_tacotron2.py">train_tacotron2.py</a>, <a href="https://github.com/tensorspeech/TensorFlowTTS/blob/master/examples/fastspeech/train_fastspeech.py">train_fastspeech.py</a>).</p>
 <h1 id="end-to-end-examples">End-to-End Examples</h1>
 <p>You can know how to inference each model at <a href="https://github.com/tensorspeech/TensorFlowTTS/tree/master/notebooks">notebooks</a> or see a <a href="https://colab.research.google.com/drive/1akxtrLZHKuMiQup00tzO2olCaN-y3KiD?usp=sharing">colab</a> (for English), <a href="https://colab.research.google.com/drive/1ybWwOS5tipgPFttNulp77P6DAB5MtiuN?usp=sharing">colab</a> (for Korean), <a href="https://colab.research.google.com/drive/1YpSHRBRPBI7cnTkQn1UcVTWEQVbsUm1S?usp=sharing">colab</a> (for Chinese), <a href="https://colab.research.google.com/drive/1jd3u46g-fGQw0rre8fIwWM9heJvrV1c0?usp=sharing">colab</a> (for French), <a href="https://colab.research.google.com/drive/1W0nSFpsz32M0OcIkY9uMOiGrLTPKVhTy?usp=sharing">colab</a> (for German). Here is an example code for end2end inference with fastspeech2 and multi-band melgan. We uploaded all our pretrained in <a href="https://huggingface.co/tensorspeech">HuggingFace Hub</a>.</p>
-<pre><code>import soundfile as sf
+<pre><code># https://huggingface.co/tensorspeech/tts-mb_melgan-baker-ch
+
+import soundfile as sf
 import numpy as np
 
-# https://huggingface.co/tensorspeech/tts-mb_melgan-baker-ch
-
 import tensorflow as tf
+
+# for windows 10
+# tensorflow-cpu==2.10.0
+# TensorFlowTTS==1.6
+# huggingface-hub==0.13.2
 
 from tensorflow_tts.inference import AutoProcessor
 from tensorflow_tts.inference import TFAutoModel
 
-processor = AutoProcessor.from_pretrained(&quot;tts-tacotron2-baker-ch&quot;)
+processor = AutoProcessor.from_pretrained(&quot;tensorspeech/tts-tacotron2-baker-ch&quot;)
 tacotron2 = TFAutoModel.from_pretrained(&quot;tensorspeech/tts-tacotron2-baker-ch&quot;)
 mb_melgan = TFAutoModel.from_pretrained(&quot;tensorspeech/tts-mb_melgan-baker-ch&quot;)
 
-text = &quot;这是一个google开源的端到端中文语音合成系统&quot;
+text = &quot;这是一个开源的端到端中文语音合成系统&quot;
 
 input_ids = processor.text_to_sequence(text, inference=True)
 
@@ -3420,6 +3425,8 @@ audio = mb_melgan.inference(mel_outputs)[0, :, 0]
 
 # save to file
 sf.write('./audio.wav', audio, 22050, &quot;PCM_16&quot;)
+
+
 </code></pre>
 <h1 id="contact">Contact</h1>
 <ul>
