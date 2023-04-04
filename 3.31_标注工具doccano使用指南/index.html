@@ -13,17 +13,17 @@
       
       
       
-        <link rel="prev" href="../4.2_paddlehub%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E5%85%B3%E9%94%AE%E7%82%B9%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B/">
+        <link rel="prev" href="../3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/">
       
       
-        <link rel="next" href="../2023/03.28_am_%E6%96%B0%E9%97%BB/">
+        <link rel="next" href="../4.01.22_%E9%95%BF%E5%AF%BF%E8%8A%B1%E6%80%8E%E4%B9%88%E5%85%BB%E6%AE%96/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>4.3 Transformer text to speech model from fairseq - 随遇而安</title>
+        <title>3.31 标注工具doccano使用指南 - 随遇而安</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#transformer-text-to-speech-model-from-fairseq" class="md-skip">
+        <a href="#doccano" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.3 Transformer text to speech model from fairseq
+              3.31 标注工具doccano使用指南
             
           </span>
         </div>
@@ -289,11 +289,131 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.31_%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1doccano%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
-        3.31 文本分类任务doccano使用指南
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.31 标注工具doccano使用指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3.31 标注工具doccano使用指南
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#doccano" class="md-nav__link">
+    标注工具doccano使用指南
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 项目创建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 数据上传
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 标签构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 任务标注
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 数据导出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.数据转换
+  </a>
+  
+    <nav class="md-nav" aria-label="7.数据转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    7.1 多分类任务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    7.2 多标签任务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3 层次分类任务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -338,21 +458,6 @@
     <li class="md-nav__item">
       <a href="../4.1_PaddleClas%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABPULC%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="md-nav__link">
         4.1 PaddleClas图像识别PULC快速体验
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.1_windows%E4%B8%8B%E6%80%8E%E4%B9%88%E7%94%A8sublime%20text%E6%90%AD%E5%BB%BApython%20%E7%9A%84ide/" class="md-nav__link">
-        4.1 windows下怎么用sublime text搭建python 的ide
       </a>
     </li>
   
@@ -424,48 +529,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.3 Transformer text to speech model from fairseq
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        4.3 Transformer text to speech model from fairseq
+    <li class="md-nav__item">
+      <a href="../4.4_%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91App/" class="md-nav__link">
+        4.4 低代码开发App
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#transformer-text-to-speech-model-from-fairseq" class="md-nav__link">
-    Transformer text-to-speech model from fairseq
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -483,17 +551,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
       
       
       
-        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           2023
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_16">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           2023
         </label>
@@ -1989,6 +2057,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023/4.1_windows%E4%B8%8B%E6%80%8E%E4%B9%88%E7%94%A8sublime%20text%E6%90%AD%E5%BB%BApython%20%E7%9A%84ide/" class="md-nav__link">
+        4.1 windows下怎么用sublime text搭建python 的ide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2023/4.2_paddlepaddle%E7%94%9F%E6%80%81%E7%9A%84%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%B7%A5%E5%85%B7PaddleHub/" class="md-nav__link">
         4.2 paddlepaddle生态的预训练模型应用工具PaddleHub
       </a>
@@ -2005,6 +2087,20 @@
     <li class="md-nav__item">
       <a href="../2023/4.2_%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Chocolatey%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         4.2 软件管理工具Chocolatey的安装与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/4.3_Transformer%20text-to-speech%20model%20from%20fairseq/" class="md-nav__link">
+        4.3 Transformer text to speech model from fairseq
       </a>
     </li>
   
@@ -2030,17 +2126,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
       
       
       
-        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
           催眠
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_17">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
           催眠
         </label>
@@ -2303,17 +2399,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
       
       
       
-        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           生活
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_18">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           生活
         </label>
@@ -2610,17 +2706,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_21" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_21" >
       
       
       
-        <label class="md-nav__link" for="__nav_18_21" id="__nav_18_21_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_17_21" id="__nav_17_21_label" tabindex="0">
           幽默
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_21_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_18_21">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_17_21_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17_21">
           <span class="md-nav__icon md-icon"></span>
           幽默
         </label>
@@ -2728,17 +2824,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_22" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_22" >
       
       
       
-        <label class="md-nav__link" for="__nav_18_22" id="__nav_18_22_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_17_22" id="__nav_17_22_label" tabindex="0">
           汪曾祺
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_22_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_18_22">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_17_22_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17_22">
           <span class="md-nav__icon md-icon"></span>
           汪曾祺
         </label>
@@ -2852,8 +2948,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#transformer-text-to-speech-model-from-fairseq" class="md-nav__link">
-    Transformer text-to-speech model from fairseq
+  <a href="#doccano" class="md-nav__link">
+    标注工具doccano使用指南
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 项目创建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 数据上传
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 标签构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 任务标注
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 数据导出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.数据转换
+  </a>
+  
+    <nav class="md-nav" aria-label="7.数据转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    7.1 多分类任务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    7.2 多标签任务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3 层次分类任务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -2873,36 +3052,192 @@
                   
 
 
-  <h1>4.3 Transformer text to speech model from fairseq</h1>
+  <h1>3.31 标注工具doccano使用指南</h1>
 
-<h2 id="transformer-text-to-speech-model-from-fairseq">Transformer text-to-speech model from fairseq</h2>
-<pre><code>from fairseq.checkpoint_utils import load_model_ensemble_and_task_from_hf_hub
-from fairseq.models.text_to_speech.hub_interface import TTSHubInterface
-import torch
-import IPython.display as ipd
-
-models, cfg, task = load_model_ensemble_and_task_from_hf_hub(
-    &quot;facebook/tts_transformer-zh-cv7_css10&quot;,
-    arg_overrides={&quot;vocoder&quot;: &quot;hifigan&quot;, &quot;fp16&quot;: False}
-)
-
-# print(models)
-model = models[0]
-model = model.to(torch.device('cpu'))
-TTSHubInterface.update_cfg_with_data_cfg(cfg, task.data_cfg)
-generator = task.build_generator(models, cfg)
-
-text = &quot;写作能力&quot;
-sample = TTSHubInterface.get_model_input(task, text)
-
-wav, rate = TTSHubInterface.get_prediction(task, model, generator, sample)
-# print(wav)
-wav.to('cpu')
-
-ipd.Audio(wav, rate=rate)
-
-
+<h2 id="doccano">标注工具doccano使用指南</h2>
+<p><strong>目录</strong></p>
+<ul>
+<li><a href="#安装">1. 安装</a></li>
+<li><a href="#项目创建">2. 项目创建</a></li>
+<li><a href="#数据上传">3. 数据上传</a></li>
+<li><a href="#标签构建">4. 标签构建</a></li>
+<li><a href="#任务标注">5. 任务标注</a></li>
+<li><a href="#数据导出">6. 数据导出</a></li>
+<li><a href="#数据转换">7. 数据转换</a></li>
+</ul>
+<p><a name="安装"></a></p>
+<h2 id="1">1. 安装</h2>
+<p><strong>以下标注示例用到的环境配置：</strong></p>
+<ul>
+<li>Python 3.8+</li>
+<li>doccano 1.6.2+</li>
+</ul>
+<p>在终端(terminal)使用pip安装doccano：</p>
+<pre><code class="language-shell">pip install doccano
 </code></pre>
+<p>安装完成后，运行以下命令行：</p>
+<pre><code class="language-shell"># Initialize database.
+doccano init
+# Create a super user.
+doccano createuser --username admin --password admin
+# Start a web server.
+doccano webserver --port 8000
+</code></pre>
+<p>在新的终端(terminal)运行如下命令行：</p>
+<pre><code class="language-shell"># Start the task queue to handle file upload/download.
+doccano task
+</code></pre>
+<p>在浏览器打开<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>，输入用户名和密码登录，开始使用doccano进行标注。doccano支持中文版本，可以点击右上角选择ZH(中文)。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176856052-bde31dd7-6317-49d9-8ae6-572c821f4e3d.png height=230 hspace='15'/>
+</div>
+
+<p>doccano还支持PostgreSQL、Docker、Docker Compose等安装方式，详情请参考<a href="https://github.com/doccano/doccano">doccano官方文档</a> 完成doccano的安装与初始配置。</p>
+<p><a name="项目创建"></a></p>
+<h2 id="2">2. 项目创建</h2>
+<p>文本分类支持多分类、多标签、层次分类三种类型的文本分类任务。</p>
+<p>点击创建（Create）开始创建一个新的项目，选择文本分类，然后填写项目名称、描述、Tags等项目信息。如果是多分类任务或者是单路径层次分类任务，勾选 <code>Allow single label</code> ，勾选后标签标注只允许选择一个标签进行标注。点击创建成功创建一个doccano项目。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176857646-b324d075-e281-4e9f-9f42-50fa2645b271.png height=400 hspace='15'/>
+</div>
+
+<p><a name="数据上传"></a></p>
+<h2 id="3">3. 数据上传</h2>
+<p>点击数据集-操作-导入数据集，开始导入本地待标注数据集：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176858888-79b781f9-2ce0-4348-ba14-faac19031867.png height=300 hspace='15'/>
+</div>
+<p>doccano支持<code>TextFile</code>、<code>TextLine</code>、<code>JSONL</code>和<code>CoNLL</code>四种数据上传格式，文本分类本地数据集定制训练中<strong>统一使用TextLine</strong>这一文件格式，即上传的文件需要为txt等格式，且在数据标注时，该文件的每一行待标注文本显示为一页内容。
+上传的文件为txt等格式，每一行为一条待标注文本，示例:</p>
+<pre><code class="language-text">黑苦荞茶的功效与作用及食用方法
+交界痣会凸起吗
+检查是否能怀孕挂什么科
+鱼油怎么吃咬破吃还是直接咽下去
+幼儿挑食的生理原因是
+...
+</code></pre>
+<p>上传数据类型<strong>选择TextLine</strong>，选择待标注文本或拖拽文本导入doccano项目中，点击导入，导入待标注数据集。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176859861-b790288f-32d7-4ab0-8b5f-b30e97f8c306.png height=300 hspace='15'/>
+</div>
+
+<p><a name="标签构建"></a></p>
+<h2 id="4">4. 标签构建</h2>
+<p>点击标签-操作-创建标签，开始添加分类类别标签：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176860972-eb9cacf1-199a-4cec-9940-6858434cfb94.png height=300 hspace='15'/>
+</div>
+<p>填入分类类别标签，选择标签颜色，建议不同标签选择不同颜色，最后点击保存或保存并添加下一个，保存标签：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176860977-55292e2a-8bf8-4316-a0f8-b925872e5023.png height=300 hspace='15'/>
+</div>
+<p>文本分类标签构建示例：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176860996-542cd1f7-9770-4b22-9586-a5bf0e802970.png height=300 hspace='15'/>
+</div>
+
+<p><strong>NOTE:</strong>
+我们默认层次分类标签不同层的标签之间具有关联性，以下图为例一个样本具有标签美短虎斑，我们默认还包含美国短毛猫和猫两个标签。</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/175248039-ce1673f1-9b03-4804-b1cb-29e4b4193f86.png height=300 hspace='15'/>
+</div>
+
+<p>对于层次分类任务的分类标签我们建议使用标签层次结构中<strong>叶结点标签路径作为标签</strong>，以上图的标签结构为例，我们建议使用<code>##</code>作为分隔符，分隔不同层之间的标签：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/177095794-0acb9665-3862-4de9-8771-8f424fd4f7b0.png height=300 hspace='15'/>
+</div>
+<p><a name="任务标注"></a></p>
+<h2 id="5">5. 任务标注</h2>
+<p>标注示例，选择对应的分类类别标签，输入回车（Enter）键确认：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176872684-4a19f592-be5c-4b86-8adf-eb0a7d7aa375.png height=200 hspace='10'/>
+</div>
+
+<p><a name="数据导出"></a></p>
+<h2 id="6">6. 数据导出</h2>
+<p>选择数据集-操作-导出数据集，将标注好的数据导出，我们默认所有数据集已经标注完成且正确：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176874195-d21615f4-8d53-4033-8f53-2106ebdf21f8.png height=250 hspace='20'/>
+</div>
+
+<p>选择导出的文件类型为<code>JSONL</code>，导出数据：</p>
+<div align="center">
+    <img src=https://user-images.githubusercontent.com/63761690/176873347-fd995e4e-5baf-4d13-92b9-800cabd1f0b1.png height=300 hspace='20'/>
+</div>
+
+<p>导出数据示例：</p>
+<pre><code class="language-text">{&quot;id&quot;: 23, &quot;data&quot;: &quot;黑苦荞茶的功效与作用及食用方法&quot;, &quot;label&quot;: [&quot;功效作用&quot;]}
+{&quot;id&quot;: 24, &quot;data&quot;: &quot;交界痣会凸起吗&quot;, &quot;label&quot;: [&quot;疾病表述&quot;]}
+{&quot;id&quot;: 25, &quot;data&quot;: &quot;检查是否能怀孕挂什么科&quot;, &quot;label&quot;: [&quot;就医建议&quot;]}
+{&quot;id&quot;: 26, &quot;data&quot;: &quot;鱼油怎么吃咬破吃还是直接咽下去&quot;, &quot;label&quot;: [&quot;其他&quot;]}
+{&quot;id&quot;: 27, &quot;data&quot;: &quot;幼儿挑食的生理原因是&quot;, &quot;label&quot;: [&quot;病因分析&quot;]}
+</code></pre>
+<p>标注数据保存在同一个文本文件中，每条样例占一行且存储为<code>jsonl</code>格式，其包含以下字段
+- <code>id</code>: 样本在数据集中的唯一标识ID。
+- <code>data</code>: 原始文本数据。
+- <code>label</code>: 文本对应类别标签。</p>
+<p><a name="数据转换"></a></p>
+<h2 id="7">7.数据转换</h2>
+<p>该章节详细说明如何通过<code>doccano.py</code>脚本对doccano平台导出的标注数据进行转换，一键生成训练/验证/测试集。当标注完成后，在 doccano 平台上导出 <code>JSON</code> 形式的文件，并将其重命名为 <code>doccano.jsonl</code>。</p>
+<h3 id="71">7.1 多分类任务</h3>
+<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="multi_class/README.md">多分类文本任务指南</a>中固定格式进行相应模型训练。</p>
+<p>数据标注转化运行：</p>
+<pre><code class="language-shell">python doccano.py \
+    --doccano_file doccano.jsonl \
+    --save_dir ./data \
+    --splits 0.8 0.1 0.1 \
+    --task_type &quot;multi_class&quot;
+</code></pre>
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="multi_class/analysis/README.md">多分类训练评估与模型优化指南</a></p>
+<h3 id="72">7.2 多标签任务</h3>
+<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="multi_label/README.md">多标签文本分类任务指南</a>中固定格式进行相应模型训练。</p>
+<p>数据标注转化运行：</p>
+<pre><code class="language-shell">python doccano.py \
+    --doccano_file doccano.jsonl \
+    --save_dir ./data \
+    --splits 0.8 0.1 0.1 \
+    --task_type &quot;multi_label&quot;
+</code></pre>
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="multi_label/analysis/README.md">多标签训练评估与模型优化指南</a></p>
+<h3 id="73">7.3 层次分类任务</h3>
+<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="hierarchical/README.md">层次文本分类任务指南</a>中固定格式进行相应模型训练。</p>
+<p>数据标注转化运行：</p>
+<pre><code class="language-shell">python doccano.py \
+    --doccano_file doccano.jsonl \
+    --save_dir ./data \
+    --splits 0.8 0.2 \
+    --task_type &quot;hierarchical&quot;
+</code></pre>
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="hierarchical/analysis/README.md">层次分类训练评估与模型优化指南</a>
+可配置参数说明：</p>
+<ul>
+<li><code>doccano_file</code>: 从doccano导出的数据标注文件。</li>
+<li><code>save_dir</code>: 训练数据的保存目录，默认存储在<code>data</code>目录下。</li>
+<li><code>splits</code>: 划分数据集时训练集、验证集所占的比例。默认为[0.8, 0.2]表示按照<code>8:2</code>的比例将数据划分为训练集、验证集。</li>
+<li><code>task_type</code>: 可选，选择任务类型,有多分类，多标签，层次分类三种类型的任务。</li>
+<li><code>is_shuffle</code>: 是否对数据集进行随机打散，默认为True。</li>
+<li><code>seed</code>: 随机种子，默认为1000.</li>
+<li><code>separator</code>: 不同层标签之间的分隔符，该参数只对层次文本分类任务有效。默认为"##"。</li>
+<li><code>valid</code>: 是否为稀疏数据筛选的有效标注数据，默认为False.</li>
+<li><code>dirty</code>: 是否为脏数据清洗策略标注数据，默认为False.</li>
+</ul>
+<p>转化后的doccano标注数据目录结构如下：</p>
+<pre><code class="language-text">data/
+├── train.txt # 训练数据集文件
+├── dev.txt # 开发数据集文件
+├── test.txt # 测试训练集文件（可选，数据划分为 train/dev/test 数据集）
+├── label.txt # 分类标签文件
+└── data.txt # 待预测数据文件
+</code></pre>
+<p>备注：
+- 默认情况下 <a href="./doccano.py">doccano.py</a> 脚本会按照比例将数据划分成train/dev 数据集，也可以划分为 train/dev/test 数据集。
+- 脚本会自动生成data.txt，如果数据划分为 train/dev/test 数据集，data.txt则为test数据集无标签数据；如果数据划分为 train/dev 数据集，data.txt为无标签数据。<strong>如果有未标注数据，则用未标注数据文件替换data.txt</strong>
+- 每次执行 <a href="./doccano.py">doccano.py</a> 脚本，将会覆盖已有的同名数据文件
+- 对于从doccano导出的文件，默认文件中的每条数据都是经过人工正确标注的。</p>
+<h2 id="references">References</h2>
+<ul>
+<li><strong><a href="https://github.com/doccano/doccano">doccano</a></strong></li>
+</ul>
 
 
 
