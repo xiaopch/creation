@@ -13,17 +13,17 @@
       
       
       
-        <link rel="prev" href="../4.2_Huggingface%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/">
+        <link rel="prev" href="../4.12_%E7%94%A8Python%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E4%BB%BF%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/">
       
       
-        <link rel="next" href="../2023/03.28_am_%E6%96%B0%E9%97%BB/">
+        <link rel="next" href="../4.13_python%E7%94%9F%E6%88%90%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>4.9 笑话 - 随遇而安</title>
+        <title>4.13 EinsteinPy模块介绍 - 随遇而安</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#einsteinpy" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.9 笑话
+              4.13 EinsteinPy模块介绍
             
           </span>
         </div>
@@ -379,11 +379,207 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.13_EinsteinPy%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.13 EinsteinPy模块介绍
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.13 EinsteinPy模块介绍
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einsteinpy" class="md-nav__link">
+    EinsteinPy模块介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features-of-the-einsteinpy-project" class="md-nav__link">
+    Key Features of The EinsteinPy Project
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Features of The EinsteinPy Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geodesic-trajectories" class="md-nav__link">
+    Geodesic Trajectories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolic-calculation-support" class="md-nav__link">
+    Symbolic Calculation Support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productive" class="md-nav__link">
+    Productive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-system" class="md-nav__link">
+    Coordinate System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source" class="md-nav__link">
+    Open Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citing" class="md-nav__link">
+    Citing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-einsteinpy" class="md-nav__link">
+    Why "EinsteinPy"?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-do-with-einsteinpy" class="md-nav__link">
+    Can I do  with EinsteinPy?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-future-of-the-project" class="md-nav__link">
+    What's the future of the project?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspiration" class="md-nav__link">
+    Inspiration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -439,48 +635,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.9 笑话
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.9_%E7%AC%91%E8%AF%9D/" class="md-nav__link">
         4.9 笑话
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    笑话
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3105,9 +3264,168 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    笑话
+  <a href="#einsteinpy" class="md-nav__link">
+    EinsteinPy模块介绍
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features-of-the-einsteinpy-project" class="md-nav__link">
+    Key Features of The EinsteinPy Project
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Features of The EinsteinPy Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geodesic-trajectories" class="md-nav__link">
+    Geodesic Trajectories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolic-calculation-support" class="md-nav__link">
+    Symbolic Calculation Support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productive" class="md-nav__link">
+    Productive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-system" class="md-nav__link">
+    Coordinate System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source" class="md-nav__link">
+    Open Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citing" class="md-nav__link">
+    Citing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-einsteinpy" class="md-nav__link">
+    Why "EinsteinPy"?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-do-with-einsteinpy" class="md-nav__link">
+    Can I do  with EinsteinPy?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-future-of-the-project" class="md-nav__link">
+    What's the future of the project?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspiration" class="md-nav__link">
+    Inspiration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3126,154 +3444,126 @@
                   
 
 
-  <h1>4.9 笑话</h1>
+  <h1>4.13 EinsteinPy模块介绍</h1>
 
-<h2 id="_1">笑话</h2>
-<p>1.我此刻最后解脱了，每次看你的作文我都有一种想要自杀的冲动！</p>
-<p>2.世界上有两种东西会趴玻璃，一个是壁虎，一个是班主任</p>
-<p>3.渐渐的，你们都去了不一样的城市，朕的心腹遍布全世界，兴复帝国指日可待啊。</p>
-<p>4.是人都有阴暗面，如果你偏说你很单纯，那我只能说，你不是人！</p>
-<p>5.月考不给你们露两手，还真以为我上课白睡的。</p>
-<p>6.执子之手，方知子丑，泪流满面，子不走我走。</p>
-<p>7.当我看见美女的时候，首先摸摸兜里，看看有没有钱！</p>
-<p>8.长大了要嫁给唐僧，能玩就玩，不能玩就把他吃掉。</p>
-<p>9.没有医保和寿险的，天黑后不要见义勇为……</p>
-<p>10.无论什么事情，习惯了就好，就连伤痛也一样。</p>
-<p>11.做人必须要昂首挺胸，这样别人才看不见你的双下巴。</p>
-<p>12.如果上帝关掉你的一扇窗顺便也把门堵上了，有可能上帝要开空调了哦。</p>
-<p>13.此刻你补作业时流的泪，就是你浪的时候脑子进的水。</p>
-<p>14.所谓成长，就是在听到“波涛汹涌”四个字，再也联想不到大海了。</p>
-<p>15.自我感觉良好的时候，正是别人对你感觉最不好的时候。</p>
-<p>16.上班就是要发扬死猪不怕开水烫的精神！</p>
-<p>17.俺从不写错字，但俺写通假字。</p>
-<p>18.鸭子太嚣张，兔子太多嘴，我是猪，我很乖。</p>
-<p>19.穷耐克，富阿迪，流氓一身阿玛尼。</p>
-<p>20.自从放了假，每一天洗脸这件事，再也跟我无关。</p>
-<p>21.跟我要儿童节礼物，我能够给，但过几天的父亲节你们就要注意了。</p>
-<p>22.蚊子不可恶，可恶的是唐伯虎忘了给我们点蚊香。</p>
-<p>23.有些孩子，老幻想自己是公主，我就不一样，我是王子。</p>
-<p>24.兄台，别逼我动用在北京的势力，我本不想掀起一场腥风血雨。</p>
-<p>25.睡到半夜手机掉了，结果我捡起拖鞋睡着了！</p>
-<p>26.每年夏天晒黑了，我总是会想“没事，冬天就修复好了。</p>
-<p>27.今日什么都不想做，只想安静地帅上一天。</p>
-<p>28.你像捧在手心里的挚爱，掌心一合，不憋死你才怪…</p>
-<p>29.哥吸烟，是因为它伤肺，不悲哀。</p>
-<p>30.小时候关灯，总是要以迈的速度冲上床！</p>
-<p>31.自拍这种东西：三分天注定，七分靠滤镜。</p>
-<p>32.题不必须要会做，但是翻卷声音必须要响。</p>
-<p>33.陌生阻止你认识陌生的事物，熟悉妨碍你理解熟悉的事物。</p>
-<p>34.昨日去市里参加放鸽子比赛，结果就我一个人去了。</p>
-<p>35.这风真猥琐，把我的嘴都亲干了。</p>
-<p>36.今日天气很好，在房间里宅久了，准备去客厅散散心。</p>
-<p>37.虽然你身上喷了古龙水，但我还是能隐约闻到一股人渣味儿。</p>
-<p>38.学佛是对自己的良心交待，不是做给别人看的。</p>
-<p>39.时间过得真快，还差三百五十五天我们就认识一年了。</p>
-<p>40.我的人生一半是倒霉，另一半是处理倒霉的事。</p>
-<p>41.你给我一个微笑，我也会还你一个微笑，也不是善意的招呼，只是让你知道：老子笑起来比你好看。</p>
-<p>42.我觉得打电话挺好的，这样说的每句话都是值钱的。</p>
-<p>43.用室友手机搜东西，看见搜索历史中有一条——如何强奸室友？当时脸都吓绿了！</p>
-<p>44.叹气是最浪费时间的事情，哭泣是最浪费力气的行径。</p>
-<p>45.一个人快乐不是因为他拥有的多，而是他计较的少。一个健康的心理，不是因为他拥有了快乐，而是因为他释怀了快乐。</p>
-<p>46.一个彻悟的程度，恰等于他所受痛苦的深度。</p>
-<p>47.我有八十多种小辣条，此刻思考跟我做朋友还来得及。</p>
-<p>48.月老，你能不能别在用劣质的线给我牵了嘛，隔三差五就断。</p>
-<p>49.别说别人可怜，自己更可怜，自己又懂得人生多少？</p>
-<p>50.我常在海边，却不喜欢海，而是喜欢浪。</p>
-<p>51.世界上最遥远的距离，就他妈是星期一到星期五。</p>
-<p>52.远处看到了一个帅哥，走近一看原来是一面镜子。</p>
-<p>53.单身的男的叫单身狗，单身的女的叫狗不理。</p>
-<p>54.有些失望是不可避免的，但大部分的失望，都是因为你高估了你自己。</p>
-<p>55.我一在强调做人要低调。可你们非要给我掌声和尖叫。</p>
-<p>56.能抗洪的尿布湿，才是真正的尿布湿！</p>
-<p>57.时间是用来流浪的，身躯是用来相爱的，生命是用来遗忘的，而灵魂，是用来歌唱的。</p>
-<p>58.瘦不了的永远在骚动，吃不胖的都有恃无恐。</p>
-<p>59.人生能够适当游戏，但不能够游戏人生。</p>
-<p>60.不要把自己的伤口揭开给别人看，世界上多的不是医师，多的是撒盐的人。</p>
-<p>61.人家手牵手，我牵我的狗，看谁不爽咬一口。</p>
-<p>62.骑驴把歌颂，不是秃子头发总是会失光的。</p>
-<p>63.我本来想给生活一个吻，而现实却给了我两巴掌，你说作为回报，我能不踹他一脚么？</p>
-<p>64.活了多年，没能为祖国为人民做点什么，每思及此，悲哀欲绝。</p>
-<p>65.不要同没有素质的人争论，因为那就像与猪摔跤，赢了不光荣，输了更丢人。</p>
-<p>66.暑假前信誓旦旦的说我要减肥，暑假后没瘦还胖了！</p>
-<p>67.只暖一个女生的男生才叫暖男，暖所有女生的男生叫烧锅炉。</p>
-<p>68.挤公交是包含散打瑜珈柔道平衡木等多种体育和健身项目于一体的综合性运动。</p>
-<p>69.你矮是终身的，我胖却是暂时的。</p>
-<p>70.别和我抢东西，虽然我不会撒娇，但我会玩摔跤。</p>
-<p>71.我超潜力还有很多，不只是超可爱。</p>
-<p>72.坏人需要实力，败类更需要品位。</p>
-<p>73.古九尾狐狸有九命，分别亡于语数外政史地理化生。</p>
-<p>74.提问：为什么暑假必须比寒假长?回答：因为热胀冷缩。</p>
-<p>75.受约束的是情绪，不受约束的是生命。</p>
-<p>76.种草不让人去躺，不如改种仙人掌！</p>
-<p>77.聪明的女人对付男人，而笨女人对付女人。</p>
-<p>78.会演戏的不必须都是演员，会装的必须就是孙子。</p>
-<p>79.西游记告诉我们：凡是有后台的妖怪都被接走了，凡是没后台的都被一棒子打死了。</p>
-<p>80.给我订两张去天庭的机票，我要亲自找月老，逼着他给我牵一条红线。</p>
-<p>81.心狠手辣的我，舔了一下自己的手指，被辣哭了。</p>
-<p>82.我的心不是公交车，不是有空位你就坐下来。</p>
-<p>83.连洗头都要很留意，生怕脑子进了水。</p>
-<p>84.如果我是僵尸，我必须择吃掉所有好学生的脑。</p>
-<p>85.多撮合撮合班里的男女同学，这样将来能省一半的份子钱。</p>
-<p>86.怕爹是孝顺，怕老婆是爱情。</p>
-<p>87.在家不能对着手机笑，家长会以为你在恋爱。</p>
-<p>88.下雨了，别忘了打伞，湿身是小，淋病就麻烦啦！</p>
-<p>89.老师的教诲，小明没齿难忘，于是第二天，他镶了一副假牙。</p>
-<p>90.大家好像都去谈恋爱了，留我一人独自建设社会主义。</p>
-<p>91.我不是随便的人。我随便起来不是人。</p>
-<p>92.左手拿着书，右手拿着打火机，哪里不会点哪里！</p>
-<p>93.混社会是个体力活儿，讲究四门功课：闪转腾挪。</p>
-<p>94.我诅咒你一辈子买方便面没有调料包。</p>
-<p>95.我这人从不记仇，一般有仇我当场就报了。</p>
-<p>96.你这么爱说风凉话，莫非你是风油精和清凉油生出来的？</p>
-<p>97.情若能自控，我必须会按捺住我那颗吃货的心。</p>
-<p>98.我个性困的时候，道德标准也没有醒，老师们要留意了。</p>
-<p>99.世界那么大能认识你，我觉得好不幸。</p>
-<p>100.三分天注定，七分靠打扮。</p>
-<p>101.我们老板是小怪兽，我们是奥特曼。但我们见了老板就跑，因为我们没带召唤器。</p>
-<p>102.炫富就像孔雀开屏，一心想展示华丽的外表，却被人看见了屁眼。</p>
-<p>103.长得好看的人才有青春，像我们这种人就只有大学了。</p>
-<p>104.我是一个潜力无穷的学生，我能够三小时写完国庆作业，但这他妈是被动技能，只能十月七号晚上启动。</p>
-<p>105.女人一生最喜欢两朵花：一是有钱花，二是尽量花！</p>
-<p>106.大姨妈就像灰太狼，走的时候总会喊上一句，我必须会回来的。</p>
-<p>107.此刻的梦想决定着你的将来，所以还是再睡一会吧。</p>
-<p>108.人们厌恶谎言，有时又甘愿堕入自己或别人编织的谎言中。</p>
-<p>109.就你这个样貌，这个年龄，已经跌破发行价了。</p>
-<p>110.自打我学会了顶嘴，我老婆也学会了磨刀。</p>
-<p>111.我喜欢你就像我喜欢海，可我也不能去跳海，我能够去上海。</p>
-<p>112.世界上最远的距离不是天涯和海角，而是老师在讲第四章，学霸在自学第八章，而我在看目录！</p>
-<p>113.我们的爱情，医生说他已经尽力了。</p>
-<p>114.别回头，哥恋的只是你的背影。</p>
-<p>115.比我帅的都没我有才，比我有才的都没我帅！选不选我做你男朋友你自己看着办吧。</p>
-<p>116.强迫症就是：睡觉前必须上个厕所，如果去过厕所后再玩手机，那一会睡觉还要再去一趟。</p>
-<p>117.我上了床就和野兽一样，具体来说像考拉，一睡就是个小时。</p>
-<p>118.前年睡不醒，后年睡不着。</p>
-<p>119.一脚揣不出你屎来，算你拉的干净！</p>
-<p>120.我知道我的努力有一大半是没有用的，但是我却不知道究竟是哪一半。</p>
+<h2 id="einsteinpy">EinsteinPy模块介绍</h2>
+<table>
+<thead>
+<tr>
+<th>Name:</th>
+<th>EinsteinPy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Website:</td>
+<td><a href="https://einsteinpy.org/">https://einsteinpy.org/</a></td>
+</tr>
+<tr>
+<td>Version:</td>
+<td>0.5.dev0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EinsteinPy</strong> is an open-source pure Python package dedicated to the study of problems arising in General Relativity and gravitational physics. Using EinsteinPy, it is possible to approach problems symbolically as well as numerically. On the symbolic side, EinsteinPy provides a robust API, which allows users to access several predefined metrics or to define custom metrics and perform symbolic calculations on them. Computation of quantities, such as terms of metric tensors, Christoffel symbols, Riemann Curvature tensor, Ricci tensor, stress-energy tensor and more are all supported and extensible, since the symbolic modules are built on top of SymPy. On the numerical side, EinsteinPy provides tools to calculate and visualize geodesics, metric singularities and hypersurface embeddings in certain spacetimes. We hope to extend the package to include more features in the future. EinsteinPy is released under the MIT license.</p>
+<h2 id="documentation">Documentation</h2>
+<p><a href="https://docs.einsteinpy.org/en/latest/?badge=latest"><img alt="docslatest" src="https://camo.githubusercontent.com/6b9c4a1e6bcb49b28ec4f2a9bf6f3b427d974b6b7b3a9dc0b9b8d84f620b2c2e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f63732d6c61746573742d627269676874677265656e2e7376673f7374796c653d666c61742d737175617265" /></a> <a href="https://docs.einsteinpy.org/en/stable/?badge=stable"><img alt="docsstable" src="https://camo.githubusercontent.com/4fc033f406808301c549bad1e60809f5d4c3e37033b6f6e6470655f2f6e70c85/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f63732d737461626c652d627269676874677265656e2e7376673f7374796c653d666c61742d737175617265" /></a></p>
+<p>Complete documentation, including a user guide and an API reference, can be perused on the wonderful <a href="https://docs.einsteinpy.org/en/latest/">Read the Docs</a>.</p>
+<h2 id="examples">Examples</h2>
+<p><a href="https://mybinder.org/v2/gh/einsteinpy/einsteinpy/main?filepath=docs/source/examples/index.ipynb"><img alt="mybinder" src="https://camo.githubusercontent.com/e3988d3977c5f1571a29788d521c8cadf8e8eed01e52a546ffbbda6a5410d319/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c61756e63682d62696e6465722d6536363538312e7376673f7374796c653d666c61742d737175617265" /></a></p>
+<p>Several tutorial Jupyter notebooks on specific applications of EinsteinPy can be found in the <a href="https://github.com/einsteinpy/einsteinpy/tree/main/docs/source/examples">examples</a> directory. You can launch a Jupyter notebook instance in the cloud using <a href="https://mybinder.org/v2/gh/einsteinpy/einsteinpy/main?filepath=docs/source/examples/index.ipynb">binder</a> to run and edit these notebooks without installing anything. Try it out!</p>
+<h2 id="requirements">Requirements</h2>
+<p>EinsteinPy requires the following Python packages:</p>
 <ul>
-<li>
-<p>一老伙计丢车，当他把新买的一辆车放在楼下时他上了三把锁并夹了一张纸:让你丫偷!第二天车没丢，并且多了两把锁和一张，上写着：让你丫骑.</p>
-</li>
-<li>
-<p>朋友中午请我吃饭，买单的时候我看到他掏钱掏得很慢，就说“要不我来掏吧。”“那怎么好意思啊！”“没事。”于是我把手伸进了他的口袋。</p>
-</li>
-<li>
-<p>考试分数出来了，小亮很无奈讲到：此次没有考好，考了零分。茜茜也很无奈正宗：哎，我是零分。小亮猛的一敲桌子，对茜茜讲到：这下坏掉，教师是否会认为大家舞弊了。</p>
-</li>
-<li>
-<p>女友是吃货，记得第一次领她回家吃饭，我妈不停地给她夹菜，终于她忍不住了，偷偷的对我说：“你能不能给我夹块肉啊？”</p>
-</li>
-<li>
-<p>在同学家吃了个晚饭，他说喝个茶聊天叙旧非要留我。家里面又没茶叶了，便到邻居家去借。很长时间邻居也没有送来，水烧开，也不见拿来，没办法只好不断往锅里添加凉水。过了半天，锅里的水已经满了，而茶叶最终也没有送来，嫂子对同学说：茶是喝不成了，不如留他洗个澡算了！</p>
-</li>
-<li>
-<p>有的人在起床的时候，先闻闻袜子是不是还能穿一天。我想对你说，太不讲卫生了！我都是看硬度</p>
-</li>
-<li></li>
-<li>
-<p>不管是在在学校还是在社会，我们都有可能要写幽默搞笑的句子。只是呢，你知不知道什么是幽默？幽默是内心强大，有直面真相、戏谑调侃的勇气。你无才无德?那恭喜你啦，你前途无量。不知道你有没有在找幽默搞笑的句子呢？请您阅读小编辑为您编辑整理的《每天一个笑话大全爆笑100个》，欢迎大家与身边的朋友分享吧！</p>
-</li>
-<li></li>
+<li><code>NumPy</code>, for basic numerical routines</li>
+<li><code>SciPy</code>, for solving ordinary differential equations</li>
+<li><code>SymPy</code>, for symbolic calculations</li>
+<li><code>Astropy</code>, for handling conversion between physical units</li>
+<li><code>Matplotlib</code>, for producing static visualizations</li>
+<li><code>Plotly</code>, for producing interactive visualizations</li>
+<li><code>Numba</code>, for accelerating the code</li>
 </ul>
+<p>EinsteinPy is currently tested on Linux, Windows and macOS on Python 3.7 and 3.8, against the latest <code>NumPy</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Site</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td>CircleCI</td>
+<td><a href="https://circleci.com/gh/einsteinpy/einsteinpy"><img alt="circleci" src="https://camo.githubusercontent.com/7cd3fa2be6c1a05d5c610b33e7860717e2bbc00a393f2541c24e197566196401/68747470733a2f2f696d672e736869656c64732e696f2f636972636c6563692f70726f6a6563742f6769746875622f65696e737465696e70792f65696e737465696e70792f6d61696e2e7376673f7374796c653d666c61742d737175617265266c6f676f3d636972636c656369" /></a></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>Github Actions</td>
+<td><a href="https://github.com/einsteinpy/einsteinpy/actions?query=branch%3Amain"><img alt="ghactions" src="https://camo.githubusercontent.com/4da675c761144581fd7df046edee1e32690b452bfa1e274f25360ee6e3a04d8c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f65696e737465696e70792f65696e737465696e70792f707974686f6e7061636b6167652e796d6c3f6272616e63683d6d61696e266c6f676f3d676974687562267374796c653d666c61742d737175617265" /></a></td>
+</tr>
+<tr>
+<td>Windows x64</td>
+<td>Appveyor</td>
+<td><a href="https://ci.appveyor.com/project/shreyasbapat/einsteinpy/branch/main"><img alt="appveyor" src="https://camo.githubusercontent.com/498d919a960de8e2ddc72ea44e387bc09a318acb15f9358b0eb2bf94d748d08e/68747470733a2f2f696d672e736869656c64732e696f2f6170707665796f722f63692f7368726579617362617061742f65696e737465696e70792f6d61696e3f6c6f676f3d6170707665796f72267374796c653d666c61742d737175617265" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation</h2>
+<p>Currently, the recommended way to install EinsteinPy is using <code>pip</code> from <a href="https://pypi.org/project/einsteinpy/">PyPI</a>:</p>
+<pre><code>$ pip install einsteinpy
+</code></pre>
+<p>Or, you can install the package using <a href="https://anaconda.org/conda-forge/einsteinpy">conda</a>:</p>
+<pre><code>$ conda install einsteinpy --channel conda-forge
+</code></pre>
+<p>Note that the package on <code>conda-forge</code> is currently a version behind <code>PyPI</code>. We are working on updating it.</p>
+<p>For Debian/Ubuntu/Mint users, the package is installable via <a href="https://packages.debian.org/sid/python3-einsteinpy">apt</a> (Ubuntu 19.04 onwards):</p>
+<pre><code>$ sudo apt install python3-einsteinpy
+</code></pre>
+<p>If you prefer to install from source to stay on the latest but likely unstable version, you can do so using the method described <a href="https://docs.einsteinpy.org/en/latest/installation.html#latest-version">here</a>.</p>
+<h2 id="key-features-of-the-einsteinpy-project">Key Features of The EinsteinPy Project</h2>
+<hr />
+<h4 id="geodesic-trajectories">Geodesic Trajectories</h4>
+<p>EinsteinPy makes it very simple to calculate geodesic trajectories in Schwarzschild, Kerr and Kerr Newman Geometries!</p>
+<h4 id="visualization">Visualization</h4>
+<p>The most amazing part of it is the plotting module! The plotting module can make anyone understand Einstein’s ideas in a plot!</p>
+<h4 id="symbolic-calculation-support">Symbolic Calculation Support</h4>
+<p>EinsteinPy provides and amazing support for sympy based symbolic calculation of various tensors and their operations!</p>
+<h4 id="productive">Productive</h4>
+<p>Work in Python close to all the Scientific Python tools (Astropy, Numpy etc.) you are already familiar with.</p>
+<h4 id="coordinate-system">Coordinate System</h4>
+<p>You don’t get confused between what coordinate system to use! EinsteinPy handles coordinates smoothly!</p>
+<h4 id="open-source">Open Source</h4>
+<p>Everything, including the core module, plotting, symbolic module is MIT licensed and available on <a href="https://github.com/einsteinpy/einsteinpy">GitHub</a>.</p>
+<h2 id="problems">Problems</h2>
+<p>If the installation fails or you find something that doesn't work as expected, please open an issue in the <a href="https://github.com/einsteinpy/einsteinpy/issues">issue tracker</a>.</p>
+<h2 id="contributing">Contributing</h2>
+<p>EinsteinPy is a community project. Hence, all contributions are more than welcome! For more information, head to <a href="https://github.com/einsteinpy/einsteinpy/blob/main/CONTRIBUTING.rst">CONTRIBUTING</a> or see the <a href="https://docs.einsteinpy.org/en/latest/dev_guide.html">developer guide</a>.</p>
+<h2 id="support">Support</h2>
+<p><a href="https://gitter.im/EinsteinPy-Project/EinsteinPy?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/EinsteinPy-Project/EinsteinPy" src="https://camo.githubusercontent.com/3ffaf2f1bc1daa369bd2465ea0493765bba19e3a262d481396d964a2d00ef801/68747470733a2f2f696d672e736869656c64732e696f2f6769747465722f726f6f6d2f45696e737465696e50792d50726f6a6563742f45696e737465696e50792e7376673f6c6f676f3d676974746572267374796c653d666c61742d737175617265" /></a> <a href="https://app.element.io/#/room/#einsteinpy:matrix.org"><img alt="riotchat" src="https://camo.githubusercontent.com/69c24b6b48c1744945181a513f4ddbbb6054881caa18b83a60f93926b13ef1cc/68747470733a2f2f696d672e736869656c64732e696f2f6d61747269782f65696e737465696e70793a6d61747269782e6f72672e7376673f6c6f676f3d72696f74267374796c653d666c61742d737175617265" /></a> <a href="https://groups.io/g/einsteinpy-dev"><img alt="mailing" src="https://camo.githubusercontent.com/32575984c627009b78e1777fa44cc5e6c25484ce23d65df15026f180351b1318/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696c696e672532306c6973742d67726f7570732e696f2d3863626364312e7376673f7374796c653d666c61742d737175617265" /></a></p>
+<p>Please join our [<a href="https://matrix.to/#/#einsteinpy:matrix.org">matrix]</a> channel or <a href="https://gitter.im/EinsteinPy-Project/EinsteinPy">Gitter</a> chat room for general discussions and further queries.</p>
+<p>Release announcements take place on our <a href="https://groups.io/g/einsteinpy-dev">mailing list</a>. Feel free to join!</p>
+<p>If you still have a doubt, write to us directly at <a href="mailto:all@einsteinpy.org">all@einsteinpy.org</a>.</p>
+<h2 id="citing">Citing</h2>
+<p>If you use EinsteinPy in your project, please <a href="mailto:all@einsteinpy.org">drop us a line</a>. You can also use the DOI to cite it in your publications. This is the latest one:</p>
+<p><a href="https://doi.org/10.5281/zenodo.2582387"><img alt="doi" src="https://camo.githubusercontent.com/7ee6f9c9eeebdd898c19e43ebdc10df16214e8b0797b94bbba0d191805e2b402/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f444f492f31302e353238312f7a656e6f646f2e323538323338372e737667" /></a></p>
+<p>And this is an example citation format:</p>
+<blockquote>
+<p>Shreyas Bapat et al (2021). EinsteinPy 0.4.0 (v0.4.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.2582387">https://doi.org/10.5281/zenodo.2582387</a></p>
+</blockquote>
+<h2 id="license">License</h2>
+<p><a href="https://github.com/einsteinpy/einsteinpy/raw/main/COPYING"><img alt="license" src="https://camo.githubusercontent.com/6ae43f07818e28c456bc0e4f35a61ebb4f08677499bf4eaa31c508107ccec75f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e7376673f7374796c653d666c61742d737175617265" /></a></p>
+<p>EinsteinPy is released under the MIT license, thereby allowing commercial use of the library. Please refer to <a href="https://github.com/einsteinpy/einsteinpy/blob/main/COPYING">COPYING</a> for more details.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="why-einsteinpy">Why "EinsteinPy"?</h3>
+<p>EinsteinPy borrows the name of the famous physicist, Nobel laureate and revolutionary human, Dr. Albert Einstein. This is a small tribute on our part for the amazing work he did for humanity!</p>
+<h3 id="can-i-do-with-einsteinpy">Can I do <insert nerdy thing> with EinsteinPy?</h3>
+<p>EinsteinPy is focused on general relativity. One can always discuss probable features in discussion forums and the mailing list and also work with the maintainers to try to implement them. We welcome every contribution to EinsteinPy. Please see <a href="https://github.com/einsteinpy/einsteinpy/blob/main/CONTRIBUTING.rst">CONTRIBUTING</a> for more details.</p>
+<h3 id="whats-the-future-of-the-project">What's the future of the project?</h3>
+<p>EinsteinPy is actively maintained and we hope to receive an influx of new contributors. The best way to get an idea about the roadmap is to view the <a href="https://github.com/einsteinpy/einsteinpy/milestones">milestones</a> of the project.</p>
+<h3 id="inspiration">Inspiration</h3>
+<p>The documentation and code structure is shamelessly inspired by <a href="https://docs.poliastro.space/">poliastro</a>. We wholeheartedly thank the <code>poliastro</code> developers that made this possible. EinsteinPy is nothing without its supporters and community.</p>
 
 
 
