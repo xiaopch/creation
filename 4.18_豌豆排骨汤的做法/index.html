@@ -23,7 +23,7 @@
     
     
       
-        <title>4.13 python生成黑洞图像 - 随遇而安</title>
+        <title>4.18 豌豆排骨汤的做法 - 随遇而安</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.13 python生成黑洞图像
+              4.18 豌豆排骨汤的做法
             
           </span>
         </div>
@@ -284,12 +284,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.13 python生成黑洞图像
+          4.18 豌豆排骨汤的做法
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        4.13 python生成黑洞图像
+        4.18 豌豆排骨汤的做法
       </a>
       
         
@@ -306,9 +306,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    python生成黑洞图像
+  <a href="#_1" class="md-nav__link">
+    豌豆排骨汤的做法
   </a>
+  
+    <nav class="md-nav" aria-label="豌豆排骨汤的做法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    豌豆排骨汤材料配方：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    制作步骤：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3178,9 +3198,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    python生成黑洞图像
+  <a href="#_1" class="md-nav__link">
+    豌豆排骨汤的做法
   </a>
+  
+    <nav class="md-nav" aria-label="豌豆排骨汤的做法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    豌豆排骨汤材料配方：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    制作步骤：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3199,1033 +3239,20 @@
                   
 
 
-  <h1>4.13 python生成黑洞图像</h1>
-
-<h2 id="python">python生成黑洞图像</h2>
-<pre><code># -*- coding: utf-8 -*-
-&quot;&quot;&quot;
-Black hole simulation
-
-@author: Jonathan Peltier
-
-GitHub deposit:
-https://github.com/Python-simulation/Black-hole-simulation-using-python/
-
-BlackHole class solving photons trajectories closed to a static black hole.
-Render the perceived image deformation by a black hole.
-Object-oriented programming version.
-Numpy optimized version 30x faster.
-&quot;&quot;&quot;
-
-import sys
-import math  # import known fonctions and constants
-import time  # Used to check computation time
-import os.path  # Used to search files on computer
-from tkinter import Tk, Frame
-from tkinter import Button, Label, Checkbutton, BooleanVar, StringVar, Spinbox
-from tkinter.filedialog import askopenfilename
-
-import matplotlib.pyplot as plt  # Graphical module
-#from matplotlib.widgets import Slider  # TODO: use it for offset GUI
-import numpy as np  # Use for matrices and list
-from scipy.interpolate import interp1d  # Use for interpolation
-from scipy.integrate import solve_ivp  # Integrate ord diff eqs
-from scipy.constants import pi  # 3.141592653589793
-from scipy.constants import c  # Speed light vaccum = 299792458 m/s
-from scipy.constants import G  # Newton constant = 6.67408e-11 m3/Kg/s2
-from scipy.constants import au  # sun-earth distance m = 149597870691 m
-from PIL import Image  # Use to open, modify and save images
-from PIL import ImageDraw
-
-M_sun = 1.98840987e+30  # solar mass in Kg taken from AstroPy
-
-
-class BlackHole:
-    &quot;&quot;&quot;Main class&quot;&quot;&quot;
-    def __init__(self):
-        &quot;&quot;&quot;Main class&quot;&quot;&quot;
-        self.init_var()
-
-        try:
-            abs_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-            folder = os.path.join(abs_path, 'images')
-            img_name = os.path.join(folder, 'milkyway.jpg')
-            self.open(img_name, size=self.axe_X)
-
-        except FileNotFoundError:
-            print(&quot;milkyway image not found, creating a default image&quot;)
-            self.create_default_image(size=self.axe_X)
-
-    def init_var(self):
-        &quot;&quot;&quot;Initialize most variables.&quot;&quot;&quot;
-        # TODO: allow both M and Rs definition
-        #M = 1.7342*10**22/M_sun  # Black hole mass in solar mass (alternative, del M below)
-        #Rs = 2*G*M_sun*M/c**2/Ds  # Schwarzschild radius in Astronomical unit (ua)
-        self.Rs = 8  # Schwarzschild radius in ua
-        self.M = self.Rs * c**2 / 2 / G * au / M_sun  # Black hole mass in solar masses  (del if use solar mass)
-        self.D = 50  # Distance from the black hole in ua
-        self.axe_X = 360  # Image size over x
-        self.FOV_img = 360  # The image FOV (it doesn't change the current image FOV !)
-
-        self.kind = 'cubic'  # Interpolation: linear for speed(less accurate), cubic for precision (slow)
-        self.fixed_background = True
-        self.display_trajectories = True
-        self.display_interpolation = True
-        self.display_blackhole = True
-        # Note that openning matrices is slower than computing the blackhole,
-        # but skip trajectories calculation than takes 1.5s -&gt; better to open
-        # matricies at low resolution but better to compute at high resolution
-        self.use_matrix = True  # Use matrices if exists  # TODO: GUI option
-        self.save_matrix = False  # will save or overwrite matrices if exists
-
-        self.zoom = 0
-        self.offset_X = 0
-        self.offset_X2 = 0
-        self.out_graph = False
-        #----------------------------------------------------------------------
-        self.img_matrix_x = None
-        self.img_matrix_y = None
-        self.img2 = None
-        self.ax = None
-        #----------------------------------------------------------------------
-        # if want matricies without images loaded
-#        self.axe_Y = self.axe_X//2
-#        self.img_res = self.axe_X/360  # =Pixels per degree along axis
-#        self.img_res_Y = self.axe_Y/180  # =Pixels per degree along axis
-#        self.FOV_img_Y = self.FOV_img//2
-#        self.img_debut = None
-
-    def create_default_image(self, size=&quot;default&quot;, pattern=&quot;grid&quot;):
-        &quot;&quot;&quot;Create a default image if doesn't want to import one.&quot;&quot;&quot;
-        if size == &quot;default&quot;:
-            size = self.axe_X
-
-        abs_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-        folder = os.path.join(abs_path, 'images')
-        self.img_name = os.path.join(folder, 'default.png')
-
-        axe_X = 1000  # int(self.axe_X)
-        axe_Y = 500  # self.axe_X//2
-
-        if pattern == &quot;noise&quot;:
-            pixels = np.random.randint(0, 255, (axe_Y, axe_X, 3))
-            self.img_original = Image.fromarray(pixels.astype('uint8'), 'RGB')
-
-        elif pattern in (&quot;grid&quot;, &quot;cercle&quot;, &quot;rectangle&quot;):
-            self.img_original = Image.new('RGB', (axe_X, axe_Y), color=255)
-            Drawer = ImageDraw.Draw(self.img_original)
-            Drawer.rectangle((0, 0, axe_X/2, axe_Y/2), fill=&quot;yellow&quot;)
-            Drawer.rectangle((0, axe_Y/2, axe_X/2, axe_Y), fill=&quot;green&quot;)
-            Drawer.rectangle((axe_Y, 0, axe_X, axe_Y/2), fill=&quot;blue&quot;)
-            Drawer.rectangle((axe_Y, axe_Y/2, axe_X, axe_Y), fill=&quot;red&quot;)
-
-            nbr_rect = 40
-            if pattern == &quot;grid&quot;:
-                for i in range(0, axe_X, axe_X//nbr_rect):
-                    Drawer.line((i, 0, i, axe_Y), fill=&quot;black&quot;, width=2)
-                for i in range(0, axe_Y, axe_Y//(nbr_rect//2)):
-                    Drawer.line((0, i, axe_X, i), fill=&quot;black&quot;, width=2)
-            else:
-                for i in range(0, axe_X, axe_X//nbr_rect):
-
-                    if pattern == &quot;cercle&quot;:
-                        Drawer.ellipse((i, i/2, axe_X-i, axe_Y-i/2), outline=&quot;black&quot;)
-                    elif pattern == &quot;rectangle&quot;:
-                        Drawer.rectangle((i, i/2, axe_X-i, axe_Y-i/2), outline=&quot;black&quot;)
-
-        else:
-            raise ValueError(&quot;pattern parameter must be: grid, noise, cercle or rectangle&quot;)
-
-        self.img_debut = self.img_resize(size)
-        return self.img_debut
-
-    def open(self, img_name, size=&quot;default&quot;):
-        &quot;&quot;&quot;Open an equirectangular image.
-        Can resize it with the size option.
-        &quot;&quot;&quot;
-        print(&quot;Openning %s&quot; % img_name)
-        self.img_original = Image.open(img_name, mode='r')
-        self.img_name = img_name
-
-        if size == &quot;default&quot;:
-            size = self.img_original.size[0]
-
-        self.img_debut = self.img_resize(size)
-        return self.img_debut
-
-    def img_resize(self, axe_X):
-        &quot;&quot;&quot;Create img_debut at the desired size from the img_original.&quot;&quot;&quot;
-        self.img_debut = self.img_original.convert(&quot;RGB&quot;)
-        size_X, size_Y = self.img_debut.size
-        size_factor = axe_X/size_X
-        axe_X = int(axe_X)
-        axe_Y = int(size_factor*size_Y)
-
-        # even dimensions needed for image (error if not)
-        if axe_X % 2 != 0:
-            axe_X -= 1
-
-        if axe_Y % 2 != 0:
-            axe_Y -= 1
-
-        self.img_debut = self.img_debut.resize((axe_X, axe_Y), Image.ANTIALIAS)
-        self.FOV_img_Y = self.FOV_img * axe_Y / axe_X
-
-        if self.FOV_img_Y &gt; 180:
-            raise StopIteration(&quot;Can't have a FOV&gt;180 in the Y-axis&quot;)
-
-        print(&quot;size %sx%s pixels\n&quot; % (axe_X, axe_Y))
-        self.img_res = axe_X/360  # =Pixels per degree along axis
-        self.img_res_Y = axe_Y/180  # =Pixels per degree along axis
-
-        self.axe_X, self.axe_Y = axe_X, axe_Y
-
-        return self.img_debut
-
-    def compute(self, Rs, D):
-        &quot;&quot;&quot;main method used to compute the black hole deformation and apply it
-        on a image.&quot;&quot;&quot;
-        self.Rs = Rs
-        self.D = D
-        self.M = (self.Rs * c**2 * au) / (2 * G * M_sun)
-        print(&quot;M = %.1e M☉\t%.2e Kg&quot; % (self.M, self.M*M_sun))
-        print(&quot;Rs = %s ua\t%.2e m&quot; % (self.Rs, self.Rs*au))
-        print(&quot;D = %s ua\t%.2e m\n&quot; % (self.D, self.D*au))
-
-        vrai_debut = time.process_time()
-
-        if self.use_matrix and self.check_matrices():
-            img_matrix_x, img_matrix_y = self.open_matrices()
-            plt.close('Trajectories interpolation')
-            plt.close('Trajectories plan')
-
-        else:
-            seen_angle, deviated_angle = self.trajectories()
-
-            self.interpolation = self.interpolate(seen_angle, deviated_angle)
-
-            if self.display_interpolation is True:
-                xmin = np.min(seen_angle)
-                xmax = np.max(seen_angle)
-                seen_angle_splin = np.linspace(xmin, xmax, 20001)
-                deviated_angle_splin = self.interpolation(seen_angle_splin)
-                plt.figure('Trajectories interpolation')
-                plt.clf()
-                plt.title(&quot;Light deviation interpolation&quot;, va='bottom')
-                plt.xlabel('seen angle(°)')
-                plt.ylabel('deviated angle(°)')
-                plt.plot(seen_angle, deviated_angle, 'o')
-                plt.plot(seen_angle_splin, deviated_angle_splin)
-                plt.grid()
-                #plt.savefig('interpolation.png', dpi=250, bbox_inches='tight')
-                plt.draw()
-    #
-            print(&quot;last angle&quot;, seen_angle[-1])
-            print(&quot;trajectories time: %.1f&quot; % (time.process_time()-vrai_debut))
-
-            img_matrix_x, img_matrix_y = self.create_matrices()
-
-            if self.save_matrix is True:
-                matrix_file_x, matrix_file_y = self.matrices_names()
-                np.savetxt(matrix_file_x, img_matrix_x, fmt='%i')
-                np.savetxt(matrix_file_y, img_matrix_y, fmt='%i')
-                print(&quot;Saved matrices: \n\t%s\n\t%s&quot; % (matrix_file_x, matrix_file_y))
-
-        self.img_matrix_x = img_matrix_x
-        self.img_matrix_y = img_matrix_y
-
-        self.img2 = self.img_pixels(self.img_debut)
-
-        vrai_fin = time.process_time()
-        print(&quot;\nglobal computing time: %.1f\n&quot; % (vrai_fin-vrai_debut))
-
-        if self.display_blackhole:
-            self.plot()
-
-    def trajectories(self):
-        &quot;&quot;&quot;Compute several photons trajectories in order to interpolate the
-        possibles trajectories and gain in execution time.&quot;&quot;&quot;
-        # OPTIMIZE: take too much time due to too much solver call
-        alpha_min = self.search_alpha_min()
-        alpha_finder = self.FOV_img/2
-
-        if self.display_trajectories is True:
-            plt.figure('Trajectories plan')
-            plt.clf() #clear the graph to avoir superposing data from the same set (can be deactivated if need to superpose)
-            ax = plt.subplot(111, projection='polar') #warning if use python in ligne (!= graphical) graphs got superposed
-            ax.set_title(&quot;light trajectories close to a black hole\n&quot;, va='bottom')
-            ax.set_xlabel('R(UA)')
-            plt.ylabel('phi(°)\n\n\n\n', rotation=0)
-            ax.set_rlim((0, 4*self.D))
-            ax.set_rlabel_position(-90)
-
-        seen_angle = np.array([])
-        deviated_angle = np.array([])
-
-        booli = False  # avoid points from the first loop to exceed points from the second loop
-        points = 40  # careful with this if using kind=linear
-
-        for i in range(6):
-    #        print(alpha_finder)
-
-            for alpha in np.linspace(alpha_finder, alpha_min,
-                                     num=points, endpoint=booli):
-                r, phi = self.solver(alpha)
-
-                if r[-1] &gt; 1.1*self.Rs:  # if not capture by black hole
-                    seen_angle = np.append(seen_angle, 180-alpha)
-                    dev_angle = phi[-1] + math.asin(self.D/r[-1]*math.sin(phi[-1]))
-                    dev_angle = math.degrees(dev_angle)
-                    deviated_angle = np.append(deviated_angle, dev_angle)
-                    Ci = 'C'+str(i)
-
-                    if self.display_trajectories is True:
-                        ax.plot(phi, r, Ci)  # plot one trajectory
-
-            if self.kind == 'linear':
-                alpha_finder = alpha_min + (alpha_finder - alpha_min)/(points/3 + 1) # start a more precise cycle from last point
-
-            else:
-                alpha_finder = alpha_min + (alpha_finder - alpha_min)/(points + 1) # start a more precise cycle from last point
-
-            points = 10  # careful with this if using kind=linear
-
-            if i == 4:
-                booli = True  # allow to display the last point
-
-        if self.display_trajectories is True:
-    #        plt.savefig('trajectories.png', format='png', dpi=1000, bbox_inches='tight')
-            plt.draw()
-
-        return seen_angle, deviated_angle
-
-    def search_alpha_min(self):
-        &quot;&quot;&quot;Return last angle at which the photon is kept by the black hole.&quot;&quot;&quot;
-        alpha_min = 0
-
-        for alpha in range(0, 180, 4):
-            r = self.solver(alpha)[0]
-            if r[-1] &gt; 1.1*self.Rs:
-                break
-
-        if (alpha-4) &gt; 0:
-            alpha_min = alpha - 4
-    #        print(&quot;alpha_min :&quot;,alpha_min,&quot;(-4)&quot;)
-        i = 1
-
-        while alpha_min == 0 or round(alpha_min*self.img_res) != round((alpha_min+i*10)*self.img_res):  #increase precision
-
-            for alpha in range(int(alpha_min/i), int(180/i), 1):
-                alpha = alpha*i
-                r = self.solver(alpha)[0]
-
-                if r[-1] &gt; 1.1*self.Rs:
-                    break
-
-            if (alpha-i) &gt; 0:
-                alpha_min = alpha - i
-    #            print(&quot;alpha_min : &quot;,alpha_min,&quot; (-&quot;,i,&quot;)&quot;,sep=&quot;&quot;)
-
-            i = i/10
-        i = 10*i
-        alpha_min += i
-        print(&quot;alpha_min: %s [%s, %s]&quot; % (alpha_min, alpha_min-i, alpha_min))
-
-        return alpha_min
-
-    def solver(self, alpha):
-        &quot;&quot;&quot;Solve the differential equation, in spherical coordinate, for a
-        static black hole using solve_ivp.
-        Allows to compute the photon trajectory giving its distance from the
-        black hole and its initial angular speed.&quot;&quot;&quot;
-        if alpha == 0:  # skip divided by 0 error
-            return [0], [0]  # r and phi=0
-
-        if alpha == 180:
-            return [self.D], [0]  # if angle= pi then, tan(pi)=0 so 1/tan=1/0
-
-        # initial value for position and angular speed
-        y0 = [1/self.D, 1/(self.D*math.tan(math.radians(alpha)))]
-        sol = solve_ivp(fun=self._diff_eq, t_span=[0, 10*pi], y0=y0, method='Radau', events=[self._eventRs]) #, self._eventR])#,t_eval=np.linspace(0, t_max, 10000)) #dense_output=False
-
-        if sol.t[-1] == 10*pi:
-            raise StopIteration(&quot;solver error, alpha reached computation limit (loop number)&quot;)
-
-        phi = np.array(sol.t)
-        r = np.abs(1/sol.y[0, :])  # must use this because solver can't be stop before infinity because negative
-
-        return r, phi
-
-    def _diff_eq(self, phi, u):
-        &quot;&quot;&quot;Represent the differential equation : d²u(ɸ)/dɸ²=3/2*Rs*u²(ɸ)-u(ɸ)
-        &quot;&quot;&quot;
-        v0 = u[1]  #correspond to u'
-        v1 = 3/2*self.Rs*u[0]**2 - u[0] #correspond to u&quot;
-        return v0, v1
-
-    def _eventRs(self, phi, u):
-        &quot;&quot;&quot;stop solver if radius &lt; black hole radius&quot;&quot;&quot;
-        with np.errstate(all='ignore'):
-            return 1/u[0] - self.Rs
-    _eventRs.terminal = True
-
-#    def _eventR(self, phi, u): #not needed and don't work with ivp (without it we get an error message but irrelevant)
-#        &quot;&quot;&quot;stop solver if radius &gt; sphere limit&quot;&quot;&quot;
-#        R = 1e15
-#        return (1/u[0]-math.sqrt(R**2-self.D**2*math.sin(phi)**2)+self.D*math.cos(phi))
-#    _eventR.terminal = True
-
-    def interpolate(self, x_pivot, f_pivot):
-        &quot;&quot;&quot;Create interpolation data to reduce computation time.&quot;&quot;&quot;
-        interpolation = interp1d(x_pivot, f_pivot,
-                                 kind=self.kind, bounds_error=False)
-        return interpolation
-
-    def matrices_names(self, folder=None):
-        &quot;&quot;&quot;Return the matrices names.&quot;&quot;&quot;
-        if folder is None:
-            abs_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-            folder = os.path.join(abs_path, 'matrix')
-
-        matrix_name_x = &quot;%s_%s_%s_%s_x.txt&quot; % (
-            self.D, self.Rs, self.axe_X, self.FOV_img)
-        matrix_file_x = os.path.join(folder, matrix_name_x)
-
-        matrix_name_y = &quot;%s_%s_%s_%s_y.txt&quot; % (
-            self.D, self.Rs, self.axe_X, self.FOV_img)
-        matrix_file_y = os.path.join(folder, matrix_name_y)
-
-        return matrix_file_x, matrix_file_y
-
-    def check_matrices(self, folder=None):
-        &quot;&quot;&quot;Check if matricess exists.&quot;&quot;&quot;
-        if folder is None:
-            abs_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-            folder = os.path.join(abs_path, 'matrix')
-
-        matrix_file_x, matrix_file_y = self.matrices_names(folder=folder)
-
-        x_file = listdirectory(folder, matrix_file_x)
-        y_file = listdirectory(folder, matrix_file_y)
-
-        matrices_exist = x_file is True and y_file is True
-        return matrices_exist
-
-    def create_matrices(self):
-        &quot;&quot;&quot;Call find_position function and create matrices with pixels
-        positions informations.
-        Create two matrices with corresponding (x, y) -&gt; (x2, y2).
-        &quot;&quot;&quot;
-        debut = time.process_time()
-
-        x = np.arange(0, self.axe_X)
-        y = np.arange(0, self.axe_Y)
-        xv, yv = np.meshgrid(x, y)
-
-        print(&quot;\nmatrix creation estimation time: %.1fs&quot; % (1e-6*self.axe_X*self.axe_Y))
-
-        img_matrix_x, img_matrix_y = self.find_position(xv, yv)
-
-        fin = time.process_time()
-        print(&quot;matrix created in time: %.1f s&quot; % (fin-debut))
-        return img_matrix_x, img_matrix_y
-
-    def open_matrices(self):
-        &quot;&quot;&quot;Open the matricies corresponding to the chosen Rs, D, axe_X and FOV
-        parameters.&quot;&quot;&quot;
-        print(&quot;\nmatrix opening estimation: %.1f&quot; % (
-            1.65e-6*self.axe_X*self.axe_Y))
-        matrix_opening_debut = time.process_time()
-
-        matrix_file_x, matrix_file_y = self.matrices_names()
-        img_matrix_x = np.loadtxt(matrix_file_x, dtype=int)
-        img_matrix_y = np.loadtxt(matrix_file_y, dtype=int)
-        matrix_opening_fin = time.process_time()
-        print(&quot;matrix opening time:&quot;, round(matrix_opening_fin-matrix_opening_debut, 1))
-        return img_matrix_x, img_matrix_y
-
-    def find_position(self, xv, yv):
-        &quot;&quot;&quot;Takes seen pixel position and search deviated pixel position.&quot;&quot;&quot;
-        # Convert position in spheric coord
-        phi = xv*self.FOV_img/360/self.img_res
-        theta = yv*self.FOV_img_Y/180/self.img_res_Y
-        phi2 = phi+(360-self.FOV_img)/2
-        theta2 = theta+(180-self.FOV_img_Y)/2
-
-        u, v, w = spheric2cart(np.radians(theta2), np.radians(phi2))  # give cartesian coord of pixel
-
-        # ignore errors due to /0 -&gt; inf, -inf
-        # divide (w/v) and invalid arctan2()
-        with np.errstate(all='ignore'):  # OPTIMIZE: see comment about pi = -pi and don't matter if -0 or 0 -&gt; just replace by pi
-            beta = -np.arctan(w/v)
-#        beta2 = -np.arctan2(w, v)
-
-#        v2 = np.dot(rotation_matrix(beta), [u, v, w]) # take 3*3 created matrix and aplly to vector
-        matrix = rotation_matrix(beta)
-        u2 = matrix[0, 0]*u
-        v2 = matrix[1, 1]*v+matrix[1, 2]*w
-        w2 = matrix[2, 1]*v+matrix[2, 2]*w
-        _, seen_angle = cart2spheric(u2, v2, w2)    # return phi in equator &quot;projection&quot;
-
-        seen_angle = np.degrees(seen_angle)
-        seen_angle = np.mod(seen_angle, 360)  # define phi [0, 360]
-
-#        seen_angle[seen_angle &gt; 360] -= 360
-        deviated_angle = np.zeros(seen_angle.shape)
-        deviated_angle[seen_angle &lt; 180] = self.interpolation(seen_angle[seen_angle &lt; 180])
-        deviated_angle[seen_angle &gt;= 180] = 360 - self.interpolation(360-seen_angle[seen_angle &gt;= 180])
-#        np.flip(deviated_angle, 1)  &quot; mais probleme overlap entre left et right
-
-        theta = pi/2# *np.ones(deviated_angle.shape)
-        phi = np.radians(deviated_angle)
-        u3, v3, w3 = spheric2cart(theta, phi) #get cart coord of deviated pixel
-
-        matrix = rotation_matrix(-beta)
-        u4 = matrix[0, 0]*u3
-        v4 = matrix[1, 1]*v3+matrix[1, 2]*w3
-        w4 = matrix[2, 1]*v3+matrix[2, 2]*w3
-
-        theta, phi = cart2spheric(u4, v4, w4)  #give spheric coord of deviated pixel
-
-        theta, phi = np.degrees(theta), np.degrees(phi)
-
-        phi -= (360-self.FOV_img)/2
-        theta -= (180-self.FOV_img_Y)/2
-
-        with np.errstate(all='ignore'):  # OPTIMIZE
-            phi = np.mod(phi, 360)  # define phi [0, 360]
-            theta = np.mod(theta, 180)  # define phi [0, 360]
-
-        phi[phi == 360] = 0
-        xv2 = phi*360/self.FOV_img*self.img_res
-        yv2 = theta*180/self.FOV_img_Y*self.img_res_Y #give deviated angle pixel position
-
-        xv2[np.isnan(xv2)] = -1
-        yv2[np.isnan(yv2)] = -1
-
-        xv2 = np.array(xv2, dtype=int)
-        yv2 = np.array(yv2, dtype=int)
-
-        return xv2, yv2
-
-    def gif(self, nbr_offset=1):
-        &quot;&quot;&quot;Apply seveal offset and save each images to be reconstructed
-        externaly to make agif animation of a moving black hole.&quot;&quot;&quot;
-        file_name, extension = return_folder_file_extension(self.img_name)[1:]
-
-        offset_X_temp = 0  # locals, relative to img2 given, not absolute
-        offset_X_tot = 0
-        time_estimate = 2.2e-8*self.axe_X*self.axe_Y*(nbr_offset+1)
-        print(&quot;\ntotal offsets estimation time: %.1f&quot; % (time_estimate))
-
-        if nbr_offset == 1:  # avoid two offsets for a single image
-            nbr_offset = 0
-
-        # +1 for final offset to set back image to initial offset
-        for a in range(nbr_offset+1):
-            if a &lt; nbr_offset:
-                print(&quot;\n%s/%s\toffset: %s&quot; % (a+1, nbr_offset, offset_X_tot))
-
-            self.img_debut = img_offset_X(self.img_debut, offset_X_temp)
-
-            img2 = self.img_pixels(self.img_debut)
-
-            if self.fixed_background != True and self.fixed_background != False:
-
-                if self.fixed_background.get() is True:  # needed for GUI
-                    img2 = img_offset_X(img2, -offset_X_tot)  # if want a fixed background and moving black hole
-
-            if self.fixed_background is True:
-                img2 = img_offset_X(img2, -offset_X_tot)  # if want a fixed background and moving black hole
-
-            if nbr_offset != 1 and a &lt; nbr_offset: #if need to save real offset, put offset_x in global and offset_x+offset_x2+offset_x_tot in save name
-                image_name_save = &quot;%s_D=%s_Rs=%s_size=%s_offset=%i%s&quot; % (file_name, self.D, self.Rs, self.axe_X, offset_X_tot+self.offset_X+self.offset_X2, extension)
-                img2.save(image_name_save)
-                print(&quot;Save: &quot;+image_name_save)
-
-            if a &lt; nbr_offset:
-                offset_X_temp = int(self.axe_X/nbr_offset) #at the end to have offset=0 for the first iteration
-                offset_X_tot += offset_X_temp
-
-            elif nbr_offset &gt; 1:
-                print(&quot;\nOffset reset to %i&quot; % (offset_X_tot % self.axe_X))
-
-        self.img2 = img2
-
-    def plot(self):
-        &quot;&quot;&quot;Plot the black hole and connect functions to the canvas.&quot;&quot;&quot;
-        self.fig = plt.figure('Black hole')
-        self.fig.clf() #clear the graph to avoir superposing data from the same set (can be deactivated if need to superpose)
-        self.ax = plt.subplot()
-
-        if self.img2 is not None:
-            self.ax.imshow(self.img2)
-        else:
-            print(&quot;No black hole deformation in the memory, displayed the original image instead.&quot;)
-            self.ax.imshow(self.img_debut)
-
-        self.ax.set_title(&quot;scrool to zoom in or out \nright click to add an offset in the background \nleft click to refresh image \n close the option windows to stop the program&quot;)
-        self.fig.canvas.mpl_connect('scroll_event', self.onscroll)
-        self.fig.canvas.mpl_connect('button_press_event', self.onclick)
-        self.fig.canvas.mpl_connect('axes_leave_event', self.disconnect)
-        self.fig.canvas.mpl_connect('axes_enter_event', self.connect)
-
-        self.draw()
-
-    def img_pixels(self, img_debut):
-        &quot;&quot;&quot;Takes deviated pixels color and assign them to seen pixels by using
-        the matrices img_matrix_x and img_matrix_y.&quot;&quot;&quot;
-        pixels = np.array(img_debut)
-        pixels2 = np.array(img_debut)
-
-        xv, yv = self.img_matrix_x, self.img_matrix_y
-
-        yv[yv &gt;= self.axe_Y] = -2  # locate pixels outside of the image
-        xv[xv &gt;= self.axe_X] = -2
-
-        pixels2 = pixels[yv, xv]  # apply the black hole deformation
-
-        pixels2[xv == -1] = [0, 0, 0]  # color the black hole in black
-        pixels2[yv == -2] = [255, 192, 203]  # color pixels outside
-        pixels2[xv == -2] = [255, 192, 203]
-
-        img2 = Image.fromarray(pixels2.astype('uint8'), 'RGB')
-        return img2
-
-    def img_save(self):
-        &quot;&quot;&quot;Save the image img2 with the parameters values.&quot;&quot;&quot;
-        file_name, extension = return_folder_file_extension(self.img_name)[1:]
-        image_name_save = &quot;%s_D=%s_Rs=%s_size=%s_offset=%i%s&quot; % (file_name, self.D, self.Rs, self.axe_X, self.offset_X+self.offset_X2, extension)
-
-        if self.img2 is not None:
-            self.img2.save(image_name_save)
-            print(&quot;Saved &quot;+image_name_save)
-        else:
-            print(&quot;No image to save&quot;)
-
-    def onscroll(self, event):
-        &quot;&quot;&quot;Zoom in or out the canvas when using the scrool wheel.&quot;&quot;&quot;
-        if self.out_graph is False:
-            self.zoom += 10*event.step
-
-            if self.zoom &gt;= self.axe_X/2/self.FOV_img*self.FOV_img_Y:
-                self.zoom = self.axe_X/2/self.FOV_img*self.FOV_img_Y
-
-            if self.zoom &lt;= 0:
-                self.zoom = 0
-
-            self.draw()
-
-    def draw(self):
-        &quot;&quot;&quot;Draw the black hole on the canvas by setting the axes need to match
-        the zoom setting.&quot;&quot;&quot;
-        # TODO: take graph axe value but careful with changing size when computing
-        # need to change the equation because based on full scale and not arbitrary position
-        left_side = self.zoom*self.FOV_img/self.FOV_img_Y
-        right_side = self.axe_X - self.zoom*self.FOV_img/self.FOV_img_Y
-        up_side = self.zoom
-        down_side = self.axe_Y - self.zoom
-
-        if right_side == self.axe_X:
-            right_side -= 1
-        if down_side == self.axe_Y:
-            down_side -= 1
-
-        self.ax.set_xlim((left_side, right_side))
-        self.ax.set_ylim((down_side, up_side))
-#        print((self.left_side, self.right_side), (self.down_side, self.up_side))
-        self.fig.canvas.draw()
-
-    def onclick(self, event):
-        &quot;&quot;&quot;Use to apply an offset when right clicking. Will be replace by a
-        Slider from matplotlib.&quot;&quot;&quot;
-        # OPTIMIZE: create bar to offset and del this function
-        if self.out_graph is False:
-
-            if (event.button == 3 and event.xdata &gt;= 0
-                    and event.xdata &lt;= self.axe_X):
-                self.offset_X += self.offset_X2
-                self.offset_X2 = int(self.axe_X/2 - event.xdata - self.offset_X)
-                self.img_debut = img_offset_X(self.img_debut, self.offset_X2)
-                self.img2 = self.img_pixels(self.img_debut)
-                self.ax.imshow(self.img2)
-                self.fig.canvas.draw()
-
-    def disconnect(self, event):
-        &quot;&quot;&quot;Used to known when the mouse is outside the black hole canvas.&quot;&quot;&quot;
-        self.out_graph = True
-
-
-    def connect(self, event):
-        &quot;&quot;&quot;Used to known when the mouse is inside the black hole canvas.&quot;&quot;&quot;
-        self.out_graph = False
-
-
-class BlackHoleGUI:
-    &quot;&quot;&quot;GUI controling a blackhole instance.&quot;&quot;&quot;
-    def __init__(self, blackhole=None):
-        &quot;&quot;&quot;GUI controling a blackhole instance.&quot;&quot;&quot;
-        if blackhole is None:
-            self.blackhole = BlackHole()
-        else:
-            self.blackhole = blackhole
-
-        self.create_interface()
-
-    def create_interface(self):
-        &quot;&quot;&quot;Create the interface.&quot;&quot;&quot;
-        root = Tk()
-        frame = Frame(root)
-        root.title(&quot;Black hole options&quot;)
-        frame.pack()
-
-        open_file_button = Button(frame, text=&quot;Open image&quot;, width=14, command=self.open_file_name)
-        open_file_button.grid(row=0, column=0)
-
-        L1 = Label(frame, text=&quot;radius&quot;)
-        L1.grid(row=1, column=0)
-        var = StringVar(root)
-        var.set(self.blackhole.Rs)
-        self.radius = Spinbox(frame, from_=1e-100, to=1e100, textvariable=var, bd=2, width=7)
-        self.radius.grid(row=1, column=1)
-
-        L2 = Label(frame, text=&quot;distance&quot;)
-        L2.grid(row=2, column=0)
-        var = StringVar(root)
-        var.set(self.blackhole.D)
-        self.distance = Spinbox(frame, from_=1e-100, to=1e100, textvariable=var, bd=2, width=7)
-        self.distance.grid(row=2, column=1)
-
-        compute_button = Button(frame, text=&quot;Compute&quot;, width=14, command=self.compute)
-        compute_button.grid(row=1, column=2)
-
-        self.message = Label(frame, text=&quot;&quot;, width=20)
-        self.message.grid(row=1, column=3)
-        self.message5 = Label(frame, text=&quot;&quot;, width=20)
-        self.message5.grid(row=2, column=3)
-
-        L3 = Label(frame, text=&quot;Image size&quot;)
-        L3.grid(row=3, column=0)
-        var = StringVar(root)
-        var.set(self.blackhole.axe_X)
-        self.size = Spinbox(frame, from_=1, to=1e100, textvariable=var, bd=2, width=7)
-        self.size.grid(row=3, column=1)
-
-        self.message2 = Label(frame, text=&quot;&quot;, width=20)
-        self.message2.grid(row=3, column=3)
-
-        save_button = Button(frame, text=&quot;Save image&quot;, width=14, command=self.img_save)
-        save_button.grid(row=4, column=2)
-
-        self.message4 = Label(frame, text=&quot;&quot;)
-        self.message4.grid(row=4, column=3)
-
-        message6 = Label(frame, text=&quot;Fix background&quot;)
-        message6.grid(row=5, column=0)
-
-        fixed_background = BooleanVar()
-        C1 = Checkbutton(frame, text=&quot;&quot;, variable=fixed_background,
-                         onvalue=True, offvalue=False)
-        C1.grid(row=5, column=1)
-
-        L4 = Label(frame, text=&quot;images&quot;)
-        L4.grid(row=6, column=0)
-
-        var = StringVar(root)
-        var.set(10)
-        self.number = Spinbox(frame, from_=1, to=1e100, textvariable=var, bd=2, width=7)
-        self.number.grid(row=6, column=1)
-
-        save_gif_button = Button(frame, text=&quot;Save animation&quot;, width=14, command=self.save_gif)
-        save_gif_button.grid(row=6, column=2)
-
-        self.message3 = Label(frame, text=&quot;&quot;)
-        self.message3.grid(row=6, column=3)
-
-        root.mainloop()
-
-    def compute(self):
-        &quot;&quot;&quot;Call the compute method of the blackhole instance.&quot;&quot;&quot;
-        if not self.test_GUI():
-            return None
-        self.reset_msg()
-
-        try:
-            if float(self.distance.get()) &lt;= 0 or float(self.radius.get()) &lt;= 0:
-                self.message[&quot;text&quot;] = &quot;Can't be 0 or negative&quot;
-                return None
-            elif (float(self.distance.get()) == self.blackhole.D
-                      and float(self.radius.get()) == self.blackhole.Rs
-                      and int(self.size.get()) == self.blackhole.axe_X
-                      and self.blackhole.img_matrix_x is not None):
-                self.message[&quot;text&quot;] = &quot;same values as before&quot;
-                return None
-            elif float(self.distance.get()) &lt; float(self.radius.get()):
-                self.message[&quot;text&quot;] = &quot;Inside black hole !&quot;
-                return None
-            else:
-                self.blackhole.D = float(self.distance.get())
-                self.blackhole.Rs = float(self.radius.get())
-
-        except ValueError:
-            self.message[&quot;text&quot;] = &quot;radius, distance&quot;
-            self.message5[&quot;text&quot;] = &quot;&amp; image size are floats&quot;
-            return None
-
-        if self.blackhole.axe_X != int(self.size.get()):
-            try:
-                self.increase_resolution()
-            except ValueError as ex:
-                print(ex)
-                return None
-
-        self.message[&quot;text&quot;] = &quot;Computing&quot;
-
-        self.blackhole.compute(self.blackhole.Rs, self.blackhole.D)
-        self.message[&quot;text&quot;] = &quot;Done !&quot;
-
-    def increase_resolution(self):
-        &quot;&quot;&quot;Increase the image size and correct offset and zoom to match the new
-        size.&quot;&quot;&quot;
-        if not self.test_GUI():
-            return None
-        self.reset_msg()
-
-        if int(self.size.get()) &lt;= 0:
-            self.message2[&quot;text&quot;] = &quot;Can't be 0 or negative&quot;
-            raise ValueError(&quot;Can't be 0 or negative&quot;)
-        elif int(self.size.get()) == self.blackhole.axe_X:
-            self.message2[&quot;text&quot;] = &quot;same size as before&quot;
-        else:
-            # self.message2[&quot;text&quot;] = &quot;Computing&quot;
-            new_size_image = int(self.size.get())
-            self.blackhole.offset_X += self.blackhole.offset_X2
-            self.blackhole.offset_X2 = 0
-            res_fact = new_size_image/self.blackhole.axe_X
-
-            self.blackhole.axe_X = new_size_image
-
-            self.blackhole.offset_X *= res_fact
-            self.blackhole.zoom *= res_fact
-
-            try:
-                self.blackhole.img_resize(self.blackhole.axe_X)
-                self.blackhole.img_debut = img_offset_X(
-                    self.blackhole.img_debut, self.blackhole.offset_X)
-            except ValueError as ex:
-                print(&quot;error when resizing image&quot;)
-                raise ValueError(ex)
-
-    def img_save(self):
-        &quot;&quot;&quot;Save the image img2 with the parameters values. GUI version.&quot;&quot;&quot;
-        if not self.test_GUI():
-            return None
-        self.reset_msg()
-
-        file_name, extension = return_folder_file_extension(self.blackhole.img_name)[1:]
-        image_name_save = &quot;%s_D=%s_Rs=%s_size=%s_offset=%i%s&quot; % (file_name, self.blackhole.D, self.blackhole.Rs, self.blackhole.axe_X, self.blackhole.offset_X+self.blackhole.offset_X2, extension)
-
-        if self.blackhole.img2 is not None:
-            self.blackhole.img2.save(image_name_save)
-            print(&quot;Saved &quot;+image_name_save)
-            self.message4[&quot;text&quot;] = &quot;Saved &quot;+image_name_save
-        else:
-            self.message4[&quot;text&quot;] = &quot;No image to save&quot;
-
-    def save_gif(self):
-        &quot;&quot;&quot;Call the gif method if the blackhole instance.&quot;&quot;&quot;
-        if not self.test_GUI():
-            return None
-        self.reset_msg()
-
-        file_name, extension = return_folder_file_extension(self.blackhole.img_name)[1:]
-
-        if self.blackhole.img2 is not None:
-            self.message3[&quot;text&quot;] = &quot;Computing&quot;
-        else:
-            self.message3[&quot;text&quot;] = &quot;No image to save&quot;
-            return None
-        try:
-            if int(self.number.get()) &lt;= 0:
-                print(&quot;Can't be 0 or negative&quot;)
-                self.message3[&quot;text&quot;] = &quot;Can't be 0 or negative&quot;
-            else:
-                self.blackhole.gif(int(self.number.get()))
-                image_name_save = &quot;%s_D=%s_Rs=%s_size=%s_offset=%s%s&quot; % (file_name, self.blackhole.D, self.blackhole.Rs, self.blackhole.axe_X, &quot;*&quot;, extension)
-                self.message3[&quot;text&quot;] = &quot;Saved &quot;+image_name_save
-        except Exception:
-            print(&quot;need integer&quot;)
-            self.message3[&quot;text&quot;] = &quot;need integer&quot;
-
-    def open_file_name(self):
-        &quot;&quot;&quot;Open a new image and aply the previous parameters.
-        Compute a new black hole if parameters were changed.
-        Source: https://gist.github.com/Yagisanatode/0d1baad4e3a871587ab1&quot;&quot;&quot;
-        if not self.test_GUI():
-            return None
-        self.reset_msg()
-
-        img_name = askopenfilename(
-            # initialdir=&quot;&quot;,
-            filetypes=[(&quot;Image File&quot;, &quot;.png .jpg&quot;)],
-            title=&quot;Image file&quot;)
-
-        if img_name:
-            size = int(self.size.get())
-            self.blackhole.open(img_name, size=size)
-            if self.blackhole.img_matrix_x is not None:
-                if self.blackhole.axe_X != self.blackhole.img_matrix_x.shape[1]:
-                    self.blackhole.compute(self.blackhole.Rs, self.blackhole.D)
-
-                self.blackhole.offset_X += self.blackhole.offset_X2
-                self.blackhole.offset_X2 = 0
-                self.blackhole.img_debut = img_offset_X(
-                    self.blackhole.img_debut, self.blackhole.offset_X)
-                self.blackhole.img2 = self.blackhole.img_pixels(self.blackhole.img_debut)
-
-                self.blackhole.plot()
-
-    def reset_msg(self):
-        &quot;&quot;&quot;Reset all GUI messages.&quot;&quot;&quot;
-        if not self.test_GUI():
-            return None
-        self.message5[&quot;text&quot;] = &quot;&quot;
-        self.message4[&quot;text&quot;] = &quot;&quot;
-        self.message3[&quot;text&quot;] = &quot;&quot;
-        self.message2[&quot;text&quot;] = &quot;&quot;
-        self.message[&quot;text&quot;] = &quot;&quot;
-
-    def test_GUI(self):
-        &quot;&quot;&quot;Return True if the GUI is active and False otherwise.&quot;&quot;&quot;
-        try:
-            temp = self.message[&quot;text&quot;]
-            self.message[&quot;text&quot;] = &quot;&quot;
-            self.message[&quot;text&quot;] = temp
-            return True
-        except Exception:
-            print(&quot;The GUI is not openned, function ignored&quot;)
-            return False
-
-
-def listdirectory(path, matrix_file):
-    &quot;&quot;&quot;Allow to search if files exist in folders.
-    Source: https://python.developpez.com/faq/?page=Fichier#isFile&quot;&quot;&quot;
-    for root, dirs, files in os.walk(path):
-        for i in files:
-            fichier = os.path.join(root, i)
-            if fichier == matrix_file:
-                return True
-    return False
-
-
-def spheric2cart(theta, phi):
-    &quot;&quot;&quot;Convert spherical coordinates to cartesian.&quot;&quot;&quot;
-    x = np.sin(theta) * np.cos(phi)
-    y = np.sin(theta) * np.sin(phi)
-    z = np.cos(theta)
-    return x, y, z
-
-
-def cart2spheric(x, y, z):
-    &quot;&quot;&quot;Convert cartesian coordinates to spherical.&quot;&quot;&quot;
-    # doesn't compute r because chosen egal to 1
-    with np.errstate(all='ignore'):
-        theta = np.arccos(z)
-    phi = np.arctan2(y, x)
-
-    return theta, phi
-
-
-def rotation_matrix(beta):
-    &quot;&quot;&quot;Return the rotation matrix associated with counterclockwise rotation
-    about the x axis by beta degree.
-    Source: https://stackoverflow.com/questions/6802577/rotation-of-3d-vector
-    &quot;&quot;&quot;
-    beta = np.array(beta)
-    aa_bb, ab2neg = np.cos(beta), np.sin(beta)
-    zero, one = np.zeros(beta.shape), np.ones(beta.shape)
-
-    return np.array([[one, zero, zero],
-                     [zero, aa_bb, -ab2neg],
-                     [zero, ab2neg, aa_bb]])
-
-
-def img_offset_X(img, offset_X):
-    &quot;&quot;&quot;Return the image with an offset in the X-axis.
-    Allow to rotate around the blackhole.&quot;&quot;&quot;
-    offset_X = int(offset_X)
-    (axe_X, axe_Y) = img.size
-
-    while offset_X &gt;= axe_X:
-        offset_X -= axe_X
-
-    if offset_X == 0:
-        return img
-
-    if offset_X &lt; 0:
-        offset_X = -offset_X
-        img_right = img.crop((0, 0, axe_X-offset_X, axe_Y))
-        img_left = img.crop((axe_X-offset_X, 0, axe_X, axe_Y))
-        img.paste(img_right, (offset_X, 0))
-
-    else:
-        img_right = img.crop((0, 0, offset_X, axe_Y))
-        img_left = img.crop((offset_X, 0, axe_X, axe_Y))
-        img.paste(img_right, (axe_X-offset_X, 0))
-
-    img.paste(img_left, (0, 0))
-
-    return img
-
-
-def return_folder_file_extension(img_name):
-    &quot;&quot;&quot;Return the foler, file and extension of a file.&quot;&quot;&quot;
-    *folder, file = img_name.replace(&quot;\\&quot;, &quot;/&quot;).split(&quot;/&quot;)
-
-    if len(folder) != 0:
-        folder = folder[0]
-
-    file, extension = file.split(&quot;.&quot;)
-
-    return folder, file, &quot;.&quot;+extension
-
-
-def example():
-    &quot;&quot;&quot;Compute and save example.&quot;&quot;&quot;
-    blackhole = BlackHole()
-    img_name = os.path.join('images', 'milkyway.jpg')
-    blackhole.open(img_name, size=1000)
-    blackhole.compute(Rs=8, D=50)
-    blackhole.img2.save('example.jpg')
-
-
-def approching_blackhole():
-    &quot;&quot;&quot;Approching a black hole example.&quot;&quot;&quot;
-    blackhole = BlackHole()
-    Rs = 8.0
-    D_list = np.round(10**np.linspace(np.log10(50), np.log10(100000), 30))
-    blackhole.open(blackhole.img_name, size=2000)
-
-    for D in D_list:
-        blackhole.compute(Rs, D)
-        blackhole.img_save()
-
-
-if __name__ == &quot;__main__&quot;:
-#    blackholeGUI = BlackHoleGUI()
-
-   blackhole = BlackHole()
-    # blackhole.compute(8, 50)
-    # blackholeGUI = BlackHoleGUI(blackhole)
-
-   img_name = os.path.join('images', 'milkyway.jpg')
-   blackhole.open(img_name, size=1980)
-   blackhole.img_resize(1980)
-   blackhole.compute(Rs=8, D=241)
-   blackholeGUI = BlackHoleGUI(blackhole)
-
-
-</code></pre>
+  <h1>4.18 豌豆排骨汤的做法</h1>
+
+<h2 id="_1">豌豆排骨汤的做法</h2>
+<h4 id="_2">豌豆排骨汤材料配方：</h4>
+<p>嫩豌豆500克，煮排骨250克，生姜1块，香葱一颗，料酒、白醋、食盐适量</p>
+<h4 id="_3">制作步骤：</h4>
+<p>第一步：食材准备。把嫩豌豆剥出豌豆颗(500克的嫩豌豆剥出来豌豆颗约200克)，豌豆颗用清水洗净，控干水分备用。</p>
+<p><img alt="img" src="https://pics2.baidu.com/feed/b2de9c82d158ccbf736876ad34cadb34b0354169.jpeg@f_auto?token=50c71c97c4ef060dc7363255eb78406b" /></p>
+<p>排骨用清水洗干净，剁成小块。生姜去皮切成厚片，香葱中间分开，上部切成葱花。</p>
+<p>第二步：排骨焯水去血沫。锅里添加适量冷水，排骨冷水下锅，大火烧开煮出浮沫。煮2分钟左右，捞出排骨冲洗干净浮沫。</p>
+<p>第三步：熬豌豆排骨汤。用炖锅最好，能一键完成。锅里添加适量清水，焯水排骨乘冷水下锅，放入姜片葱段，一勺料酒，一勺白醋，加盖用大火炖煮。时间30分钟后揭盖捞出姜片葱段，此时排骨已熟，香味浓郁。</p>
+<p>然后放入备好的嫩豌豆，烧开煮沸后转中火煮，时间约30分钟左右。煮至豌豆颗粒滚圆内部烂熟，此时的排骨只要轻轻一拨就能轻松的骨肉分开。</p>
+<p>确认排骨、豌豆都已熟烂，关火。加放少许食盐调制合适的口味，豌豆排骨汤可以出锅了。汤味清香微甜，豌豆入口即化，色香鲜味俱全。</p>
+<p><img alt="img" src="https://pics2.baidu.com/feed/f603918fa0ec08fad621332b74fc5a6755fbda31.jpeg@f_auto?token=eeac9c273daffa2a0803173dab160c0a" /></p>
 
 
 
