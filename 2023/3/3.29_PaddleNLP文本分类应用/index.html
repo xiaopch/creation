@@ -1,0 +1,3828 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hello World">
+      
+      
+        <meta name="author" content="xiaopch">
+      
+      
+      
+        <link rel="prev" href="../3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/">
+      
+      
+        <link rel="next" href="../3.29_TensorFlow%202.0%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%95%99%E7%A8%8B/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>3.29 PaddleNLP文本分类应用 - 随遇而安</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#paddlenlp" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="随遇而安" class="md-header__button md-logo" aria-label="随遇而安" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            随遇而安
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.29 PaddleNLP文本分类应用
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://gitee.com/xiaopch" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gitee
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="随遇而安" class="md-nav__button md-logo" aria-label="随遇而安" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    随遇而安
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://gitee.com/xiaopch" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gitee
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../000-%E5%B8%B8%E7%94%A8%E7%BD%91%E5%9D%80%E5%88%86%E4%BA%AB/" class="md-nav__link">
+        000 常用网址分享
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.16_mkdocs%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        2.16 mkdocs生成项目文档
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_%E6%88%91%E5%85%81%E8%AE%B8-%E6%B5%B7%E7%81%B5%E6%A0%BC/" class="md-nav__link">
+        3.1 我允许 海灵格
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.20_%E6%B5%81%E6%B7%8C/" class="md-nav__link">
+        4.20 流淌
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.24_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        4.24 ChatGPT中文调教指南
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.25_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        4.25 ChatGPT中文调教指南
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.25_chatgpt%E5%86%99%E4%BD%9C%E5%B0%8F%E8%AF%B4%E7%9A%84prompt%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        4.25 chatgpt写作小说的prompt的设计
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.25_%E5%A6%82%E4%BD%95%E7%94%A8ChatGPT%E5%86%99%E4%B8%80%E7%AF%87%E7%B2%BE%E5%BD%A9%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%9F/" class="md-nav__link">
+        4.25 如何用ChatGPT写一篇精彩的故事？
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          2023
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          2023
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+          2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.01_%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/" class="md-nav__link">
+        2.01 思维模型故事和案例 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_x86%E6%9E%B6%E6%9E%84%E4%B8%8B%E4%BD%BF%E7%94%A8Genymotion%E8%99%9A%E6%8B%9F%E5%8C%96%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%85%BC%E5%AE%B9arm%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        2.07 x86架构下使用Genymotion虚拟化设备并兼容arm架构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E4%B8%AA%E6%80%A7%E5%8C%96%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%BB%BC%E8%BF%B0/" class="md-nav__link">
+        个性化推荐系统综述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E5%BF%85%E7%84%B6/" class="md-nav__link">
+        2.07 必然
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        2.07 查理芒格的100个思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        2.07 物理学概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.08_%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        2.08 自私的基因 读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.09_%E4%BA%BA%E7%B1%BB%E6%80%9D%E7%BB%B4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1%EF%BC%8C%E4%BD%A0%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%B1%82%E6%AC%A1/" class="md-nav__link">
+        2.09 人类思维的4个层次，你在哪个层次
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.11_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2022/" class="md-nav__link">
+        常用的思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.11_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        2.11 查理芒格的100个思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.11_%E6%AD%8C%E8%AF%8D_%E4%BA%91%E6%B8%B8%E4%BE%A0/" class="md-nav__link">
+        2.11 歌词 云游侠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.12_%E5%86%99%E5%87%BA%E6%88%91%E5%BF%83%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%86%99%E4%BD%9C%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1/" class="md-nav__link">
+        2.12 写出我心：普通人如何通过写作表达自己
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.12_%E5%AF%B9%E8%AF%9D%E4%BD%93%E5%86%99%E4%BD%9C-2023/" class="md-nav__link">
+        2.12 对话体写作 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.12_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2023/" class="md-nav__link">
+        2.12 常用的思维模型2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.13_Python%E8%B0%83%E7%94%A8chatgpt/" class="md-nav__link">
+        2.13 Python调用chatgpt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.13_%E7%81%B5%E6%84%9F%E6%B5%81%E6%B7%8C%E7%9A%84%E5%86%99%E4%BD%9C/" class="md-nav__link">
+        2.13 灵感流淌的写作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.13_%E7%94%A8Python%E8%B0%83%E7%94%A8OpenAI_API%E5%81%9A%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BA%8B/" class="md-nav__link">
+        2.13 用Python调用OpenAI API做有趣的事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_chatgpt-%E7%BB%84%E5%90%88%E5%88%9B%E6%96%B0%E7%9A%84%E6%AD%A5%E9%AA%A4%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.14 chatgpt 组合创新的步骤有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E5%86%99%E4%B8%80%E9%A6%96%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%97/" class="md-nav__link">
+        2.14 写一首情人节的诗
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E5%AE%89%E8%A3%85linux%E7%89%88%E6%9C%AC%E7%9A%84Clash%20for%20Windows/" class="md-nav__link">
+        2.14 安装linux版本的Clash for Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%80%8E%E6%A0%B7%E5%92%8C%E8%87%AA%E5%B7%B1%E5%92%8C%E8%A7%A3/" class="md-nav__link">
+        2.14 怎样和自己和解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%972023/" class="md-nav__link">
+        2.14 情人节的诗2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%89%93%E5%85%AB%E6%AE%B5%E9%94%A6%E6%9C%89%E6%84%9F/" class="md-nav__link">
+        2.14 打八段锦有感
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%9C%AA%E6%9D%A5%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%BB%E8%A6%81%E8%B6%8B%E5%8A%BF%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.14 未来科学的主要趋势有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%AF%8F%E5%A4%A9%E7%BB%83%E5%85%AB%E6%AE%B5%E9%94%A6%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+        2.14 每天练八段锦的好处
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.15_%E5%86%99%E4%BD%9C%E7%9A%84%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.15 写作的常用的结构有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.15_%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%80%E5%8F%91%E6%9C%88%E7%90%83%E5%91%A2/" class="md-nav__link">
+        2.15 怎么利用人工智能开发月球呢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.15_%E6%80%8E%E6%A0%B7%E5%BF%AB%E9%80%9F%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" class="md-nav__link">
+        2.15 怎样快速提升自己的认知能力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.16_python%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%8E%9F%E6%96%87%E4%BB%B6%E5%90%8D/" class="md-nav__link">
+        2.16 python实现网络文件下载并保存为原文件名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.16_python%E6%93%8D%E4%BD%9Cmongodb/" class="md-nav__link">
+        2.16 python操作mongodb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.16_%E5%90%AB%E6%9C%89%E8%8A%B1%E9%9D%92%E7%B4%A0%E7%9A%84%E6%B0%B4%E6%9E%9C%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.16 含有花青素的水果有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.17_%E8%87%AA%E5%AA%92%E4%BD%93%E5%86%99%E4%BD%9C-%E4%BB%8E%E5%9F%BA%E6%9C%AC%E5%8A%9F%E5%88%B0%E5%AE%9E%E6%88%98%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        2.17 自媒体写作 从基本功到实战方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.20_%E6%A0%87%E9%A2%98%E7%9A%84%E5%86%99%E6%B3%95/" class="md-nav__link">
+        2.20 标题的写法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF-%E6%AF%8F%E6%97%A5%E5%8F%8D%E6%80%9D%E6%A8%A1%E7%89%88/" class="md-nav__link">
+        2.20 高效能人士七个习惯 每日反思模版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        2.20 高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.21_python%E8%BD%AC%E6%8D%A2%E9%9F%B3%E9%A2%91%E9%87%87%E6%A0%B7%E7%8E%87/" class="md-nav__link">
+        2.21 python转换音频采样率
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.21_%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E7%BE%8E%E9%A3%9F%E7%9F%AD%E8%A7%86%E9%A2%91%E5%8D%9A%E4%B8%BB%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%92%8C%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        2.21 成为一名美食短视频博主的步骤和建议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.22_deepin%E5%AE%89%E8%A3%85Python3.7.4%E5%92%8CPostman/" class="md-nav__link">
+        2.22 deepin安装Python3.7.4和Postman
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.22_vscode%E6%80%8E%E6%A0%B7%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        2.22 vscode怎样配置python开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.26_5%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/" class="md-nav__link">
+        2.26 5款开源免费音频处理软件推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.26_python%E5%AE%9E%E7%8E%B0%E9%9F%B3%E9%A2%91%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        2.26 python实现音频格式转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.26_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E6%AD%A3%E8%A7%81/" class="md-nav__link">
+        2.26 从今天开始的每一天.正见
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+        2.27 5分钟催眠引导
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E7%A5%9D%E7%A6%8F/" class="md-nav__link">
+        2.27 从今天开始的每一天.祝福
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC%E4%B8%8E%E8%BA%AB%E4%BD%93%E5%AF%B9%E8%AF%9D%E5%85%A8%E9%9D%A2%E4%BF%AE%E5%A4%8D%E8%BA%AB%E4%BD%93/" class="md-nav__link">
+        2.27 催眠引导与身体对话全面修复身体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%BC%95%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+        2.27 催眠渐进式引导语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E8%AF%B1%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+        2.27 催眠诱导语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E5%A6%82%E4%BD%95%E8%AE%A9%E6%94%B9%E5%8F%98%E5%8F%91%E7%94%9F/" class="md-nav__link">
+        2.28 如何让改变发生
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E6%88%91%E4%BB%AC%E6%97%A0%E6%B3%95%E6%8E%A7%E5%88%B6%E5%92%8C%E9%9C%80%E8%A6%81%E6%8E%A5%E5%8F%97%E7%9A%84%204%20%E4%BB%B6%E4%BA%8B/" class="md-nav__link">
+        2.28 我们无法控制和需要接受的 4 件事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E7%94%9F%E5%91%BD%E5%B0%B1%E6%98%AF%E6%97%A0%E6%95%B0%E4%B8%AA%E7%88%B1%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%BA%E4%BC%9A%E2%80%94%E2%80%94%E9%9C%B2%E6%98%93%E4%B8%9D%C2%B7%E6%B5%B7/" class="md-nav__link">
+        2.28 生命就是无数个爱自己的机会——露易丝·海
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E8%AE%A9%E4%BA%BA%E5%8F%98%E5%BF%AB%E4%B9%90%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AD%97%E2%80%9C%E5%BA%A6%E2%80%9D%E5%92%8C%E2%80%9C%E6%94%BE%E2%80%9D/" class="md-nav__link">
+        2.28 让人变快乐的两个字“度”和“放”
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.6_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        2.6 物理学概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_KK-%E5%BF%85%E7%84%B6-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        2.7 KK 必然 读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        2.7 东菱面包机标准面包做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E4%BA%BA%E7%94%9F%E5%A6%82%E8%8C%B6/" class="md-nav__link">
+        2.7 人生如茶
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E5%86%A5%E6%83%B3%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F/" class="md-nav__link">
+        2.7 冥想有什么作用呢？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E5%B9%BD%E9%BB%98%E5%A4%B8%E4%BA%BA%E7%9A%84%E5%8F%A5%E5%AD%90%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+        幽默夸人的句子大全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E6%88%91%E5%A6%88%E4%B8%89%E5%A4%A9%E6%B2%A1%E6%89%93%E6%88%91%E5%95%A6/" class="md-nav__link">
+        2.7 我妈三天没打我啦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%AD%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+        有趣的短句子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95-%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA/" class="md-nav__link">
+        2.7 标准面包做法 东菱面包机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%80%97%E4%BA%BA%E5%BC%80%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%9A%84%E6%96%87%E6%A1%88/" class="md-nav__link">
+        逗人开心可以发朋友圈的文案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%81%93%E5%BE%B7%E7%BB%8F%E6%96%87/" class="md-nav__link">
+        2.7 道德经文
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%A3%8E%E8%B6%A3%E5%B9%BD%E9%BB%98%E7%9A%84%E5%A4%B8%E4%BA%BA%E8%AF%84%E8%AF%AD/" class="md-nav__link">
+        风趣幽默的夸人评语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%AB%98%E6%83%85%E5%95%86%E5%A4%B8%E4%BA%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+        高情商夸人漂亮的句子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/4.11_2015%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+        4.11 2015爆笑笑话大全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/4.11_%E6%82%BC%E5%BF%B5%E4%B8%80%E4%B8%AA%E9%80%9D%E5%8E%BB%E7%9A%84%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%96%87%E7%AB%A0/" class="md-nav__link">
+        4.11 悼念一个逝去的朋友的文章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/4.11_%E6%9C%80%E6%96%B0%E6%A0%A1%E5%9B%AD%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D/" class="md-nav__link">
+        4.11 最新校园爆笑笑话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/4.6_%E7%90%BC%E8%8A%B1%E7%9A%84%E7%B9%81%E6%AE%96%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        4.6 琼花的繁殖方法有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/4.9_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        4.9 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/4.9_%E7%AC%91%E8%AF%9D/" class="md-nav__link">
+        4.9 笑话
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.28_am_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.28 am 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.28_pm_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.28 pm 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.29_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.29 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.31_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.31 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.01_%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%80%E5%8D%8A%E7%83%9F%E7%81%AB%EF%BC%8C%E4%B8%80%E5%8D%8A%E6%B8%85%E6%AC%A2/" class="md-nav__link">
+        3.01 生活，一半烟火，一半清欢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.01_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        3.01 高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.02_%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%84%E5%85%BB%E6%8A%A4%E6%8A%80%E5%B7%A7%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.02 康乃馨的养护技巧是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.02_%E8%8A%B1%E7%9B%86%E9%87%8C%E5%85%BB%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%844%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+        3.02 花盆里养康乃馨的4个小技巧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.02_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        3.02 高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.03_openai%E7%9A%84ASR%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABWhisper/" class="md-nav__link">
+        3.03 openai的ASR语音识别Whisper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.03_%E5%BF%83%E6%B5%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        3.03 心流 学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.04_%E5%A4%A7%E9%B1%BC-%E6%AD%8C%E8%AF%8D/" class="md-nav__link">
+        3.04 大鱼 歌词
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.05_%E6%8E%A8%E8%8D%905%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+        3.05 推荐5款开源免费音频处理软件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.08_python%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABwhisper%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        python语音识别whisper的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.08_%E5%85%B3%E4%BA%8E%E6%B6%8C%E7%8E%B0/" class="md-nav__link">
+        3.08 关于涌现
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.08_%E6%B1%89%E5%AD%97%E7%AE%80%E7%B9%81%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        3.08 汉字简繁转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.09_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%BC%BA%E5%A4%A7%E5%86%85%E5%BF%83%E5%85%8B%E6%9C%8D%E8%AE%A8%E5%A5%BD%E4%BA%BA%E6%A0%BC/" class="md-nav__link">
+        3.09 5分钟催眠体验强大内心克服讨好人格
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.09_TikTokDownload%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.09 TikTokDownload使用教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.09_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%87%8F%E5%8E%8B%E6%8E%A5%E7%BA%B3%E8%87%AA%E5%B7%B1_5%E5%88%86%E9%92%9F/" class="md-nav__link">
+        3.09 催眠体验减压接纳自己 5分钟
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.10_%E4%B8%87%E8%83%BD%E6%89%A6%E6%8F%92%E6%B3%95-%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E4%B8%80%E6%8B%9B%E6%90%9E%E5%AE%9A/" class="md-nav__link">
+        3.10 万能扦插法 植物扦插一招搞定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.10_%E5%82%AC%E7%9C%A0%E5%87%8F%E5%8E%8B%E7%BC%93%E8%A7%A3%E7%96%B2%E5%8A%B3%E6%B7%B1%E5%BA%A6%E7%9D%A1%E7%9C%A0/" class="md-nav__link">
+        3.10 催眠减压缓解疲劳深度睡眠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.10_%E5%82%AC%E7%9C%A0%E6%88%98%E8%83%9C%E6%BD%9C%E6%84%8F%E8%AF%86%E4%B8%AD%E7%9A%84%E6%81%90%E6%83%A7/" class="md-nav__link">
+        3.10 催眠战胜潜意识中的恐惧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.10_%E6%97%A9%E9%A4%90%E8%AF%95%E8%AF%95%E8%BF%99%E4%B8%AA%E8%94%AC%E8%8F%9C%E9%A5%BC/" class="md-nav__link">
+        3.10 早餐试试这个蔬菜饼
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.11_%E4%B8%80%E8%A1%8C%E7%A6%85%E5%B8%88%E7%9A%8432%E4%B8%AA%E6%AD%A3%E5%BF%B5%E7%9A%84%E7%BB%83%E4%B9%A0/" class="md-nav__link">
+        3.11 一行禅师的32个正念的练习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.11_%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC/" class="md-nav__link">
+        3.11 海市蜃楼
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.12_TensorFlowTTS%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.12 TensorFlowTTS文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.12_python%E5%BD%95%E9%9F%B3%E5%92%8C%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90/" class="md-nav__link">
+        3.12 python录音和播放音乐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.13_English%20Text%20to%20speech%20with%20TensorFlowTTS/" class="md-nav__link">
+        3.13 English Text to speech with TensorFlowTTS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.13_%E4%BD%BF%E7%94%A8MelGAN%E8%BF%9B%E8%A1%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.13 使用MelGAN进行文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.15_Midjourney%20Discord%20Interface/" class="md-nav__link">
+        3.15 Midjourney Discord Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.15_Tensorflow%20Eager%20Execution/" class="md-nav__link">
+        3.15 Tensorflow Eager Execution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.15_%E5%85%B3%E4%BA%8E%E4%B8%AD%E5%BA%B8/" class="md-nav__link">
+        3.15 关于中庸
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.16_python%E5%AE%9A%E6%97%B6%E6%8A%93%E5%8F%96zhihu%E5%92%8C%E7%99%BE%E5%BA%A6%E7%9A%84%E7%83%AD%E7%82%B9/" class="md-nav__link">
+        3.16 python定时抓取zhihu和百度的热点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.16_python%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        3.16 python循环执行模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.16_%E6%96%B0%E5%BF%85%E5%BA%94%EF%BC%88New%20Bing%EF%BC%89%E5%9B%BD%E5%86%85%E7%94%B3%E8%AF%B7%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.16 新必应（New Bing）国内申请与使用教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.19_%E4%BD%BF%E7%94%A8%20Python%20%E8%B0%83%E7%94%A8%20ChatGPT-3.5-API/" class="md-nav__link">
+        3.19 使用 Python 调用 ChatGPT 3.5 API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.19_%E8%AF%B7%E9%97%AE%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1chatgpt%E7%9A%84prompt/" class="md-nav__link">
+        3.19 请问怎么设计chatgpt的prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20.%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+        3.20.微生物和果皮怎么制作酵素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20_133033.%E5%86%A5%E6%83%B3%E5%92%8C%E6%AD%A3%E5%BF%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 133033.冥想和正念之间的关系是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20_KK%E7%9A%84%E3%80%8A%E5%A4%B1%E6%8E%A7%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 KK的《失控》这本书主要讲了什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20_%E3%80%8A%E5%BF%83%E6%B5%81%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 《心流》这本书主要讲了什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20_%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+        3.20 微生物和果皮怎么制作酵素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.20_%E7%94%A8python%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        3.20 用python实现chatgpt对话程序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.21_TensorFlow%20Hub%20%E5%BA%93%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        3.21 TensorFlow Hub 库概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.21_paddlehub_pretrained_models/" class="md-nav__link">
+        3.21 paddlehub pretrained models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.21_python%E9%80%9A%E8%BF%87google%E5%9C%A8%E7%BA%BF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        3.21 python通过google在线实现语音识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.21_%E5%AE%9E%E7%8E%B0%E6%B0%91%E4%B8%BB%E6%9C%80%E5%A5%BD%E7%9A%84%E9%80%94%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.21 实现民主最好的途径是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.21_%E8%B0%83%E7%94%A8google%20API%E8%AF%86%E5%88%AB%E9%BA%A6%E5%85%8B%E9%A3%8E%E7%9A%84%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.21 调用google API识别麦克风的语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.21_%E9%80%9A%E8%BF%87%E8%AF%AD%E9%9F%B3%E5%92%8Cchatgpt%E5%AF%B9%E8%AF%9D%E7%9A%84python%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        3.21 通过语音和chatgpt对话的python程序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.22_%E4%BA%BA%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%B0%86%E6%80%8E%E6%A0%B7%E4%BA%92%E5%8A%A8/" class="md-nav__link">
+        3.22 人和人工智能将怎样互动
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.22_%E6%96%B0%E9%97%BB_2023/" class="md-nav__link">
+        3.22 新闻 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.23_Midjourney%20Quick%20Start/" class="md-nav__link">
+        3.23 Midjourney Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.23_PaddleNLP%20Examples/" class="md-nav__link">
+        3.23 PaddleNLP Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.23_chatbot_unified_transformer/" class="md-nav__link">
+        3.23 chatbot unified transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.23_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.23 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.24_PaddleNLP_taskflow/" class="md-nav__link">
+        3.24 PaddleNLP taskflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.24_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.24 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.25_%E9%94%AF%E6%9C%AB%E5%85%BB%E8%8A%B1%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+        3.25 锯末养花的好处
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.26_python%E6%93%8D%E4%BD%9Csqlite/" class="md-nav__link">
+        3.26 python操作sqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.26_%E4%BD%BF%E7%94%A8%20PythonMagick%20%E7%94%9F%E6%88%90%20icon%20%E5%9B%BE%E6%A0%87/" class="md-nav__link">
+        3.26 使用 PythonMagick 生成 icon 图标
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.27_ERNIE%203.0%E5%AE%9E%E6%88%98%E6%B3%95%E5%BE%8B%E6%96%87%E6%9C%AC%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        3.27 ERNIE 3.0实战法律文本多标签分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.27_awesome-chatgpt-prompts/" class="md-nav__link">
+        3.27 awesome chatgpt prompts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.27_%E4%B8%B4%E6%B1%9F%E4%BB%99%C2%B7%E5%A4%9C%E9%A5%AE%E4%B8%9C%E5%9D%A1%E9%86%92%E5%A4%8D%E9%86%89/" class="md-nav__link">
+        3.27 临江仙·夜饮东坡醒复醉
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.27_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        3.27 常用的思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.27_%E6%96%87%E6%A1%88_%E4%B8%80%E6%9D%AF%E8%8C%B6/" class="md-nav__link">
+        3.27 文案 一杯茶
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.27 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.28_python%E7%9A%84%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0sqlite/" class="md-nav__link">
+        3.28 python的实现chatgpt对话并保存到sqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.28_sqlite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8Cpandas%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        3.28 sqlite数据库和pandas数据转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        3.29 PaddleNLP分类任务指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.29 PaddleNLP文本分类应用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3.29 PaddleNLP文本分类应用
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paddlenlp" class="md-nav__link">
+    PaddleNLP文本分类应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 文本分类应用简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 技术特色介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 技术特色介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 文本分类方案全覆盖
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 文本分类方案全覆盖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    2.1.1 分类场景齐全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    2.1.2 多方案满足定制需求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    方案一：预训练模型微调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    方案二：提示学习
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方案三：语义索引
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 更懂中文的训练基座
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 高效模型调优方案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 产业级全流程方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 快速开始
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 常用中文分类数据集
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.29_TensorFlow%202.0%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.29 TensorFlow 2.0初学者的教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.30_windows%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8Cpath%E7%8E%AF%E5%A2%83%E5%90%8E%E5%8D%B3%E6%97%B6%E7%94%9F%E6%95%88/" class="md-nav__link">
+        3.30 windows配置环境变量和path环境后即时生效
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.31_google%E5%9C%A8%E7%BA%BFTTS%E5%92%8CASR/" class="md-nav__link">
+        3.31 google在线TTS和ASR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.31_pygame%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        3.31 pygame播放音频文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.31_window%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8paddlespeech%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%92%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.31 window系统使用paddlespeech进行语音识别和文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.31_%E6%80%8E%E6%A0%B7%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%A2%84%E6%B5%8B%E5%9F%BA%E9%87%91%E8%B6%8B%E5%8A%BF/" class="md-nav__link">
+        3.31 怎样用人工智能预测基金趋势
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.31_%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7doccano%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        3.31 标注工具doccano使用指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.6_%E4%B8%A4%E7%A7%8D%E8%87%AA%E5%88%B6%E7%94%9F%E6%A0%B9%E7%B2%89%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        两种自制生根粉的方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.6_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
+        3.6 催眠体验R1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.6_%E6%B0%B4%E6%9D%A8%E9%85%B8%E7%9A%84%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        3.6 水杨酸的提取方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.7_%E4%B8%8E%E6%BD%9C%E6%84%8F%E8%AF%86%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+        3.7 与潜意识对话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.7_%E5%82%AC%E7%9C%A0%E7%BC%93%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%84%A6%E8%99%91%E5%92%8C%E5%8E%8B%E5%8A%9B/" class="md-nav__link">
+        3.7 催眠缓解你的焦虑和压力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.7_%E5%A4%A7%E8%87%AA%E7%84%B6%E5%86%A5%E6%83%B3_%E8%87%AA%E6%88%91%E5%82%AC%E7%9C%A0/" class="md-nav__link">
+        3.7 大自然冥想 自我催眠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.8_%E5%82%AC%E7%9C%A0%E9%87%8A%E6%94%BE%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E5%86%85%E7%96%9A%E6%83%85%E7%BB%AA/" class="md-nav__link">
+        3.8 催眠释放对他人的内疚情绪
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.8_%E8%81%8C%E4%B8%9A%E5%82%AC%E7%9C%A0%E5%B8%88%E5%B8%A6%E4%BD%A0%E4%BD%93%E9%AA%8C%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%82%AC%E7%9C%A0%E2%80%94%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E5%89%8D%E4%B8%96/" class="md-nav__link">
+        3.8 职业催眠师带你体验真正的催眠—看到你的前世
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.9_%E5%82%AC%E7%9C%A0%E5%85%A5%E7%9D%A1%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+        3.9 催眠入睡引导
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/04.11_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        04.11 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.01.22_%E9%95%BF%E5%AF%BF%E8%8A%B1%E6%80%8E%E4%B9%88%E5%85%BB%E6%AE%96/" class="md-nav__link">
+        4.01.22 长寿花怎么养殖
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.01_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        4.01 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.03_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        4.03 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.06_%E6%9E%B8%E6%9D%9E%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        4.06 枸杞的种植方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.11_AI%E5%BF%AB%E8%BD%A6%E9%81%93-FastDeploy%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%E5%A5%97%E4%BB%B6%E7%B3%BB%E5%88%97/" class="md-nav__link">
+        4.11 AI快车道 FastDeploy推理部署套件系列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.11_%E5%BE%AE%E4%BF%A1%E6%80%8E%E4%B9%88%E6%94%B6%E6%AC%BE/" class="md-nav__link">
+        4.11 微信怎么收款
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_Sympy%20-%20Symbolic%20algebra%20in%20Python/" class="md-nav__link">
+        4.12 Sympy   Symbolic algebra in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_Tools%20for%20high-performance%20computing%20applications/" class="md-nav__link">
+        4.12 Tools for high performance computing applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_matplotlib%20-%202D%20and%203D%20plotting%20in%20Python/" class="md-nav__link">
+        4.12 matplotlib   2D and 3D plotting in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_%E7%94%A8Python%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E4%BB%BF%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+        4.12 用Python绘制一个仿黑洞图像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.13_EinsteinPy%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        4.13 EinsteinPy模块介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.13_python%E7%94%9F%E6%88%90%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+        4.13 python生成黑洞图像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.16_%E8%8A%B1%E9%9D%92%E7%B4%A0%E5%90%AB%E9%87%8F%E9%AB%98%E7%9A%84%E9%A3%9F%E7%89%A9%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        4.16 花青素含量高的食物有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.17_%E6%A7%90%E8%8A%B1%E7%82%92%E9%B8%A1%E8%9B%8B/" class="md-nav__link">
+        4.17 槐花炒鸡蛋
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.18_%E8%B1%8C%E8%B1%86%E6%8E%92%E9%AA%A8%E6%B1%A4%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        4.18 豌豆排骨汤的做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_PaddleClas%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABPULC%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="md-nav__link">
+        4.1 PaddleClas图像识别PULC快速体验
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_windows%E4%B8%8B%E6%80%8E%E4%B9%88%E7%94%A8sublime%20text%E6%90%AD%E5%BB%BApython%20%E7%9A%84ide/" class="md-nav__link">
+        4.1 windows下怎么用sublime text搭建python 的ide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_%E5%9F%BA%E4%BA%8EPP-LCNetV2%E7%9A%84%E5%8A%A8%E7%89%A9%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8E%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        4.1 基于PP LCNetV2的动物图像识别与分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_%E6%8E%A8%E8%8D%90%E4%B8%80%E7%A7%8D%E5%81%A5%E5%BA%B7%E7%9A%84%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        4.1 推荐一种健康的生活方式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.21_%E4%BB%A5%E7%A7%91%E5%AD%A6%E5%85%A5%E9%81%93/" class="md-nav__link">
+        4.21 以科学入道
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.22_%E6%97%B6%E9%97%B4%E7%9A%84%E7%A7%A9%E5%BA%8F-%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        4.22 时间的秩序 笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.22_%E6%9C%BA%E5%99%A8%E6%96%87%E6%98%8E%E7%9A%84%E5%86%B0%E5%B1%B1%E4%B8%80%E8%A7%92/" class="md-nav__link">
+        4.22 机器文明的冰山一角
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.24_chatgpt%20%E5%86%99%E5%B0%8F%E8%AF%B4%E6%8F%90%E7%BA%B2%E7%9A%84prompt/" class="md-nav__link">
+        4.24 chatgpt 写小说提纲的prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.24_%E5%88%A9%E7%94%A8ChatGPT%E8%BD%BB%E6%9D%BE%E7%BB%98%E5%9B%BE/" class="md-nav__link">
+        4.24 利用ChatGPT轻松绘图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.24_%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9C%AF%E8%AF%AD/" class="md-nav__link">
+        4.24 大模型的一些术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25.18_%E6%89%AE%E6%BC%94%E8%AF%97%E4%BA%BA/" class="md-nav__link">
+        4.25.18 扮演诗人
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25.19_%E5%B0%8F%E8%AF%B4-%E5%BF%83%E9%9A%8F%E6%A2%A6%E9%80%90/" class="md-nav__link">
+        4.25.19 小说 心随梦逐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25_chatgpt%20%E5%86%99%E5%A5%87%E5%B9%BB%E5%B0%8F%E6%95%85%E4%BA%8B%E7%9A%84prompt/" class="md-nav__link">
+        4.25 chatgpt 写奇幻小故事的prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25_python-%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2%E6%8E%89%E6%96%87%E6%9C%AC%E4%B8%AD%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7/" class="md-nav__link">
+        4.25 python 正则替换掉文本中标点符号
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26_%E7%A2%B0%E7%A2%B0%E9%A6%99%E7%9A%84%E5%85%BB%E6%AE%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        碰碰香的养殖方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26_%E8%99%8E%E7%9A%AE%E5%85%B0%E7%9A%84%E5%85%BB%E6%8A%A4%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        虎皮兰的养护方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26_%E9%87%87%E8%98%91%E8%8F%87%E7%9A%84%E5%B0%8F%E5%A7%91%E5%A8%98/" class="md-nav__link">
+        4.26 采蘑菇的小姑娘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_Huggingface%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        4.2 Huggingface开源模型和数据集介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_paddlehub%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E5%85%B3%E9%94%AE%E7%82%B9%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        4.2 paddlehub人体骨骼关键点检测模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_paddlepaddle%E7%94%9F%E6%80%81%E7%9A%84%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%B7%A5%E5%85%B7PaddleHub/" class="md-nav__link">
+        4.2 paddlepaddle生态的预训练模型应用工具PaddleHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Chocolatey%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        4.2 软件管理工具Chocolatey的安装与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.3_AI%E5%B7%A5%E5%85%B7%E9%9B%86/" class="md-nav__link">
+        4.3 AI工具集
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.3_Transformer%20text-to-speech%20model%20from%20fairseq/" class="md-nav__link">
+        4.3 Transformer text to speech model from fairseq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.4_%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91App/" class="md-nav__link">
+        4.4 低代码开发App
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          汪曾祺
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          汪曾祺
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+        2.7 摘录 人间草木
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E8%A5%BF%E5%B1%B1%E5%AE%A2%E8%AF%9D/" class="md-nav__link">
+        2.7 摘录 西山客话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+        2.7 文案 人间草木
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E6%98%86%E6%98%8E%E7%9A%84%E9%9B%A8/" class="md-nav__link">
+        2.7 文案 昆明的雨
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%B1%AA%E6%9B%BE%E7%A5%BA%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        2.7 汪曾祺简介
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paddlenlp" class="md-nav__link">
+    PaddleNLP文本分类应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 文本分类应用简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 技术特色介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 技术特色介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 文本分类方案全覆盖
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 文本分类方案全覆盖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    2.1.1 分类场景齐全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    2.1.2 多方案满足定制需求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    方案一：预训练模型微调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    方案二：提示学习
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方案三：语义索引
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 更懂中文的训练基座
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 高效模型调优方案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 产业级全流程方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 快速开始
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 常用中文分类数据集
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>3.29 PaddleNLP文本分类应用</h1>
+
+<h2 id="paddlenlp">PaddleNLP文本分类应用</h2>
+<p><strong>目录</strong></p>
+<ul>
+<li>
+<p><a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#文本分类应用简介">1. 文本分类应用简介</a></p>
+</li>
+<li>
+<p>2.技术特色介绍</p>
+</li>
+<li><a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#文本分类方案全覆盖">2.1 文本分类方案全覆盖</a></li>
+<li><a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#更懂中文的训练基座">2.2 更懂中文的训练基座</a></li>
+<li><a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#高效模型调优方案">2.3 高效模型调优方案</a></li>
+<li>
+<p><a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#产业级全流程方案">2.4 产业级全流程方案</a></p>
+</li>
+<li>
+<p><a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#快速开始">3. 快速开始</a></p>
+</li>
+<li>
+<p><a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#常用中文分类数据集">4. 常用中文分类数据集</a></p>
+</li>
+</ul>
+<h2 id="1">1. 文本分类应用简介</h2>
+<p>文本分类应用针对<strong>多分类、多标签、层次分类等高频场景开源了产业级分类应用方案</strong>，打通数据标注-模型训练-模型调优-模型压缩-预测部署全流程，旨在解决细分场景应用的痛点和难点，快速实现文本分类产品落地。</p>
+<p>文本分类简单来说就是对给定的一个句子或一段文本使用分类模型分类。虽然文本分类在金融、医疗、法律、工业等领域都有广泛的成功实践应用，但如何选择合适的方案和预训练模型、数据标注质量差、效果调优困难、AI入门成本高、如何高效训练部署等问题使部分开发者望而却步。针对文本分类领域的痛点和难点，PaddleNLP文本分类应用提出了多种前沿解决方案，助力开发者简单高效实现文本分类数据标注、训练、调优、上线，降低文本分类落地技术门槛。</p>
+<p><strong>文本分类应用技术特色：</strong></p>
+<ul>
+<li><strong>方案全面🎓：</strong> 涵盖多分类、多标签、层次分类等高频分类场景，提供预训练模型微调、提示学习（小样本学习）、语义索引三种端到端全流程分类方案，满足开发者多样文本分类落地需求。</li>
+<li><strong>效果领先🏃：</strong> 使用在中文领域内模型效果和模型计算效率有突出效果的ERNIE 3.0 轻量级系列模型作为训练基座，ERNIE 3.0 轻量级系列提供多种尺寸的预训练模型满足不同需求，具有广泛成熟的实践应用性。</li>
+<li><strong>高效调优✊：</strong> 文本分类应用依托<a href="https://github.com/PaddlePaddle/TrustAI">TrustAI</a>可信增强能力和<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/docs/dataaug.md">数据增强API</a>，提供模型分析模块助力开发者实现模型分析，并提供稀疏数据筛选、脏数据清洗、数据增强等多种解决方案。</li>
+<li><strong>简单易用👶：</strong> 开发者<strong>无需机器学习背景知识</strong>，仅需提供指定格式的标注分类数据，一行命令即可开启文本分类训练，轻松完成上线部署，不再让技术成为文本分类的门槛。</li>
+</ul>
+<h2 id="2">2. 技术特色介绍</h2>
+<h3 id="21">2.1 文本分类方案全覆盖</h3>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114232-bb706af4-45a9-4e63-8857-76945a63d081.png"><img alt="image" src="https://user-images.githubusercontent.com/63761690/189114232-bb706af4-45a9-4e63-8857-76945a63d081.png" /></a></p>
+<h4 id="211">2.1.1 分类场景齐全</h4>
+<p>文本分类应用涵盖多分类（multi class）、多标签（multi label）、层次分类（hierarchical）三种场景，接下来我们将以下图的新闻文本分类为例介绍三种分类场景的区别。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/186378697-630d3590-4e67-49a0-8d5f-7cabd9daa894.png"><img alt="image" src="https://user-images.githubusercontent.com/63761690/186378697-630d3590-4e67-49a0-8d5f-7cabd9daa894.png" /></a></p>
+<ul>
+<li><strong>多分类🚶：</strong> 数据集的标签集含有两个或两个以上的类别，所有输入句子/文本有且只有一个标签。在文本多分类场景中，我们需要预测输入句子/文本最可能来自 <code>n</code> 个标签类别中的哪一个类别。以上图多分类中新闻文本为例，该新闻文本的标签为 <code>娱乐</code>。快速开启多分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_class#readme">多分类指南</a></li>
+<li><strong>多标签👫 ：</strong> 数据集的标签集含有两个或两个以上的类别，输入句子/文本具有一个或多个标签。在文本多标签任务中，我们需要预测输入句子/文本可能来自 <code>n</code> 个标签类别中的哪几个类别。以上图多标签中新闻文本为例，该新闻文本具有 <code>相机</code> 和 <code>芯片</code> 两个标签。快速开启多标签任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_label#readme">多标签指南</a> 。</li>
+<li><strong>层次分类👪 ：</strong> 数据集的标签集具有多级标签且标签之间具有层级结构关系，输入句子/文本具有一个或多个标签。在文本层次分类任务中，我们需要预测输入句子/文本可能来自于不同级标签类别中的某一个或几个类别。以上图层次分类中新闻文本为例（新闻为根节点），该新闻一级分类标签为 <code>体育</code>，二级分类标签为 <code>足球</code>。快速开启层次分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/hierarchical#readme">层次分类指南</a> 。</li>
+</ul>
+<h4 id="212">2.1.2 多方案满足定制需求</h4>
+<h4 id="_1">方案一：预训练模型微调</h4>
+<p>【方案选择】对于大多数任务，我们推荐使用<strong>预训练模型微调作为首选的文本分类方案</strong>，预训练模型微调提供了数据标注-模型训练-模型分析-模型压缩-预测部署全流程，有效减少开发时间，低成本迁移至实际应用场景。</p>
+<p>【方案介绍】ERNIE 3.0 轻量级模型不能直接在文本分类任务上使用，预训练模型微调在预训练模型 <code>[CLS]</code> 输出向量后接入线性层作为文本分类器，用具体任务数据进行微调训练文本分类器，使预训练模型”更懂”这个任务。</p>
+<p>【方案效果】下表展示在多标签任务CAIL2019—婚姻家庭要素提取数据集中ERNIE 3.0 系列轻量级模型效果评测。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/189115968-c1d14ed3-dbdd-4a84-ac11-e9eaa447d40f.png"><img alt="img" src="https://user-images.githubusercontent.com/63761690/189115968-c1d14ed3-dbdd-4a84-ac11-e9eaa447d40f.png" /></a></p>
+<p>【快速开始】</p>
+<ul>
+<li>快速开启多分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_class#readme">预训练模型微调-多分类指南</a></li>
+<li>快速开启多标签分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_label#readme">预训练模型微调-多标签分类指南</a></li>
+<li>快速开启层次分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/hierarchical#readme">预训练模型微调-层次分类指南</a></li>
+</ul>
+<h4 id="_2">方案二：提示学习</h4>
+<p>【方案选择】提示学习（Prompt Learning）适用于<strong>标注成本高、标注样本较少的文本分类场景</strong>。在小样本场景中，相比于预训练模型微调学习，提示学习能取得更好的效果。对于标注样本充足、标注成本较低的场景，我们仍旧推荐使用充足的标注样本进行文本分类<a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification#预训练模型微调">预训练模型微调</a>。</p>
+<p>【方案介绍】<strong>提示学习的主要思想是将文本分类任务转换为构造提示中掩码 [MASK] 的分类预测任务</strong>，也即在掩码 <code>[MASK]</code>向量后接入线性层分类器预测掩码位置可能的字或词。提示学习使用待预测字的预训练向量来初始化分类器参数（如果待预测的是词，则为词中所有字的预训练向量平均值），充分利用预训练语言模型学习到的特征和标签文本，从而降低样本需求。提示学习同时提供<a href="https://arxiv.org/abs/2106.14448"> R-Drop</a> 和 <a href="https://aclanthology.org/2022.findings-naacl.81/">RGL</a> 策略，帮助提升模型效果。</p>
+<p>我们以下图情感二分类任务为例来具体介绍提示学习流程，分类任务标签分为 <code>0:负向</code> 和 <code>1:正向</code> 。在文本加入构造提示 <code>我[MASK]喜欢。</code> ，将情感分类任务转化为预测掩码 <code>[MASK]</code> 的待预测字是 <code>不</code> 还是 <code>很</code>。具体实现方法是在掩码<code>[MASK]</code>的输出向量后接入线性分类器（二分类），然后用<code>不</code>和<code>很</code>的预训练向量来初始化分类器进行训练，分类器预测分类为 <code>0：不</code> 或 <code>1：很</code> 对应原始标签 <code>0:负向</code> 或 <code>1:正向</code>。而预训练模型微调则是在预训练模型<code>[CLS]</code>向量接入随机初始化线性分类器进行训练，分类器直接预测分类为 <code>0:负向</code> 或 <code>1:正向</code>。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114324-376025b6-8f4e-4d94-a135-953f53f20636.png"><img alt="img" src="https://user-images.githubusercontent.com/63761690/189114324-376025b6-8f4e-4d94-a135-953f53f20636.png" /></a></p>
+<p>【方案效果】我们比较预训练模型微调与提示学习在多分类、多标签、层次分类小样本场景的模型表现（多分类精度为准确率，多标签和层次分类精度为Macro F1值），可以看到在样本较少的情况下，提示学习比预训练模型微调有明显优势。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114445-ee0dd6af-f102-4708-9f46-c630c572dfd3.png"><img alt="文本分类落地难点" src="https://user-images.githubusercontent.com/63761690/189114445-ee0dd6af-f102-4708-9f46-c630c572dfd3.png" /></a></p>
+<p>【快速开始】</p>
+<p>更多测评和使用细节详见各场景文档：</p>
+<ul>
+<li>快速开启多分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_class/few-shot#readme">提示学习(小样本)-多分类指南</a></li>
+<li>快速开启多标签分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_label/few-shot#readme">提示学习(小样本)-多标签分类指南</a></li>
+<li>快速开启层次分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/hierarchical/few-shot#readme">提示学习(小样本)-层次分类指南</a></li>
+</ul>
+<h4 id="_3">方案三：语义索引</h4>
+<p>【方案选择】基于语义索引的文本分类方案<strong>适用于标签类别不固定的场景</strong>，对于新增标签类别或新的相关分类任务无需重新训练，模型仍然能获得较好预测效果，方案具有良好的拓展性。</p>
+<p>【方案介绍】语义索引目标是从海量候选召回集中快速、准确地召回一批与输入文本语义相关的文本。基于语义索引的文本分类方法具体来说是将标签集作为召回目标集，召回与输入文本语义相似的标签作为文本的标签类别。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114541-2278b7f7-1af6-470d-a300-28e7e902b6a8.png"><img alt="img" src="https://user-images.githubusercontent.com/63761690/189114541-2278b7f7-1af6-470d-a300-28e7e902b6a8.png" /></a></p>
+<p>【快速开始】</p>
+<ul>
+<li>快速开启多分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_class/retrieval_based#readme">语义索引-多分类指南</a></li>
+<li>快速开启多标签分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_label/retrieval_based#readme">语义索引-多标签分类指南</a></li>
+<li>快速开启层次分类任务参见 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/hierarchical/retrieval_based#readme">语义索引-层次分类指南</a></li>
+</ul>
+<h3 id="22">2.2 更懂中文的训练基座</h3>
+<p>近年来，大量的研究表明在超大规模的语料采用无监督或者弱监督的方式训练模型，模型能够获得语言相关的知识。预训练模型学习到的文本语义表示能够避免从零开始训练模型，同时有利于下游自然语言处理(NLP)任务。预训练模型与具体的文本分类任务的关系可以直观地理解为，<strong>预训练模型已经懂得了相关句法、语义的语言知识，用具体任务数据训练使得预训练模型”更懂”这个任务</strong>，在预训练过程中学到的知识基础使学习文本分类任务事半功倍。</p>
+<p>文本分类应用使用<strong>ERNIE 3.0轻量级模型作为预训练模型</strong>，ERNIE 3.0 轻量级模型是文心大模型ERNIE 3.0基础上通过在线蒸馏技术得到的轻量级模型。下面是ERNIE 3.0 效果-时延图，ERNIE 3.0 轻量级模型在精度和性能上的综合表现已全面领先于 UER-py、Huawei-Noah 以及 HFL 的中文模型，具体的测评细节可以见<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/model_zoo/ernie-3.0">ERNIE 3.0 效果和性能测评文档</a>。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/186376051-6c3ca239-1e31-4c0a-bdbe-547439234ddb.png"><img alt="img" src="https://user-images.githubusercontent.com/63761690/186376051-6c3ca239-1e31-4c0a-bdbe-547439234ddb.png" /></a></p>
+<h3 id="23">2.3 高效模型调优方案</h3>
+<p>有这么一句话在业界广泛流传，"数据决定了机器学习的上限，而模型和算法只是逼近这个上限"，可见数据质量的重要性。文本分类应用依托<a href="https://github.com/PaddlePaddle/TrustAI">TrustAI</a>可信增强能力和<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/docs/dataaug.md">数据增强API</a>开源了模型分析模块，针对标注数据质量不高、训练数据覆盖不足、样本数量少等文本分类常见数据痛点，提供稀疏数据筛选、脏数据清洗、数据增强三种数据优化方案，解决训练数据缺陷问题，用低成本方式获得大幅度的效果提升。</p>
+<ul>
+<li><strong>稀疏数据筛选</strong>基于特征相似度的实例级证据分析方法挖掘待预测数据中缺乏证据支持的数据（也即稀疏数据），并进行有选择的训练集数据增强或针对性筛选未标注数据进行标注来解决稀疏数据问题，有效提升模型表现。</li>
+</ul>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114644-c0d21801-dd6c-4530-b3a3-5f5a568a7a22.png"><img alt="文本分类落地难点" src="https://user-images.githubusercontent.com/63761690/189114644-c0d21801-dd6c-4530-b3a3-5f5a568a7a22.png" /></a></p>
+<p>我们采用在多分类、多标签、层次分类场景中评测稀疏数据-数据增强策略和稀疏数据-数据标注策略，下图表明稀疏数据筛选方案在各场景能够有效提高模型表现（多分类精度为准确率，多标签和层次分类精度为Macro F1值）。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114660-820d1471-4907-4c73-a118-c494200afff0.png"><img alt="文本分类落地难点" src="https://user-images.githubusercontent.com/63761690/189114660-820d1471-4907-4c73-a118-c494200afff0.png" /></a></p>
+<ul>
+<li><strong>脏数据清洗</strong>基于表示点方法的实例级证据分析方法，计算训练数据对模型的影响分数，分数高的训练数据表明对模型影响大，这些数据有较大概率为脏数据（标注错误样本）。脏数据清洗方案通过高效识别训练集中脏数据（也即标注质量差的数据），有效降低人力检查成本。</li>
+</ul>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114677-9a2f5232-9551-4e10-a215-54ddb7ca1f33.png"><img alt="文本分类落地难点" src="https://user-images.githubusercontent.com/63761690/189114677-9a2f5232-9551-4e10-a215-54ddb7ca1f33.png" /></a></p>
+<p>我们采用在多分类、多标签、层次分类场景中评测脏数据清洗方案，实验表明方案能够高效筛选出训练集中脏数据，提高模型表现（多分类精度为准确率，多标签和层次分类精度为Macro F1值）。</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/189114695-90cef2fd-955d-4243-9fc4-78f2dcf7fb6c.png"><img alt="文本分类落地难点" src="https://user-images.githubusercontent.com/63761690/189114695-90cef2fd-955d-4243-9fc4-78f2dcf7fb6c.png" /></a></p>
+<ul>
+<li><strong>数据增强</strong>在数据量较少的情况下能够通过增加数据集多样性，提升模型效果。PaddleNLP内置<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/docs/dataaug.md">数据增强API</a>，支持词替换、词删除、词插入、词置换、基于上下文生成词（MLM预测）、TF-IDF等多种数据增强策略。数据增强方案提供一行命令，快速完成数据集增强。以CAIL2019—婚姻家庭要素提取数据子集（500条）为例，我们在数据集应用多种数据增强策略，策略效果如下表。</li>
+</ul>
+<p><a href="https://user-images.githubusercontent.com/63761690/189115071-40152f7c-7c90-41b3-a70b-4d4aabc5b715.png"><img alt="文本分类落地难点" src="https://user-images.githubusercontent.com/63761690/189115071-40152f7c-7c90-41b3-a70b-4d4aabc5b715.png" /></a></p>
+<p>【快速开始】</p>
+<p>更多使用方法和测评细节详见各场景模型分析模块：</p>
+<ul>
+<li>体验模型分析模块 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_class/analysis">多分类-模型分析模块</a></li>
+<li>体验模型分析模块 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_label/analysis">多标签-模型分析模块</a></li>
+<li>体验模型分析模块 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/hierarchical/analysis">层次分类-模型分析模块</a></li>
+</ul>
+<h3 id="24">2.4 产业级全流程方案</h3>
+<p>文本分类应用提供了简单易用的数据标注-模型训练-模型调优-模型压缩-预测部署全流程方案，我们将以预训练模型微调方案为例介绍文本分类应用的全流程：</p>
+<p><a href="https://user-images.githubusercontent.com/63761690/189115101-20cbaa00-e549-425b-b047-61bac2a5e39f.png"><img alt="image" src="https://user-images.githubusercontent.com/63761690/189115101-20cbaa00-e549-425b-b047-61bac2a5e39f.png" /></a></p>
+<p>文本分类应用全流程示意图</p>
+<p><strong>1.数据准备阶段</strong></p>
+<ul>
+<li>我们根据文本分类任务选择对应的场景目录: <a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/applications/text_classification/multi_class">多分类场景目录</a>、 <a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/applications/text_classification/multi_label">多标签场景目录</a>、<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/applications/text_classification/hierarchical">层次分类场景目录</a>。</li>
+<li>如果没有已标注的数据集，我们推荐doccano数据标注工具进行标注，详见<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/applications/text_classification/doccano.md">文本分类标注指南</a>。如果已有标注好的本地数据集，我们需要根据不同任务要求将数据集整理为文档要求的格式，详见各分类场景文档。</li>
+</ul>
+<p><strong>2.模型训练</strong></p>
+<ul>
+<li>数据准备完成后，开始进行预训练模型微调训练。可以根据实际数据调整可配置参数，选择使用GPU或CPU进行模型训练，脚本默认保存在开发集最佳表现模型参数。</li>
+<li>训练结束后，使用模型分析(analysis)模块对分析模型表现，同时模型分析(analysis)模块依托<a href="https://github.com/PaddlePaddle/TrustAI">TrustAI</a>可信增强能力和<a href="https://github.com/PaddlePaddle/PaddleNLP/blob/develop/docs/dataaug.md">数据增强API</a>提供稀疏数据筛选、脏数据清洗、数据增强三种优化方案帮助提升模型效果。</li>
+<li>模型训练、调优完成后，可以通过预测脚本加载最佳模型参数，打印模型预测结果。</li>
+</ul>
+<p><strong>3.模型部署</strong></p>
+<ul>
+<li>现实部署场景需要同时考虑模型的精度和性能表现，文本分类应用接入PaddleNLP 模型压缩 API 。采用了DynaBERT 中宽度自适应裁剪策略，对预训练模型多头注意力机制中的头（Head ）进行重要性排序，保证更重要的头（Head ）不容易被裁掉，然后用原模型作为蒸馏过程中的教师模型，宽度更小的模型作为学生模型，蒸馏得到的学生模型就是我们裁剪得到的模型。实验表明模型裁剪能够有效缩小模型体积、减少内存占用、提升推理速度。模型裁剪去掉了部分冗余参数的扰动，增加了模型的泛化能力，在部分任务中预测精度得到提高。</li>
+</ul>
+<p><a href="https://user-images.githubusercontent.com/63761690/189115124-2f429043-3145-4bf8-9969-47580a706037.png"><img alt="image" src="https://user-images.githubusercontent.com/63761690/189115124-2f429043-3145-4bf8-9969-47580a706037.png" /></a></p>
+<ul>
+<li>模型部署需要将保存的最佳模型参数（动态图参数）导出成静态图参数，用于后续的推理部署。p.s.模型裁剪之后会默认导出静态图模型</li>
+<li>文本分类应用提供了离线部署，并且支持在GPU设备使用FP16，在CPU设备使用动态量化的低精度加速推理；同时提供基于Paddle Serving的在线服务化部署，详见各分类场景文档中模型部署介绍。</li>
+</ul>
+<h2 id="3">3. 快速开始</h2>
+<ul>
+<li>快速开启多分类 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_class#readme">多分类指南</a></li>
+<li>快速开启多标签分类 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/multi_label#readme">多标签指南</a></li>
+<li>快速开启层次分类 👉 <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/text_classification/hierarchical#readme">层次分类指南</a></li>
+</ul>
+<h2 id="4">4. 常用中文分类数据集</h2>
+<p><strong>多分类数据集：</strong></p>
+<ul>
+<li><a href="http://thuctc.thunlp.org/">THUCNews新闻分类数据集</a></li>
+<li><a href="https://github.com/brightmart/nlp_chinese_corpus#3百科类问答json版baike2018qa">百科问答分类数据集</a></li>
+<li><a href="https://github.com/aceimnorstuvwxz/toutiao-text-classfication-dataset">头条新闻标题数据集TNEWS</a></li>
+<li><a href="https://www.heywhale.com/mw/dataset/5d3a9c86cf76a600360edd04">复旦新闻文本数据集</a></li>
+<li><a href="https://storage.googleapis.com/cluebenchmark/tasks/iflytek_public.zip">IFLYTEK app应用描述分类数据集</a></li>
+<li><a href="https://cloud.tsinghua.edu.cn/d/6e911ff1286d47db8016/">CAIL 2022事件检测</a></li>
+</ul>
+<p><strong>情感分类数据集(多分类):</strong></p>
+<ul>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/yf_amazon/intro.ipynb">亚马逊商品评论情感数据集</a></li>
+<li><a href="https://github.com/wwwxmu/Dataset-of-financial-news-sentiment-classification">财经新闻情感分类数据集</a></li>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/tree/master/datasets/ChnSentiCorp_htl_all">ChnSentiCorp 酒店评论情感分类数据集</a></li>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/waimai_10k/intro.ipynb">外卖评论情感分类数据集</a></li>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/weibo_senti_100k/intro.ipynb">weibo情感二分类数据集</a></li>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/simplifyweibo_4_moods/intro.ipynb">weibo情感四分类数据集</a></li>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/online_shopping_10_cats/intro.ipynb">商品评论情感分类数据集</a></li>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/dmsc_v2/intro.ipynb">电影评论情感分类数据集</a></li>
+<li><a href="https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/yf_dianping/intro.ipynb">大众点评分类数据集</a></li>
+</ul>
+<p><strong>多标签数据集:</strong></p>
+<ul>
+<li><a href="https://github.com/FBI1314/textClassification/tree/master/multilabel_text_classfication/data">学生评语分类数据集</a></li>
+<li><a href="https://aistudio.baidu.com/aistudio/projectdetail/3996601">CAIL2019婚姻要素识别</a></li>
+<li><a href="https://cail.oss-cn-qingdao.aliyuncs.com/CAIL2018_ALL_DATA.zip">CAIL2018 刑期预测、法条预测、罪名预测</a></li>
+</ul>
+<p><strong>层次分类数据集:</strong></p>
+<ul>
+<li><a href="https://github.com/aceimnorstuvwxz/toutiao-multilevel-text-classfication-dataset">头条新闻标题分类-TNEWS的升级版</a></li>
+<li><a href="https://csri.scu.edu.cn/info/1012/2827.htm">网页层次分类数据集</a></li>
+<li><a href="https://github.com/liutongyang/CMID">医学意图数据集(CMID)</a></li>
+<li><a href="https://github.com/percent4/keras_bert_multi_label_cls/tree/master/data">2020语言与智能技术竞赛事件分类</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+<hr>
+<h2 align="center">  <a href="mailto:xiaopch@163.com">Copyright@Xiaopch 2023</a></h2>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+    
+  </body>
+</html>
