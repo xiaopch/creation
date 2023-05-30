@@ -23,7 +23,7 @@
     
     
       
-        <title>Python Gradio Quickstart - 随遇而安</title>
+        <title>5.30 Python Gradio Quickstart - 随遇而安</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python Gradio Quickstart
+              5.30 Python Gradio Quickstart
             
           </span>
         </div>
@@ -462,16 +462,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Python Gradio Quickstart
+          5.30 Python Gradio Quickstart
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Python Gradio Quickstart
+        5.30 Python Gradio Quickstart
       </a>
       
         
@@ -479,8 +477,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -490,23 +486,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#python-gradio-quickstart" class="md-nav__link">
+    Python Gradio Quickstart
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Gradio Quickstart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#what-does-gradio-do" class="md-nav__link">
     What Does Gradio Do?
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     Hello, World
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-input-and-output-components" class="md-nav__link">
-    Multiple Input and Output Components
+        
+          <li class="md-nav__item">
+  <a href="#run-the-code-below-as-a-python-script-or-in-a-jupyter-notebook" class="md-nav__link">
+    Run the code below as a Python script or in a Jupyter Notebook
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4239,8 +4248,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4249,23 +4256,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#python-gradio-quickstart" class="md-nav__link">
+    Python Gradio Quickstart
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Gradio Quickstart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#what-does-gradio-do" class="md-nav__link">
     What Does Gradio Do?
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     Hello, World
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-input-and-output-components" class="md-nav__link">
-    Multiple Input and Output Components
+        
+          <li class="md-nav__item">
+  <a href="#run-the-code-below-as-a-python-script-or-in-a-jupyter-notebook" class="md-nav__link">
+    Run the code below as a Python script or in a Jupyter Notebook
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4284,22 +4304,20 @@
                   
 
 
-<h1 id="python-gradio-quickstart">Python Gradio Quickstart</h1>
+  <h1>5.30 Python Gradio Quickstart</h1>
+
+<h2 id="python-gradio-quickstart">Python Gradio Quickstart</h2>
 <p><strong>Prerequisite</strong>: Gradio requires Python 3.7 or higher, that's all!</p>
-<h2 id="what-does-gradio-do">What Does Gradio Do?</h2>
+<h4 id="what-does-gradio-do">What Does Gradio Do?</h4>
 <p>One of the <em>best ways to share</em> your machine learning model, API, or data science workflow with others is to create an <strong>interactive app</strong> that allows your users or colleagues to try out the demo in their browsers.</p>
 <p>Gradio allows you to <strong>build demos and share them, all in Python.</strong> And usually in just a few lines of code! So let's get started.</p>
-<h2 id="hello-world">Hello, World</h2>
+<h4 id="hello-world">Hello, World</h4>
 <p>To get Gradio running with a simple "Hello, World" example, follow these three steps:</p>
-<ol>
-<li>Install Gradio using pip:</li>
-</ol>
+<p>Install Gradio using pip:</p>
 <pre><code class="language-bash">pip install gradio
 </code></pre>
-<ol>
-<li>Run the code below as a Python script or in a Jupyter Notebook (or <a href="https://colab.research.google.com/drive/18ODkJvyxHutTN0P5APWyGFO_xwNcgHDZ?usp=sharing">Google Colab</a>):</li>
-</ol>
-<pre><code class="language-python">import gradio as gr
+<h4 id="run-the-code-below-as-a-python-script-or-in-a-jupyter-notebook">Run the code below as a Python script or in a Jupyter Notebook</h4>
+<pre><code>import gradio as gr
 
 def greet(name):
     return &quot;Hello &quot; + name + &quot;!&quot;
@@ -4309,29 +4327,24 @@ demo = gr.Interface(fn=greet, inputs=&quot;text&quot;, outputs=&quot;text&quot;)
 demo.launch()   
 </code></pre>
 <p>We shorten the imported name to <code>gr</code> for better readability of code using Gradio. This is a widely adopted convention that you should follow so that anyone working with your code can easily understand it.</p>
-<ol>
-<li>
 <p>The demo below will appear automatically within the Jupyter Notebook, or pop in a browser on <a href="http://localhost:7860/">http://localhost:7860</a> if running from a script.</p>
-</li>
-<li>
-<h2 id="multiple-input-and-output-components">Multiple Input and Output Components</h2>
-</li>
-</ol>
+<p><strong>Multiple Input and Output Components</strong></p>
 <p>Suppose you had a more complex function, with multiple inputs and outputs. In the example below, we define a function that takes a string, boolean, and number, and returns a string and number. Take a look how you pass a list of input and output components.</p>
-<p>```python
-   import gradio as gr</p>
-<p>def greet(name, is_morning, temperature):
-       salutation = "Good morning" if is_morning else "Good evening"
-       greeting = f"{salutation} {name}. It is {temperature} degrees today"
-       celsius = (temperature - 32) * 5 / 9
-       return greeting, round(celsius, 2)</p>
-<p>demo = gr.Interface(
-       fn=greet,
-       inputs=["text", "checkbox", gr.Slider(0, 100)],
-       outputs=["text", "number"],
-   )
-   demo.launch()
-   ```</p>
+<pre><code class="language-python">import gradio as gr
+
+def greet(name, is_morning, temperature):
+    salutation = &quot;Good morning&quot; if is_morning else &quot;Good evening&quot;
+    greeting = f&quot;{salutation} {name}. It is {temperature} degrees today&quot;
+    celsius = (temperature - 32) * 5 / 9
+    return greeting, round(celsius, 2)
+
+demo = gr.Interface(
+    fn=greet,
+    inputs=[&quot;text&quot;, &quot;checkbox&quot;, gr.Slider(0, 100)],
+    outputs=[&quot;text&quot;, &quot;number&quot;],
+)
+demo.launch()
+</code></pre>
 
 
 
