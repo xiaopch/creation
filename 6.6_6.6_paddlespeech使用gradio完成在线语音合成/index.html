@@ -16,14 +16,14 @@
         <link rel="prev" href="../6.2_Gradio%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAAI%E7%AE%97%E6%B3%95%E5%8F%AF%E8%A7%86%E5%8C%96%E9%83%A8%E7%BD%B2/">
       
       
-        <link rel="next" href="../2023/2/2.01_%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/">
+        <link rel="next" href="../6.6_Gradio%E5%92%8C%E7%99%BE%E5%BA%A6paddlepaddle%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%96%87%E5%AD%97/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>6.6 语音合成工具CoquiTTS安装及体验 - 随遇而安</title>
+        <title>6.6 6.6 paddlespeech使用gradio完成在线语音合成 - 随遇而安</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coqui-tts" class="md-skip">
+        <a href="#paddlespeechgradio" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6.6 语音合成工具CoquiTTS安装及体验
+              6.6 6.6 paddlespeech使用gradio完成在线语音合成
             
           </span>
         </div>
@@ -329,12 +329,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          6.6 语音合成工具CoquiTTS安装及体验
+          6.6 6.6 paddlespeech使用gradio完成在线语音合成
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        6.6 语音合成工具CoquiTTS安装及体验
+        6.6 6.6 paddlespeech使用gradio完成在线语音合成
       </a>
       
         
@@ -351,58 +351,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#coqui-tts" class="md-nav__link">
-    语音合成工具Coqui TTS安装及体验
+  <a href="#paddlespeechgradio" class="md-nav__link">
+    paddlespeech使用gradio完成在线语音合成
   </a>
   
-    <nav class="md-nav" aria-label="语音合成工具Coqui TTS安装及体验">
+    <nav class="md-nav" aria-label="paddlespeech使用gradio完成在线语音合成">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    官网
+    安装环境
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#windowscoqui-tts" class="md-nav__link">
-    Windows下安装Coqui TTS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-tts" class="md-nav__link">
-    Install TTS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    查看本地所有模型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    执行测试命令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    合成中文语音
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    在python中使用中文语音合成
+  <a href="#gradiotts" class="md-nav__link">
+    gradio实现在线TTS
   </a>
   
 </li>
@@ -427,23 +392,68 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../6.6_Gradio%E5%92%8C%E7%99%BE%E5%BA%A6paddlepaddle%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%96%87%E5%AD%97/" class="md-nav__link">
+        6.6 Gradio和百度paddlepaddle实现在线图像转文字
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.6_Transformer%E5%AE%9E%E7%8E%B0ASR/" class="md-nav__link">
+        6.6 Transformer实现ASR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.6_%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%E5%B7%A5%E5%85%B7Coqui%E7%9A%84TTS%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%93%E9%AA%8C/" class="md-nav__link">
+        6.6 语音合成工具Coqui的TTS安装及体验
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
       
       
       
-        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           2023
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           2023
         </label>
@@ -460,17 +470,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
           2
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_1">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12_1">
           <span class="md-nav__icon md-icon"></span>
           2
         </label>
@@ -1390,17 +1400,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
           3
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12_2">
           <span class="md-nav__icon md-icon"></span>
           3
         </label>
@@ -2628,17 +2638,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
           4
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_3">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12_3">
           <span class="md-nav__icon md-icon"></span>
           4
         </label>
@@ -3432,17 +3442,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
           5
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_4">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12_4">
           <span class="md-nav__icon md-icon"></span>
           5
         </label>
@@ -4110,17 +4120,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12_5" id="__nav_12_5_label" tabindex="0">
           汪曾祺
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_5">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12_5">
           <span class="md-nav__icon md-icon"></span>
           汪曾祺
         </label>
@@ -4222,17 +4232,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
       
       
       
-        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
           6
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_10">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
           6
         </label>
@@ -4467,17 +4477,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
       
       
       
-        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
           GuShi
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_11">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_14">
           <span class="md-nav__icon md-icon"></span>
           GuShi
         </label>
@@ -4536,17 +4546,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_4" >
       
       
       
-        <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_14_4" id="__nav_14_4_label" tabindex="0">
           037号童话世界
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_11_4">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_14_4">
           <span class="md-nav__icon md-icon"></span>
           037号童话世界
         </label>
@@ -4598,17 +4608,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_5" >
       
       
       
-        <label class="md-nav__link" for="__nav_11_5" id="__nav_11_5_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_14_5" id="__nav_14_5_label" tabindex="0">
           2035机器奶牛
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_11_5">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_14_5">
           <span class="md-nav__icon md-icon"></span>
           2035机器奶牛
         </label>
@@ -4666,58 +4676,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#coqui-tts" class="md-nav__link">
-    语音合成工具Coqui TTS安装及体验
+  <a href="#paddlespeechgradio" class="md-nav__link">
+    paddlespeech使用gradio完成在线语音合成
   </a>
   
-    <nav class="md-nav" aria-label="语音合成工具Coqui TTS安装及体验">
+    <nav class="md-nav" aria-label="paddlespeech使用gradio完成在线语音合成">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    官网
+    安装环境
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#windowscoqui-tts" class="md-nav__link">
-    Windows下安装Coqui TTS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-tts" class="md-nav__link">
-    Install TTS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    查看本地所有模型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    执行测试命令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    合成中文语音
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    在python中使用中文语音合成
+  <a href="#gradiotts" class="md-nav__link">
+    gradio实现在线TTS
   </a>
   
 </li>
@@ -4742,77 +4717,72 @@
                   
 
 
-  <h1>6.6 语音合成工具CoquiTTS安装及体验</h1>
+  <h1>6.6 6.6 paddlespeech使用gradio完成在线语音合成</h1>
 
-<h2 id="coqui-tts">语音合成工具Coqui TTS安装及体验</h2>
-<h4 id="_1">官网</h4>
-<p>https://coqui.ai/
-是基于深度学习的语音合成软件，效果较好</p>
-<h4 id="windowscoqui-tts">Windows下安装Coqui TTS</h4>
-<p>安装环境
-要求python运行环境：https://www.python.org/downloads/windows/
-本文基于版本：python-3.8.10-amd64.exe，并且自行更新并设置好pip安装源</p>
-<h4 id="install-tts">Install TTS</h4>
-<p>🐸TTS is tested on Ubuntu 18.04 with <strong>python &gt;= 3.7, &lt; 3.11.</strong>.</p>
-<p>If you are only interested in <a href="https://tts.readthedocs.io/en/latest/inference.html">synthesizing speech</a> with the released 🐸TTS models, installing from PyPI is the easiest option.</p>
-<pre><code class="language-bash">pip install TTS
+<h2 id="paddlespeechgradio">paddlespeech使用gradio完成在线语音合成</h2>
+<h4 id="_1">安装环境</h4>
+<pre><code class="language-bash">pip install paddlepaddle
+pip install paddlespeech
+pip install paddleaudio
 </code></pre>
-<p>If you plan to code or train models, clone 🐸TTS and install it locally.</p>
-<pre><code class="language-bash">git clone https://github.com/coqui-ai/TTS
-pip install -e .[all,dev,notebooks]  # Select the relevant extras
-</code></pre>
-<h4 id="_2">查看本地所有模型</h4>
-<pre><code class="language-bash">tts --list_models
-</code></pre>
-<h4 id="_3">执行测试命令</h4>
-<pre><code class="language-bash">tts --text &quot;Hello world.&quot; --out_path aaa.wav
-</code></pre>
-<h4 id="_4">合成中文语音</h4>
-<p>进过一番折腾，终于能够顺利合成中文语音，命令中需要指定中文模型</p>
-<pre><code>tts --text &quot;知是行之始，行是知之成。&quot; --out_path aaa.wav --model_name tts_models/zh-CN/baker/tacotron2-DDC-GST
-</code></pre>
-<h4 id="python">在python中使用中文语音合成</h4>
-<pre><code>from TTS.api import TTS
-tts=TTS(&quot;tts_models/zh-CN/baker/tacotron2-DDC-GST&quot;)
-tts.tts_to_file(text=&quot;正念的一天开始了&quot;, file_path=&quot;aaa.wav&quot;)
-
-</code></pre>
-<p>gradio实现在线TTS</p>
+<h4 id="gradiotts">gradio实现在线TTS</h4>
 <pre><code>import gradio as gr
-from TTS.api import TTS
+from paddlespeech.cli.tts import TTSExecutor
 import librosa
 import os
 
-title = &quot;文本转语音&quot;
+title = &quot;在线文本转语音&quot;
 # # 安装tts模块
 # pip install TTS
-def generateAudio(text):
-    #由于TTS无法很好地处理回车符和空格，需要对text里的回车符进行替换
-    text = text.replace(&quot;\n&quot;,&quot;,&quot;)
-    text = text.replace(&quot; &quot;,&quot;&quot;)
-    if '。' not in text:
-        text = text + '。'
-    tts = TTS(model_name=&quot;tts_models/zh-CN/baker/tacotron2-DDC-GST&quot;, progress_bar=True, gpu=False)
-    tts.tts_to_file(text,file_path=&quot;output.wav&quot;)
+tts_executor = TTSExecutor()
 
+def replace_all(text):
+    text = text.replace('\n',',')
+    chars = ''' :?、“”'''
+    for i in chars:
+        text = text.replace(i,'')
+    return text
+
+def generateAudio(text):
+    global tts_executor
+    text = replace_all(text)
+    wav_file = tts_executor(
+        text=text,
+        am='fastspeech2_aishell3',# TTS任务的声学模型 fastspeech2_aishell3  fastspeech2_csmsc
+        voc='hifigan_csmsc',# TTS任务的声码器
+        lang='zh',# TTS任务的语言
+        spk_id=1,# 说话人ID
+        use_onnx=True,
+        output='output.wav',
+        cpu_threads=4)
     audio, sr = librosa.load(path=&quot;output.wav&quot;)
 
     return  sr,audio
+
+
 
 app = gr.Interface(
     fn=generateAudio,
     inputs=&quot;text&quot;,
     outputs=&quot;audio&quot;,
     title=title,
-    # examples=[os.path.join(os.path.dirname(__file__),&quot;output.wav&quot;)]
+    examples=['做从长期来看会有价值的事情，对于自己不能控制的事情想都不要去想。',
+    '人心惟危，道心惟微。用某种方式定义自己的好，就等于在定义别人的坏。',
+    '每件东西都有它自己的频率和节奏，我们要做的是顺应。',
+    '''好人在强者面前刷存在感，不仅可怕，还很可悲。
+庄子之所以可爱，就在于他从来不对人性的恶怀有怨恨，他认为这都是正常的，是大概率事件。弱者的愤慨只会把自己气到内伤。有很多好人的结局并不好，就是因为他们不够智慧，没有深入地理解人性。'''
+    ]
     )
 
 app.launch()
 
 import webbrowser
 webbrowser.open('http://127.0.0.1:7860')
-</code></pre>
-<pre><code>
+
+# from TTS.api import TTS
+# tts=TTS(&quot;tts_models/zh-CN/baker/tacotron2-DDC-GST&quot;)
+# tts.tts_to_file(text=&quot;正念的一天开始了.&quot;, file_path=&quot;bbb.wav&quot;)
+
 </code></pre>
 
 
