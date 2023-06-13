@@ -2647,13 +2647,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#72" class="md-nav__link">
-    7.2 多标签任务
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#73" class="md-nav__link">
     7.3 层次分类任务
   </a>
@@ -4927,13 +4920,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#72" class="md-nav__link">
-    7.2 多标签任务
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#73" class="md-nav__link">
     7.3 层次分类任务
   </a>
@@ -5095,7 +5081,7 @@ doccano task
 <h2 id="7">7.数据转换</h2>
 <p>该章节详细说明如何通过<code>doccano.py</code>脚本对doccano平台导出的标注数据进行转换，一键生成训练/验证/测试集。当标注完成后，在 doccano 平台上导出 <code>JSON</code> 形式的文件，并将其重命名为 <code>doccano.jsonl</code>。</p>
 <h3 id="71">7.1 多分类任务</h3>
-<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="multi_class/README.md">多分类文本任务指南</a>中固定格式进行相应模型训练。</p>
+<p>通过 [doccano.py]脚本进行数据形式转换，然后便可以按照[多分类文本任务指南]中固定格式进行相应模型训练。</p>
 <p>数据标注转化运行：</p>
 <pre><code class="language-shell">python doccano.py \
     --doccano_file doccano.jsonl \
@@ -5103,9 +5089,8 @@ doccano task
     --splits 0.8 0.1 0.1 \
     --task_type &quot;multi_class&quot;
 </code></pre>
-<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="multi_class/analysis/README.md">多分类训练评估与模型优化指南</a></p>
-<h3 id="72">7.2 多标签任务</h3>
-<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="multi_label/README.md">多标签文本分类任务指南</a>中固定格式进行相应模型训练。</p>
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见[多分类训练评估与模型优化指南]</p>
+<p>通过 [doccano.py]脚本进行数据形式转换，然后便可以按照[多标签文本分类任务指南]中固定格式进行相应模型训练。</p>
 <p>数据标注转化运行：</p>
 <pre><code class="language-shell">python doccano.py \
     --doccano_file doccano.jsonl \
@@ -5113,9 +5098,9 @@ doccano task
     --splits 0.8 0.1 0.1 \
     --task_type &quot;multi_label&quot;
 </code></pre>
-<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="multi_label/analysis/README.md">多标签训练评估与模型优化指南</a></p>
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见[多标签训练评估与模型优化指南]</p>
 <h3 id="73">7.3 层次分类任务</h3>
-<p>通过 <a href="./doccano.py">doccano.py</a> 脚本进行数据形式转换，然后便可以按照<a href="hierarchical/README.md">层次文本分类任务指南</a>中固定格式进行相应模型训练。</p>
+<p>通过 [doccano.py] 脚本进行数据形式转换，然后便可以按照[层次文本分类任务指南]中固定格式进行相应模型训练。</p>
 <p>数据标注转化运行：</p>
 <pre><code class="language-shell">python doccano.py \
     --doccano_file doccano.jsonl \
@@ -5123,7 +5108,7 @@ doccano task
     --splits 0.8 0.2 \
     --task_type &quot;hierarchical&quot;
 </code></pre>
-<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见<a href="hierarchical/analysis/README.md">层次分类训练评估与模型优化指南</a>
+<p>稀疏数据识别出的有效标注请增加配置参数<code>--valid</code>，脏数据清洗的标注数据（文本中有脏数据标签）请增加配置参数<code>--dirty</code>，更多稀疏数据识别和脏数据清洗详见[层次分类训练评估与模型优化指南]
 可配置参数说明：</p>
 <ul>
 <li><code>doccano_file</code>: 从doccano导出的数据标注文件。</li>
@@ -5145,9 +5130,9 @@ doccano task
 └── data.txt # 待预测数据文件
 </code></pre>
 <p>备注：
-- 默认情况下 <a href="./doccano.py">doccano.py</a> 脚本会按照比例将数据划分成train/dev 数据集，也可以划分为 train/dev/test 数据集。
+- 默认情况下 [doccano.py] 脚本会按照比例将数据划分成train/dev 数据集，也可以划分为 train/dev/test 数据集。
 - 脚本会自动生成data.txt，如果数据划分为 train/dev/test 数据集，data.txt则为test数据集无标签数据；如果数据划分为 train/dev 数据集，data.txt为无标签数据。<strong>如果有未标注数据，则用未标注数据文件替换data.txt</strong>
-- 每次执行 <a href="./doccano.py">doccano.py</a> 脚本，将会覆盖已有的同名数据文件
+- 每次执行 [doccano.py]脚本，将会覆盖已有的同名数据文件
 - 对于从doccano导出的文件，默认文件中的每条数据都是经过人工正确标注的。</p>
 <h2 id="references">References</h2>
 <ul>

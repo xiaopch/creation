@@ -5438,7 +5438,7 @@
 <h2 id="1">1. 模型介绍</h2>
 <p><a name="1.1"></a></p>
 <h3 id="11">1.1 模型简介</h3>
-<p>骨干网络对计算机视觉下游任务的影响不言而喻，不仅对下游模型的性能影响很大，而且模型效率也极大地受此影响，但现有的大多骨干网络在真实应用中的效率并不理想，特别是缺乏针对 Intel CPU 平台所优化的骨干网络，我们测试了现有的主流轻量级模型，发现在 Intel CPU 平台上的效率并不理想，然而目前 Intel CPU 平台在工业界仍有大量使用场景，因此我们提出了 PP-LCNet 系列模型，PP-LCNetV2 是在 <a href="PP-LCNet.md">PP-LCNetV1</a> 基础上所改进的。</p>
+<p>骨干网络对计算机视觉下游任务的影响不言而喻，不仅对下游模型的性能影响很大，而且模型效率也极大地受此影响，但现有的大多骨干网络在真实应用中的效率并不理想，特别是缺乏针对 Intel CPU 平台所优化的骨干网络，我们测试了现有的主流轻量级模型，发现在 Intel CPU 平台上的效率并不理想，然而目前 Intel CPU 平台在工业界仍有大量使用场景，因此我们提出了 PP-LCNet 系列模型，PP-LCNetV2 是在 [PP-LCNetV1] 基础上所改进的。</p>
 <p><a name="1.2"></a></p>
 <h2 id="12">1.2 模型细节</h2>
 <p>PP-LCNetV2 模型的网络整体结构如上图所示。PP-LCNetV2 模型是在 PP-LCNetV1 的基础上优化而来，主要使用重参数化策略组合了不同大小卷积核的深度卷积，并优化了点卷积、Shortcut等。</p>
@@ -5607,7 +5607,7 @@ print(next(result))
 <p><a name="3.1"></a>  </p>
 <h3 id="31">3.1 环境配置</h3>
 <ul>
-<li>安装：请先参考文档<a href="../../installation.md">环境准备</a> 配置 PaddleClas 运行环境。</li>
+<li>安装：请先参考文档[环境准备] 配置 PaddleClas 运行环境。</li>
 </ul>
 <p><a name="3.2"></a></p>
 <h3 id="32">3.2 数据准备</h3>
@@ -5624,7 +5624,7 @@ print(next(result))
 <p>train_data目录生成<code>train_list.txt</code> 和 <code>val_list.txt</code> 分别为训练集和验证集的标签文件。labels.txt为分类目录文件。</p>
 <p><strong>备注：</strong></p>
 <ul>
-<li>关于 <code>train_list.txt</code>、<code>val_list.txt</code>的格式说明，可以参考<a href="../../training/single_label_classification/dataset.md#1-数据集格式说明">PaddleClas分类数据集格式说明</a> 。</li>
+<li>关于 <code>train_list.txt</code>、<code>val_list.txt</code>的格式说明，可以参考[PaddleClas分类数据集格式说明] 。</li>
 </ul>
 <p><strong>备注：</strong></p>
 <h4 id="label-list"># 生成推断用的label list</h4>
@@ -5871,19 +5871,19 @@ ILSVRC2012_val_00030010.jpeg:    class id(s): [80, 143, 81, 137, 98], score(s): 
 </code></pre>
 <p><a name="4.3"></a></p>
 <h3 id="43-c">4.3 基于 C++ 预测引擎推理</h3>
-<p>PaddleClas 提供了基于 C++ 预测引擎推理的示例，您可以参考<a href="../../deployment/image_classification/cpp/linux.md">服务器端 C++ 预测</a>来完成相应的推理部署。如果您使用的是 Windows 平台，可以参考<a href="../../deployment/image_classification/cpp/windows.md">基于 Visual Studio 2019 Community CMake 编译指南</a>完成相应的预测库编译和模型预测工作。</p>
+<p>PaddleClas 提供了基于 C++ 预测引擎推理的示例，您可以参考[服务器端 C++ 预测]来完成相应的推理部署。如果您使用的是 Windows 平台，可以参考[基于 Visual Studio 2019 Community CMake 编译指南]完成相应的预测库编译和模型预测工作。</p>
 <p><a name="4.4"></a></p>
 <h3 id="44">4.4 服务化部署</h3>
 <p>Paddle Serving 提供高性能、灵活易用的工业级在线推理服务。Paddle Serving 支持 RESTful、gRPC、bRPC 等多种协议，提供多种异构硬件和多种操作系统环境下推理解决方案。更多关于Paddle Serving 的介绍，可以参考<a href="https://github.com/PaddlePaddle/Serving">Paddle Serving 代码仓库</a>。</p>
-<p>PaddleClas 提供了基于 Paddle Serving 来完成模型服务化部署的示例，您可以参考<a href="../../deployment/image_classification/paddle_serving.md">模型服务化部署</a>来完成相应的部署工作。</p>
+<p>PaddleClas 提供了基于 Paddle Serving 来完成模型服务化部署的示例，您可以参考[模型服务化部署]来完成相应的部署工作。</p>
 <p><a name="4.5"></a></p>
 <h3 id="45">4.5 端侧部署</h3>
 <p>Paddle Lite 是一个高性能、轻量级、灵活性强且易于扩展的深度学习推理框架，定位于支持包括移动端、嵌入式以及服务器端在内的多硬件平台。更多关于 Paddle Lite 的介绍，可以参考<a href="https://github.com/PaddlePaddle/Paddle-Lite">Paddle Lite 代码仓库</a>。</p>
-<p>PaddleClas 提供了基于 Paddle Lite 来完成模型端侧部署的示例，您可以参考<a href="../../deployment/image_classification/paddle_lite.md">端侧部署</a>来完成相应的部署工作。</p>
+<p>PaddleClas 提供了基于 Paddle Lite 来完成模型端侧部署的示例，您可以参考[端侧部署]来完成相应的部署工作。</p>
 <p><a name="4.6"></a></p>
 <h3 id="46-paddle2onnx">4.6 Paddle2ONNX 模型转换与预测</h3>
 <p>Paddle2ONNX 支持将 PaddlePaddle 模型格式转化到 ONNX 模型格式。通过 ONNX 可以完成将 Paddle 模型到多种推理引擎的部署，包括TensorRT/OpenVINO/MNN/TNN/NCNN，以及其它对 ONNX 开源格式进行支持的推理引擎或硬件。更多关于 Paddle2ONNX 的介绍，可以参考<a href="https://github.com/PaddlePaddle/Paddle2ONNX">Paddle2ONNX 代码仓库</a>。</p>
-<p>PaddleClas 提供了基于 Paddle2ONNX 来完成 inference 模型转换 ONNX 模型并作推理预测的示例，您可以参考<a href="../../deployment/image_classification/paddle2onnx.md">Paddle2ONNX 模型转换与预测</a>来完成相应的部署工作。</p>
+<p>PaddleClas 提供了基于 Paddle2ONNX 来完成 inference 模型转换 ONNX 模型并作推理预测的示例，您可以参考[Paddle2ONNX 模型转换与预测]来完成相应的部署工作。</p>
 
 
 
