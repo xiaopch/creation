@@ -13,24 +13,24 @@
       
       
       
-        <link rel="prev" href="../4.9_%E6%96%B0%E9%97%BB/">
+        <link rel="prev" href="../6.16_%E7%AB%A5%E8%AF%9D%E6%95%85%E4%BA%8B%E5%88%9B%E4%BD%9C/">
       
       
-        <link rel="next" href="../../5/05.04_%E6%96%B0%E9%97%BB/">
+        <link rel="next" href="../6.7_python%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E5%92%8C%E5%9B%BE%E7%89%87%E6%96%87%E6%A1%88%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>4.9 笑话 - 随遇而安</title>
+        <title>6.18 python读取并查找xml文件 - 随遇而安</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#pythonxml" class="md-skip">
           跳转至
         </a>
       
@@ -87,7 +87,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="随遇而安" class="md-header__button md-logo" aria-label="随遇而安" data-md-component="logo">
+    <a href=".." title="随遇而安" class="md-header__button md-logo" aria-label="随遇而安" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.9 笑话
+              6.18 python读取并查找xml文件
             
           </span>
         </div>
@@ -185,7 +185,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="随遇而安" class="md-nav__button md-logo" aria-label="随遇而安" data-md-component="logo">
+    <a href=".." title="随遇而安" class="md-nav__button md-logo" aria-label="随遇而安" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -216,7 +216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Home
       </a>
     </li>
@@ -231,7 +231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../000-%E5%B8%B8%E7%94%A8%E7%BD%91%E5%9D%80%E5%88%86%E4%BA%AB/" class="md-nav__link">
+      <a href="../000-%E5%B8%B8%E7%94%A8%E7%BD%91%E5%9D%80%E5%88%86%E4%BA%AB/" class="md-nav__link">
         000 常用网址分享
       </a>
     </li>
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2.16_mkdocs%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="md-nav__link">
+      <a href="../2.16_mkdocs%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="md-nav__link">
         2.16 mkdocs生成项目文档
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../3.1_%E6%88%91%E5%85%81%E8%AE%B8-%E6%B5%B7%E7%81%B5%E6%A0%BC/" class="md-nav__link">
+      <a href="../3.1_%E6%88%91%E5%85%81%E8%AE%B8-%E6%B5%B7%E7%81%B5%E6%A0%BC/" class="md-nav__link">
         3.1 我允许 海灵格
       </a>
     </li>
@@ -276,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.13_%E6%80%8E%E6%A0%B7%E5%9C%A8Windows%E4%B8%8B%E5%AE%89%E8%A3%85python/" class="md-nav__link">
+      <a href="../6.13_%E6%80%8E%E6%A0%B7%E5%9C%A8Windows%E4%B8%8B%E5%AE%89%E8%A3%85python/" class="md-nav__link">
         6.13 怎样在Windows下安装python
       </a>
     </li>
@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.14_%E3%80%8A%E4%BA%BA%E7%94%9F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%BB%B6%E4%BA%8B%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90/" class="md-nav__link">
+      <a href="../6.14_%E3%80%8A%E4%BA%BA%E7%94%9F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%BB%B6%E4%BA%8B%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90/" class="md-nav__link">
         6.14 《人生只有一件事》的读书笔记生成
       </a>
     </li>
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.14_%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84%E5%86%9C%E4%BA%A7%E5%93%81/" class="md-nav__link">
+      <a href="../6.14_%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84%E5%86%9C%E4%BA%A7%E5%93%81/" class="md-nav__link">
         6.14 最受欢迎的农产品
       </a>
     </li>
@@ -321,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.15_%E3%80%8A%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90.%E4%BA%BA%E9%97%B4%E4%B8%96%E3%80%8B%E4%B9%A6%E8%AF%84/" class="md-nav__link">
+      <a href="../6.15_%E3%80%8A%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90.%E4%BA%BA%E9%97%B4%E4%B8%96%E3%80%8B%E4%B9%A6%E8%AF%84/" class="md-nav__link">
         6.15 《梁冬说庄子.人间世》书评
       </a>
     </li>
@@ -336,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.15_%E5%86%9C%E6%9D%91%E7%A7%8D%E6%A4%8D%E4%BB%80%E4%B9%88%E7%BB%8F%E6%B5%8E%E6%95%88%E7%9B%8A%E6%9C%80%E5%A5%BD/" class="md-nav__link">
+      <a href="../6.15_%E5%86%9C%E6%9D%91%E7%A7%8D%E6%A4%8D%E4%BB%80%E4%B9%88%E7%BB%8F%E6%B5%8E%E6%95%88%E7%9B%8A%E6%9C%80%E5%A5%BD/" class="md-nav__link">
         6.15 农村种植什么经济效益最好
       </a>
     </li>
@@ -351,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.15_%E5%8D%97%E7%93%9C%E7%9A%84%E5%8A%A0%E5%B7%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../6.15_%E5%8D%97%E7%93%9C%E7%9A%84%E5%8A%A0%E5%B7%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
         6.15 南瓜的加工方法
       </a>
     </li>
@@ -366,7 +366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.15_%E7%91%9E%C2%B7%E8%BE%BE%E5%88%A9%E6%AC%A7%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../6.15_%E7%91%9E%C2%B7%E8%BE%BE%E5%88%A9%E6%AC%A7%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         6.15 瑞·达利欧《原则》的读书笔记
       </a>
     </li>
@@ -381,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.15_%E7%9F%B3%E8%8F%96%E8%92%B2%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%8A%80%E6%9C%AF/" class="md-nav__link">
+      <a href="../6.15_%E7%9F%B3%E8%8F%96%E8%92%B2%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%8A%80%E6%9C%AF/" class="md-nav__link">
         6.15 石菖蒲的种植技术
       </a>
     </li>
@@ -396,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.16_python%E8%AF%BB%E5%86%99yaml%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+      <a href="../6.16_python%E8%AF%BB%E5%86%99yaml%E6%A8%A1%E5%9D%97/" class="md-nav__link">
         6.16 python读写yaml模块
       </a>
     </li>
@@ -411,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.16_%E7%AB%A5%E8%AF%9D%E6%95%85%E4%BA%8B%E5%88%9B%E4%BD%9C/" class="md-nav__link">
+      <a href="../6.16_%E7%AB%A5%E8%AF%9D%E6%95%85%E4%BA%8B%E5%88%9B%E4%BD%9C/" class="md-nav__link">
         6.16 童话故事创作
       </a>
     </li>
@@ -424,11 +424,68 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../6.18_python%E8%AF%BB%E5%8F%96%E5%B9%B6%E6%9F%A5%E6%89%BExml%E6%96%87%E4%BB%B6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          6.18 python读取并查找xml文件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         6.18 python读取并查找xml文件
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pythonxml" class="md-nav__link">
+    python读取并查找xml文件
+  </a>
+  
+    <nav class="md-nav" aria-label="python读取并查找xml文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    读取xml文件代码如下：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml_1" class="md-nav__link">
+    xml文件：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -441,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6.7_python%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E5%92%8C%E5%9B%BE%E7%89%87%E6%96%87%E6%A1%88%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+      <a href="../6.7_python%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E5%92%8C%E5%9B%BE%E7%89%87%E6%96%87%E6%A1%88%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
         6.7 python实现文字和图片文案自动生成视频文件
       </a>
     </li>
@@ -456,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E3%80%8A%E5%A4%B1%E6%8E%A7%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8B/" class="md-nav__link">
+      <a href="../%E3%80%8A%E5%A4%B1%E6%8E%A7%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8B/" class="md-nav__link">
         《失控的机器人》
       </a>
     </li>
@@ -469,16 +526,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
       
       
       
@@ -487,7 +542,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_18">
           <span class="md-nav__icon md-icon"></span>
           2023
@@ -527,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.01_%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/" class="md-nav__link">
+      <a href="../2023/2/2.01_%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/" class="md-nav__link">
         2.01 思维模型故事和案例 2023
       </a>
     </li>
@@ -541,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.07_x86%E6%9E%B6%E6%9E%84%E4%B8%8B%E4%BD%BF%E7%94%A8Genymotion%E8%99%9A%E6%8B%9F%E5%8C%96%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%85%BC%E5%AE%B9arm%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      <a href="../2023/2/2.07_x86%E6%9E%B6%E6%9E%84%E4%B8%8B%E4%BD%BF%E7%94%A8Genymotion%E8%99%9A%E6%8B%9F%E5%8C%96%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%85%BC%E5%AE%B9arm%E6%9E%B6%E6%9E%84/" class="md-nav__link">
         2.07 x86架构下使用Genymotion虚拟化设备并兼容arm架构
       </a>
     </li>
@@ -555,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.07_%E4%B8%AA%E6%80%A7%E5%8C%96%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%BB%BC%E8%BF%B0/" class="md-nav__link">
+      <a href="../2023/2/2.07_%E4%B8%AA%E6%80%A7%E5%8C%96%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%BB%BC%E8%BF%B0/" class="md-nav__link">
         个性化推荐系统综述
       </a>
     </li>
@@ -569,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.07_%E5%BF%85%E7%84%B6/" class="md-nav__link">
+      <a href="../2023/2/2.07_%E5%BF%85%E7%84%B6/" class="md-nav__link">
         2.07 必然
       </a>
     </li>
@@ -583,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.07_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../2023/2/2.07_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         2.07 查理芒格的100个思维模型
       </a>
     </li>
@@ -597,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.07_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+      <a href="../2023/2/2.07_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
         2.07 物理学概论
       </a>
     </li>
@@ -611,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.08_%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../2023/2/2.08_%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         2.08 自私的基因 读书笔记
       </a>
     </li>
@@ -625,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.09_%E4%BA%BA%E7%B1%BB%E6%80%9D%E7%BB%B4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1%EF%BC%8C%E4%BD%A0%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%B1%82%E6%AC%A1/" class="md-nav__link">
+      <a href="../2023/2/2.09_%E4%BA%BA%E7%B1%BB%E6%80%9D%E7%BB%B4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1%EF%BC%8C%E4%BD%A0%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%B1%82%E6%AC%A1/" class="md-nav__link">
         2.09 人类思维的4个层次，你在哪个层次
       </a>
     </li>
@@ -639,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.11_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2022/" class="md-nav__link">
+      <a href="../2023/2/2.11_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2022/" class="md-nav__link">
         常用的思维模型
       </a>
     </li>
@@ -653,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.11_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../2023/2/2.11_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         2.11 查理芒格的100个思维模型
       </a>
     </li>
@@ -667,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.11_%E6%AD%8C%E8%AF%8D_%E4%BA%91%E6%B8%B8%E4%BE%A0/" class="md-nav__link">
+      <a href="../2023/2/2.11_%E6%AD%8C%E8%AF%8D_%E4%BA%91%E6%B8%B8%E4%BE%A0/" class="md-nav__link">
         2.11 歌词 云游侠
       </a>
     </li>
@@ -681,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.12_%E5%86%99%E5%87%BA%E6%88%91%E5%BF%83%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%86%99%E4%BD%9C%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1/" class="md-nav__link">
+      <a href="../2023/2/2.12_%E5%86%99%E5%87%BA%E6%88%91%E5%BF%83%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%86%99%E4%BD%9C%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1/" class="md-nav__link">
         2.12 写出我心：普通人如何通过写作表达自己
       </a>
     </li>
@@ -695,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.12_%E5%AF%B9%E8%AF%9D%E4%BD%93%E5%86%99%E4%BD%9C-2023/" class="md-nav__link">
+      <a href="../2023/2/2.12_%E5%AF%B9%E8%AF%9D%E4%BD%93%E5%86%99%E4%BD%9C-2023/" class="md-nav__link">
         2.12 对话体写作 2023
       </a>
     </li>
@@ -709,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.12_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2023/" class="md-nav__link">
+      <a href="../2023/2/2.12_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2023/" class="md-nav__link">
         2.12 常用的思维模型2023
       </a>
     </li>
@@ -723,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.13_Python%E8%B0%83%E7%94%A8chatgpt/" class="md-nav__link">
+      <a href="../2023/2/2.13_Python%E8%B0%83%E7%94%A8chatgpt/" class="md-nav__link">
         2.13 Python调用chatgpt
       </a>
     </li>
@@ -737,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.13_%E7%81%B5%E6%84%9F%E6%B5%81%E6%B7%8C%E7%9A%84%E5%86%99%E4%BD%9C/" class="md-nav__link">
+      <a href="../2023/2/2.13_%E7%81%B5%E6%84%9F%E6%B5%81%E6%B7%8C%E7%9A%84%E5%86%99%E4%BD%9C/" class="md-nav__link">
         2.13 灵感流淌的写作
       </a>
     </li>
@@ -751,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.13_%E7%94%A8Python%E8%B0%83%E7%94%A8OpenAI_API%E5%81%9A%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BA%8B/" class="md-nav__link">
+      <a href="../2023/2/2.13_%E7%94%A8Python%E8%B0%83%E7%94%A8OpenAI_API%E5%81%9A%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BA%8B/" class="md-nav__link">
         2.13 用Python调用OpenAI API做有趣的事
       </a>
     </li>
@@ -765,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_chatgpt-%E7%BB%84%E5%90%88%E5%88%9B%E6%96%B0%E7%9A%84%E6%AD%A5%E9%AA%A4%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+      <a href="../2023/2/2.14_chatgpt-%E7%BB%84%E5%90%88%E5%88%9B%E6%96%B0%E7%9A%84%E6%AD%A5%E9%AA%A4%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         2.14 chatgpt 组合创新的步骤有哪些
       </a>
     </li>
@@ -779,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_%E5%86%99%E4%B8%80%E9%A6%96%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%97/" class="md-nav__link">
+      <a href="../2023/2/2.14_%E5%86%99%E4%B8%80%E9%A6%96%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%97/" class="md-nav__link">
         2.14 写一首情人节的诗
       </a>
     </li>
@@ -793,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_%E5%AE%89%E8%A3%85linux%E7%89%88%E6%9C%AC%E7%9A%84Clash%20for%20Windows/" class="md-nav__link">
+      <a href="../2023/2/2.14_%E5%AE%89%E8%A3%85linux%E7%89%88%E6%9C%AC%E7%9A%84Clash%20for%20Windows/" class="md-nav__link">
         2.14 安装linux版本的Clash for Windows
       </a>
     </li>
@@ -807,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_%E6%80%8E%E6%A0%B7%E5%92%8C%E8%87%AA%E5%B7%B1%E5%92%8C%E8%A7%A3/" class="md-nav__link">
+      <a href="../2023/2/2.14_%E6%80%8E%E6%A0%B7%E5%92%8C%E8%87%AA%E5%B7%B1%E5%92%8C%E8%A7%A3/" class="md-nav__link">
         2.14 怎样和自己和解
       </a>
     </li>
@@ -821,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%972023/" class="md-nav__link">
+      <a href="../2023/2/2.14_%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%972023/" class="md-nav__link">
         2.14 情人节的诗2023
       </a>
     </li>
@@ -835,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_%E6%89%93%E5%85%AB%E6%AE%B5%E9%94%A6%E6%9C%89%E6%84%9F/" class="md-nav__link">
+      <a href="../2023/2/2.14_%E6%89%93%E5%85%AB%E6%AE%B5%E9%94%A6%E6%9C%89%E6%84%9F/" class="md-nav__link">
         2.14 打八段锦有感
       </a>
     </li>
@@ -849,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_%E6%9C%AA%E6%9D%A5%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%BB%E8%A6%81%E8%B6%8B%E5%8A%BF%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+      <a href="../2023/2/2.14_%E6%9C%AA%E6%9D%A5%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%BB%E8%A6%81%E8%B6%8B%E5%8A%BF%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         2.14 未来科学的主要趋势有哪些
       </a>
     </li>
@@ -863,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.14_%E6%AF%8F%E5%A4%A9%E7%BB%83%E5%85%AB%E6%AE%B5%E9%94%A6%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+      <a href="../2023/2/2.14_%E6%AF%8F%E5%A4%A9%E7%BB%83%E5%85%AB%E6%AE%B5%E9%94%A6%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
         2.14 每天练八段锦的好处
       </a>
     </li>
@@ -877,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.15_%E5%86%99%E4%BD%9C%E7%9A%84%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+      <a href="../2023/2/2.15_%E5%86%99%E4%BD%9C%E7%9A%84%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         2.15 写作的常用的结构有哪些
       </a>
     </li>
@@ -891,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.15_%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%80%E5%8F%91%E6%9C%88%E7%90%83%E5%91%A2/" class="md-nav__link">
+      <a href="../2023/2/2.15_%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%80%E5%8F%91%E6%9C%88%E7%90%83%E5%91%A2/" class="md-nav__link">
         2.15 怎么利用人工智能开发月球呢
       </a>
     </li>
@@ -905,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.15_%E6%80%8E%E6%A0%B7%E5%BF%AB%E9%80%9F%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" class="md-nav__link">
+      <a href="../2023/2/2.15_%E6%80%8E%E6%A0%B7%E5%BF%AB%E9%80%9F%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" class="md-nav__link">
         2.15 怎样快速提升自己的认知能力
       </a>
     </li>
@@ -919,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.16_python%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%8E%9F%E6%96%87%E4%BB%B6%E5%90%8D/" class="md-nav__link">
+      <a href="../2023/2/2.16_python%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%8E%9F%E6%96%87%E4%BB%B6%E5%90%8D/" class="md-nav__link">
         2.16 python实现网络文件下载并保存为原文件名
       </a>
     </li>
@@ -933,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.16_python%E6%93%8D%E4%BD%9Cmongodb/" class="md-nav__link">
+      <a href="../2023/2/2.16_python%E6%93%8D%E4%BD%9Cmongodb/" class="md-nav__link">
         2.16 python操作mongodb
       </a>
     </li>
@@ -947,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.16_%E5%90%AB%E6%9C%89%E8%8A%B1%E9%9D%92%E7%B4%A0%E7%9A%84%E6%B0%B4%E6%9E%9C%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+      <a href="../2023/2/2.16_%E5%90%AB%E6%9C%89%E8%8A%B1%E9%9D%92%E7%B4%A0%E7%9A%84%E6%B0%B4%E6%9E%9C%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         2.16 含有花青素的水果有哪些
       </a>
     </li>
@@ -961,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.17_%E8%87%AA%E5%AA%92%E4%BD%93%E5%86%99%E4%BD%9C-%E4%BB%8E%E5%9F%BA%E6%9C%AC%E5%8A%9F%E5%88%B0%E5%AE%9E%E6%88%98%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/2/2.17_%E8%87%AA%E5%AA%92%E4%BD%93%E5%86%99%E4%BD%9C-%E4%BB%8E%E5%9F%BA%E6%9C%AC%E5%8A%9F%E5%88%B0%E5%AE%9E%E6%88%98%E6%96%B9%E6%B3%95/" class="md-nav__link">
         2.17 自媒体写作 从基本功到实战方法
       </a>
     </li>
@@ -975,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.20_%E6%A0%87%E9%A2%98%E7%9A%84%E5%86%99%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/2/2.20_%E6%A0%87%E9%A2%98%E7%9A%84%E5%86%99%E6%B3%95/" class="md-nav__link">
         2.20 标题的写法
       </a>
     </li>
@@ -989,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF-%E6%AF%8F%E6%97%A5%E5%8F%8D%E6%80%9D%E6%A8%A1%E7%89%88/" class="md-nav__link">
+      <a href="../2023/2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF-%E6%AF%8F%E6%97%A5%E5%8F%8D%E6%80%9D%E6%A8%A1%E7%89%88/" class="md-nav__link">
         2.20 高效能人士七个习惯 每日反思模版
       </a>
     </li>
@@ -1003,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+      <a href="../2023/2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
         2.20 高效能人士七个习惯
       </a>
     </li>
@@ -1017,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.21_python%E8%BD%AC%E6%8D%A2%E9%9F%B3%E9%A2%91%E9%87%87%E6%A0%B7%E7%8E%87/" class="md-nav__link">
+      <a href="../2023/2/2.21_python%E8%BD%AC%E6%8D%A2%E9%9F%B3%E9%A2%91%E9%87%87%E6%A0%B7%E7%8E%87/" class="md-nav__link">
         2.21 python转换音频采样率
       </a>
     </li>
@@ -1031,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.21_%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E7%BE%8E%E9%A3%9F%E7%9F%AD%E8%A7%86%E9%A2%91%E5%8D%9A%E4%B8%BB%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%92%8C%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+      <a href="../2023/2/2.21_%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E7%BE%8E%E9%A3%9F%E7%9F%AD%E8%A7%86%E9%A2%91%E5%8D%9A%E4%B8%BB%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%92%8C%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
         2.21 成为一名美食短视频博主的步骤和建议
       </a>
     </li>
@@ -1045,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.22_deepin%E5%AE%89%E8%A3%85Python3.7.4%E5%92%8CPostman/" class="md-nav__link">
+      <a href="../2023/2/2.22_deepin%E5%AE%89%E8%A3%85Python3.7.4%E5%92%8CPostman/" class="md-nav__link">
         2.22 deepin安装Python3.7.4和Postman
       </a>
     </li>
@@ -1059,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.22_vscode%E6%80%8E%E6%A0%B7%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91/" class="md-nav__link">
+      <a href="../2023/2/2.22_vscode%E6%80%8E%E6%A0%B7%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91/" class="md-nav__link">
         2.22 vscode怎样配置python开发
       </a>
     </li>
@@ -1073,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.26_5%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/" class="md-nav__link">
+      <a href="../2023/2/2.26_5%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/" class="md-nav__link">
         2.26 5款开源免费音频处理软件推荐
       </a>
     </li>
@@ -1087,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.26_python%E5%AE%9E%E7%8E%B0%E9%9F%B3%E9%A2%91%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+      <a href="../2023/2/2.26_python%E5%AE%9E%E7%8E%B0%E9%9F%B3%E9%A2%91%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
         2.26 python实现音频格式转换
       </a>
     </li>
@@ -1101,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.26_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E6%AD%A3%E8%A7%81/" class="md-nav__link">
+      <a href="../2023/2/2.26_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E6%AD%A3%E8%A7%81/" class="md-nav__link">
         2.26 从今天开始的每一天.正见
       </a>
     </li>
@@ -1115,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.27_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+      <a href="../2023/2/2.27_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC/" class="md-nav__link">
         2.27 5分钟催眠引导
       </a>
     </li>
@@ -1129,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.27_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E7%A5%9D%E7%A6%8F/" class="md-nav__link">
+      <a href="../2023/2/2.27_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E7%A5%9D%E7%A6%8F/" class="md-nav__link">
         2.27 从今天开始的每一天.祝福
       </a>
     </li>
@@ -1143,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC%E4%B8%8E%E8%BA%AB%E4%BD%93%E5%AF%B9%E8%AF%9D%E5%85%A8%E9%9D%A2%E4%BF%AE%E5%A4%8D%E8%BA%AB%E4%BD%93/" class="md-nav__link">
+      <a href="../2023/2/2.27_%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC%E4%B8%8E%E8%BA%AB%E4%BD%93%E5%AF%B9%E8%AF%9D%E5%85%A8%E9%9D%A2%E4%BF%AE%E5%A4%8D%E8%BA%AB%E4%BD%93/" class="md-nav__link">
         2.27 催眠引导与身体对话全面修复身体
       </a>
     </li>
@@ -1157,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%BC%95%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+      <a href="../2023/2/2.27_%E5%82%AC%E7%9C%A0%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%BC%95%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
         2.27 催眠渐进式引导语
       </a>
     </li>
@@ -1171,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E8%AF%B1%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+      <a href="../2023/2/2.27_%E5%82%AC%E7%9C%A0%E8%AF%B1%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
         2.27 催眠诱导语
       </a>
     </li>
@@ -1185,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.28_%E5%A6%82%E4%BD%95%E8%AE%A9%E6%94%B9%E5%8F%98%E5%8F%91%E7%94%9F/" class="md-nav__link">
+      <a href="../2023/2/2.28_%E5%A6%82%E4%BD%95%E8%AE%A9%E6%94%B9%E5%8F%98%E5%8F%91%E7%94%9F/" class="md-nav__link">
         2.28 如何让改变发生
       </a>
     </li>
@@ -1199,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.28_%E6%88%91%E4%BB%AC%E6%97%A0%E6%B3%95%E6%8E%A7%E5%88%B6%E5%92%8C%E9%9C%80%E8%A6%81%E6%8E%A5%E5%8F%97%E7%9A%84%204%20%E4%BB%B6%E4%BA%8B/" class="md-nav__link">
+      <a href="../2023/2/2.28_%E6%88%91%E4%BB%AC%E6%97%A0%E6%B3%95%E6%8E%A7%E5%88%B6%E5%92%8C%E9%9C%80%E8%A6%81%E6%8E%A5%E5%8F%97%E7%9A%84%204%20%E4%BB%B6%E4%BA%8B/" class="md-nav__link">
         2.28 我们无法控制和需要接受的 4 件事
       </a>
     </li>
@@ -1213,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.28_%E7%94%9F%E5%91%BD%E5%B0%B1%E6%98%AF%E6%97%A0%E6%95%B0%E4%B8%AA%E7%88%B1%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%BA%E4%BC%9A%E2%80%94%E2%80%94%E9%9C%B2%E6%98%93%E4%B8%9D%C2%B7%E6%B5%B7/" class="md-nav__link">
+      <a href="../2023/2/2.28_%E7%94%9F%E5%91%BD%E5%B0%B1%E6%98%AF%E6%97%A0%E6%95%B0%E4%B8%AA%E7%88%B1%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%BA%E4%BC%9A%E2%80%94%E2%80%94%E9%9C%B2%E6%98%93%E4%B8%9D%C2%B7%E6%B5%B7/" class="md-nav__link">
         2.28 生命就是无数个爱自己的机会——露易丝·海
       </a>
     </li>
@@ -1227,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.28_%E8%AE%A9%E4%BA%BA%E5%8F%98%E5%BF%AB%E4%B9%90%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AD%97%E2%80%9C%E5%BA%A6%E2%80%9D%E5%92%8C%E2%80%9C%E6%94%BE%E2%80%9D/" class="md-nav__link">
+      <a href="../2023/2/2.28_%E8%AE%A9%E4%BA%BA%E5%8F%98%E5%BF%AB%E4%B9%90%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AD%97%E2%80%9C%E5%BA%A6%E2%80%9D%E5%92%8C%E2%80%9C%E6%94%BE%E2%80%9D/" class="md-nav__link">
         2.28 让人变快乐的两个字“度”和“放”
       </a>
     </li>
@@ -1241,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.6_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+      <a href="../2023/2/2.6_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
         2.6 物理学概论
       </a>
     </li>
@@ -1255,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_KK-%E5%BF%85%E7%84%B6-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../2023/2/2.7_KK-%E5%BF%85%E7%84%B6-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         2.7 KK 必然 读书笔记
       </a>
     </li>
@@ -1269,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95/" class="md-nav__link">
         2.7 东菱面包机标准面包做法
       </a>
     </li>
@@ -1283,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E4%BA%BA%E7%94%9F%E5%A6%82%E8%8C%B6/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E4%BA%BA%E7%94%9F%E5%A6%82%E8%8C%B6/" class="md-nav__link">
         2.7 人生如茶
       </a>
     </li>
@@ -1297,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E5%86%A5%E6%83%B3%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E5%86%A5%E6%83%B3%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F/" class="md-nav__link">
         2.7 冥想有什么作用呢？
       </a>
     </li>
@@ -1311,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E5%B9%BD%E9%BB%98%E5%A4%B8%E4%BA%BA%E7%9A%84%E5%8F%A5%E5%AD%90%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E5%B9%BD%E9%BB%98%E5%A4%B8%E4%BA%BA%E7%9A%84%E5%8F%A5%E5%AD%90%E5%A4%A7%E5%85%A8/" class="md-nav__link">
         幽默夸人的句子大全
       </a>
     </li>
@@ -1325,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E6%88%91%E5%A6%88%E4%B8%89%E5%A4%A9%E6%B2%A1%E6%89%93%E6%88%91%E5%95%A6/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E6%88%91%E5%A6%88%E4%B8%89%E5%A4%A9%E6%B2%A1%E6%89%93%E6%88%91%E5%95%A6/" class="md-nav__link">
         2.7 我妈三天没打我啦
       </a>
     </li>
@@ -1339,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%AD%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%AD%E5%8F%A5%E5%AD%90/" class="md-nav__link">
         有趣的短句子
       </a>
     </li>
@@ -1353,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95-%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95-%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA/" class="md-nav__link">
         2.7 标准面包做法 东菱面包机
       </a>
     </li>
@@ -1367,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E9%80%97%E4%BA%BA%E5%BC%80%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%9A%84%E6%96%87%E6%A1%88/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E9%80%97%E4%BA%BA%E5%BC%80%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%9A%84%E6%96%87%E6%A1%88/" class="md-nav__link">
         逗人开心可以发朋友圈的文案
       </a>
     </li>
@@ -1381,7 +1436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E9%81%93%E5%BE%B7%E7%BB%8F%E6%96%87/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E9%81%93%E5%BE%B7%E7%BB%8F%E6%96%87/" class="md-nav__link">
         2.7 道德经文
       </a>
     </li>
@@ -1395,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E9%A3%8E%E8%B6%A3%E5%B9%BD%E9%BB%98%E7%9A%84%E5%A4%B8%E4%BA%BA%E8%AF%84%E8%AF%AD/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E9%A3%8E%E8%B6%A3%E5%B9%BD%E9%BB%98%E7%9A%84%E5%A4%B8%E4%BA%BA%E8%AF%84%E8%AF%AD/" class="md-nav__link">
         风趣幽默的夸人评语
       </a>
     </li>
@@ -1409,7 +1464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2/2.7_%E9%AB%98%E6%83%85%E5%95%86%E5%A4%B8%E4%BA%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+      <a href="../2023/2/2.7_%E9%AB%98%E6%83%85%E5%95%86%E5%A4%B8%E4%BA%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E5%8F%A5%E5%AD%90/" class="md-nav__link">
         高情商夸人漂亮的句子
       </a>
     </li>
@@ -1457,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/03.28_am_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/3/03.28_am_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         03.28 am 新闻
       </a>
     </li>
@@ -1471,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/03.28_pm_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/3/03.28_pm_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         03.28 pm 新闻
       </a>
     </li>
@@ -1485,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/03.29_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/3/03.29_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         03.29 新闻
       </a>
     </li>
@@ -1499,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/03.31_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/3/03.31_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         03.31 新闻
       </a>
     </li>
@@ -1513,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.01_%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%80%E5%8D%8A%E7%83%9F%E7%81%AB%EF%BC%8C%E4%B8%80%E5%8D%8A%E6%B8%85%E6%AC%A2/" class="md-nav__link">
+      <a href="../2023/3/3.01_%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%80%E5%8D%8A%E7%83%9F%E7%81%AB%EF%BC%8C%E4%B8%80%E5%8D%8A%E6%B8%85%E6%AC%A2/" class="md-nav__link">
         3.01 生活，一半烟火，一半清欢
       </a>
     </li>
@@ -1527,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.01_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+      <a href="../2023/3/3.01_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
         3.01 高效能人士七个习惯
       </a>
     </li>
@@ -1541,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.02_%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%84%E5%85%BB%E6%8A%A4%E6%8A%80%E5%B7%A7%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+      <a href="../2023/3/3.02_%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%84%E5%85%BB%E6%8A%A4%E6%8A%80%E5%B7%A7%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
         3.02 康乃馨的养护技巧是什么
       </a>
     </li>
@@ -1555,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.02_%E8%8A%B1%E7%9B%86%E9%87%8C%E5%85%BB%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%844%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      <a href="../2023/3/3.02_%E8%8A%B1%E7%9B%86%E9%87%8C%E5%85%BB%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%844%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         3.02 花盆里养康乃馨的4个小技巧
       </a>
     </li>
@@ -1569,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.02_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+      <a href="../2023/3/3.02_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
         3.02 高效能人士七个习惯
       </a>
     </li>
@@ -1583,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.03_openai%E7%9A%84ASR%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABWhisper/" class="md-nav__link">
+      <a href="../2023/3/3.03_openai%E7%9A%84ASR%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABWhisper/" class="md-nav__link">
         3.03 openai的ASR语音识别Whisper
       </a>
     </li>
@@ -1597,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.03_%E5%BF%83%E6%B5%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../2023/3/3.03_%E5%BF%83%E6%B5%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         3.03 心流 学习笔记
       </a>
     </li>
@@ -1611,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.04_%E5%A4%A7%E9%B1%BC-%E6%AD%8C%E8%AF%8D/" class="md-nav__link">
+      <a href="../2023/3/3.04_%E5%A4%A7%E9%B1%BC-%E6%AD%8C%E8%AF%8D/" class="md-nav__link">
         3.04 大鱼 歌词
       </a>
     </li>
@@ -1625,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.05_%E6%8E%A8%E8%8D%905%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+      <a href="../2023/3/3.05_%E6%8E%A8%E8%8D%905%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
         3.05 推荐5款开源免费音频处理软件
       </a>
     </li>
@@ -1639,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.08_python%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABwhisper%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../2023/3/3.08_python%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABwhisper%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         python语音识别whisper的使用
       </a>
     </li>
@@ -1653,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.08_%E5%85%B3%E4%BA%8E%E6%B6%8C%E7%8E%B0/" class="md-nav__link">
+      <a href="../2023/3/3.08_%E5%85%B3%E4%BA%8E%E6%B6%8C%E7%8E%B0/" class="md-nav__link">
         3.08 关于涌现
       </a>
     </li>
@@ -1667,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.08_%E6%B1%89%E5%AD%97%E7%AE%80%E7%B9%81%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+      <a href="../2023/3/3.08_%E6%B1%89%E5%AD%97%E7%AE%80%E7%B9%81%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
         3.08 汉字简繁转换
       </a>
     </li>
@@ -1681,7 +1736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.09_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%BC%BA%E5%A4%A7%E5%86%85%E5%BF%83%E5%85%8B%E6%9C%8D%E8%AE%A8%E5%A5%BD%E4%BA%BA%E6%A0%BC/" class="md-nav__link">
+      <a href="../2023/3/3.09_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%BC%BA%E5%A4%A7%E5%86%85%E5%BF%83%E5%85%8B%E6%9C%8D%E8%AE%A8%E5%A5%BD%E4%BA%BA%E6%A0%BC/" class="md-nav__link">
         3.09 5分钟催眠体验强大内心克服讨好人格
       </a>
     </li>
@@ -1695,7 +1750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.09_TikTokDownload%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../2023/3/3.09_TikTokDownload%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
         3.09 TikTokDownload使用教程
       </a>
     </li>
@@ -1709,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.09_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%87%8F%E5%8E%8B%E6%8E%A5%E7%BA%B3%E8%87%AA%E5%B7%B1_5%E5%88%86%E9%92%9F/" class="md-nav__link">
+      <a href="../2023/3/3.09_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%87%8F%E5%8E%8B%E6%8E%A5%E7%BA%B3%E8%87%AA%E5%B7%B1_5%E5%88%86%E9%92%9F/" class="md-nav__link">
         3.09 催眠体验减压接纳自己 5分钟
       </a>
     </li>
@@ -1723,7 +1778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.10_%E4%B8%87%E8%83%BD%E6%89%A6%E6%8F%92%E6%B3%95-%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E4%B8%80%E6%8B%9B%E6%90%9E%E5%AE%9A/" class="md-nav__link">
+      <a href="../2023/3/3.10_%E4%B8%87%E8%83%BD%E6%89%A6%E6%8F%92%E6%B3%95-%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E4%B8%80%E6%8B%9B%E6%90%9E%E5%AE%9A/" class="md-nav__link">
         3.10 万能扦插法 植物扦插一招搞定
       </a>
     </li>
@@ -1737,7 +1792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.10_%E5%82%AC%E7%9C%A0%E5%87%8F%E5%8E%8B%E7%BC%93%E8%A7%A3%E7%96%B2%E5%8A%B3%E6%B7%B1%E5%BA%A6%E7%9D%A1%E7%9C%A0/" class="md-nav__link">
+      <a href="../2023/3/3.10_%E5%82%AC%E7%9C%A0%E5%87%8F%E5%8E%8B%E7%BC%93%E8%A7%A3%E7%96%B2%E5%8A%B3%E6%B7%B1%E5%BA%A6%E7%9D%A1%E7%9C%A0/" class="md-nav__link">
         3.10 催眠减压缓解疲劳深度睡眠
       </a>
     </li>
@@ -1751,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.10_%E5%82%AC%E7%9C%A0%E6%88%98%E8%83%9C%E6%BD%9C%E6%84%8F%E8%AF%86%E4%B8%AD%E7%9A%84%E6%81%90%E6%83%A7/" class="md-nav__link">
+      <a href="../2023/3/3.10_%E5%82%AC%E7%9C%A0%E6%88%98%E8%83%9C%E6%BD%9C%E6%84%8F%E8%AF%86%E4%B8%AD%E7%9A%84%E6%81%90%E6%83%A7/" class="md-nav__link">
         3.10 催眠战胜潜意识中的恐惧
       </a>
     </li>
@@ -1765,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.10_%E6%97%A9%E9%A4%90%E8%AF%95%E8%AF%95%E8%BF%99%E4%B8%AA%E8%94%AC%E8%8F%9C%E9%A5%BC/" class="md-nav__link">
+      <a href="../2023/3/3.10_%E6%97%A9%E9%A4%90%E8%AF%95%E8%AF%95%E8%BF%99%E4%B8%AA%E8%94%AC%E8%8F%9C%E9%A5%BC/" class="md-nav__link">
         3.10 早餐试试这个蔬菜饼
       </a>
     </li>
@@ -1779,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.11_%E4%B8%80%E8%A1%8C%E7%A6%85%E5%B8%88%E7%9A%8432%E4%B8%AA%E6%AD%A3%E5%BF%B5%E7%9A%84%E7%BB%83%E4%B9%A0/" class="md-nav__link">
+      <a href="../2023/3/3.11_%E4%B8%80%E8%A1%8C%E7%A6%85%E5%B8%88%E7%9A%8432%E4%B8%AA%E6%AD%A3%E5%BF%B5%E7%9A%84%E7%BB%83%E4%B9%A0/" class="md-nav__link">
         3.11 一行禅师的32个正念的练习
       </a>
     </li>
@@ -1793,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.11_%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC/" class="md-nav__link">
+      <a href="../2023/3/3.11_%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC/" class="md-nav__link">
         3.11 海市蜃楼
       </a>
     </li>
@@ -1807,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.12_TensorFlowTTS%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+      <a href="../2023/3/3.12_TensorFlowTTS%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
         3.12 TensorFlowTTS文字转语音
       </a>
     </li>
@@ -1821,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.12_python%E5%BD%95%E9%9F%B3%E5%92%8C%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90/" class="md-nav__link">
+      <a href="../2023/3/3.12_python%E5%BD%95%E9%9F%B3%E5%92%8C%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90/" class="md-nav__link">
         3.12 python录音和播放音乐
       </a>
     </li>
@@ -1835,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.13_English%20Text%20to%20speech%20with%20TensorFlowTTS/" class="md-nav__link">
+      <a href="../2023/3/3.13_English%20Text%20to%20speech%20with%20TensorFlowTTS/" class="md-nav__link">
         3.13 English Text to speech with TensorFlowTTS
       </a>
     </li>
@@ -1849,7 +1904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.13_%E4%BD%BF%E7%94%A8MelGAN%E8%BF%9B%E8%A1%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+      <a href="../2023/3/3.13_%E4%BD%BF%E7%94%A8MelGAN%E8%BF%9B%E8%A1%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
         3.13 使用MelGAN进行文字转语音
       </a>
     </li>
@@ -1863,7 +1918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.15_Midjourney%20Discord%20Interface/" class="md-nav__link">
+      <a href="../2023/3/3.15_Midjourney%20Discord%20Interface/" class="md-nav__link">
         3.15 Midjourney Discord Interface
       </a>
     </li>
@@ -1877,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.15_Tensorflow%20Eager%20Execution/" class="md-nav__link">
+      <a href="../2023/3/3.15_Tensorflow%20Eager%20Execution/" class="md-nav__link">
         3.15 Tensorflow Eager Execution
       </a>
     </li>
@@ -1891,7 +1946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.15_%E5%85%B3%E4%BA%8E%E4%B8%AD%E5%BA%B8/" class="md-nav__link">
+      <a href="../2023/3/3.15_%E5%85%B3%E4%BA%8E%E4%B8%AD%E5%BA%B8/" class="md-nav__link">
         3.15 关于中庸
       </a>
     </li>
@@ -1905,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.16_python%E5%AE%9A%E6%97%B6%E6%8A%93%E5%8F%96zhihu%E5%92%8C%E7%99%BE%E5%BA%A6%E7%9A%84%E7%83%AD%E7%82%B9/" class="md-nav__link">
+      <a href="../2023/3/3.16_python%E5%AE%9A%E6%97%B6%E6%8A%93%E5%8F%96zhihu%E5%92%8C%E7%99%BE%E5%BA%A6%E7%9A%84%E7%83%AD%E7%82%B9/" class="md-nav__link">
         3.16 python定时抓取zhihu和百度的热点
       </a>
     </li>
@@ -1919,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.16_python%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+      <a href="../2023/3/3.16_python%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%9D%97/" class="md-nav__link">
         3.16 python循环执行模块
       </a>
     </li>
@@ -1933,7 +1988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.16_%E6%96%B0%E5%BF%85%E5%BA%94%EF%BC%88New%20Bing%EF%BC%89%E5%9B%BD%E5%86%85%E7%94%B3%E8%AF%B7%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../2023/3/3.16_%E6%96%B0%E5%BF%85%E5%BA%94%EF%BC%88New%20Bing%EF%BC%89%E5%9B%BD%E5%86%85%E7%94%B3%E8%AF%B7%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
         3.16 新必应（New Bing）国内申请与使用教程
       </a>
     </li>
@@ -1947,7 +2002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.19_%E4%BD%BF%E7%94%A8%20Python%20%E8%B0%83%E7%94%A8%20ChatGPT-3.5-API/" class="md-nav__link">
+      <a href="../2023/3/3.19_%E4%BD%BF%E7%94%A8%20Python%20%E8%B0%83%E7%94%A8%20ChatGPT-3.5-API/" class="md-nav__link">
         3.19 使用 Python 调用 ChatGPT 3.5 API
       </a>
     </li>
@@ -1961,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.19_%E8%AF%B7%E9%97%AE%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1chatgpt%E7%9A%84prompt/" class="md-nav__link">
+      <a href="../2023/3/3.19_%E8%AF%B7%E9%97%AE%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1chatgpt%E7%9A%84prompt/" class="md-nav__link">
         3.19 请问怎么设计chatgpt的prompt
       </a>
     </li>
@@ -1975,7 +2030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.20.%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+      <a href="../2023/3/3.20.%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
         3.20.微生物和果皮怎么制作酵素
       </a>
     </li>
@@ -1989,7 +2044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.20_133033.%E5%86%A5%E6%83%B3%E5%92%8C%E6%AD%A3%E5%BF%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+      <a href="../2023/3/3.20_133033.%E5%86%A5%E6%83%B3%E5%92%8C%E6%AD%A3%E5%BF%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
         3.20 133033.冥想和正念之间的关系是什么
       </a>
     </li>
@@ -2003,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.20_KK%E7%9A%84%E3%80%8A%E5%A4%B1%E6%8E%A7%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+      <a href="../2023/3/3.20_KK%E7%9A%84%E3%80%8A%E5%A4%B1%E6%8E%A7%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
         3.20 KK的《失控》这本书主要讲了什么
       </a>
     </li>
@@ -2017,7 +2072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.20_%E3%80%8A%E5%BF%83%E6%B5%81%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+      <a href="../2023/3/3.20_%E3%80%8A%E5%BF%83%E6%B5%81%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
         3.20 《心流》这本书主要讲了什么
       </a>
     </li>
@@ -2031,7 +2086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.20_%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+      <a href="../2023/3/3.20_%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
         3.20 微生物和果皮怎么制作酵素
       </a>
     </li>
@@ -2045,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.20_%E7%94%A8python%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+      <a href="../2023/3/3.20_%E7%94%A8python%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
         3.20 用python实现chatgpt对话程序
       </a>
     </li>
@@ -2059,7 +2114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.21_TensorFlow%20Hub%20%E5%BA%93%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+      <a href="../2023/3/3.21_TensorFlow%20Hub%20%E5%BA%93%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         3.21 TensorFlow Hub 库概述
       </a>
     </li>
@@ -2073,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.21_paddlehub_pretrained_models/" class="md-nav__link">
+      <a href="../2023/3/3.21_paddlehub_pretrained_models/" class="md-nav__link">
         3.21 paddlehub pretrained models
       </a>
     </li>
@@ -2087,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.21_python%E9%80%9A%E8%BF%87google%E5%9C%A8%E7%BA%BF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+      <a href="../2023/3/3.21_python%E9%80%9A%E8%BF%87google%E5%9C%A8%E7%BA%BF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
         3.21 python通过google在线实现语音识别
       </a>
     </li>
@@ -2101,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.21_%E5%AE%9E%E7%8E%B0%E6%B0%91%E4%B8%BB%E6%9C%80%E5%A5%BD%E7%9A%84%E9%80%94%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+      <a href="../2023/3/3.21_%E5%AE%9E%E7%8E%B0%E6%B0%91%E4%B8%BB%E6%9C%80%E5%A5%BD%E7%9A%84%E9%80%94%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
         3.21 实现民主最好的途径是什么
       </a>
     </li>
@@ -2115,7 +2170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.21_%E8%B0%83%E7%94%A8google%20API%E8%AF%86%E5%88%AB%E9%BA%A6%E5%85%8B%E9%A3%8E%E7%9A%84%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+      <a href="../2023/3/3.21_%E8%B0%83%E7%94%A8google%20API%E8%AF%86%E5%88%AB%E9%BA%A6%E5%85%8B%E9%A3%8E%E7%9A%84%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
         3.21 调用google API识别麦克风的语音
       </a>
     </li>
@@ -2129,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.21_%E9%80%9A%E8%BF%87%E8%AF%AD%E9%9F%B3%E5%92%8Cchatgpt%E5%AF%B9%E8%AF%9D%E7%9A%84python%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+      <a href="../2023/3/3.21_%E9%80%9A%E8%BF%87%E8%AF%AD%E9%9F%B3%E5%92%8Cchatgpt%E5%AF%B9%E8%AF%9D%E7%9A%84python%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
         3.21 通过语音和chatgpt对话的python程序
       </a>
     </li>
@@ -2143,7 +2198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.22_%E4%BA%BA%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%B0%86%E6%80%8E%E6%A0%B7%E4%BA%92%E5%8A%A8/" class="md-nav__link">
+      <a href="../2023/3/3.22_%E4%BA%BA%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%B0%86%E6%80%8E%E6%A0%B7%E4%BA%92%E5%8A%A8/" class="md-nav__link">
         3.22 人和人工智能将怎样互动
       </a>
     </li>
@@ -2157,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.22_%E6%96%B0%E9%97%BB_2023/" class="md-nav__link">
+      <a href="../2023/3/3.22_%E6%96%B0%E9%97%BB_2023/" class="md-nav__link">
         3.22 新闻 2023
       </a>
     </li>
@@ -2171,7 +2226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.23_Midjourney%20Quick%20Start/" class="md-nav__link">
+      <a href="../2023/3/3.23_Midjourney%20Quick%20Start/" class="md-nav__link">
         3.23 Midjourney Quick Start
       </a>
     </li>
@@ -2185,7 +2240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.23_PaddleNLP%20Examples/" class="md-nav__link">
+      <a href="../2023/3/3.23_PaddleNLP%20Examples/" class="md-nav__link">
         3.23 PaddleNLP Examples
       </a>
     </li>
@@ -2199,7 +2254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.23_chatbot_unified_transformer/" class="md-nav__link">
+      <a href="../2023/3/3.23_chatbot_unified_transformer/" class="md-nav__link">
         3.23 chatbot unified transformer
       </a>
     </li>
@@ -2213,7 +2268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.23_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/3/3.23_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         3.23 新闻
       </a>
     </li>
@@ -2227,7 +2282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.24_PaddleNLP_taskflow/" class="md-nav__link">
+      <a href="../2023/3/3.24_PaddleNLP_taskflow/" class="md-nav__link">
         3.24 PaddleNLP taskflow
       </a>
     </li>
@@ -2241,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.24_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/3/3.24_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         3.24 新闻
       </a>
     </li>
@@ -2255,7 +2310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.25_%E9%94%AF%E6%9C%AB%E5%85%BB%E8%8A%B1%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+      <a href="../2023/3/3.25_%E9%94%AF%E6%9C%AB%E5%85%BB%E8%8A%B1%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
         3.25 锯末养花的好处
       </a>
     </li>
@@ -2269,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.26_python%E6%93%8D%E4%BD%9Csqlite/" class="md-nav__link">
+      <a href="../2023/3/3.26_python%E6%93%8D%E4%BD%9Csqlite/" class="md-nav__link">
         3.26 python操作sqlite
       </a>
     </li>
@@ -2283,7 +2338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.26_%E4%BD%BF%E7%94%A8%20PythonMagick%20%E7%94%9F%E6%88%90%20icon%20%E5%9B%BE%E6%A0%87/" class="md-nav__link">
+      <a href="../2023/3/3.26_%E4%BD%BF%E7%94%A8%20PythonMagick%20%E7%94%9F%E6%88%90%20icon%20%E5%9B%BE%E6%A0%87/" class="md-nav__link">
         3.26 使用 PythonMagick 生成 icon 图标
       </a>
     </li>
@@ -2297,7 +2352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.27_ERNIE%203.0%E5%AE%9E%E6%88%98%E6%B3%95%E5%BE%8B%E6%96%87%E6%9C%AC%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../2023/3/3.27_ERNIE%203.0%E5%AE%9E%E6%88%98%E6%B3%95%E5%BE%8B%E6%96%87%E6%9C%AC%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
         3.27 ERNIE 3.0实战法律文本多标签分类
       </a>
     </li>
@@ -2311,7 +2366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.27_awesome-chatgpt-prompts/" class="md-nav__link">
+      <a href="../2023/3/3.27_awesome-chatgpt-prompts/" class="md-nav__link">
         3.27 awesome chatgpt prompts
       </a>
     </li>
@@ -2325,7 +2380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.27_%E4%B8%B4%E6%B1%9F%E4%BB%99%C2%B7%E5%A4%9C%E9%A5%AE%E4%B8%9C%E5%9D%A1%E9%86%92%E5%A4%8D%E9%86%89/" class="md-nav__link">
+      <a href="../2023/3/3.27_%E4%B8%B4%E6%B1%9F%E4%BB%99%C2%B7%E5%A4%9C%E9%A5%AE%E4%B8%9C%E5%9D%A1%E9%86%92%E5%A4%8D%E9%86%89/" class="md-nav__link">
         3.27 临江仙·夜饮东坡醒复醉
       </a>
     </li>
@@ -2339,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.27_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../2023/3/3.27_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         3.27 常用的思维模型
       </a>
     </li>
@@ -2353,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.27_%E6%96%87%E6%A1%88_%E4%B8%80%E6%9D%AF%E8%8C%B6/" class="md-nav__link">
+      <a href="../2023/3/3.27_%E6%96%87%E6%A1%88_%E4%B8%80%E6%9D%AF%E8%8C%B6/" class="md-nav__link">
         3.27 文案 一杯茶
       </a>
     </li>
@@ -2367,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/3/3.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         3.27 新闻
       </a>
     </li>
@@ -2381,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.28_python%E7%9A%84%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0sqlite/" class="md-nav__link">
+      <a href="../2023/3/3.28_python%E7%9A%84%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0sqlite/" class="md-nav__link">
         3.28 python的实现chatgpt对话并保存到sqlite
       </a>
     </li>
@@ -2395,7 +2450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.28_sqlite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8Cpandas%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+      <a href="../2023/3/3.28_sqlite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8Cpandas%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
         3.28 sqlite数据库和pandas数据转换
       </a>
     </li>
@@ -2409,7 +2464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../2023/3/3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/" class="md-nav__link">
         3.29 PaddleNLP分类任务指南
       </a>
     </li>
@@ -2423,7 +2478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/" class="md-nav__link">
+      <a href="../2023/3/3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/" class="md-nav__link">
         3.29 PaddleNLP文本分类应用
       </a>
     </li>
@@ -2437,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.29_TensorFlow%202.0%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../2023/3/3.29_TensorFlow%202.0%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%95%99%E7%A8%8B/" class="md-nav__link">
         3.29 TensorFlow 2.0初学者的教程
       </a>
     </li>
@@ -2451,7 +2506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.30_windows%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8Cpath%E7%8E%AF%E5%A2%83%E5%90%8E%E5%8D%B3%E6%97%B6%E7%94%9F%E6%95%88/" class="md-nav__link">
+      <a href="../2023/3/3.30_windows%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8Cpath%E7%8E%AF%E5%A2%83%E5%90%8E%E5%8D%B3%E6%97%B6%E7%94%9F%E6%95%88/" class="md-nav__link">
         3.30 windows配置环境变量和path环境后即时生效
       </a>
     </li>
@@ -2465,7 +2520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.31_google%E5%9C%A8%E7%BA%BFTTS%E5%92%8CASR/" class="md-nav__link">
+      <a href="../2023/3/3.31_google%E5%9C%A8%E7%BA%BFTTS%E5%92%8CASR/" class="md-nav__link">
         3.31 google在线TTS和ASR
       </a>
     </li>
@@ -2479,7 +2534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.31_pygame%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+      <a href="../2023/3/3.31_pygame%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
         3.31 pygame播放音频文件
       </a>
     </li>
@@ -2493,7 +2548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.31_window%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8paddlespeech%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%92%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+      <a href="../2023/3/3.31_window%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8paddlespeech%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%92%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
         3.31 window系统使用paddlespeech进行语音识别和文字转语音
       </a>
     </li>
@@ -2507,7 +2562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.31_%E6%80%8E%E6%A0%B7%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%A2%84%E6%B5%8B%E5%9F%BA%E9%87%91%E8%B6%8B%E5%8A%BF/" class="md-nav__link">
+      <a href="../2023/3/3.31_%E6%80%8E%E6%A0%B7%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%A2%84%E6%B5%8B%E5%9F%BA%E9%87%91%E8%B6%8B%E5%8A%BF/" class="md-nav__link">
         3.31 怎样用人工智能预测基金趋势
       </a>
     </li>
@@ -2521,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.31_%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7doccano%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../2023/3/3.31_%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7doccano%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
         3.31 标注工具doccano使用指南
       </a>
     </li>
@@ -2535,7 +2590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.6_%E4%B8%A4%E7%A7%8D%E8%87%AA%E5%88%B6%E7%94%9F%E6%A0%B9%E7%B2%89%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/3/3.6_%E4%B8%A4%E7%A7%8D%E8%87%AA%E5%88%B6%E7%94%9F%E6%A0%B9%E7%B2%89%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
         两种自制生根粉的方法
       </a>
     </li>
@@ -2549,7 +2604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.6_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
+      <a href="../2023/3/3.6_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
         3.6 催眠体验R1
       </a>
     </li>
@@ -2563,7 +2618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.6_%E6%B0%B4%E6%9D%A8%E9%85%B8%E7%9A%84%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/3/3.6_%E6%B0%B4%E6%9D%A8%E9%85%B8%E7%9A%84%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
         3.6 水杨酸的提取方法
       </a>
     </li>
@@ -2577,7 +2632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.7_%E4%B8%8E%E6%BD%9C%E6%84%8F%E8%AF%86%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+      <a href="../2023/3/3.7_%E4%B8%8E%E6%BD%9C%E6%84%8F%E8%AF%86%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
         3.7 与潜意识对话
       </a>
     </li>
@@ -2591,7 +2646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.7_%E5%82%AC%E7%9C%A0%E7%BC%93%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%84%A6%E8%99%91%E5%92%8C%E5%8E%8B%E5%8A%9B/" class="md-nav__link">
+      <a href="../2023/3/3.7_%E5%82%AC%E7%9C%A0%E7%BC%93%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%84%A6%E8%99%91%E5%92%8C%E5%8E%8B%E5%8A%9B/" class="md-nav__link">
         3.7 催眠缓解你的焦虑和压力
       </a>
     </li>
@@ -2605,7 +2660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.7_%E5%A4%A7%E8%87%AA%E7%84%B6%E5%86%A5%E6%83%B3_%E8%87%AA%E6%88%91%E5%82%AC%E7%9C%A0/" class="md-nav__link">
+      <a href="../2023/3/3.7_%E5%A4%A7%E8%87%AA%E7%84%B6%E5%86%A5%E6%83%B3_%E8%87%AA%E6%88%91%E5%82%AC%E7%9C%A0/" class="md-nav__link">
         3.7 大自然冥想 自我催眠
       </a>
     </li>
@@ -2619,7 +2674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.8_%E5%82%AC%E7%9C%A0%E9%87%8A%E6%94%BE%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E5%86%85%E7%96%9A%E6%83%85%E7%BB%AA/" class="md-nav__link">
+      <a href="../2023/3/3.8_%E5%82%AC%E7%9C%A0%E9%87%8A%E6%94%BE%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E5%86%85%E7%96%9A%E6%83%85%E7%BB%AA/" class="md-nav__link">
         3.8 催眠释放对他人的内疚情绪
       </a>
     </li>
@@ -2633,7 +2688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.8_%E8%81%8C%E4%B8%9A%E5%82%AC%E7%9C%A0%E5%B8%88%E5%B8%A6%E4%BD%A0%E4%BD%93%E9%AA%8C%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%82%AC%E7%9C%A0%E2%80%94%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E5%89%8D%E4%B8%96/" class="md-nav__link">
+      <a href="../2023/3/3.8_%E8%81%8C%E4%B8%9A%E5%82%AC%E7%9C%A0%E5%B8%88%E5%B8%A6%E4%BD%A0%E4%BD%93%E9%AA%8C%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%82%AC%E7%9C%A0%E2%80%94%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E5%89%8D%E4%B8%96/" class="md-nav__link">
         3.8 职业催眠师带你体验真正的催眠—看到你的前世
       </a>
     </li>
@@ -2647,7 +2702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3/3.9_%E5%82%AC%E7%9C%A0%E5%85%A5%E7%9D%A1%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+      <a href="../2023/3/3.9_%E5%82%AC%E7%9C%A0%E5%85%A5%E7%9D%A1%E5%BC%95%E5%AF%BC/" class="md-nav__link">
         3.9 催眠入睡引导
       </a>
     </li>
@@ -2666,16 +2721,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
       
       
       
@@ -2684,7 +2737,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_18_3">
           <span class="md-nav__icon md-icon"></span>
           4
@@ -2697,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04.11_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/4/04.11_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         04.11 新闻
       </a>
     </li>
@@ -2711,7 +2764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.01.22_%E9%95%BF%E5%AF%BF%E8%8A%B1%E6%80%8E%E4%B9%88%E5%85%BB%E6%AE%96/" class="md-nav__link">
+      <a href="../2023/4/4.01.22_%E9%95%BF%E5%AF%BF%E8%8A%B1%E6%80%8E%E4%B9%88%E5%85%BB%E6%AE%96/" class="md-nav__link">
         4.01.22 长寿花怎么养殖
       </a>
     </li>
@@ -2725,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.01_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/4/4.01_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         4.01 新闻
       </a>
     </li>
@@ -2739,7 +2792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.03_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/4/4.03_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         4.03 新闻
       </a>
     </li>
@@ -2753,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.06_%E6%9E%B8%E6%9D%9E%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/4/4.06_%E6%9E%B8%E6%9D%9E%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%96%B9%E6%B3%95/" class="md-nav__link">
         4.06 枸杞的种植方法
       </a>
     </li>
@@ -2767,7 +2820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.11_2015%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+      <a href="../2023/4/4.11_2015%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D%E5%A4%A7%E5%85%A8/" class="md-nav__link">
         4.11 2015爆笑笑话大全
       </a>
     </li>
@@ -2781,7 +2834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.11_AI%E5%BF%AB%E8%BD%A6%E9%81%93-FastDeploy%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%E5%A5%97%E4%BB%B6%E7%B3%BB%E5%88%97/" class="md-nav__link">
+      <a href="../2023/4/4.11_AI%E5%BF%AB%E8%BD%A6%E9%81%93-FastDeploy%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%E5%A5%97%E4%BB%B6%E7%B3%BB%E5%88%97/" class="md-nav__link">
         4.11 AI快车道 FastDeploy推理部署套件系列
       </a>
     </li>
@@ -2795,7 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.11_%E5%BE%AE%E4%BF%A1%E6%80%8E%E4%B9%88%E6%94%B6%E6%AC%BE/" class="md-nav__link">
+      <a href="../2023/4/4.11_%E5%BE%AE%E4%BF%A1%E6%80%8E%E4%B9%88%E6%94%B6%E6%AC%BE/" class="md-nav__link">
         4.11 微信怎么收款
       </a>
     </li>
@@ -2809,7 +2862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.11_%E6%82%BC%E5%BF%B5%E4%B8%80%E4%B8%AA%E9%80%9D%E5%8E%BB%E7%9A%84%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%96%87%E7%AB%A0/" class="md-nav__link">
+      <a href="../2023/4/4.11_%E6%82%BC%E5%BF%B5%E4%B8%80%E4%B8%AA%E9%80%9D%E5%8E%BB%E7%9A%84%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%96%87%E7%AB%A0/" class="md-nav__link">
         4.11 悼念一个逝去的朋友的文章
       </a>
     </li>
@@ -2823,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.11_%E6%9C%80%E6%96%B0%E6%A0%A1%E5%9B%AD%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D/" class="md-nav__link">
+      <a href="../2023/4/4.11_%E6%9C%80%E6%96%B0%E6%A0%A1%E5%9B%AD%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D/" class="md-nav__link">
         4.11 最新校园爆笑笑话
       </a>
     </li>
@@ -2837,7 +2890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.12_Sympy%20-%20Symbolic%20algebra%20in%20Python/" class="md-nav__link">
+      <a href="../2023/4/4.12_Sympy%20-%20Symbolic%20algebra%20in%20Python/" class="md-nav__link">
         4.12 Sympy   Symbolic algebra in Python
       </a>
     </li>
@@ -2851,7 +2904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.12_Tools%20for%20high-performance%20computing%20applications/" class="md-nav__link">
+      <a href="../2023/4/4.12_Tools%20for%20high-performance%20computing%20applications/" class="md-nav__link">
         4.12 Tools for high performance computing applications
       </a>
     </li>
@@ -2865,7 +2918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.12_matplotlib%20-%202D%20and%203D%20plotting%20in%20Python/" class="md-nav__link">
+      <a href="../2023/4/4.12_matplotlib%20-%202D%20and%203D%20plotting%20in%20Python/" class="md-nav__link">
         4.12 matplotlib   2D and 3D plotting in Python
       </a>
     </li>
@@ -2879,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.12_%E7%94%A8Python%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E4%BB%BF%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+      <a href="../2023/4/4.12_%E7%94%A8Python%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E4%BB%BF%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
         4.12 用Python绘制一个仿黑洞图像
       </a>
     </li>
@@ -2893,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.13_EinsteinPy%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../2023/4/4.13_EinsteinPy%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         4.13 EinsteinPy模块介绍
       </a>
     </li>
@@ -2907,7 +2960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.13_python%E7%94%9F%E6%88%90%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+      <a href="../2023/4/4.13_python%E7%94%9F%E6%88%90%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
         4.13 python生成黑洞图像
       </a>
     </li>
@@ -2921,7 +2974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.16_%E8%8A%B1%E9%9D%92%E7%B4%A0%E5%90%AB%E9%87%8F%E9%AB%98%E7%9A%84%E9%A3%9F%E7%89%A9%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+      <a href="../2023/4/4.16_%E8%8A%B1%E9%9D%92%E7%B4%A0%E5%90%AB%E9%87%8F%E9%AB%98%E7%9A%84%E9%A3%9F%E7%89%A9%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         4.16 花青素含量高的食物有哪些
       </a>
     </li>
@@ -2935,7 +2988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.17_%E6%A7%90%E8%8A%B1%E7%82%92%E9%B8%A1%E8%9B%8B/" class="md-nav__link">
+      <a href="../2023/4/4.17_%E6%A7%90%E8%8A%B1%E7%82%92%E9%B8%A1%E8%9B%8B/" class="md-nav__link">
         4.17 槐花炒鸡蛋
       </a>
     </li>
@@ -2949,7 +3002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.18_%E8%B1%8C%E8%B1%86%E6%8E%92%E9%AA%A8%E6%B1%A4%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/4/4.18_%E8%B1%8C%E8%B1%86%E6%8E%92%E9%AA%A8%E6%B1%A4%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
         4.18 豌豆排骨汤的做法
       </a>
     </li>
@@ -2963,7 +3016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1_PaddleClas%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABPULC%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="md-nav__link">
+      <a href="../2023/4/4.1_PaddleClas%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABPULC%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="md-nav__link">
         4.1 PaddleClas图像识别PULC快速体验
       </a>
     </li>
@@ -2977,7 +3030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1_windows%E4%B8%8B%E6%80%8E%E4%B9%88%E7%94%A8sublime%20text%E6%90%AD%E5%BB%BApython%20%E7%9A%84ide/" class="md-nav__link">
+      <a href="../2023/4/4.1_windows%E4%B8%8B%E6%80%8E%E4%B9%88%E7%94%A8sublime%20text%E6%90%AD%E5%BB%BApython%20%E7%9A%84ide/" class="md-nav__link">
         4.1 windows下怎么用sublime text搭建python 的ide
       </a>
     </li>
@@ -2991,7 +3044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1_%E5%9F%BA%E4%BA%8EPP-LCNetV2%E7%9A%84%E5%8A%A8%E7%89%A9%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8E%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../2023/4/4.1_%E5%9F%BA%E4%BA%8EPP-LCNetV2%E7%9A%84%E5%8A%A8%E7%89%A9%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8E%E5%88%86%E7%B1%BB/" class="md-nav__link">
         4.1 基于PP LCNetV2的动物图像识别与分类
       </a>
     </li>
@@ -3005,7 +3058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1_%E6%8E%A8%E8%8D%90%E4%B8%80%E7%A7%8D%E5%81%A5%E5%BA%B7%E7%9A%84%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+      <a href="../2023/4/4.1_%E6%8E%A8%E8%8D%90%E4%B8%80%E7%A7%8D%E5%81%A5%E5%BA%B7%E7%9A%84%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/" class="md-nav__link">
         4.1 推荐一种健康的生活方式
       </a>
     </li>
@@ -3019,7 +3072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.20_%E6%B5%81%E6%B7%8C/" class="md-nav__link">
+      <a href="../2023/4/4.20_%E6%B5%81%E6%B7%8C/" class="md-nav__link">
         4.20 流淌
       </a>
     </li>
@@ -3033,7 +3086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.21_%E4%BB%A5%E7%A7%91%E5%AD%A6%E5%85%A5%E9%81%93/" class="md-nav__link">
+      <a href="../2023/4/4.21_%E4%BB%A5%E7%A7%91%E5%AD%A6%E5%85%A5%E9%81%93/" class="md-nav__link">
         4.21 以科学入道
       </a>
     </li>
@@ -3047,7 +3100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.22_%E6%97%B6%E9%97%B4%E7%9A%84%E7%A7%A9%E5%BA%8F-%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../2023/4/4.22_%E6%97%B6%E9%97%B4%E7%9A%84%E7%A7%A9%E5%BA%8F-%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         4.22 时间的秩序 笔记
       </a>
     </li>
@@ -3061,7 +3114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.22_%E6%9C%BA%E5%99%A8%E6%96%87%E6%98%8E%E7%9A%84%E5%86%B0%E5%B1%B1%E4%B8%80%E8%A7%92/" class="md-nav__link">
+      <a href="../2023/4/4.22_%E6%9C%BA%E5%99%A8%E6%96%87%E6%98%8E%E7%9A%84%E5%86%B0%E5%B1%B1%E4%B8%80%E8%A7%92/" class="md-nav__link">
         4.22 机器文明的冰山一角
       </a>
     </li>
@@ -3075,7 +3128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.24_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../2023/4/4.24_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
         4.24 ChatGPT中文调教指南
       </a>
     </li>
@@ -3089,7 +3142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.24_chatgpt%20%E5%86%99%E5%B0%8F%E8%AF%B4%E6%8F%90%E7%BA%B2%E7%9A%84prompt/" class="md-nav__link">
+      <a href="../2023/4/4.24_chatgpt%20%E5%86%99%E5%B0%8F%E8%AF%B4%E6%8F%90%E7%BA%B2%E7%9A%84prompt/" class="md-nav__link">
         4.24 chatgpt 写小说提纲的prompt
       </a>
     </li>
@@ -3103,7 +3156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.24_%E5%88%A9%E7%94%A8ChatGPT%E8%BD%BB%E6%9D%BE%E7%BB%98%E5%9B%BE/" class="md-nav__link">
+      <a href="../2023/4/4.24_%E5%88%A9%E7%94%A8ChatGPT%E8%BD%BB%E6%9D%BE%E7%BB%98%E5%9B%BE/" class="md-nav__link">
         4.24 利用ChatGPT轻松绘图
       </a>
     </li>
@@ -3117,7 +3170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.24_%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9C%AF%E8%AF%AD/" class="md-nav__link">
+      <a href="../2023/4/4.24_%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9C%AF%E8%AF%AD/" class="md-nav__link">
         4.24 大模型的一些术语
       </a>
     </li>
@@ -3131,7 +3184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.25.18_%E6%89%AE%E6%BC%94%E8%AF%97%E4%BA%BA/" class="md-nav__link">
+      <a href="../2023/4/4.25.18_%E6%89%AE%E6%BC%94%E8%AF%97%E4%BA%BA/" class="md-nav__link">
         4.25.18 扮演诗人
       </a>
     </li>
@@ -3145,7 +3198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.25.19_%E5%B0%8F%E8%AF%B4-%E5%BF%83%E9%9A%8F%E6%A2%A6%E9%80%90/" class="md-nav__link">
+      <a href="../2023/4/4.25.19_%E5%B0%8F%E8%AF%B4-%E5%BF%83%E9%9A%8F%E6%A2%A6%E9%80%90/" class="md-nav__link">
         4.25.19 小说 心随梦逐
       </a>
     </li>
@@ -3159,7 +3212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.25_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../2023/4/4.25_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
         4.25 ChatGPT中文调教指南
       </a>
     </li>
@@ -3173,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.25_chatgpt%20%E5%86%99%E5%A5%87%E5%B9%BB%E5%B0%8F%E6%95%85%E4%BA%8B%E7%9A%84prompt/" class="md-nav__link">
+      <a href="../2023/4/4.25_chatgpt%20%E5%86%99%E5%A5%87%E5%B9%BB%E5%B0%8F%E6%95%85%E4%BA%8B%E7%9A%84prompt/" class="md-nav__link">
         4.25 chatgpt 写奇幻小故事的prompt
       </a>
     </li>
@@ -3187,7 +3240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.25_chatgpt%E5%86%99%E4%BD%9C%E7%9A%84prompt%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../2023/4/4.25_chatgpt%E5%86%99%E4%BD%9C%E7%9A%84prompt%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         4.25 chatgpt写作的prompt的设计
       </a>
     </li>
@@ -3201,7 +3254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.25_python-%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2%E6%8E%89%E6%96%87%E6%9C%AC%E4%B8%AD%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7/" class="md-nav__link">
+      <a href="../2023/4/4.25_python-%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2%E6%8E%89%E6%96%87%E6%9C%AC%E4%B8%AD%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7/" class="md-nav__link">
         4.25 python 正则替换掉文本中标点符号
       </a>
     </li>
@@ -3215,7 +3268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.25_%E5%A6%82%E4%BD%95%E7%94%A8ChatGPT%E5%86%99%E4%B8%80%E7%AF%87%E7%B2%BE%E5%BD%A9%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%9F/" class="md-nav__link">
+      <a href="../2023/4/4.25_%E5%A6%82%E4%BD%95%E7%94%A8ChatGPT%E5%86%99%E4%B8%80%E7%AF%87%E7%B2%BE%E5%BD%A9%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%9F/" class="md-nav__link">
         4.25 如何用ChatGPT写一篇精彩的故事？
       </a>
     </li>
@@ -3229,7 +3282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.26.21_%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E6%98%A5%E6%B8%B8%E5%8F%A4%E5%9F%8E/" class="md-nav__link">
+      <a href="../2023/4/4.26.21_%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E6%98%A5%E6%B8%B8%E5%8F%A4%E5%9F%8E/" class="md-nav__link">
         4.26.21 一剪梅·春游古城
       </a>
     </li>
@@ -3243,7 +3296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.26_%E6%97%B6%E7%A9%BA%E9%80%83%E4%BA%A1/" class="md-nav__link">
+      <a href="../2023/4/4.26_%E6%97%B6%E7%A9%BA%E9%80%83%E4%BA%A1/" class="md-nav__link">
         4.26 时空逃亡
       </a>
     </li>
@@ -3257,7 +3310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.26_%E7%A2%B0%E7%A2%B0%E9%A6%99%E7%9A%84%E5%85%BB%E6%AE%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/4/4.26_%E7%A2%B0%E7%A2%B0%E9%A6%99%E7%9A%84%E5%85%BB%E6%AE%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
         碰碰香的养殖方法
       </a>
     </li>
@@ -3271,7 +3324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.26_%E8%99%8E%E7%9A%AE%E5%85%B0%E7%9A%84%E5%85%BB%E6%8A%A4%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/4/4.26_%E8%99%8E%E7%9A%AE%E5%85%B0%E7%9A%84%E5%85%BB%E6%8A%A4%E6%96%B9%E6%B3%95/" class="md-nav__link">
         虎皮兰的养护方法
       </a>
     </li>
@@ -3285,7 +3338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.26_%E9%87%87%E8%98%91%E8%8F%87%E7%9A%84%E5%B0%8F%E5%A7%91%E5%A8%98/" class="md-nav__link">
+      <a href="../2023/4/4.26_%E9%87%87%E8%98%91%E8%8F%87%E7%9A%84%E5%B0%8F%E5%A7%91%E5%A8%98/" class="md-nav__link">
         4.26 采蘑菇的小姑娘
       </a>
     </li>
@@ -3299,7 +3352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.27.08_%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8/" class="md-nav__link">
+      <a href="../2023/4/4.27.08_%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8/" class="md-nav__link">
         4.27.08 时间机器
       </a>
     </li>
@@ -3313,7 +3366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.27_Python%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2-webp%E8%BD%ACpng/" class="md-nav__link">
+      <a href="../2023/4/4.27_Python%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2-webp%E8%BD%ACpng/" class="md-nav__link">
         Python实现图片格式转换-webp转png
       </a>
     </li>
@@ -3327,7 +3380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2_Huggingface%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../2023/4/4.2_Huggingface%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         4.2 Huggingface开源模型和数据集介绍
       </a>
     </li>
@@ -3341,7 +3394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2_paddlehub%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E5%85%B3%E9%94%AE%E7%82%B9%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../2023/4/4.2_paddlehub%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E5%85%B3%E9%94%AE%E7%82%B9%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         4.2 paddlehub人体骨骼关键点检测模型
       </a>
     </li>
@@ -3355,7 +3408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2_paddlepaddle%E7%94%9F%E6%80%81%E7%9A%84%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%B7%A5%E5%85%B7PaddleHub/" class="md-nav__link">
+      <a href="../2023/4/4.2_paddlepaddle%E7%94%9F%E6%80%81%E7%9A%84%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%B7%A5%E5%85%B7PaddleHub/" class="md-nav__link">
         4.2 paddlepaddle生态的预训练模型应用工具PaddleHub
       </a>
     </li>
@@ -3369,7 +3422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2_%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Chocolatey%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../2023/4/4.2_%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Chocolatey%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         4.2 软件管理工具Chocolatey的安装与使用
       </a>
     </li>
@@ -3383,7 +3436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.3_AI%E5%B7%A5%E5%85%B7%E9%9B%86/" class="md-nav__link">
+      <a href="../2023/4/4.3_AI%E5%B7%A5%E5%85%B7%E9%9B%86/" class="md-nav__link">
         4.3 AI工具集
       </a>
     </li>
@@ -3397,7 +3450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.3_Transformer%20text-to-speech%20model%20from%20fairseq/" class="md-nav__link">
+      <a href="../2023/4/4.3_Transformer%20text-to-speech%20model%20from%20fairseq/" class="md-nav__link">
         4.3 Transformer text to speech model from fairseq
       </a>
     </li>
@@ -3411,7 +3464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.4_%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91App/" class="md-nav__link">
+      <a href="../2023/4/4.4_%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91App/" class="md-nav__link">
         4.4 低代码开发App
       </a>
     </li>
@@ -3425,7 +3478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.6_%E7%90%BC%E8%8A%B1%E7%9A%84%E7%B9%81%E6%AE%96%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+      <a href="../2023/4/4.6_%E7%90%BC%E8%8A%B1%E7%9A%84%E7%B9%81%E6%AE%96%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         4.6 琼花的繁殖方法有哪些
       </a>
     </li>
@@ -3439,7 +3492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.9_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/4/4.9_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         4.9 新闻
       </a>
     </li>
@@ -3451,48 +3504,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.9 笑话
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2023/4/4.9_%E7%AC%91%E8%AF%9D/" class="md-nav__link">
         4.9 笑话
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    笑话
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3538,7 +3554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/05.04_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/5/05.04_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         05.04 新闻
       </a>
     </li>
@@ -3552,7 +3568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.12.15_%E9%BE%99%E4%B9%8B%E7%8E%8B%E5%9B%BD/" class="md-nav__link">
+      <a href="../2023/5/5.12.15_%E9%BE%99%E4%B9%8B%E7%8E%8B%E5%9B%BD/" class="md-nav__link">
         5.12.15 龙之王国
       </a>
     </li>
@@ -3566,7 +3582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.14_%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A-%E5%AE%97%E6%AF%85/" class="md-nav__link">
+      <a href="../2023/5/5.14_%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A-%E5%AE%97%E6%AF%85/" class="md-nav__link">
         5.14 裂变式创业 宗毅
       </a>
     </li>
@@ -3580,7 +3596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.16_%E6%80%8E%E6%A0%B7%E5%9C%A8Windows%E4%B8%8B%E5%AE%89%E8%A3%85python/" class="md-nav__link">
+      <a href="../2023/5/5.16_%E6%80%8E%E6%A0%B7%E5%9C%A8Windows%E4%B8%8B%E5%AE%89%E8%A3%85python/" class="md-nav__link">
         5.16 怎样在Windows下安装python
       </a>
     </li>
@@ -3594,7 +3610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.16_%E7%9A%AE%E8%9B%8B%E7%98%A6%E8%82%89%E7%B2%A5%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/5/5.16_%E7%9A%AE%E8%9B%8B%E7%98%A6%E8%82%89%E7%B2%A5%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
         5.16 皮蛋瘦肉粥的做法
       </a>
     </li>
@@ -3608,7 +3624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.17_%E4%BB%80%E4%B9%88%E6%98%AF%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E7%BB%B4/" class="md-nav__link">
+      <a href="../2023/5/5.17_%E4%BB%80%E4%B9%88%E6%98%AF%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E7%BB%B4/" class="md-nav__link">
         5.17 什么是批判性思维
       </a>
     </li>
@@ -3622,7 +3638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.18_%E6%9E%87%E6%9D%B7%E8%86%8F%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/5/5.18_%E6%9E%87%E6%9D%B7%E8%86%8F%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
         5.18 枇杷膏的做法
       </a>
     </li>
@@ -3636,7 +3652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.18_%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%A8%A1%E5%9E%8BPrompt%E8%AE%BE%E8%AE%A1%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
+      <a href="../2023/5/5.18_%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%A8%A1%E5%9E%8BPrompt%E8%AE%BE%E8%AE%A1%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
         5.18 百度大模型Prompt设计课程
       </a>
     </li>
@@ -3650,7 +3666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.18_%E9%93%B6%E8%80%B3%E7%BE%B9%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/5/5.18_%E9%93%B6%E8%80%B3%E7%BE%B9%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
         5.18 银耳羹的做法
       </a>
     </li>
@@ -3664,7 +3680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.19_%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%A8%E6%B0%91%E5%9F%BA%E6%9C%AC%E6%94%B6%E5%85%A5UBI/" class="md-nav__link">
+      <a href="../2023/5/5.19_%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%A8%E6%B0%91%E5%9F%BA%E6%9C%AC%E6%94%B6%E5%85%A5UBI/" class="md-nav__link">
         5.19 什么是全民基本收入UBI
       </a>
     </li>
@@ -3678,7 +3694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.19_%E4%BB%80%E4%B9%88%E6%98%AF%E8%A3%82%E5%8F%98%E5%BC%8F%E5%86%85%E9%83%A8%E5%88%9B%E4%B8%9A/" class="md-nav__link">
+      <a href="../2023/5/5.19_%E4%BB%80%E4%B9%88%E6%98%AF%E8%A3%82%E5%8F%98%E5%BC%8F%E5%86%85%E9%83%A8%E5%88%9B%E4%B8%9A/" class="md-nav__link">
         5.19 什么是裂变式内部创业
       </a>
     </li>
@@ -3692,7 +3708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.19_%E5%85%A8%E7%90%83%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%20Worldcoin/" class="md-nav__link">
+      <a href="../2023/5/5.19_%E5%85%A8%E7%90%83%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%20Worldcoin/" class="md-nav__link">
         5.19 全球数字货币 Worldcoin
       </a>
     </li>
@@ -3706,7 +3722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.19_%E6%80%8E%E4%B9%88%E8%AE%B2%E5%A5%BD%E4%B8%80%E4%B8%AA%E6%95%85%E4%BA%8B/" class="md-nav__link">
+      <a href="../2023/5/5.19_%E6%80%8E%E4%B9%88%E8%AE%B2%E5%A5%BD%E4%B8%80%E4%B8%AA%E6%95%85%E4%BA%8B/" class="md-nav__link">
         5.19 怎么讲好一个故事
       </a>
     </li>
@@ -3720,7 +3736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.19_%E6%80%8E%E6%A0%B7%E5%9F%B9%E5%85%BB%E5%AD%A9%E5%AD%90%E7%9A%84%E8%80%90%E5%BF%83/" class="md-nav__link">
+      <a href="../2023/5/5.19_%E6%80%8E%E6%A0%B7%E5%9F%B9%E5%85%BB%E5%AD%A9%E5%AD%90%E7%9A%84%E8%80%90%E5%BF%83/" class="md-nav__link">
         5.19 怎样培养孩子的耐心
       </a>
     </li>
@@ -3734,7 +3750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.20_%E5%9B%BE%E7%89%87%E5%90%84%E5%BC%8F%E8%BD%AC%E6%8D%A2-webp%E5%88%B0png/" class="md-nav__link">
+      <a href="../2023/5/5.20_%E5%9B%BE%E7%89%87%E5%90%84%E5%BC%8F%E8%BD%AC%E6%8D%A2-webp%E5%88%B0png/" class="md-nav__link">
         5.20 图片各式转换 webp到png
       </a>
     </li>
@@ -3748,7 +3764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.21_%E5%86%A5%E6%83%B3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="md-nav__link">
+      <a href="../2023/5/5.21_%E5%86%A5%E6%83%B3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="md-nav__link">
         5.21 冥想注意事项
       </a>
     </li>
@@ -3762,7 +3778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.21_%E5%BD%93%E5%89%8D%E7%A7%91%E5%AD%A6%E6%9C%AA%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+      <a href="../2023/5/5.21_%E5%BD%93%E5%89%8D%E7%A7%91%E5%AD%A6%E6%9C%AA%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         5.21 当前科学未解决的问题有哪些
       </a>
     </li>
@@ -3776,7 +3792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.21_%E6%80%8E%E6%A0%B7%E7%94%A8%E5%9B%BE%E7%89%87%E5%92%8Cmp3%E7%94%9F%E6%88%90mp4%E8%A7%86%E9%A2%91/" class="md-nav__link">
+      <a href="../2023/5/5.21_%E6%80%8E%E6%A0%B7%E7%94%A8%E5%9B%BE%E7%89%87%E5%92%8Cmp3%E7%94%9F%E6%88%90mp4%E8%A7%86%E9%A2%91/" class="md-nav__link">
         5.21 怎样用图片和mp3生成mp4视频
       </a>
     </li>
@@ -3790,7 +3806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.21_%E6%9A%97%E7%89%A9%E8%B4%A8%E5%92%8C%E6%9A%97%E8%83%BD%E9%87%8F%E7%9A%84%E7%89%B9%E6%80%A7/" class="md-nav__link">
+      <a href="../2023/5/5.21_%E6%9A%97%E7%89%A9%E8%B4%A8%E5%92%8C%E6%9A%97%E8%83%BD%E9%87%8F%E7%9A%84%E7%89%B9%E6%80%A7/" class="md-nav__link">
         5.21 暗物质和暗能量的特性
       </a>
     </li>
@@ -3804,7 +3820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_Sympy%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../2023/5/5.22_Sympy%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         5.22 Sympy简介
       </a>
     </li>
@@ -3818,7 +3834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_%E4%B8%AD%E5%9B%BD%E8%91%97%E5%90%8D%E7%9A%8412%E5%A4%A7%E7%A5%9E%E8%AF%9D%E6%95%85%E4%BA%8B%E5%92%8C%E5%85%B6%E4%B8%AD%E5%AF%93%E6%84%8F/" class="md-nav__link">
+      <a href="../2023/5/5.22_%E4%B8%AD%E5%9B%BD%E8%91%97%E5%90%8D%E7%9A%8412%E5%A4%A7%E7%A5%9E%E8%AF%9D%E6%95%85%E4%BA%8B%E5%92%8C%E5%85%B6%E4%B8%AD%E5%AF%93%E6%84%8F/" class="md-nav__link">
         5.22 中国著名的12大神话故事和其中寓意
       </a>
     </li>
@@ -3832,7 +3848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_%E5%86%9C%E6%B0%91%E4%B8%93%E4%B8%9A%E5%90%88%E4%BD%9C%E7%A4%BE%E7%9A%84%E7%BB%84%E7%BB%87%E5%BD%A2%E5%BC%8F%E5%8F%8A%E6%B6%89%E7%A8%8E%E4%BC%98%E6%83%A0/" class="md-nav__link">
+      <a href="../2023/5/5.22_%E5%86%9C%E6%B0%91%E4%B8%93%E4%B8%9A%E5%90%88%E4%BD%9C%E7%A4%BE%E7%9A%84%E7%BB%84%E7%BB%87%E5%BD%A2%E5%BC%8F%E5%8F%8A%E6%B6%89%E7%A8%8E%E4%BC%98%E6%83%A0/" class="md-nav__link">
         5.22 农民专业合作社的组织形式及涉税优惠
       </a>
     </li>
@@ -3846,7 +3862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Python%E5%AE%9E%E7%8E%B0%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E6%96%87%E4%BB%B6/" class="md-nav__link">
+      <a href="../2023/5/5.22_%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Python%E5%AE%9E%E7%8E%B0%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E6%96%87%E4%BB%B6/" class="md-nav__link">
         5.22 如何使用Python实现删除重复文件
       </a>
     </li>
@@ -3860,7 +3876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/5/5.22_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         5.22 新闻
       </a>
     </li>
@@ -3874,7 +3890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_%E6%B0%B4%E7%A8%BB%E7%9B%B4%E6%92%AD%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../2023/5/5.22_%E6%B0%B4%E7%A8%BB%E7%9B%B4%E6%92%AD%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         5.22 水稻直播技术介绍
       </a>
     </li>
@@ -3888,7 +3904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_%E6%B3%A8%E5%86%8C%E5%86%9C%E6%9D%91%E5%90%88%E4%BD%9C%E7%A4%BE%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E6%9D%A1%E4%BB%B6/" class="md-nav__link">
+      <a href="../2023/5/5.22_%E6%B3%A8%E5%86%8C%E5%86%9C%E6%9D%91%E5%90%88%E4%BD%9C%E7%A4%BE%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E6%9D%A1%E4%BB%B6/" class="md-nav__link">
         5.22 注册农村合作社需要什么条件
       </a>
     </li>
@@ -3902,7 +3918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.22_%E8%AF%B7%E5%B8%AE%E6%88%91%E4%BF%AE%E6%94%B9%E4%B8%8B%E9%9D%A2%E7%94%B1%E6%88%91%E6%8F%90%E4%BE%9B%E7%9A%84%E6%96%87%E7%AB%A0/" class="md-nav__link">
+      <a href="../2023/5/5.22_%E8%AF%B7%E5%B8%AE%E6%88%91%E4%BF%AE%E6%94%B9%E4%B8%8B%E9%9D%A2%E7%94%B1%E6%88%91%E6%8F%90%E4%BE%9B%E7%9A%84%E6%96%87%E7%AB%A0/" class="md-nav__link">
         5.22 请帮我修改下面由我提供的文章
       </a>
     </li>
@@ -3916,7 +3932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.23_%E5%9C%9F%E8%B1%86%E5%B9%B2%E5%92%8C%E8%90%9D%E5%8D%9C%E5%B9%B2%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+      <a href="../2023/5/5.23_%E5%9C%9F%E8%B1%86%E5%B9%B2%E5%92%8C%E8%90%9D%E5%8D%9C%E5%B9%B2%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
         5.23 土豆干和萝卜干的做法
       </a>
     </li>
@@ -3930,7 +3946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.24_%E5%B0%B9%E9%9B%86%E4%B8%8E%E5%8F%A4%E9%9A%86%E4%B8%AD/" class="md-nav__link">
+      <a href="../2023/5/5.24_%E5%B0%B9%E9%9B%86%E4%B8%8E%E5%8F%A4%E9%9A%86%E4%B8%AD/" class="md-nav__link">
         5.24 尹集与古隆中
       </a>
     </li>
@@ -3944,7 +3960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.25_%E6%88%90%E7%AB%8B%E5%86%9C%E6%9D%91%E5%90%88%E4%BD%9C%E7%A4%BE%E7%9A%84%E5%A5%BD%E5%A4%84%E5%92%8C%E5%BC%8A%E7%AB%AF/" class="md-nav__link">
+      <a href="../2023/5/5.25_%E6%88%90%E7%AB%8B%E5%86%9C%E6%9D%91%E5%90%88%E4%BD%9C%E7%A4%BE%E7%9A%84%E5%A5%BD%E5%A4%84%E5%92%8C%E5%BC%8A%E7%AB%AF/" class="md-nav__link">
         5.25 成立农村合作社的好处和弊端
       </a>
     </li>
@@ -3958,7 +3974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.25_%E6%88%90%E9%95%BF%E6%80%A7%E6%80%9D%E7%BB%B4%E5%92%8C%E5%9B%BA%E5%AE%9A%E6%80%A7%E6%80%9D%E7%BB%B4/" class="md-nav__link">
+      <a href="../2023/5/5.25_%E6%88%90%E9%95%BF%E6%80%A7%E6%80%9D%E7%BB%B4%E5%92%8C%E5%9B%BA%E5%AE%9A%E6%80%A7%E6%80%9D%E7%BB%B4/" class="md-nav__link">
         5.25 成长性思维和固定性思维
       </a>
     </li>
@@ -3972,7 +3988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.25_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../2023/5/5.25_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         5.25 新闻
       </a>
     </li>
@@ -3986,7 +4002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.26_%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90/" class="md-nav__link">
+      <a href="../2023/5/5.26_%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90/" class="md-nav__link">
         5.26 梁冬说庄子
       </a>
     </li>
@@ -4000,7 +4016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.28_%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%B9%8B%E9%97%B4%E5%8F%AF%E4%BB%A5%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+      <a href="../2023/5/5.28_%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%B9%8B%E9%97%B4%E5%8F%AF%E4%BB%A5%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
         5.28 智能机器之间可以对话
       </a>
     </li>
@@ -4014,7 +4030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.30_LLM%E5%BC%80%E5%8F%91%E8%8C%83%E5%BC%8F/" class="md-nav__link">
+      <a href="../2023/5/5.30_LLM%E5%BC%80%E5%8F%91%E8%8C%83%E5%BC%8F/" class="md-nav__link">
         5.30 LLM开发范式
       </a>
     </li>
@@ -4028,7 +4044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.30_Python%20Gradio%20Quickstart/" class="md-nav__link">
+      <a href="../2023/5/5.30_Python%20Gradio%20Quickstart/" class="md-nav__link">
         5.30 Python Gradio Quickstart
       </a>
     </li>
@@ -4042,7 +4058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.30_%E8%A5%BF%E5%B0%94%E6%96%AF%E6%80%80%E5%AD%95%E7%99%BE%E7%A7%91/" class="md-nav__link">
+      <a href="../2023/5/5.30_%E8%A5%BF%E5%B0%94%E6%96%AF%E6%80%80%E5%AD%95%E7%99%BE%E7%A7%91/" class="md-nav__link">
         5.30 西尔斯怀孕百科
       </a>
     </li>
@@ -4056,7 +4072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.31_%E6%B9%96%E8%BE%B9%E5%82%AC%E7%9C%A0%E5%86%A5%E6%83%B3/" class="md-nav__link">
+      <a href="../2023/5/5.31_%E6%B9%96%E8%BE%B9%E5%82%AC%E7%9C%A0%E5%86%A5%E6%83%B3/" class="md-nav__link">
         5.31 湖边催眠冥想
       </a>
     </li>
@@ -4070,7 +4086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.3_python%E5%AE%9E%E7%8E%B0%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D/" class="md-nav__link">
+      <a href="../2023/5/5.3_python%E5%AE%9E%E7%8E%B0%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D/" class="md-nav__link">
         5.3 python实现批量文件重命名
       </a>
     </li>
@@ -4084,7 +4100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.6_%E5%9F%B9%E5%85%BB%E5%B9%BD%E9%BB%98%E6%84%9F/" class="md-nav__link">
+      <a href="../2023/5/5.6_%E5%9F%B9%E5%85%BB%E5%B9%BD%E9%BB%98%E6%84%9F/" class="md-nav__link">
         5.6 培养幽默感
       </a>
     </li>
@@ -4098,7 +4114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.6_%E5%A6%82%E4%BD%95%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%BF%AB%E4%B9%90/" class="md-nav__link">
+      <a href="../2023/5/5.6_%E5%A6%82%E4%BD%95%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%BF%AB%E4%B9%90/" class="md-nav__link">
         5.6 如何让自己快乐
       </a>
     </li>
@@ -4112,7 +4128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.6_%E5%B9%BD%E9%BB%98%E6%AE%B5%E5%AD%90%E9%9B%86%E5%90%88/" class="md-nav__link">
+      <a href="../2023/5/5.6_%E5%B9%BD%E9%BB%98%E6%AE%B5%E5%AD%90%E9%9B%86%E5%90%88/" class="md-nav__link">
         5.6 幽默段子集合
       </a>
     </li>
@@ -4126,7 +4142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.7_%E3%80%8A%E6%B0%B4%E6%B5%92%E4%BC%A0%E3%80%8B108%E5%90%8D%E5%A5%BD%E6%B1%89%E6%80%A7%E6%A0%BC%E7%89%B9%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%95%85%E4%BA%8B/" class="md-nav__link">
+      <a href="../2023/5/5.7_%E3%80%8A%E6%B0%B4%E6%B5%92%E4%BC%A0%E3%80%8B108%E5%90%8D%E5%A5%BD%E6%B1%89%E6%80%A7%E6%A0%BC%E7%89%B9%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%95%85%E4%BA%8B/" class="md-nav__link">
         5.7 《水浒传》108名好汉性格特点及相关故事
       </a>
     </li>
@@ -4140,7 +4156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.8_%E5%B9%BD%E9%BB%98%E7%9A%84%E5%9B%9E%E7%AD%94/" class="md-nav__link">
+      <a href="../2023/5/5.8_%E5%B9%BD%E9%BB%98%E7%9A%84%E5%9B%9E%E7%AD%94/" class="md-nav__link">
         5.8 幽默的回答
       </a>
     </li>
@@ -4154,7 +4170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.9_python%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9/" class="md-nav__link">
+      <a href="../2023/5/5.9_python%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9/" class="md-nav__link">
         5.9 python语言的特点
       </a>
     </li>
@@ -4168,7 +4184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5/5.9_%E5%B9%BD%E9%BB%98%E6%95%85%E4%BA%8B/" class="md-nav__link">
+      <a href="../2023/5/5.9_%E5%B9%BD%E9%BB%98%E6%95%85%E4%BA%8B/" class="md-nav__link">
         5.9 幽默故事
       </a>
     </li>
@@ -4216,7 +4232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+      <a href="../2023/%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
         2.7 摘录 人间草木
       </a>
     </li>
@@ -4230,7 +4246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E8%A5%BF%E5%B1%B1%E5%AE%A2%E8%AF%9D/" class="md-nav__link">
+      <a href="../2023/%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E8%A5%BF%E5%B1%B1%E5%AE%A2%E8%AF%9D/" class="md-nav__link">
         2.7 摘录 西山客话
       </a>
     </li>
@@ -4244,7 +4260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+      <a href="../2023/%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
         2.7 文案 人间草木
       </a>
     </li>
@@ -4258,7 +4274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E6%98%86%E6%98%8E%E7%9A%84%E9%9B%A8/" class="md-nav__link">
+      <a href="../2023/%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E6%98%86%E6%98%8E%E7%9A%84%E9%9B%A8/" class="md-nav__link">
         2.7 文案 昆明的雨
       </a>
     </li>
@@ -4272,7 +4288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%B1%AA%E6%9B%BE%E7%A5%BA%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../2023/%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%B1%AA%E6%9B%BE%E7%A5%BA%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         2.7 汪曾祺简介
       </a>
     </li>
@@ -4328,7 +4344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/06.01_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../6/06.01_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         06.01 新闻
       </a>
     </li>
@@ -4342,7 +4358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/06.05_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../6/06.05_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         06.05 新闻
       </a>
     </li>
@@ -4356,7 +4372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/06.07_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+      <a href="../6/06.07_%E6%96%B0%E9%97%BB/" class="md-nav__link">
         06.07 新闻
       </a>
     </li>
@@ -4370,7 +4386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.12_%E7%89%9B%E9%A1%BF%E7%9A%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
+      <a href="../6/6.12_%E7%89%9B%E9%A1%BF%E7%9A%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
         6.12 牛顿的故事
       </a>
     </li>
@@ -4384,7 +4400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.1_Zero-Shot%20Image%20Classification/" class="md-nav__link">
+      <a href="../6/6.1_Zero-Shot%20Image%20Classification/" class="md-nav__link">
         6.1 Zero Shot Image Classification
       </a>
     </li>
@@ -4398,7 +4414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.1_%E5%8D%81%E7%A7%92%E7%AC%91%E5%88%B0%E6%96%AD%E6%B0%94%E7%9A%84%E6%90%9E%E7%AC%91%E6%AE%B5%E5%AD%90/" class="md-nav__link">
+      <a href="../6/6.1_%E5%8D%81%E7%A7%92%E7%AC%91%E5%88%B0%E6%96%AD%E6%B0%94%E7%9A%84%E6%90%9E%E7%AC%91%E6%AE%B5%E5%AD%90/" class="md-nav__link">
         6.1 十秒笑到断气的搞笑段子
       </a>
     </li>
@@ -4412,7 +4428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.1_%E5%AF%B9%E8%AF%9D%E6%A8%A1%E5%9E%8BChatGLM-6B/" class="md-nav__link">
+      <a href="../6/6.1_%E5%AF%B9%E8%AF%9D%E6%A8%A1%E5%9E%8BChatGLM-6B/" class="md-nav__link">
         6.1 对话模型ChatGLM 6B
       </a>
     </li>
@@ -4426,7 +4442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.1_%E5%B9%BD%E9%BB%98%E6%90%9E%E7%AC%91%E6%AE%B5%E5%AD%90/" class="md-nav__link">
+      <a href="../6/6.1_%E5%B9%BD%E9%BB%98%E6%90%9E%E7%AC%91%E6%AE%B5%E5%AD%90/" class="md-nav__link">
         6.1 幽默搞笑段子
       </a>
     </li>
@@ -4440,7 +4456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.1_%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90-%E4%BA%BA%E9%97%B4%E4%B8%96/" class="md-nav__link">
+      <a href="../6/6.1_%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90-%E4%BA%BA%E9%97%B4%E4%B8%96/" class="md-nav__link">
         6.1 梁冬说庄子 人间世
       </a>
     </li>
@@ -4454,7 +4470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.1_%E7%AC%91%E5%88%B0%E8%82%9A%E5%AD%90%E7%96%BC%E7%9A%84%E6%AE%B5%E5%AD%90/" class="md-nav__link">
+      <a href="../6/6.1_%E7%AC%91%E5%88%B0%E8%82%9A%E5%AD%90%E7%96%BC%E7%9A%84%E6%AE%B5%E5%AD%90/" class="md-nav__link">
         6.1 笑到肚子疼的段子
       </a>
     </li>
@@ -4468,7 +4484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.2_Gradio%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/" class="md-nav__link">
+      <a href="../6/6.2_Gradio%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/" class="md-nav__link">
         6.2 Gradio入门到进阶
       </a>
     </li>
@@ -4482,7 +4498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.2_Gradio%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAAI%E7%AE%97%E6%B3%95%E5%8F%AF%E8%A7%86%E5%8C%96%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+      <a href="../6/6.2_Gradio%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAAI%E7%AE%97%E6%B3%95%E5%8F%AF%E8%A7%86%E5%8C%96%E9%83%A8%E7%BD%B2/" class="md-nav__link">
         6.2 Gradio快速搭建AI算法可视化部署
       </a>
     </li>
@@ -4496,7 +4512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.3_openai%20chatgpt%20reg%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+      <a href="../6/6.3_openai%20chatgpt%20reg%E8%AF%B4%E6%98%8E/" class="md-nav__link">
         6.3 openai chatgpt reg说明
       </a>
     </li>
@@ -4510,7 +4526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.4_Huggingface%E7%9A%84ZeroShot%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../6/6.4_Huggingface%E7%9A%84ZeroShot%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
         6.4 Huggingface的ZeroShot图像分类
       </a>
     </li>
@@ -4524,7 +4540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.4_gradio%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+      <a href="../6/6.4_gradio%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
         6.4 gradio实现chatgpt对话
       </a>
     </li>
@@ -4538,7 +4554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.5_gradio%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../6/6.5_gradio%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
         6.5 gradio实现在线图像分类
       </a>
     </li>
@@ -4552,7 +4568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.5_gradio%E7%94%9F%E6%88%90%E7%9B%B8%E5%86%8C/" class="md-nav__link">
+      <a href="../6/6.5_gradio%E7%94%9F%E6%88%90%E7%9B%B8%E5%86%8C/" class="md-nav__link">
         6.5 gradio生成相册
       </a>
     </li>
@@ -4566,7 +4582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.5_gradio%E7%BB%93%E5%90%88whisper%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+      <a href="../6/6.5_gradio%E7%BB%93%E5%90%88whisper%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
         6.5 gradio结合whisper实现在线语音识别
       </a>
     </li>
@@ -4580,7 +4596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.5_%E4%BB%A5%E2%80%9C%E6%97%A0%E5%8F%AF%E5%A5%88%E4%BD%95%E2%80%9D%E7%9A%84%E5%BF%83%E6%80%81%E5%8E%BB%E5%81%9A%E4%BA%8B/" class="md-nav__link">
+      <a href="../6/6.5_%E4%BB%A5%E2%80%9C%E6%97%A0%E5%8F%AF%E5%A5%88%E4%BD%95%E2%80%9D%E7%9A%84%E5%BF%83%E6%80%81%E5%8E%BB%E5%81%9A%E4%BA%8B/" class="md-nav__link">
         6.5 以“无可奈何”的心态去做事
       </a>
     </li>
@@ -4594,7 +4610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.5_%E5%AD%95%E6%9C%9F%E7%B3%96%E5%B0%BF%E7%97%85%E7%9A%84%E9%A5%AE%E9%A3%9F%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+      <a href="../6/6.5_%E5%AD%95%E6%9C%9F%E7%B3%96%E5%B0%BF%E7%97%85%E7%9A%84%E9%A5%AE%E9%A3%9F%E6%8E%A7%E5%88%B6/" class="md-nav__link">
         6.5 孕期糖尿病的饮食控制
       </a>
     </li>
@@ -4608,7 +4624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.6_6.6_paddlespeech%E4%BD%BF%E7%94%A8gradio%E5%AE%8C%E6%88%90%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" class="md-nav__link">
+      <a href="../6/6.6_6.6_paddlespeech%E4%BD%BF%E7%94%A8gradio%E5%AE%8C%E6%88%90%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" class="md-nav__link">
         6.6 6.6 paddlespeech使用gradio完成在线语音合成
       </a>
     </li>
@@ -4622,7 +4638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.6_Transformer%E5%AE%9E%E7%8E%B0ASR/" class="md-nav__link">
+      <a href="../6/6.6_Transformer%E5%AE%9E%E7%8E%B0ASR/" class="md-nav__link">
         6.6 Transformer实现ASR
       </a>
     </li>
@@ -4636,7 +4652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.6_%E6%96%87%E6%9C%AC%E5%92%8C%E5%9B%BE%E7%89%87%E7%94%9F%E6%88%90MP4%E8%A7%86%E9%A2%91/" class="md-nav__link">
+      <a href="../6/6.6_%E6%96%87%E6%9C%AC%E5%92%8C%E5%9B%BE%E7%89%87%E7%94%9F%E6%88%90MP4%E8%A7%86%E9%A2%91/" class="md-nav__link">
         6.6 文本和图片生成MP4视频
       </a>
     </li>
@@ -4650,7 +4666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.6_%E7%99%BE%E5%BA%A6paddlepaddle%E5%92%8CGradio%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%96%87%E5%AD%97/" class="md-nav__link">
+      <a href="../6/6.6_%E7%99%BE%E5%BA%A6paddlepaddle%E5%92%8CGradio%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%96%87%E5%AD%97/" class="md-nav__link">
         6.6 百度paddlepaddle和Gradio实现在线图像转文字
       </a>
     </li>
@@ -4664,7 +4680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.6_%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%E5%B7%A5%E5%85%B7Coqui%E7%9A%84TTS%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%93%E9%AA%8C/" class="md-nav__link">
+      <a href="../6/6.6_%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%E5%B7%A5%E5%85%B7Coqui%E7%9A%84TTS%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%93%E9%AA%8C/" class="md-nav__link">
         6.6 语音合成工具Coqui的TTS安装及体验
       </a>
     </li>
@@ -4678,7 +4694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.7_ffmpeg%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+      <a href="../6/6.7_ffmpeg%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
         6.7 ffmpeg生成视频文件
       </a>
     </li>
@@ -4692,7 +4708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.7_%E4%BD%BF%E7%94%A8PP-TTS%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" class="md-nav__link">
+      <a href="../6/6.7_%E4%BD%BF%E7%94%A8PP-TTS%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" class="md-nav__link">
         6.7 使用PP TTS实现语音合成
       </a>
     </li>
@@ -4706,7 +4722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.8_Bark%20TTS/" class="md-nav__link">
+      <a href="../6/6.8_Bark%20TTS/" class="md-nav__link">
         6.8 Bark TTS
       </a>
     </li>
@@ -4720,7 +4736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../6/6.8_%E4%B8%96%E7%95%8C%E8%91%97%E5%90%8D%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%95%85%E4%BA%8B%E5%8D%81%E5%88%99/" class="md-nav__link">
+      <a href="../6/6.8_%E4%B8%96%E7%95%8C%E8%91%97%E5%90%8D%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%95%85%E4%BA%8B%E5%8D%81%E5%88%99/" class="md-nav__link">
         6.8 世界著名科学家的故事十则
       </a>
     </li>
@@ -4769,7 +4785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GuShi/5.22_%E6%8E%89%E8%BF%9B%E7%B1%B3%E7%BC%B8%E9%87%8C%E7%9A%84%E8%80%81%E9%BC%A0/" class="md-nav__link">
+      <a href="../GuShi/5.22_%E6%8E%89%E8%BF%9B%E7%B1%B3%E7%BC%B8%E9%87%8C%E7%9A%84%E8%80%81%E9%BC%A0/" class="md-nav__link">
         5.22 掉进米缸里的老鼠
       </a>
     </li>
@@ -4783,7 +4799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GuShi/5.24_%E7%89%9B%E9%83%8E%E7%BB%87%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
+      <a href="../GuShi/5.24_%E7%89%9B%E9%83%8E%E7%BB%87%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
         5.24 牛郎织女的故事
       </a>
     </li>
@@ -4797,7 +4813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GuShi/5.28_%E9%87%8D%E7%BB%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
+      <a href="../GuShi/5.28_%E9%87%8D%E7%BB%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
         5.28 重组故事
       </a>
     </li>
@@ -4838,7 +4854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GuShi/037%E5%8F%B7%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/5.21.17_%E8%8B%A5%E6%B0%B4%E8%B5%B0%E8%BF%9B%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/" class="md-nav__link">
+      <a href="../GuShi/037%E5%8F%B7%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/5.21.17_%E8%8B%A5%E6%B0%B4%E8%B5%B0%E8%BF%9B%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/" class="md-nav__link">
         5.21.17 若水走进童话世界
       </a>
     </li>
@@ -4852,7 +4868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GuShi/037%E5%8F%B7%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/AI%E7%AB%A5%E8%AF%9D%E6%95%85%E4%BA%8B%E4%BD%9C%E5%AE%B6/" class="md-nav__link">
+      <a href="../GuShi/037%E5%8F%B7%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/AI%E7%AB%A5%E8%AF%9D%E6%95%85%E4%BA%8B%E4%BD%9C%E5%AE%B6/" class="md-nav__link">
         AI童话故事作家
       </a>
     </li>
@@ -4900,7 +4916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GuShi/2035%E6%9C%BA%E5%99%A8%E5%A5%B6%E7%89%9B/5.27_2035%E6%9C%BA%E5%99%A8%E5%A5%B6%E7%89%9B/" class="md-nav__link">
+      <a href="../GuShi/2035%E6%9C%BA%E5%99%A8%E5%A5%B6%E7%89%9B/5.27_2035%E6%9C%BA%E5%99%A8%E5%A5%B6%E7%89%9B/" class="md-nav__link">
         5.27 2035机器奶牛
       </a>
     </li>
@@ -4946,9 +4962,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    笑话
+  <a href="#pythonxml" class="md-nav__link">
+    python读取并查找xml文件
   </a>
+  
+    <nav class="md-nav" aria-label="python读取并查找xml文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    读取xml文件代码如下：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml_1" class="md-nav__link">
+    xml文件：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4967,154 +5003,97 @@
                   
 
 
-  <h1>4.9 笑话</h1>
+  <h1>6.18 python读取并查找xml文件</h1>
 
-<h2 id="_1">笑话</h2>
-<p>1.我此刻最后解脱了，每次看你的作文我都有一种想要自杀的冲动！</p>
-<p>2.世界上有两种东西会趴玻璃，一个是壁虎，一个是班主任</p>
-<p>3.渐渐的，你们都去了不一样的城市，朕的心腹遍布全世界，兴复帝国指日可待啊。</p>
-<p>4.是人都有阴暗面，如果你偏说你很单纯，那我只能说，你不是人！</p>
-<p>5.月考不给你们露两手，还真以为我上课白睡的。</p>
-<p>6.执子之手，方知子丑，泪流满面，子不走我走。</p>
-<p>7.当我看见美女的时候，首先摸摸兜里，看看有没有钱！</p>
-<p>8.长大了要嫁给唐僧，能玩就玩，不能玩就把他吃掉。</p>
-<p>9.没有医保和寿险的，天黑后不要见义勇为……</p>
-<p>10.无论什么事情，习惯了就好，就连伤痛也一样。</p>
-<p>11.做人必须要昂首挺胸，这样别人才看不见你的双下巴。</p>
-<p>12.如果上帝关掉你的一扇窗顺便也把门堵上了，有可能上帝要开空调了哦。</p>
-<p>13.此刻你补作业时流的泪，就是你浪的时候脑子进的水。</p>
-<p>14.所谓成长，就是在听到“波涛汹涌”四个字，再也联想不到大海了。</p>
-<p>15.自我感觉良好的时候，正是别人对你感觉最不好的时候。</p>
-<p>16.上班就是要发扬死猪不怕开水烫的精神！</p>
-<p>17.俺从不写错字，但俺写通假字。</p>
-<p>18.鸭子太嚣张，兔子太多嘴，我是猪，我很乖。</p>
-<p>19.穷耐克，富阿迪，流氓一身阿玛尼。</p>
-<p>20.自从放了假，每一天洗脸这件事，再也跟我无关。</p>
-<p>21.跟我要儿童节礼物，我能够给，但过几天的父亲节你们就要注意了。</p>
-<p>22.蚊子不可恶，可恶的是唐伯虎忘了给我们点蚊香。</p>
-<p>23.有些孩子，老幻想自己是公主，我就不一样，我是王子。</p>
-<p>24.兄台，别逼我动用在北京的势力，我本不想掀起一场腥风血雨。</p>
-<p>25.睡到半夜手机掉了，结果我捡起拖鞋睡着了！</p>
-<p>26.每年夏天晒黑了，我总是会想“没事，冬天就修复好了。</p>
-<p>27.今日什么都不想做，只想安静地帅上一天。</p>
-<p>28.你像捧在手心里的挚爱，掌心一合，不憋死你才怪…</p>
-<p>29.哥吸烟，是因为它伤肺，不悲哀。</p>
-<p>30.小时候关灯，总是要以迈的速度冲上床！</p>
-<p>31.自拍这种东西：三分天注定，七分靠滤镜。</p>
-<p>32.题不必须要会做，但是翻卷声音必须要响。</p>
-<p>33.陌生阻止你认识陌生的事物，熟悉妨碍你理解熟悉的事物。</p>
-<p>34.昨日去市里参加放鸽子比赛，结果就我一个人去了。</p>
-<p>35.这风真猥琐，把我的嘴都亲干了。</p>
-<p>36.今日天气很好，在房间里宅久了，准备去客厅散散心。</p>
-<p>37.虽然你身上喷了古龙水，但我还是能隐约闻到一股人渣味儿。</p>
-<p>38.学佛是对自己的良心交待，不是做给别人看的。</p>
-<p>39.时间过得真快，还差三百五十五天我们就认识一年了。</p>
-<p>40.我的人生一半是倒霉，另一半是处理倒霉的事。</p>
-<p>41.你给我一个微笑，我也会还你一个微笑，也不是善意的招呼，只是让你知道：老子笑起来比你好看。</p>
-<p>42.我觉得打电话挺好的，这样说的每句话都是值钱的。</p>
-<p>43.用室友手机搜东西，看见搜索历史中有一条——如何强奸室友？当时脸都吓绿了！</p>
-<p>44.叹气是最浪费时间的事情，哭泣是最浪费力气的行径。</p>
-<p>45.一个人快乐不是因为他拥有的多，而是他计较的少。一个健康的心理，不是因为他拥有了快乐，而是因为他释怀了快乐。</p>
-<p>46.一个彻悟的程度，恰等于他所受痛苦的深度。</p>
-<p>47.我有八十多种小辣条，此刻思考跟我做朋友还来得及。</p>
-<p>48.月老，你能不能别在用劣质的线给我牵了嘛，隔三差五就断。</p>
-<p>49.别说别人可怜，自己更可怜，自己又懂得人生多少？</p>
-<p>50.我常在海边，却不喜欢海，而是喜欢浪。</p>
-<p>51.世界上最遥远的距离，就他妈是星期一到星期五。</p>
-<p>52.远处看到了一个帅哥，走近一看原来是一面镜子。</p>
-<p>53.单身的男的叫单身狗，单身的女的叫狗不理。</p>
-<p>54.有些失望是不可避免的，但大部分的失望，都是因为你高估了你自己。</p>
-<p>55.我一在强调做人要低调。可你们非要给我掌声和尖叫。</p>
-<p>56.能抗洪的尿布湿，才是真正的尿布湿！</p>
-<p>57.时间是用来流浪的，身躯是用来相爱的，生命是用来遗忘的，而灵魂，是用来歌唱的。</p>
-<p>58.瘦不了的永远在骚动，吃不胖的都有恃无恐。</p>
-<p>59.人生能够适当游戏，但不能够游戏人生。</p>
-<p>60.不要把自己的伤口揭开给别人看，世界上多的不是医师，多的是撒盐的人。</p>
-<p>61.人家手牵手，我牵我的狗，看谁不爽咬一口。</p>
-<p>62.骑驴把歌颂，不是秃子头发总是会失光的。</p>
-<p>63.我本来想给生活一个吻，而现实却给了我两巴掌，你说作为回报，我能不踹他一脚么？</p>
-<p>64.活了多年，没能为祖国为人民做点什么，每思及此，悲哀欲绝。</p>
-<p>65.不要同没有素质的人争论，因为那就像与猪摔跤，赢了不光荣，输了更丢人。</p>
-<p>66.暑假前信誓旦旦的说我要减肥，暑假后没瘦还胖了！</p>
-<p>67.只暖一个女生的男生才叫暖男，暖所有女生的男生叫烧锅炉。</p>
-<p>68.挤公交是包含散打瑜珈柔道平衡木等多种体育和健身项目于一体的综合性运动。</p>
-<p>69.你矮是终身的，我胖却是暂时的。</p>
-<p>70.别和我抢东西，虽然我不会撒娇，但我会玩摔跤。</p>
-<p>71.我超潜力还有很多，不只是超可爱。</p>
-<p>72.坏人需要实力，败类更需要品位。</p>
-<p>73.古九尾狐狸有九命，分别亡于语数外政史地理化生。</p>
-<p>74.提问：为什么暑假必须比寒假长?回答：因为热胀冷缩。</p>
-<p>75.受约束的是情绪，不受约束的是生命。</p>
-<p>76.种草不让人去躺，不如改种仙人掌！</p>
-<p>77.聪明的女人对付男人，而笨女人对付女人。</p>
-<p>78.会演戏的不必须都是演员，会装的必须就是孙子。</p>
-<p>79.西游记告诉我们：凡是有后台的妖怪都被接走了，凡是没后台的都被一棒子打死了。</p>
-<p>80.给我订两张去天庭的机票，我要亲自找月老，逼着他给我牵一条红线。</p>
-<p>81.心狠手辣的我，舔了一下自己的手指，被辣哭了。</p>
-<p>82.我的心不是公交车，不是有空位你就坐下来。</p>
-<p>83.连洗头都要很留意，生怕脑子进了水。</p>
-<p>84.如果我是僵尸，我必须择吃掉所有好学生的脑。</p>
-<p>85.多撮合撮合班里的男女同学，这样将来能省一半的份子钱。</p>
-<p>86.怕爹是孝顺，怕老婆是爱情。</p>
-<p>87.在家不能对着手机笑，家长会以为你在恋爱。</p>
-<p>88.下雨了，别忘了打伞，湿身是小，淋病就麻烦啦！</p>
-<p>89.老师的教诲，小明没齿难忘，于是第二天，他镶了一副假牙。</p>
-<p>90.大家好像都去谈恋爱了，留我一人独自建设社会主义。</p>
-<p>91.我不是随便的人。我随便起来不是人。</p>
-<p>92.左手拿着书，右手拿着打火机，哪里不会点哪里！</p>
-<p>93.混社会是个体力活儿，讲究四门功课：闪转腾挪。</p>
-<p>94.我诅咒你一辈子买方便面没有调料包。</p>
-<p>95.我这人从不记仇，一般有仇我当场就报了。</p>
-<p>96.你这么爱说风凉话，莫非你是风油精和清凉油生出来的？</p>
-<p>97.情若能自控，我必须会按捺住我那颗吃货的心。</p>
-<p>98.我个性困的时候，道德标准也没有醒，老师们要留意了。</p>
-<p>99.世界那么大能认识你，我觉得好不幸。</p>
-<p>100.三分天注定，七分靠打扮。</p>
-<p>101.我们老板是小怪兽，我们是奥特曼。但我们见了老板就跑，因为我们没带召唤器。</p>
-<p>102.炫富就像孔雀开屏，一心想展示华丽的外表，却被人看见了屁眼。</p>
-<p>103.长得好看的人才有青春，像我们这种人就只有大学了。</p>
-<p>104.我是一个潜力无穷的学生，我能够三小时写完国庆作业，但这他妈是被动技能，只能十月七号晚上启动。</p>
-<p>105.女人一生最喜欢两朵花：一是有钱花，二是尽量花！</p>
-<p>106.大姨妈就像灰太狼，走的时候总会喊上一句，我必须会回来的。</p>
-<p>107.此刻的梦想决定着你的将来，所以还是再睡一会吧。</p>
-<p>108.人们厌恶谎言，有时又甘愿堕入自己或别人编织的谎言中。</p>
-<p>109.就你这个样貌，这个年龄，已经跌破发行价了。</p>
-<p>110.自打我学会了顶嘴，我老婆也学会了磨刀。</p>
-<p>111.我喜欢你就像我喜欢海，可我也不能去跳海，我能够去上海。</p>
-<p>112.世界上最远的距离不是天涯和海角，而是老师在讲第四章，学霸在自学第八章，而我在看目录！</p>
-<p>113.我们的爱情，医生说他已经尽力了。</p>
-<p>114.别回头，哥恋的只是你的背影。</p>
-<p>115.比我帅的都没我有才，比我有才的都没我帅！选不选我做你男朋友你自己看着办吧。</p>
-<p>116.强迫症就是：睡觉前必须上个厕所，如果去过厕所后再玩手机，那一会睡觉还要再去一趟。</p>
-<p>117.我上了床就和野兽一样，具体来说像考拉，一睡就是个小时。</p>
-<p>118.前年睡不醒，后年睡不着。</p>
-<p>119.一脚揣不出你屎来，算你拉的干净！</p>
-<p>120.我知道我的努力有一大半是没有用的，但是我却不知道究竟是哪一半。</p>
+<h2 id="pythonxml">python读取并查找xml文件</h2>
+<p>利用ElementTree，很容易就可以完成XML文档构建，并写入保存为文件。ElementTree对象的write方法就可以实现这个需求。</p>
 <ul>
 <li>
-<p>一老伙计丢车，当他把新买的一辆车放在楼下时他上了三把锁并夹了一张纸:让你丫偷!第二天车没丢，并且多了两把锁和一张，上写着：让你丫骑.</p>
+<p>ElementTree.parse(source, parser=None)，将xml文件加载并返回ElementTree对象。parser是一个可选的参数，如果为空，则默认使用标准的XMLParser解析器。</p>
 </li>
 <li>
-<p>朋友中午请我吃饭，买单的时候我看到他掏钱掏得很慢，就说“要不我来掏吧。”“那怎么好意思啊！”“没事。”于是我把手伸进了他的口袋。</p>
+<p>ElementTree.getroot()，得到根节点。返回根节点的element对象。
+   Element.remove(tag)，删除root下名称为tag的子节点</p>
 </li>
 <li>
-<p>考试分数出来了，小亮很无奈讲到：此次没有考好，考了零分。茜茜也很无奈正宗：哎，我是零分。小亮猛的一敲桌子，对茜茜讲到：这下坏掉，教师是否会认为大家舞弊了。</p>
+<p>以下函数，ElementTree和Element的对象都包含：</p>
 </li>
-<li>
-<p>女友是吃货，记得第一次领她回家吃饭，我妈不停地给她夹菜，终于她忍不住了，偷偷的对我说：“你能不能给我夹块肉啊？”</p>
-</li>
-<li>
-<p>在同学家吃了个晚饭，他说喝个茶聊天叙旧非要留我。家里面又没茶叶了，便到邻居家去借。很长时间邻居也没有送来，水烧开，也不见拿来，没办法只好不断往锅里添加凉水。过了半天，锅里的水已经满了，而茶叶最终也没有送来，嫂子对同学说：茶是喝不成了，不如留他洗个澡算了！</p>
-</li>
-<li>
-<p>有的人在起床的时候，先闻闻袜子是不是还能穿一天。我想对你说，太不讲卫生了！我都是看硬度</p>
-</li>
-<li></li>
-<li>
-<p>不管是在在学校还是在社会，我们都有可能要写幽默搞笑的句子。只是呢，你知不知道什么是幽默？幽默是内心强大，有直面真相、戏谑调侃的勇气。你无才无德?那恭喜你啦，你前途无量。不知道你有没有在找幽默搞笑的句子呢？请您阅读小编辑为您编辑整理的《每天一个笑话大全爆笑100个》，欢迎大家与身边的朋友分享吧！</p>
-</li>
-<li></li>
 </ul>
+<p><code>find(match)，得到第一个匹配match的子节点，match可以是一个标签名称或者是路径。返回个element
+  findtext(match,default=None)，得到第一个配置的match的element的内容
+  findall(match)，得到匹配match下的所有的子节点，match可以是一个标签或者是路径，它会返回一个list，包含匹配的elements的信息
+  iter(tag)，创建一个以当前节点为根节点的iterator</code></p>
+<h4 id="xml">读取xml文件代码如下：</h4>
+<pre><code>from xml.etree.ElementTree import parse
+# 开始分析xml文件
+tree = parse('data.xml')
+root = tree.getroot()
+print(root.tag)
+#查找title
+title= root.findall('title')[0].text
+print(f'title:{title}')
+#查找speak_id
+speak_id= root.findall('speak_id')[0].text
+print(f'speak_id:{speak_id}')
+
+
+# 查找XML文档中的元素
+for child in root.findall('content'):
+    # 获取元素的属性值或文本内容
+    text = child.text
+    print(f'text:{text}')
+    #读取content的image属性
+    image=child.attrib['image']
+    print(image)
+    print(f'attrib:{child.attrib}')
+
+
+# for child in root:
+#     print(&quot;tag:&quot;, child.tag)
+#     print(&quot;text:&quot;, child.text)
+#     print(&quot;attrib:&quot;, child.attrib)
+
+
+# # 遍历XML文件中所有元素的值和标签名  
+# for element in root.iter():  
+#     # print(element.tag, element.text)
+#     if element.tag=='title':
+#         print(f'Title:{element.text}')
+#     if element.tag=='content':
+#         print(f'text:{element.text}')
+
+#         print(f'attrib:{element.attrib}')
+#         print(element.attrib['image'])
+
+#     if element.tag=='speak_id':
+#         print(f'speak_id:{element.text}')
+
+
+</code></pre>
+<h4 id="xml_1">xml文件：</h4>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;article name=&quot;xiaopch&quot;&gt;
+    &lt;title&gt;假如有一天我们可以将自己的意识上传&lt;/title&gt;
+    &lt;speak_id&gt;171&lt;/speak_id&gt;
+    &lt;!-- 以下是章节 --&gt;
+    &lt;content image = &quot;1.png&quot;&gt;
+         如果有一天我们可以将自己的意识上传到电脑中，这将会是一个革命性的时刻，可能会对人类社会、科技和伦理道德产生深远的影响。以下是可能会发生的一些情况：
+    &lt;/content&gt;
+
+    &lt;content image = &quot;2.png&quot;&gt;
+         1.人类意识的数字化和备份：一旦我们的意识可以上传到电脑中，那么我们就可以将其数字化，并备份到云端或其他存储介质中。这样，我们的意识就可以在不同的物理载体之间进行传输，或者在我们的身体死亡后得以永存。
+         2.身体与意识的分离：上传意识后，我们的身体和意识将会被分离。这种情况下，我们可以通过更换身体来延长自己的寿命，也可以选择离开自己的身体，在虚拟世界中生活。
+         3.新的社交和互动方式：上传意识后，我们可能会发现一种新的社交和互动方式。我们可以以数字化的形式与其他人交流，并在虚拟世界中建立新的社区。
+         4.道德和伦理问题：上传意识可能会引发一系列道德和伦理问题。例如，如果我们的意识可以数字化并备份，那么是否意味着我们可以被复制？如果我们的意识可以离开身体，那么我们是否可以保持自己的身份和自我意识？这些问题将会引发激烈的讨论和争议。
+         5.技术和法律的限制：尽管上传意识可能会带来很多好处，但技术和法律上是否能够实现，以及如何管理和监管意识上传技术，都将会是巨大的挑战。
+    &lt;/content&gt;
+    &lt;content image = &quot;3.png&quot;&gt;
+         总之，如果我们的意识可以上传到电脑中，那么我们的生活将会发生巨大的改变。这是一个令人兴奋的未来，但也需要我们认真思考和应对其中的挑战。
+    &lt;/content&gt;
+
+&lt;/article&gt;
+
+</code></pre>
 
 
 
@@ -5137,10 +5116,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
     
   </body>
