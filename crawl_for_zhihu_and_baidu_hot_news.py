@@ -54,6 +54,7 @@ def getHotNews():
     # get_weibo_top('https://s.weibo.com/top/summary','div',{"class":"data"})
 
     file_name = datetime.now().strftime('%m.%d_新闻.md')
+    print(file_name)
     with open(file_name,'w',encoding='utf-8') as fh:
         fh.writelines(text_list)
 getHotNews()
