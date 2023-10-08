@@ -1,2 +1,2 @@
-cmd /c python crawl_for_zhihu_and_baidu_hot_news.py
+cmd /c python 9.16_whisper_asr_from_mp3.py
 cmd /k cd .

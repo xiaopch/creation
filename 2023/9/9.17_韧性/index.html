@@ -1,0 +1,7512 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hello World">
+      
+      
+        <meta name="author" content="xiaopch">
+      
+      
+      
+        <link rel="prev" href="../9.14_%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E9%82%80%E8%AF%B7/">
+      
+      
+        <link rel="next" href="../9.21_%E7%AC%AC3%E9%80%89%E6%8B%A9/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+    
+    
+      
+        <title>9.17 韧性 - 随遇而安</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="随遇而安" class="md-header__button md-logo" aria-label="随遇而安" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            随遇而安
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9.17 韧性
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://gitee.com/xiaopch" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gitee
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="随遇而安" class="md-nav__button md-logo" aria-label="随遇而安" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    随遇而安
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://gitee.com/xiaopch" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gitee
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../000-%E5%B8%B8%E7%94%A8%E7%BD%91%E5%9D%80%E5%88%86%E4%BA%AB/" class="md-nav__link">
+        000 常用网址分享
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10.08_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        10.08 新闻
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10.8-%E4%BB%80%E4%B9%88%E6%98%AF%E9%92%9D%E6%84%9F%E5%8A%9B/" class="md-nav__link">
+        10.8 什么是钝感力
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10.8-%E6%B6%88%E9%99%A4%E5%8E%8B%E5%8A%9B%EF%BC%8C%E4%BB%8E%E5%A4%A7%E8%84%91%E5%BC%80%E5%A7%8B_ASR_2023_10_02_184354/" class="md-nav__link">
+        10.8 消除压力，从大脑开始 ASR 2023 10 02 184354
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.16_mkdocs%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        2.16 mkdocs生成项目文档
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_%E6%88%91%E5%85%81%E8%AE%B8-%E6%B5%B7%E7%81%B5%E6%A0%BC/" class="md-nav__link">
+        3.1 我允许 海灵格
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10/10.04_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        10.04 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10/10.1_%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A_ASR_2023_10_01_145427/" class="md-nav__link">
+        10.1 非暴力沟通 ASR 2023 10 01 145427
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10/10.2_%E6%80%8E%E6%A0%B7%E6%89%8D%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E5%AD%A6%E4%B9%A0%EF%BC%9F_ASR_2023_10_02_214635/" class="md-nav__link">
+        10.2 怎样才是最好的学习？ ASR 2023 10 02 214635
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10/10.5_%E9%92%9D%E6%84%9F%E5%8A%9B_ASR_2023_09_16_161427/" class="md-nav__link">
+        10.5 钝感力 ASR 2023 09 16 161427
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10/10.6_%E5%AE%87%E5%AE%99%E6%9A%97%E7%89%A9%E8%B4%A8%E5%92%8C%E6%9A%97%E8%83%BD%E9%87%8F%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9C%AA%E8%A7%A3%E4%B9%8B%E8%B0%9C/" class="md-nav__link">
+        10.6 宇宙暗物质和暗能量还有哪些未解之谜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10/10.7_%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89%E7%9A%84%E4%B8%BB%E8%A6%81%E6%80%9D%E6%83%B3%E5%92%8C%E4%BA%BA%E7%89%A9/" class="md-nav__link">
+        10.7 存在主义的主要思想和人物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10/10.8_%E5%B0%A4%E7%93%A6%E5%B0%94%C2%B7%E8%B5%AB%E6%8B%89%E5%88%A9%E7%9A%84%E3%80%8A%E4%BB%8A%E6%97%A5%E7%AE%80%E5%8F%B2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        10.8 尤瓦尔·赫拉利的《今日简史》读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          2023
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          2023
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+          2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_1">
+          <span class="md-nav__icon md-icon"></span>
+          2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.01_%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E6%95%85%E4%BA%8B%E5%92%8C%E6%A1%88%E4%BE%8B-2023/" class="md-nav__link">
+        2.01 思维模型故事和案例 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_x86%E6%9E%B6%E6%9E%84%E4%B8%8B%E4%BD%BF%E7%94%A8Genymotion%E8%99%9A%E6%8B%9F%E5%8C%96%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%85%BC%E5%AE%B9arm%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        2.07 x86架构下使用Genymotion虚拟化设备并兼容arm架构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E4%B8%AA%E6%80%A7%E5%8C%96%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%BB%BC%E8%BF%B0/" class="md-nav__link">
+        个性化推荐系统综述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E5%BF%85%E7%84%B6/" class="md-nav__link">
+        2.07 必然
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        2.07 查理芒格的100个思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.07_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        2.07 物理学概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.08_%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        2.08 自私的基因 读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.09_%E4%BA%BA%E7%B1%BB%E6%80%9D%E7%BB%B4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1%EF%BC%8C%E4%BD%A0%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%B1%82%E6%AC%A1/" class="md-nav__link">
+        2.09 人类思维的4个层次，你在哪个层次
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.11_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2022/" class="md-nav__link">
+        常用的思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.11_%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC%E7%9A%84100%E4%B8%AA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        2.11 查理芒格的100个思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.11_%E6%AD%8C%E8%AF%8D_%E4%BA%91%E6%B8%B8%E4%BE%A0/" class="md-nav__link">
+        2.11 歌词 云游侠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.12_%E5%86%99%E5%87%BA%E6%88%91%E5%BF%83%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%86%99%E4%BD%9C%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1/" class="md-nav__link">
+        2.12 写出我心：普通人如何通过写作表达自己
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.12_%E5%AF%B9%E8%AF%9D%E4%BD%93%E5%86%99%E4%BD%9C-2023/" class="md-nav__link">
+        2.12 对话体写作 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.12_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B2023/" class="md-nav__link">
+        2.12 常用的思维模型2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.13_Python%E8%B0%83%E7%94%A8chatgpt/" class="md-nav__link">
+        2.13 Python调用chatgpt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.13_%E7%81%B5%E6%84%9F%E6%B5%81%E6%B7%8C%E7%9A%84%E5%86%99%E4%BD%9C/" class="md-nav__link">
+        2.13 灵感流淌的写作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.13_%E7%94%A8Python%E8%B0%83%E7%94%A8OpenAI_API%E5%81%9A%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BA%8B/" class="md-nav__link">
+        2.13 用Python调用OpenAI API做有趣的事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_chatgpt-%E7%BB%84%E5%90%88%E5%88%9B%E6%96%B0%E7%9A%84%E6%AD%A5%E9%AA%A4%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.14 chatgpt 组合创新的步骤有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E5%86%99%E4%B8%80%E9%A6%96%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%97/" class="md-nav__link">
+        2.14 写一首情人节的诗
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E5%AE%89%E8%A3%85linux%E7%89%88%E6%9C%AC%E7%9A%84Clash%20for%20Windows/" class="md-nav__link">
+        2.14 安装linux版本的Clash for Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%80%8E%E6%A0%B7%E5%92%8C%E8%87%AA%E5%B7%B1%E5%92%8C%E8%A7%A3/" class="md-nav__link">
+        2.14 怎样和自己和解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%83%85%E4%BA%BA%E8%8A%82%E7%9A%84%E8%AF%972023/" class="md-nav__link">
+        2.14 情人节的诗2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%89%93%E5%85%AB%E6%AE%B5%E9%94%A6%E6%9C%89%E6%84%9F/" class="md-nav__link">
+        2.14 打八段锦有感
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%9C%AA%E6%9D%A5%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%BB%E8%A6%81%E8%B6%8B%E5%8A%BF%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.14 未来科学的主要趋势有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.14_%E6%AF%8F%E5%A4%A9%E7%BB%83%E5%85%AB%E6%AE%B5%E9%94%A6%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+        2.14 每天练八段锦的好处
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.15_%E5%86%99%E4%BD%9C%E7%9A%84%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.15 写作的常用的结构有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.15_%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%80%E5%8F%91%E6%9C%88%E7%90%83%E5%91%A2/" class="md-nav__link">
+        2.15 怎么利用人工智能开发月球呢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.15_%E6%80%8E%E6%A0%B7%E5%BF%AB%E9%80%9F%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" class="md-nav__link">
+        2.15 怎样快速提升自己的认知能力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.16_python%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%8E%9F%E6%96%87%E4%BB%B6%E5%90%8D/" class="md-nav__link">
+        2.16 python实现网络文件下载并保存为原文件名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.16_python%E6%93%8D%E4%BD%9Cmongodb/" class="md-nav__link">
+        2.16 python操作mongodb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.16_%E5%90%AB%E6%9C%89%E8%8A%B1%E9%9D%92%E7%B4%A0%E7%9A%84%E6%B0%B4%E6%9E%9C%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        2.16 含有花青素的水果有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.17_%E8%87%AA%E5%AA%92%E4%BD%93%E5%86%99%E4%BD%9C-%E4%BB%8E%E5%9F%BA%E6%9C%AC%E5%8A%9F%E5%88%B0%E5%AE%9E%E6%88%98%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        2.17 自媒体写作 从基本功到实战方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.20_%E6%A0%87%E9%A2%98%E7%9A%84%E5%86%99%E6%B3%95/" class="md-nav__link">
+        2.20 标题的写法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF-%E6%AF%8F%E6%97%A5%E5%8F%8D%E6%80%9D%E6%A8%A1%E7%89%88/" class="md-nav__link">
+        2.20 高效能人士七个习惯 每日反思模版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.20_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        2.20 高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.21_python%E8%BD%AC%E6%8D%A2%E9%9F%B3%E9%A2%91%E9%87%87%E6%A0%B7%E7%8E%87/" class="md-nav__link">
+        2.21 python转换音频采样率
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.21_%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E7%BE%8E%E9%A3%9F%E7%9F%AD%E8%A7%86%E9%A2%91%E5%8D%9A%E4%B8%BB%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%92%8C%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        2.21 成为一名美食短视频博主的步骤和建议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.22_deepin%E5%AE%89%E8%A3%85Python3.7.4%E5%92%8CPostman/" class="md-nav__link">
+        2.22 deepin安装Python3.7.4和Postman
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.22_vscode%E6%80%8E%E6%A0%B7%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        2.22 vscode怎样配置python开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.26_5%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/" class="md-nav__link">
+        2.26 5款开源免费音频处理软件推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.26_python%E5%AE%9E%E7%8E%B0%E9%9F%B3%E9%A2%91%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        2.26 python实现音频格式转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.26_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E6%AD%A3%E8%A7%81/" class="md-nav__link">
+        2.26 从今天开始的每一天.正见
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+        2.27 5分钟催眠引导
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E4%BB%8E%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9.%E7%A5%9D%E7%A6%8F/" class="md-nav__link">
+        2.27 从今天开始的每一天.祝福
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E5%BC%95%E5%AF%BC%E4%B8%8E%E8%BA%AB%E4%BD%93%E5%AF%B9%E8%AF%9D%E5%85%A8%E9%9D%A2%E4%BF%AE%E5%A4%8D%E8%BA%AB%E4%BD%93/" class="md-nav__link">
+        2.27 催眠引导与身体对话全面修复身体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%BC%95%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+        2.27 催眠渐进式引导语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.27_%E5%82%AC%E7%9C%A0%E8%AF%B1%E5%AF%BC%E8%AF%AD/" class="md-nav__link">
+        2.27 催眠诱导语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E5%A6%82%E4%BD%95%E8%AE%A9%E6%94%B9%E5%8F%98%E5%8F%91%E7%94%9F/" class="md-nav__link">
+        2.28 如何让改变发生
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E6%88%91%E4%BB%AC%E6%97%A0%E6%B3%95%E6%8E%A7%E5%88%B6%E5%92%8C%E9%9C%80%E8%A6%81%E6%8E%A5%E5%8F%97%E7%9A%84%204%20%E4%BB%B6%E4%BA%8B/" class="md-nav__link">
+        2.28 我们无法控制和需要接受的 4 件事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E7%94%9F%E5%91%BD%E5%B0%B1%E6%98%AF%E6%97%A0%E6%95%B0%E4%B8%AA%E7%88%B1%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%BA%E4%BC%9A%E2%80%94%E2%80%94%E9%9C%B2%E6%98%93%E4%B8%9D%C2%B7%E6%B5%B7/" class="md-nav__link">
+        2.28 生命就是无数个爱自己的机会——露易丝·海
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.28_%E8%AE%A9%E4%BA%BA%E5%8F%98%E5%BF%AB%E4%B9%90%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AD%97%E2%80%9C%E5%BA%A6%E2%80%9D%E5%92%8C%E2%80%9C%E6%94%BE%E2%80%9D/" class="md-nav__link">
+        2.28 让人变快乐的两个字“度”和“放”
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.6_%E7%89%A9%E7%90%86%E5%AD%A6%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        2.6 物理学概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_KK-%E5%BF%85%E7%84%B6-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        2.7 KK 必然 读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        2.7 东菱面包机标准面包做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E4%BA%BA%E7%94%9F%E5%A6%82%E8%8C%B6/" class="md-nav__link">
+        2.7 人生如茶
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E5%86%A5%E6%83%B3%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F/" class="md-nav__link">
+        2.7 冥想有什么作用呢？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E5%B9%BD%E9%BB%98%E5%A4%B8%E4%BA%BA%E7%9A%84%E5%8F%A5%E5%AD%90%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+        幽默夸人的句子大全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E6%88%91%E5%A6%88%E4%B8%89%E5%A4%A9%E6%B2%A1%E6%89%93%E6%88%91%E5%95%A6/" class="md-nav__link">
+        2.7 我妈三天没打我啦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%AD%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+        有趣的短句子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E6%A0%87%E5%87%86%E9%9D%A2%E5%8C%85%E5%81%9A%E6%B3%95-%E4%B8%9C%E8%8F%B1%E9%9D%A2%E5%8C%85%E6%9C%BA/" class="md-nav__link">
+        2.7 标准面包做法 东菱面包机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%80%97%E4%BA%BA%E5%BC%80%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%9A%84%E6%96%87%E6%A1%88/" class="md-nav__link">
+        逗人开心可以发朋友圈的文案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%81%93%E5%BE%B7%E7%BB%8F%E6%96%87/" class="md-nav__link">
+        2.7 道德经文
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%A3%8E%E8%B6%A3%E5%B9%BD%E9%BB%98%E7%9A%84%E5%A4%B8%E4%BA%BA%E8%AF%84%E8%AF%AD/" class="md-nav__link">
+        风趣幽默的夸人评语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2.7_%E9%AB%98%E6%83%85%E5%95%86%E5%A4%B8%E4%BA%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E5%8F%A5%E5%AD%90/" class="md-nav__link">
+        高情商夸人漂亮的句子
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+          3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/03.28_am_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.28 am 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/03.28_pm_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.28 pm 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/03.29_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.29 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/03.31_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        03.31 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.01_%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%80%E5%8D%8A%E7%83%9F%E7%81%AB%EF%BC%8C%E4%B8%80%E5%8D%8A%E6%B8%85%E6%AC%A2/" class="md-nav__link">
+        3.01 生活，一半烟火，一半清欢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.01_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        3.01 高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.02_%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%84%E5%85%BB%E6%8A%A4%E6%8A%80%E5%B7%A7%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.02 康乃馨的养护技巧是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.02_%E8%8A%B1%E7%9B%86%E9%87%8C%E5%85%BB%E5%BA%B7%E4%B9%83%E9%A6%A8%E7%9A%844%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+        3.02 花盆里养康乃馨的4个小技巧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.02_%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        3.02 高效能人士七个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.03_openai%E7%9A%84ASR%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABWhisper/" class="md-nav__link">
+        3.03 openai的ASR语音识别Whisper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.03_%E5%BF%83%E6%B5%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        3.03 心流 学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.04_%E5%A4%A7%E9%B1%BC-%E6%AD%8C%E8%AF%8D/" class="md-nav__link">
+        3.04 大鱼 歌词
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.05_%E6%8E%A8%E8%8D%905%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+        3.05 推荐5款开源免费音频处理软件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.08_python%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABwhisper%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        python语音识别whisper的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.08_%E5%85%B3%E4%BA%8E%E6%B6%8C%E7%8E%B0/" class="md-nav__link">
+        3.08 关于涌现
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.08_%E6%B1%89%E5%AD%97%E7%AE%80%E7%B9%81%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        3.08 汉字简繁转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.09_5%E5%88%86%E9%92%9F%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%BC%BA%E5%A4%A7%E5%86%85%E5%BF%83%E5%85%8B%E6%9C%8D%E8%AE%A8%E5%A5%BD%E4%BA%BA%E6%A0%BC/" class="md-nav__link">
+        3.09 5分钟催眠体验强大内心克服讨好人格
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.09_TikTokDownload%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.09 TikTokDownload使用教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.09_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8C%E5%87%8F%E5%8E%8B%E6%8E%A5%E7%BA%B3%E8%87%AA%E5%B7%B1_5%E5%88%86%E9%92%9F/" class="md-nav__link">
+        3.09 催眠体验减压接纳自己 5分钟
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.10_%E4%B8%87%E8%83%BD%E6%89%A6%E6%8F%92%E6%B3%95-%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E4%B8%80%E6%8B%9B%E6%90%9E%E5%AE%9A/" class="md-nav__link">
+        3.10 万能扦插法 植物扦插一招搞定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.10_%E5%82%AC%E7%9C%A0%E5%87%8F%E5%8E%8B%E7%BC%93%E8%A7%A3%E7%96%B2%E5%8A%B3%E6%B7%B1%E5%BA%A6%E7%9D%A1%E7%9C%A0/" class="md-nav__link">
+        3.10 催眠减压缓解疲劳深度睡眠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.10_%E5%82%AC%E7%9C%A0%E6%88%98%E8%83%9C%E6%BD%9C%E6%84%8F%E8%AF%86%E4%B8%AD%E7%9A%84%E6%81%90%E6%83%A7/" class="md-nav__link">
+        3.10 催眠战胜潜意识中的恐惧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.10_%E6%97%A9%E9%A4%90%E8%AF%95%E8%AF%95%E8%BF%99%E4%B8%AA%E8%94%AC%E8%8F%9C%E9%A5%BC/" class="md-nav__link">
+        3.10 早餐试试这个蔬菜饼
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.11_%E4%B8%80%E8%A1%8C%E7%A6%85%E5%B8%88%E7%9A%8432%E4%B8%AA%E6%AD%A3%E5%BF%B5%E7%9A%84%E7%BB%83%E4%B9%A0/" class="md-nav__link">
+        3.11 一行禅师的32个正念的练习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.11_%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC/" class="md-nav__link">
+        3.11 海市蜃楼
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.12_TensorFlowTTS%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.12 TensorFlowTTS文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.12_python%E5%BD%95%E9%9F%B3%E5%92%8C%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90/" class="md-nav__link">
+        3.12 python录音和播放音乐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.13_English%20Text%20to%20speech%20with%20TensorFlowTTS/" class="md-nav__link">
+        3.13 English Text to speech with TensorFlowTTS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.13_%E4%BD%BF%E7%94%A8MelGAN%E8%BF%9B%E8%A1%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.13 使用MelGAN进行文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.15_Midjourney%20Discord%20Interface/" class="md-nav__link">
+        3.15 Midjourney Discord Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.15_Tensorflow%20Eager%20Execution/" class="md-nav__link">
+        3.15 Tensorflow Eager Execution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.15_%E5%85%B3%E4%BA%8E%E4%B8%AD%E5%BA%B8/" class="md-nav__link">
+        3.15 关于中庸
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.16_python%E5%AE%9A%E6%97%B6%E6%8A%93%E5%8F%96zhihu%E5%92%8C%E7%99%BE%E5%BA%A6%E7%9A%84%E7%83%AD%E7%82%B9/" class="md-nav__link">
+        3.16 python定时抓取zhihu和百度的热点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.16_python%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        3.16 python循环执行模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.16_%E6%96%B0%E5%BF%85%E5%BA%94%EF%BC%88New%20Bing%EF%BC%89%E5%9B%BD%E5%86%85%E7%94%B3%E8%AF%B7%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.16 新必应（New Bing）国内申请与使用教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.19_%E4%BD%BF%E7%94%A8%20Python%20%E8%B0%83%E7%94%A8%20ChatGPT-3.5-API/" class="md-nav__link">
+        3.19 使用 Python 调用 ChatGPT 3.5 API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.19_%E8%AF%B7%E9%97%AE%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1chatgpt%E7%9A%84prompt/" class="md-nav__link">
+        3.19 请问怎么设计chatgpt的prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.20.%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+        3.20.微生物和果皮怎么制作酵素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.20_133033.%E5%86%A5%E6%83%B3%E5%92%8C%E6%AD%A3%E5%BF%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 133033.冥想和正念之间的关系是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.20_KK%E7%9A%84%E3%80%8A%E5%A4%B1%E6%8E%A7%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 KK的《失控》这本书主要讲了什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.20_%E3%80%8A%E5%BF%83%E6%B5%81%E3%80%8B%E8%BF%99%E6%9C%AC%E4%B9%A6%E4%B8%BB%E8%A6%81%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.20 《心流》这本书主要讲了什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.20_%E5%BE%AE%E7%94%9F%E7%89%A9%E5%92%8C%E6%9E%9C%E7%9A%AE%E6%80%8E%E4%B9%88%E5%88%B6%E4%BD%9C%E9%85%B5%E7%B4%A0/" class="md-nav__link">
+        3.20 微生物和果皮怎么制作酵素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.20_%E7%94%A8python%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        3.20 用python实现chatgpt对话程序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.21_TensorFlow%20Hub%20%E5%BA%93%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        3.21 TensorFlow Hub 库概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.21_paddlehub_pretrained_models/" class="md-nav__link">
+        3.21 paddlehub pretrained models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.21_python%E9%80%9A%E8%BF%87google%E5%9C%A8%E7%BA%BF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        3.21 python通过google在线实现语音识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.21_%E5%AE%9E%E7%8E%B0%E6%B0%91%E4%B8%BB%E6%9C%80%E5%A5%BD%E7%9A%84%E9%80%94%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        3.21 实现民主最好的途径是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.21_%E8%B0%83%E7%94%A8google%20API%E8%AF%86%E5%88%AB%E9%BA%A6%E5%85%8B%E9%A3%8E%E7%9A%84%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.21 调用google API识别麦克风的语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.21_%E9%80%9A%E8%BF%87%E8%AF%AD%E9%9F%B3%E5%92%8Cchatgpt%E5%AF%B9%E8%AF%9D%E7%9A%84python%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        3.21 通过语音和chatgpt对话的python程序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.22_%E4%BA%BA%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%B0%86%E6%80%8E%E6%A0%B7%E4%BA%92%E5%8A%A8/" class="md-nav__link">
+        3.22 人和人工智能将怎样互动
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.22_%E6%96%B0%E9%97%BB_2023/" class="md-nav__link">
+        3.22 新闻 2023
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.23_Midjourney%20Quick%20Start/" class="md-nav__link">
+        3.23 Midjourney Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.23_PaddleNLP%20Examples/" class="md-nav__link">
+        3.23 PaddleNLP Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.23_chatbot_unified_transformer/" class="md-nav__link">
+        3.23 chatbot unified transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.23_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.23 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.24_PaddleNLP_taskflow/" class="md-nav__link">
+        3.24 PaddleNLP taskflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.24_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.24 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.25_%E9%94%AF%E6%9C%AB%E5%85%BB%E8%8A%B1%E7%9A%84%E5%A5%BD%E5%A4%84/" class="md-nav__link">
+        3.25 锯末养花的好处
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.26_python%E6%93%8D%E4%BD%9Csqlite/" class="md-nav__link">
+        3.26 python操作sqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.26_%E4%BD%BF%E7%94%A8%20PythonMagick%20%E7%94%9F%E6%88%90%20icon%20%E5%9B%BE%E6%A0%87/" class="md-nav__link">
+        3.26 使用 PythonMagick 生成 icon 图标
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.27_ERNIE%203.0%E5%AE%9E%E6%88%98%E6%B3%95%E5%BE%8B%E6%96%87%E6%9C%AC%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        3.27 ERNIE 3.0实战法律文本多标签分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.27_awesome-chatgpt-prompts/" class="md-nav__link">
+        3.27 awesome chatgpt prompts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.27_%E4%B8%B4%E6%B1%9F%E4%BB%99%C2%B7%E5%A4%9C%E9%A5%AE%E4%B8%9C%E5%9D%A1%E9%86%92%E5%A4%8D%E9%86%89/" class="md-nav__link">
+        3.27 临江仙·夜饮东坡醒复醉
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.27_%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        3.27 常用的思维模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.27_%E6%96%87%E6%A1%88_%E4%B8%80%E6%9D%AF%E8%8C%B6/" class="md-nav__link">
+        3.27 文案 一杯茶
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        3.27 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.28_python%E7%9A%84%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0sqlite/" class="md-nav__link">
+        3.28 python的实现chatgpt对话并保存到sqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.28_sqlite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8Cpandas%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        3.28 sqlite数据库和pandas数据转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.29_PaddleNLP%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        3.29 PaddleNLP分类任务指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.29_PaddleNLP%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        3.29 PaddleNLP文本分类应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.29_TensorFlow%202.0%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        3.29 TensorFlow 2.0初学者的教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.30_windows%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8Cpath%E7%8E%AF%E5%A2%83%E5%90%8E%E5%8D%B3%E6%97%B6%E7%94%9F%E6%95%88/" class="md-nav__link">
+        3.30 windows配置环境变量和path环境后即时生效
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.31_google%E5%9C%A8%E7%BA%BFTTS%E5%92%8CASR/" class="md-nav__link">
+        3.31 google在线TTS和ASR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.31_pygame%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        3.31 pygame播放音频文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.31_window%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8paddlespeech%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%92%8C%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        3.31 window系统使用paddlespeech进行语音识别和文字转语音
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.31_%E6%80%8E%E6%A0%B7%E7%94%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%A2%84%E6%B5%8B%E5%9F%BA%E9%87%91%E8%B6%8B%E5%8A%BF/" class="md-nav__link">
+        3.31 怎样用人工智能预测基金趋势
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.31_%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7doccano%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        3.31 标注工具doccano使用指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.6_%E4%B8%A4%E7%A7%8D%E8%87%AA%E5%88%B6%E7%94%9F%E6%A0%B9%E7%B2%89%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        两种自制生根粉的方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.6_%E5%82%AC%E7%9C%A0%E4%BD%93%E9%AA%8CR1/" class="md-nav__link">
+        3.6 催眠体验R1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.6_%E6%B0%B4%E6%9D%A8%E9%85%B8%E7%9A%84%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        3.6 水杨酸的提取方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.7_%E4%B8%8E%E6%BD%9C%E6%84%8F%E8%AF%86%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+        3.7 与潜意识对话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.7_%E5%82%AC%E7%9C%A0%E7%BC%93%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%84%A6%E8%99%91%E5%92%8C%E5%8E%8B%E5%8A%9B/" class="md-nav__link">
+        3.7 催眠缓解你的焦虑和压力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.7_%E5%A4%A7%E8%87%AA%E7%84%B6%E5%86%A5%E6%83%B3_%E8%87%AA%E6%88%91%E5%82%AC%E7%9C%A0/" class="md-nav__link">
+        3.7 大自然冥想 自我催眠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.8_%E5%82%AC%E7%9C%A0%E9%87%8A%E6%94%BE%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E5%86%85%E7%96%9A%E6%83%85%E7%BB%AA/" class="md-nav__link">
+        3.8 催眠释放对他人的内疚情绪
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.8_%E8%81%8C%E4%B8%9A%E5%82%AC%E7%9C%A0%E5%B8%88%E5%B8%A6%E4%BD%A0%E4%BD%93%E9%AA%8C%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%82%AC%E7%9C%A0%E2%80%94%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E5%89%8D%E4%B8%96/" class="md-nav__link">
+        3.8 职业催眠师带你体验真正的催眠—看到你的前世
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3.9_%E5%82%AC%E7%9C%A0%E5%85%A5%E7%9D%A1%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+        3.9 催眠入睡引导
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+          4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/04.11_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        04.11 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.01.22_%E9%95%BF%E5%AF%BF%E8%8A%B1%E6%80%8E%E4%B9%88%E5%85%BB%E6%AE%96/" class="md-nav__link">
+        4.01.22 长寿花怎么养殖
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.01_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        4.01 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.03_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        4.03 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.06_%E6%9E%B8%E6%9D%9E%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        4.06 枸杞的种植方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.11_2015%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D%E5%A4%A7%E5%85%A8/" class="md-nav__link">
+        4.11 2015爆笑笑话大全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.11_AI%E5%BF%AB%E8%BD%A6%E9%81%93-FastDeploy%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%E5%A5%97%E4%BB%B6%E7%B3%BB%E5%88%97/" class="md-nav__link">
+        4.11 AI快车道 FastDeploy推理部署套件系列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.11_%E5%BE%AE%E4%BF%A1%E6%80%8E%E4%B9%88%E6%94%B6%E6%AC%BE/" class="md-nav__link">
+        4.11 微信怎么收款
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.11_%E6%82%BC%E5%BF%B5%E4%B8%80%E4%B8%AA%E9%80%9D%E5%8E%BB%E7%9A%84%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%96%87%E7%AB%A0/" class="md-nav__link">
+        4.11 悼念一个逝去的朋友的文章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.11_%E6%9C%80%E6%96%B0%E6%A0%A1%E5%9B%AD%E7%88%86%E7%AC%91%E7%AC%91%E8%AF%9D/" class="md-nav__link">
+        4.11 最新校园爆笑笑话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_Sympy%20-%20Symbolic%20algebra%20in%20Python/" class="md-nav__link">
+        4.12 Sympy   Symbolic algebra in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_Tools%20for%20high-performance%20computing%20applications/" class="md-nav__link">
+        4.12 Tools for high performance computing applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_matplotlib%20-%202D%20and%203D%20plotting%20in%20Python/" class="md-nav__link">
+        4.12 matplotlib   2D and 3D plotting in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.12_%E7%94%A8Python%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E4%BB%BF%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+        4.12 用Python绘制一个仿黑洞图像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.13_EinsteinPy%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        4.13 EinsteinPy模块介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.13_python%E7%94%9F%E6%88%90%E9%BB%91%E6%B4%9E%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+        4.13 python生成黑洞图像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.16_%E8%8A%B1%E9%9D%92%E7%B4%A0%E5%90%AB%E9%87%8F%E9%AB%98%E7%9A%84%E9%A3%9F%E7%89%A9%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        4.16 花青素含量高的食物有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.17_%E6%A7%90%E8%8A%B1%E7%82%92%E9%B8%A1%E8%9B%8B/" class="md-nav__link">
+        4.17 槐花炒鸡蛋
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.18_%E8%B1%8C%E8%B1%86%E6%8E%92%E9%AA%A8%E6%B1%A4%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        4.18 豌豆排骨汤的做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_PaddleClas%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABPULC%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="md-nav__link">
+        4.1 PaddleClas图像识别PULC快速体验
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_windows%E4%B8%8B%E6%80%8E%E4%B9%88%E7%94%A8sublime%20text%E6%90%AD%E5%BB%BApython%20%E7%9A%84ide/" class="md-nav__link">
+        4.1 windows下怎么用sublime text搭建python 的ide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_%E5%9F%BA%E4%BA%8EPP-LCNetV2%E7%9A%84%E5%8A%A8%E7%89%A9%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8E%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        4.1 基于PP LCNetV2的动物图像识别与分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.1_%E6%8E%A8%E8%8D%90%E4%B8%80%E7%A7%8D%E5%81%A5%E5%BA%B7%E7%9A%84%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        4.1 推荐一种健康的生活方式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.20_%E6%B5%81%E6%B7%8C/" class="md-nav__link">
+        4.20 流淌
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.21_%E4%BB%A5%E7%A7%91%E5%AD%A6%E5%85%A5%E9%81%93/" class="md-nav__link">
+        4.21 以科学入道
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.22_%E6%97%B6%E9%97%B4%E7%9A%84%E7%A7%A9%E5%BA%8F-%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        4.22 时间的秩序 笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.22_%E6%9C%BA%E5%99%A8%E6%96%87%E6%98%8E%E7%9A%84%E5%86%B0%E5%B1%B1%E4%B8%80%E8%A7%92/" class="md-nav__link">
+        4.22 机器文明的冰山一角
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.24_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        4.24 ChatGPT中文调教指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.24_chatgpt%20%E5%86%99%E5%B0%8F%E8%AF%B4%E6%8F%90%E7%BA%B2%E7%9A%84prompt/" class="md-nav__link">
+        4.24 chatgpt 写小说提纲的prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.24_%E5%88%A9%E7%94%A8ChatGPT%E8%BD%BB%E6%9D%BE%E7%BB%98%E5%9B%BE/" class="md-nav__link">
+        4.24 利用ChatGPT轻松绘图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.24_%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9C%AF%E8%AF%AD/" class="md-nav__link">
+        4.24 大模型的一些术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25.18_%E6%89%AE%E6%BC%94%E8%AF%97%E4%BA%BA/" class="md-nav__link">
+        4.25.18 扮演诗人
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25.19_%E5%B0%8F%E8%AF%B4-%E5%BF%83%E9%9A%8F%E6%A2%A6%E9%80%90/" class="md-nav__link">
+        4.25.19 小说 心随梦逐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25_ChatGPT%E4%B8%AD%E6%96%87%E8%B0%83%E6%95%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        4.25 ChatGPT中文调教指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25_chatgpt%20%E5%86%99%E5%A5%87%E5%B9%BB%E5%B0%8F%E6%95%85%E4%BA%8B%E7%9A%84prompt/" class="md-nav__link">
+        4.25 chatgpt 写奇幻小故事的prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25_chatgpt%E5%86%99%E4%BD%9C%E7%9A%84prompt%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        4.25 chatgpt写作的prompt的设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25_python-%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2%E6%8E%89%E6%96%87%E6%9C%AC%E4%B8%AD%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7/" class="md-nav__link">
+        4.25 python 正则替换掉文本中标点符号
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.25_%E5%A6%82%E4%BD%95%E7%94%A8ChatGPT%E5%86%99%E4%B8%80%E7%AF%87%E7%B2%BE%E5%BD%A9%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%9F/" class="md-nav__link">
+        4.25 如何用ChatGPT写一篇精彩的故事？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26.21_%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E6%98%A5%E6%B8%B8%E5%8F%A4%E5%9F%8E/" class="md-nav__link">
+        4.26.21 一剪梅·春游古城
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26_%E6%97%B6%E7%A9%BA%E9%80%83%E4%BA%A1/" class="md-nav__link">
+        4.26 时空逃亡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26_%E7%A2%B0%E7%A2%B0%E9%A6%99%E7%9A%84%E5%85%BB%E6%AE%96%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        碰碰香的养殖方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26_%E8%99%8E%E7%9A%AE%E5%85%B0%E7%9A%84%E5%85%BB%E6%8A%A4%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        虎皮兰的养护方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.26_%E9%87%87%E8%98%91%E8%8F%87%E7%9A%84%E5%B0%8F%E5%A7%91%E5%A8%98/" class="md-nav__link">
+        4.26 采蘑菇的小姑娘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.27.08_%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8/" class="md-nav__link">
+        4.27.08 时间机器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.27_Python%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2-webp%E8%BD%ACpng/" class="md-nav__link">
+        Python实现图片格式转换-webp转png
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_Huggingface%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        4.2 Huggingface开源模型和数据集介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_paddlehub%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E5%85%B3%E9%94%AE%E7%82%B9%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        4.2 paddlehub人体骨骼关键点检测模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_paddlepaddle%E7%94%9F%E6%80%81%E7%9A%84%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%B7%A5%E5%85%B7PaddleHub/" class="md-nav__link">
+        4.2 paddlepaddle生态的预训练模型应用工具PaddleHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.2_%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Chocolatey%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        4.2 软件管理工具Chocolatey的安装与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.3_AI%E5%B7%A5%E5%85%B7%E9%9B%86/" class="md-nav__link">
+        4.3 AI工具集
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.3_Transformer%20text-to-speech%20model%20from%20fairseq/" class="md-nav__link">
+        4.3 Transformer text to speech model from fairseq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.4_%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91App/" class="md-nav__link">
+        4.4 低代码开发App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.6_%E7%90%BC%E8%8A%B1%E7%9A%84%E7%B9%81%E6%AE%96%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        4.6 琼花的繁殖方法有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.9_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        4.9 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4.9_%E7%AC%91%E8%AF%9D/" class="md-nav__link">
+        4.9 笑话
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+          5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/05.04_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        05.04 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.12.15_%E9%BE%99%E4%B9%8B%E7%8E%8B%E5%9B%BD/" class="md-nav__link">
+        5.12.15 龙之王国
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.14_%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A-%E5%AE%97%E6%AF%85/" class="md-nav__link">
+        5.14 裂变式创业 宗毅
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.16_%E6%80%8E%E6%A0%B7%E5%9C%A8Windows%E4%B8%8B%E5%AE%89%E8%A3%85python/" class="md-nav__link">
+        5.16 怎样在Windows下安装python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.16_%E7%9A%AE%E8%9B%8B%E7%98%A6%E8%82%89%E7%B2%A5%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        5.16 皮蛋瘦肉粥的做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.17_%E4%BB%80%E4%B9%88%E6%98%AF%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E7%BB%B4/" class="md-nav__link">
+        5.17 什么是批判性思维
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.18_%E6%9E%87%E6%9D%B7%E8%86%8F%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        5.18 枇杷膏的做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.18_%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%A8%A1%E5%9E%8BPrompt%E8%AE%BE%E8%AE%A1%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
+        5.18 百度大模型Prompt设计课程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.18_%E9%93%B6%E8%80%B3%E7%BE%B9%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        5.18 银耳羹的做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.19_%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%A8%E6%B0%91%E5%9F%BA%E6%9C%AC%E6%94%B6%E5%85%A5UBI/" class="md-nav__link">
+        5.19 什么是全民基本收入UBI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.19_%E4%BB%80%E4%B9%88%E6%98%AF%E8%A3%82%E5%8F%98%E5%BC%8F%E5%86%85%E9%83%A8%E5%88%9B%E4%B8%9A/" class="md-nav__link">
+        5.19 什么是裂变式内部创业
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.19_%E5%85%A8%E7%90%83%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%20Worldcoin/" class="md-nav__link">
+        5.19 全球数字货币 Worldcoin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.19_%E6%80%8E%E4%B9%88%E8%AE%B2%E5%A5%BD%E4%B8%80%E4%B8%AA%E6%95%85%E4%BA%8B/" class="md-nav__link">
+        5.19 怎么讲好一个故事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.19_%E6%80%8E%E6%A0%B7%E5%9F%B9%E5%85%BB%E5%AD%A9%E5%AD%90%E7%9A%84%E8%80%90%E5%BF%83/" class="md-nav__link">
+        5.19 怎样培养孩子的耐心
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.20_%E5%9B%BE%E7%89%87%E5%90%84%E5%BC%8F%E8%BD%AC%E6%8D%A2-webp%E5%88%B0png/" class="md-nav__link">
+        5.20 图片各式转换 webp到png
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.21_%E5%86%A5%E6%83%B3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="md-nav__link">
+        5.21 冥想注意事项
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.21_%E5%BD%93%E5%89%8D%E7%A7%91%E5%AD%A6%E6%9C%AA%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        5.21 当前科学未解决的问题有哪些
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.21_%E6%80%8E%E6%A0%B7%E7%94%A8%E5%9B%BE%E7%89%87%E5%92%8Cmp3%E7%94%9F%E6%88%90mp4%E8%A7%86%E9%A2%91/" class="md-nav__link">
+        5.21 怎样用图片和mp3生成mp4视频
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.21_%E6%9A%97%E7%89%A9%E8%B4%A8%E5%92%8C%E6%9A%97%E8%83%BD%E9%87%8F%E7%9A%84%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        5.21 暗物质和暗能量的特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_Sympy%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        5.22 Sympy简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_%E4%B8%AD%E5%9B%BD%E8%91%97%E5%90%8D%E7%9A%8412%E5%A4%A7%E7%A5%9E%E8%AF%9D%E6%95%85%E4%BA%8B%E5%92%8C%E5%85%B6%E4%B8%AD%E5%AF%93%E6%84%8F/" class="md-nav__link">
+        5.22 中国著名的12大神话故事和其中寓意
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_%E5%86%9C%E6%B0%91%E4%B8%93%E4%B8%9A%E5%90%88%E4%BD%9C%E7%A4%BE%E7%9A%84%E7%BB%84%E7%BB%87%E5%BD%A2%E5%BC%8F%E5%8F%8A%E6%B6%89%E7%A8%8E%E4%BC%98%E6%83%A0/" class="md-nav__link">
+        5.22 农民专业合作社的组织形式及涉税优惠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Python%E5%AE%9E%E7%8E%B0%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        5.22 如何使用Python实现删除重复文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        5.22 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_%E6%B0%B4%E7%A8%BB%E7%9B%B4%E6%92%AD%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        5.22 水稻直播技术介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_%E6%B3%A8%E5%86%8C%E5%86%9C%E6%9D%91%E5%90%88%E4%BD%9C%E7%A4%BE%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E6%9D%A1%E4%BB%B6/" class="md-nav__link">
+        5.22 注册农村合作社需要什么条件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.22_%E8%AF%B7%E5%B8%AE%E6%88%91%E4%BF%AE%E6%94%B9%E4%B8%8B%E9%9D%A2%E7%94%B1%E6%88%91%E6%8F%90%E4%BE%9B%E7%9A%84%E6%96%87%E7%AB%A0/" class="md-nav__link">
+        5.22 请帮我修改下面由我提供的文章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.23_%E5%9C%9F%E8%B1%86%E5%B9%B2%E5%92%8C%E8%90%9D%E5%8D%9C%E5%B9%B2%E7%9A%84%E5%81%9A%E6%B3%95/" class="md-nav__link">
+        5.23 土豆干和萝卜干的做法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.24_%E5%B0%B9%E9%9B%86%E4%B8%8E%E5%8F%A4%E9%9A%86%E4%B8%AD/" class="md-nav__link">
+        5.24 尹集与古隆中
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.25_%E6%88%90%E7%AB%8B%E5%86%9C%E6%9D%91%E5%90%88%E4%BD%9C%E7%A4%BE%E7%9A%84%E5%A5%BD%E5%A4%84%E5%92%8C%E5%BC%8A%E7%AB%AF/" class="md-nav__link">
+        5.25 成立农村合作社的好处和弊端
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.25_%E6%88%90%E9%95%BF%E6%80%A7%E6%80%9D%E7%BB%B4%E5%92%8C%E5%9B%BA%E5%AE%9A%E6%80%A7%E6%80%9D%E7%BB%B4/" class="md-nav__link">
+        5.25 成长性思维和固定性思维
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.25_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        5.25 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.26_%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90/" class="md-nav__link">
+        5.26 梁冬说庄子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.28_%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%B9%8B%E9%97%B4%E5%8F%AF%E4%BB%A5%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+        5.28 智能机器之间可以对话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.30_LLM%E5%BC%80%E5%8F%91%E8%8C%83%E5%BC%8F/" class="md-nav__link">
+        5.30 LLM开发范式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.30_Python%20Gradio%20Quickstart/" class="md-nav__link">
+        5.30 Python Gradio Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.30_%E8%A5%BF%E5%B0%94%E6%96%AF%E6%80%80%E5%AD%95%E7%99%BE%E7%A7%91/" class="md-nav__link">
+        5.30 西尔斯怀孕百科
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.31_%E6%B9%96%E8%BE%B9%E5%82%AC%E7%9C%A0%E5%86%A5%E6%83%B3/" class="md-nav__link">
+        5.31 湖边催眠冥想
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.3_python%E5%AE%9E%E7%8E%B0%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D/" class="md-nav__link">
+        5.3 python实现批量文件重命名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.6_%E5%9F%B9%E5%85%BB%E5%B9%BD%E9%BB%98%E6%84%9F/" class="md-nav__link">
+        5.6 培养幽默感
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.6_%E5%A6%82%E4%BD%95%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%BF%AB%E4%B9%90/" class="md-nav__link">
+        5.6 如何让自己快乐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.6_%E5%B9%BD%E9%BB%98%E6%AE%B5%E5%AD%90%E9%9B%86%E5%90%88/" class="md-nav__link">
+        5.6 幽默段子集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.7_%E3%80%8A%E6%B0%B4%E6%B5%92%E4%BC%A0%E3%80%8B108%E5%90%8D%E5%A5%BD%E6%B1%89%E6%80%A7%E6%A0%BC%E7%89%B9%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%95%85%E4%BA%8B/" class="md-nav__link">
+        5.7 《水浒传》108名好汉性格特点及相关故事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.8_%E5%B9%BD%E9%BB%98%E7%9A%84%E5%9B%9E%E7%AD%94/" class="md-nav__link">
+        5.8 幽默的回答
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.9_python%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9/" class="md-nav__link">
+        5.9 python语言的特点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5.9_%E5%B9%BD%E9%BB%98%E6%95%85%E4%BA%8B/" class="md-nav__link">
+        5.9 幽默故事
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+          6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_5">
+          <span class="md-nav__icon md-icon"></span>
+          6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/06.01_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        06.01 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/06.05_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        06.05 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/06.07_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        06.07 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/06.26_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        06.26 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.12_%E7%89%9B%E9%A1%BF%E7%9A%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
+        6.12 牛顿的故事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.13_%E6%80%8E%E6%A0%B7%E5%9C%A8Windows%E4%B8%8B%E5%AE%89%E8%A3%85python/" class="md-nav__link">
+        6.13 怎样在Windows下安装python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.14_%E3%80%8A%E4%BA%BA%E7%94%9F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%BB%B6%E4%BA%8B%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90/" class="md-nav__link">
+        6.14 《人生只有一件事》的读书笔记生成
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.14_%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84%E5%86%9C%E4%BA%A7%E5%93%81/" class="md-nav__link">
+        6.14 最受欢迎的农产品
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.15_%E3%80%8A%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90.%E4%BA%BA%E9%97%B4%E4%B8%96%E3%80%8B%E4%B9%A6%E8%AF%84/" class="md-nav__link">
+        6.15 《梁冬说庄子.人间世》书评
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.15_%E5%86%9C%E6%9D%91%E7%A7%8D%E6%A4%8D%E4%BB%80%E4%B9%88%E7%BB%8F%E6%B5%8E%E6%95%88%E7%9B%8A%E6%9C%80%E5%A5%BD/" class="md-nav__link">
+        6.15 农村种植什么经济效益最好
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.15_%E5%8D%97%E7%93%9C%E7%9A%84%E5%8A%A0%E5%B7%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        6.15 南瓜的加工方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.15_%E6%95%85%E4%BA%8B%E3%80%8A%E5%A4%B1%E6%8E%A7%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8B/" class="md-nav__link">
+        6.15 故事《失控的机器人》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.15_%E7%91%9E%C2%B7%E8%BE%BE%E5%88%A9%E6%AC%A7%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        6.15 瑞·达利欧《原则》的读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.15_%E7%9F%B3%E8%8F%96%E8%92%B2%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%8A%80%E6%9C%AF/" class="md-nav__link">
+        6.15 石菖蒲的种植技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.16_python%E8%AF%BB%E5%86%99yaml%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        6.16 python读写yaml模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.16_%E7%AB%A5%E8%AF%9D%E6%95%85%E4%BA%8B%E5%88%9B%E4%BD%9C/" class="md-nav__link">
+        6.16 童话故事创作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.18_python%E8%AF%BB%E5%8F%96%E5%B9%B6%E6%9F%A5%E6%89%BExml%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        6.18 python读取并查找xml文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.19_SymPy%20%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        6.19 SymPy 符号计算基本教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.19_python%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        6.19 python压缩视频文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.1_Zero-Shot%20Image%20Classification/" class="md-nav__link">
+        6.1 Zero Shot Image Classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.1_%E5%8D%81%E7%A7%92%E7%AC%91%E5%88%B0%E6%96%AD%E6%B0%94%E7%9A%84%E6%90%9E%E7%AC%91%E6%AE%B5%E5%AD%90/" class="md-nav__link">
+        6.1 十秒笑到断气的搞笑段子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.1_%E5%AF%B9%E8%AF%9D%E6%A8%A1%E5%9E%8BChatGLM-6B/" class="md-nav__link">
+        6.1 对话模型ChatGLM 6B
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.1_%E5%B9%BD%E9%BB%98%E6%90%9E%E7%AC%91%E6%AE%B5%E5%AD%90/" class="md-nav__link">
+        6.1 幽默搞笑段子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.1_%E6%A2%81%E5%86%AC%E8%AF%B4%E5%BA%84%E5%AD%90-%E4%BA%BA%E9%97%B4%E4%B8%96/" class="md-nav__link">
+        6.1 梁冬说庄子 人间世
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.1_%E7%AC%91%E5%88%B0%E8%82%9A%E5%AD%90%E7%96%BC%E7%9A%84%E6%AE%B5%E5%AD%90/" class="md-nav__link">
+        6.1 笑到肚子疼的段子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.20_python%E5%AF%B9pdf%E6%96%87%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%90%88%E5%B9%B6%E5%92%8C%E5%88%86%E5%89%B2/" class="md-nav__link">
+        6.20 python对pdf文件执行合并和分割
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.20_%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E8%A7%82%E5%BF%B5/" class="md-nav__link">
+        6.20 《道德经》最重要的观念
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.20_%E3%80%8A%E9%BD%90%E7%89%A9%E8%AE%BA%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        6.20 《齐物论》读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.20_%E4%BB%A3%E7%90%86%E8%AE%B0%E8%B4%A6%E5%90%88%E5%90%8C%E7%9A%84%E5%86%85%E5%AE%B9%E5%8F%82%E8%80%83/" class="md-nav__link">
+        6.20 代理记账合同的内容参考
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.20_%E5%B0%8F%E9%BC%B9%E9%BC%A0%E7%9A%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
+        6.20 小鼹鼠的故事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.25_%E7%94%9F%E6%88%90%E7%9B%AE%E5%BD%95%E7%9A%84bootstrap%E4%B8%BB%E9%A1%B5%E9%9D%A2/" class="md-nav__link">
+        6.25 生成目录的bootstrap主页面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.26_%E3%80%8A%E5%B1%B1%E6%B5%B7%E7%BB%8F%E3%80%8B%E7%9A%84%E6%91%98%E8%A6%81/" class="md-nav__link">
+        6.26 《山海经》的摘要
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.27_python%E6%8A%93%E5%8F%96%E6%96%B0%E6%B5%AA%E6%96%B0%E9%97%BB%E5%8E%86%E5%8F%B2/" class="md-nav__link">
+        6.27 python抓取新浪新闻历史
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.27_%E7%BF%BB%E8%BD%AC%E5%BC%8F%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        6.27 翻转式学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.28_Microsoft%20Visual%20C%2B%2B%2014.0%20or%20greater%20is%20required%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        6.28 Microsoft Visual C++ 14.0 or greater is required问题解决方案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.2_Gradio%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/" class="md-nav__link">
+        6.2 Gradio入门到进阶
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.2_Gradio%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAAI%E7%AE%97%E6%B3%95%E5%8F%AF%E8%A7%86%E5%8C%96%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        6.2 Gradio快速搭建AI算法可视化部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.3_openai%20chatgpt%20reg%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        6.3 openai chatgpt reg说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.4_Huggingface%E7%9A%84ZeroShot%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        6.4 Huggingface的ZeroShot图像分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.4_gradio%E5%AE%9E%E7%8E%B0chatgpt%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+        6.4 gradio实现chatgpt对话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.5_gradio%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        6.5 gradio实现在线图像分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.5_gradio%E7%94%9F%E6%88%90%E7%9B%B8%E5%86%8C/" class="md-nav__link">
+        6.5 gradio生成相册
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.5_gradio%E7%BB%93%E5%90%88whisper%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        6.5 gradio结合whisper实现在线语音识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.5_%E4%BB%A5%E2%80%9C%E6%97%A0%E5%8F%AF%E5%A5%88%E4%BD%95%E2%80%9D%E7%9A%84%E5%BF%83%E6%80%81%E5%8E%BB%E5%81%9A%E4%BA%8B/" class="md-nav__link">
+        6.5 以“无可奈何”的心态去做事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.5_%E5%AD%95%E6%9C%9F%E7%B3%96%E5%B0%BF%E7%97%85%E7%9A%84%E9%A5%AE%E9%A3%9F%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        6.5 孕期糖尿病的饮食控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.6_6.6_paddlespeech%E4%BD%BF%E7%94%A8gradio%E5%AE%8C%E6%88%90%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" class="md-nav__link">
+        6.6 6.6 paddlespeech使用gradio完成在线语音合成
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.6_Transformer%E5%AE%9E%E7%8E%B0ASR/" class="md-nav__link">
+        6.6 Transformer实现ASR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.6_%E6%96%87%E6%9C%AC%E5%92%8C%E5%9B%BE%E7%89%87%E7%94%9F%E6%88%90MP4%E8%A7%86%E9%A2%91/" class="md-nav__link">
+        6.6 文本和图片生成MP4视频
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.6_%E7%99%BE%E5%BA%A6paddlepaddle%E5%92%8CGradio%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%96%87%E5%AD%97/" class="md-nav__link">
+        6.6 百度paddlepaddle和Gradio实现在线图像转文字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.6_%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%E5%B7%A5%E5%85%B7Coqui%E7%9A%84TTS%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%93%E9%AA%8C/" class="md-nav__link">
+        6.6 语音合成工具Coqui的TTS安装及体验
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.7_ffmpeg%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        6.7 ffmpeg生成视频文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.7_python%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E5%92%8C%E5%9B%BE%E7%89%87%E6%96%87%E6%A1%88%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        6.7 python实现文字和图片文案自动生成视频文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.7_%E4%BD%BF%E7%94%A8PP-TTS%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" class="md-nav__link">
+        6.7 使用PP TTS实现语音合成
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.8_Bark%20TTS/" class="md-nav__link">
+        6.8 Bark TTS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.8_%E4%B8%96%E7%95%8C%E8%91%97%E5%90%8D%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%95%85%E4%BA%8B%E5%8D%81%E5%88%99/" class="md-nav__link">
+        6.8 世界著名科学家的故事十则
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_6" id="__nav_9_6_label" tabindex="0">
+          7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_6">
+          <span class="md-nav__icon md-icon"></span>
+          7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/07.05_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        07.05 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/07.06_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        07.06 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/07.15_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        07.15 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/07.25_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        07.25 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/07.27_A%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        07.27 A新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/07.27_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        07.27 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/7.23_%E5%95%86%E4%B8%9A%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88/" class="md-nav__link">
+        7.23 商业的本质是什么
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/7.23_%E8%87%AA%E5%88%B6%E4%BA%94%E8%B0%B7%E6%9D%82%E7%B2%AE%E8%90%A5%E5%85%BB%E7%B2%89/" class="md-nav__link">
+        7.23 自制五谷杂粮营养粉
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/7.3_Microsoft.WinGet.Client%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        7.3 Microsoft.WinGet.Client安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/7.4_Python%E5%AE%9E%E7%8E%B0PDF%E8%BD%ACPNG/" class="md-nav__link">
+        7.4 Python实现PDF转PNG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/7.8_%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        7.8 学习金字塔模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/7.8_%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BA%BA%E7%B1%BB%E8%AF%AF%E5%88%A4%E5%BF%83%E7%90%86%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+        7.8 常见的人类误判心理有哪些
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_7" id="__nav_9_7_label" tabindex="0">
+          8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_7">
+          <span class="md-nav__icon md-icon"></span>
+          8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/08.19_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        08.19 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/08.20_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        08.20 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/08.28_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        08.28 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.15_%E4%BD%BF%E7%94%A8python%E6%9F%A5%E6%89%BEpdf%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        8.15 使用python查找pdf文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.15_%E5%92%8C%E7%B9%81%E9%87%8D%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%B8%80%E8%B5%B7%E4%BF%AE%E8%A1%8C/" class="md-nav__link">
+        8.15 和繁重的工作一起修行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.15_%E7%9F%AD%E7%AF%87%E6%95%85%E4%BA%8B%E5%88%9B%E4%BD%9C/" class="md-nav__link">
+        8.15 短篇故事创作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.15_%E7%B4%AB%E8%8B%8F%E5%A7%9C%E7%B1%B3%E8%8C%B6%E7%9A%84%E5%88%B6%E4%BD%9C%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        8.15 紫苏姜米茶的制作方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.17_%E3%80%8A%E6%AD%A3%E5%BF%B5%E7%9A%84%E5%A5%87%E8%BF%B9%E3%80%8B%E5%88%86%E4%BA%AB%E7%A8%BF/" class="md-nav__link">
+        8.17 《正念的奇迹》分享稿
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.19_%E4%BD%BF%E7%94%A8python%E6%9F%A5%E6%89%BEpdf%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        8.19 使用python查找pdf文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.1_gradio%E5%AE%9E%E7%8E%B0%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E7%9A%84%E5%86%85%E5%AE%B9/" class="md-nav__link">
+        8.1 gradio实现识别图片的内容
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8.28_%E5%B0%86%E5%B7%A5%E4%BD%9C%E5%BD%93%E4%BD%9C%E6%AD%A3%E5%BF%B5%E7%9A%84%E4%BF%AE%E8%A1%8C/" class="md-nav__link">
+        8.28 将工作当作正念的修行
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8" id="__nav_9_8_label" tabindex="0">
+          9
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9_8">
+          <span class="md-nav__icon md-icon"></span>
+          9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09.12_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        09.12 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09.18_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        09.18 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09.20_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        09.20 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09.26_%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        09.26 新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023_09_12_225819%E5%87%AF%E6%81%A9%E6%96%AF%E4%BC%A0/" class="md-nav__link">
+        2023 09 12 225819凯恩斯传
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.13_%E8%A7%A3%E6%83%91/" class="md-nav__link">
+        9.13 解惑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.14_%20%E5%92%8C%E7%B9%81%E9%87%8D%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%B8%80%E8%B5%B7%E4%BF%AE%E8%A1%8C/" class="md-nav__link">
+        9.14  和繁重的工作一起修行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.14_%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E9%82%80%E8%AF%B7/" class="md-nav__link">
+        9.14 存在主义心理学的邀请
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          9.17 韧性
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        9.17 韧性
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    韧性
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.21_%E7%AC%AC3%E9%80%89%E6%8B%A9/" class="md-nav__link">
+        9.21 第3选择
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.28_%E5%BD%B1%E5%93%8D%E5%9C%88%E4%B8%8E%E5%85%B3%E6%B3%A8%E5%9C%88/" class="md-nav__link">
+        影响圈与关注圈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.29_%E5%8D%81%E5%88%86%E9%92%9F%E5%86%A5%E6%83%B3/" class="md-nav__link">
+        9.29 十分钟冥想
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.29_%E9%92%9D%E6%84%9F%E5%8A%9B_ASR_2023_09_16_161427/" class="md-nav__link">
+        9.29 钝感力 ASR 2023 09 16 161427
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
+          汪曾祺
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_9">
+          <span class="md-nav__icon md-icon"></span>
+          汪曾祺
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+        2.7 摘录 人间草木
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%91%98%E5%BD%95-%E8%A5%BF%E5%B1%B1%E5%AE%A2%E8%AF%9D/" class="md-nav__link">
+        2.7 摘录 西山客话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E4%BA%BA%E9%97%B4%E8%8D%89%E6%9C%A8/" class="md-nav__link">
+        2.7 文案 人间草木
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%96%87%E6%A1%88-%E6%98%86%E6%98%8E%E7%9A%84%E9%9B%A8/" class="md-nav__link">
+        2.7 文案 昆明的雨
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%AA%E6%9B%BE%E7%A5%BA/2.7_%E6%B1%AA%E6%9B%BE%E7%A5%BA%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        2.7 汪曾祺简介
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_10" id="__nav_9_10_label" tabindex="0">
+          翻转式学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_10">
+          <span class="md-nav__icon md-icon"></span>
+          翻转式学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BF%BB%E8%BD%AC%E5%BC%8F%E5%AD%A6%E4%B9%A0/6.29_%E7%BF%BB%E8%BD%AC%E5%BC%8F%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        6.29 翻转式学习
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          故事
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          故事
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%85%E4%BA%8B/5.22_%E6%8E%89%E8%BF%9B%E7%B1%B3%E7%BC%B8%E9%87%8C%E7%9A%84%E8%80%81%E9%BC%A0/" class="md-nav__link">
+        5.22 掉进米缸里的老鼠
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%85%E4%BA%8B/5.24_%E7%89%9B%E9%83%8E%E7%BB%87%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
+        5.24 牛郎织女的故事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%85%E4%BA%8B/5.28_%E9%87%8D%E7%BB%84%E6%95%85%E4%BA%8B/" class="md-nav__link">
+        5.28 重组故事
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          037号童话世界
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          037号童话世界
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%85%E4%BA%8B/037%E5%8F%B7%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/5.21.17_%E8%8B%A5%E6%B0%B4%E8%B5%B0%E8%BF%9B%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/" class="md-nav__link">
+        5.21.17 若水走进童话世界
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%85%E4%BA%8B/037%E5%8F%B7%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C/AI%E7%AB%A5%E8%AF%9D%E6%95%85%E4%BA%8B%E4%BD%9C%E5%AE%B6/" class="md-nav__link">
+        AI童话故事作家
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_5" id="__nav_10_5_label" tabindex="0">
+          2035机器奶牛
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          2035机器奶牛
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%85%E4%BA%8B/2035%E6%9C%BA%E5%99%A8%E5%A5%B6%E7%89%9B/5.27_2035%E6%9C%BA%E5%99%A8%E5%A5%B6%E7%89%9B/" class="md-nav__link">
+        5.27 2035机器奶牛
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    韧性
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>9.17 韧性</h1>
+
+<h2 id="_1">韧性</h2>
+<p>【2023-09-17 06:03:03】：听懂好书,生活更好。
+【2023-09-17 06:03:10】：本期解读,由帆书APP 樊登讲书出品。
+【2023-09-17 06:03:19】：各位听众大家好,您现在听到的是帆书樊登讲书的特别栏目:作者光临。
+【2023-09-17 06:03:25】：接下来,我将和这本书的作者，共同为您解读本书
+【2023-09-17 06:03:29】：希望可以给您带来不一样的体验。
+【2023-09-17 06:03:34】：各位好,今天我们是在中关村的樊登书店,为大家录制本期的新书。
+【2023-09-17 06:03:40】：这本书叫做《韧性.不确定时代的精进法则》。
+【2023-09-17 06:03:44】：我们为大家请到了这本书的作者,长江商学院的副院长张小萌教授，欢迎您！
+【2023-09-17 06:03:49】：你好,樊登老师。
+【2023-09-17 06:03:52】：欢迎您！小萌教授最打动我的一点,是他在跟我聊天的时候说,这能说吗?
+【2023-09-17 06:03:58】：能,可以说，没问题。
+【2023-09-17 06:04:01】：您看他今天长得这么苗条,这么有气质。
+【2023-09-17 06:04:06】：他当年200斤,200斤。
+【2023-09-17 06:04:10】：然后从200斤的体重一直减到现在100出头,120左右。
+【2023-09-17 06:04:16】：120,对。肌肉量很大,坚持锻炼,什么的。
+【2023-09-17 06:04:21】：这里边这么艰难的一个过程,是不是一定用到了韧性的方法?
+【2023-09-17 06:04:25】：是,就是典型的韧性的过程,然后韧性的方法。
+【2023-09-17 06:04:30】：您先跟大家讲讲韧性是怎么回事,这也是您在长江商学院开的一门课。
+【2023-09-17 06:04:35】：对,对,对。我是7年前全职回到长江,从国外。
+【2023-09-17 06:04:39】：然后加入长江这个7年的时间,主要是给不同的学员上课嘛。
+【2023-09-17 06:04:44】：每年来到长江,我们有很多的项目,学位项目,非学位项目。
+【2023-09-17 06:04:49】：大概我是能够接触到每年将近2000名的企业家。
+【2023-09-17 06:04:53】：在跟他们接触的过程当中,就会发现这些企业家的身上有一股韧劲。
+【2023-09-17 06:04:59】：他们很多的大型企业,比如穿越了很多的经济周期了。
+【2023-09-17 06:05:03】：但依旧能够在非常大的竞争环境下活得很好,并且他们自身也非常的坚韧。
+【2023-09-17 06:05:09】：有些企业家他面临了很大的困境之后,他依然很快乐,很强大。
+【2023-09-17 06:05:14】：所以就让我从本身我是研究行为学的,然后就聚焦到韧性的这一个
+【2023-09-17 06:05:19】：微观的这个领域,然后开始做研究,开始收集数据。
+【2023-09-17 06:05:23】：对,所以就是这么多年积累下来。
+【2023-09-17 06:05:25】：我在长江的这门课程叫做韧性的打造,就是怎么样去打造韧性,韧性是一种什么样的东西。
+【2023-09-17 06:05:31】：因为很多人对于韧性会有一种误解,就认为韧性就是熬着,
+【2023-09-17 06:05:37】：或者是不是就是吃苦,是不是就是死扛。
+【2023-09-17 06:05:40】：对,所以有个词叫坚韧不拔,所以我们一想到韧就想到坚。
+【2023-09-17 06:05:45】：所以要坚强,要熬着,要能够挺住,这个并不是韧性的定义。
+【2023-09-17 06:05:51】：其实韧性这个樊登老师讲的就特别好,我们一想到这个韧就觉得是坚,对吧。
+【2023-09-17 06:05:56】：但实际上韧这个字从古文里面,它叫柔而固也。
+【2023-09-17 06:06:00】：它相反它就是柔,比如说它的这个任字的组成,它左半边代表的是熟牛皮,
+【2023-09-17 06:06:06】：右半边我们可以看到是一个刀刃的刃字,它是划割的这个动作。
+【2023-09-17 06:06:10】：那两边组成了这个韧性的韧字,它代表的是这个皮革,它很柔软,你把它折叠它不容易破裂。
+【2023-09-17 06:06:17】：你甚至去刮它,甚至去划它,它也不容易破裂,这个是韧,就是柔而固也。
+【2023-09-17 06:06:22】：所以说往往是我们在过往的经历当中,就是回到你刚才这个问题,我为什么要研究韧性?
+【2023-09-17 06:06:29】：因为我们每个人都会面临各种各样的挑战,在生活当中,工作当中,这种挑战是非常巨大的。
+【2023-09-17 06:06:37】：那你怎么样能够经历这些挑战之后,不被打倒,打倒了之后还不光是站起来
+【2023-09-17 06:06:44】：你还得从中去成长,还得从中获益。
+【2023-09-17 06:06:47】：所以这本书,韧性这本书对于韧性这个概念的最大的一个定义就是,</p>
+<p>韧性= 复原+成长+获益,就是三个维度。
+【2023-09-17 06:06:57】：复原,加成长,加获益。
+【2023-09-17 06:07:02】：有点像我们说的反脆弱的人,像乒乓球一样。
+【2023-09-17 06:07:06】：像乒乓球一样,我不仅能够坠落以后,我不仅能够弹到原位,我可能会弹到更高。
+【2023-09-17 06:07:11】：所以这里边有一个特别好的例子,就是咱们俩共同的朋友俞敏洪老师。
+【2023-09-17 06:07:15】：对。
+【2023-09-17 06:07:16】：就能够很明显的看到俞敏洪老师,他并不是艰苦的熬着,他是从黑天鹅当中去发现机会,从而过得更愉快,更轻松,更有力量。
+【2023-09-17 06:07:28】：对,我想这跟余老师在带领新东方这么多年,他的这个口号,我原来在出国留学之前也是上新东方成长起来的嘛。
+【2023-09-17 06:07:36】：我记得特别清楚，当时,就是所有人大家会记得那句口号<strong>从绝望当中,寻找希望,对,然后生命终将辉煌</strong>,也就是说我们都会面临绝望,
+【2023-09-17 06:07:47】：就每个人其实都会有这种至暗的时刻,那你怎么样从绝望当中保有这种信念,这种希望,寻找美好,对,这个很重要。
+【2023-09-17 06:07:56】：您在这书里边第一章就讲到有关掌控感的一个经典研究,对,就是我们每个人对于掌控感的这种追求,
+【2023-09-17 06:08:04】：为什么有时候反而会导致我们失去韧性?
+【2023-09-17 06:08:07】：这个是特别核心的一个问题,因为我们从就是从行为学研究的角度,就是人类对于掌控感会有一种特别强烈的情怀。
+【2023-09-17 06:08:16】：当我们拥有掌控的时候,那你就会觉得比较愉悦。当你失去掌控的时候,你就开始会有点抓狂,
+【2023-09-17 06:08:23】：然后如果持续的一直处于失控状态,你就开始出现个比如说习得性无助啊,这个,樊登老师在讲书里面多次提到对吧,
+【2023-09-17 06:08:31】：习德性无助,然后就进入到麻木啊,然后就开始进入到各种各样的心理疾病。
+【2023-09-17 06:08:36】：所以我们对于掌控感是有种非常强烈的情怀,我们要有这种掌控感。
+【2023-09-17 06:08:41】：但它为什么会造成问题啊?就是任何东西它会有个度,一定程度的掌控带给我们的是这种比较愉悦的感觉。
+【2023-09-17 06:08:50】：但是呢,导致焦虑的最大的一个罪魁祸首也好,或者是一个诱因也好,就是我要实现百分之百的掌控。
+【2023-09-17 06:08:59】：就是我什么东西都得在我的掌控之中,甚至还会有一种病叫做列表癖,就是癖好的癖,列表癖。
+【2023-09-17 06:09:07】：比如说我今天出去旅游,我列个清单,我要带什么什么东西,这很正常。我今天进入到办公室,然后我打算做哪些事儿,然后我按照重要程度排序,这很正常对吧。
+【2023-09-17 06:09:17】：那列表癖的人,就是他百分之百的掌控到什么程度,就是我要把我所有列的表再列个表,这叫列表癖。
+【2023-09-17 06:09:26】：所以就是说,当你进入到这种百分之百掌控的时候,你就必须得做到说,我不能有任何的随机性。
+【2023-09-17 06:09:33】：任何一个随机性,他就打破了我现在这种掌控感,那我就开始抓狂,那这就不正常了。
+【2023-09-17 06:09:38】：我就想起来,我跟我儿子,我有两个孩子,那个小的跟他斗志斗勇，有关玩游戏的这个事儿。
+【2023-09-17 06:09:43】：那因为家长都会有比较类似的这种经历,比如说我们要限制孩子玩游戏,那你希望能够用家长的方式去掌控他,比如说每天,什么时间,可以玩游戏,玩多长时间。
+【2023-09-17 06:09:54】：但后来我就发现,当你给到他一定的空间,在这个空间范围内,我们达成一个统一的协定,你有你的自由度。
+【2023-09-17 06:10:03】：对吧,只要我们双方都统一,在这个时间之内,你也有你的掌控感,我也有我的掌控感。
+【2023-09-17 06:10:09】：那这样的话,双方都不纠结,就是达成了这种双方的统一之后,他就可以在这个圈里面,他自由的去玩,玩完了以后,反正我今天这个玩完了,我就不再玩了。
+【2023-09-17 06:10:20】：我记得我听樊登老师多次讲过嘟嘟玩游戏的这个事,他就能够做到,但后面你不限制他,他反而就是每天玩一段时间我就不玩了,他甚至减时间嘛。
+【2023-09-17 06:10:30】：我这个人心比较大,我属于连那个圈都没有,就是自由绽放。
+【2023-09-17 06:10:35】：对,我是相信孩子能够管好自己,因为在三岁以前下了很大的功课,三岁以前你能够帮助他建立自律,帮助他建立独立完整的自尊体系。
+【2023-09-17 06:10:46】：他会很珍惜自己的这个习惯,他不是珍惜我对他的看法,他珍惜的是自己的这个习惯,所以一直到今天他手机什么都自己管。
+【2023-09-17 06:10:56】：那挺好的。
+【2023-09-17 06:10:57】：总之是你不能太过控制,你太过控制就失去韧性。
+【2023-09-17 06:11:01】：对对对,这个韧性的理论呢,其实核心就是这张飞轮,我觉得这个模型建立的非常漂亮。
+【2023-09-17 06:11:08】：这个韧性飞轮由三个部分组成,<strong>一个叫觉察,一个叫意义,一个叫连接,</strong>待会我们会分别讲。
+【2023-09-17 06:11:17】：但是这中间有一个很重要的驱动力,叫持续小赢。每一个轮子之间的连接是靠持续小赢来继续。
+【2023-09-17 06:11:27】：是的是的。
+【2023-09-17 06:11:28】：那么您先跟大家讲讲什么叫持续小赢,以及为什么要持续小赢。
+【2023-09-17 06:11:32】：这个持续小赢是整个韧性飞轮当中特别重要的一个启动力。
+【2023-09-17 06:11:38】：就是我们要想让觉察也好,意义也好,飞轮，它们三个能够转起来,最后能够达成一个统合,它并不是分裂的。
+【2023-09-17 06:11:45】：你要想让它转起来并且持续的在转,达成一个统合。
+【2023-09-17 06:11:49】：最重要的就是要不断的去做持续性小赢的事情。
+【2023-09-17 06:11:52】：那首先比如说我们讲韧性它是一个持续一生的功课,不是说我现在韧性特别好了,我就可以歇着了。
+【2023-09-17 06:12:00】：就像我现在身体特别好,我也不能说我从现在开始就不锻炼身体了。
+【2023-09-17 06:12:04】：我得一生都得锻炼身体,韧性是一样的,就是我是健身那个叫健心,对吧。
+【2023-09-17 06:12:10】：我一生要去打造我这个韧性,那么它就做一个比喻吧,就我们是不能够用跑百米冲刺的心态和方法去跑马拉松,对吧。
+【2023-09-17 06:12:21】：就是马拉松它是很长的,我要是都在冲刺的话,大力发大力的话,那你还没到头呢,可能很远就倒下了。
+【2023-09-17 06:12:28】：所以持续性小赢的这样一个理念,它实际上是来源于我们很多人会有这样一种想法,就是我们去追寻生命当中非常重要的时刻。
+【2023-09-17 06:12:38】：比如说决定性的时刻,就是叫做高光时刻,或者是非常重大的幸福时刻,大家会觉得这样的时刻能够给我带来无比的幸福感。
+【2023-09-17 06:12:48】：但其实从研究的角度,还有包括樊老师讲这么多本书当中,有很多很多的研究都告诉我们,人类真正的这种幸福,特别是持续的幸福,
+【2023-09-17 06:12:58】：它是来源于我们的这些微小的行为的改变,而且它跟我们讲到,就是其中有一个讲到意义,你去定目标是相关的。
+【2023-09-17 06:13:07】：当我们把目标定得过远的时候,你可能就达不到你会失望,但是当我们定了一个一个小目标,一个一个去完成的时候,你的这种动力始终在。
+【2023-09-17 06:13:16】：所以人的这种心态就会非常的好。
+【2023-09-17 06:13:18】：那比如说您是怎么用这个持续小赢来改善自己?
+【2023-09-17 06:13:22】：那就很多了,比如说,樊老师知道的,对吧?
+【2023-09-17 06:13:26】：今天我到这边来跟樊老师对话,我非常开心,是因为整个樊老师讲的所有的书,真的是所有的书。
+【2023-09-17 06:13:36】：我是一分钟不落的听了。
+【2023-09-17 06:13:38】：全部?
+【2023-09-17 06:13:39】：全部,一分钟不落。
+【2023-09-17 06:13:40】：这掌声不一样。
+【2023-09-17 06:13:42】：真的是,对。
+【2023-09-17 06:13:43】：而且呢,就是说,听书的过程当中,我是密集的听。
+【2023-09-17 06:13:47】：它正好伴随着我写韧性的两年时间。
+【2023-09-17 06:13:50】：这就是一个典型的持续小赢。
+【2023-09-17 06:13:52】：我可能有满长的一段时间,每天早上起来做一个冥想。
+【2023-09-17 06:13:56】：冥想完了以后,很安静,对吧?
+【2023-09-17 06:13:58】：心情很舒缓,我就听一本书,然后因为我起得很早,每天早上是如此。
+【2023-09-17 06:14:02】：所以这一天,别人还可能在睡觉的时候,我已经把这两项这个,我们叫这个重要不紧迫的事,已经完成了。
+【2023-09-17 06:14:10】：那么听这个书的过程当中,对我最大的启发就是,它会很大程度的打开我的认知边界。
+【2023-09-17 06:14:17】：即便是我自己的专业书,当我听你讲了以后,我觉得每个人会有盲区。
+【2023-09-17 06:14:23】：当我读了这么多遍的书,我在从你的角度听一遍的时候,我会有特别不一样的收获。
+【2023-09-17 06:14:30】：所以樊登读书其实也是一个很好的持续小赢。
+【2023-09-17 06:14:33】：对对对。
+【2023-09-17 06:14:34】：每天能够听一本书,给自己带来一些改变。
+【2023-09-17 06:14:36】：是的,是的,是的。
+【2023-09-17 06:14:37】：这点改变就是说,细水长流。
+【2023-09-17 06:14:39】：因为我们有的时候去追求生命的高光时刻,但其实这种生活当中的水流过的痕迹,
+【2023-09-17 06:14:48】：其实它不比生命当中的高光时刻不重要,应该这么说。
+【2023-09-17 06:14:52】：您知道我最近在读《古文观止》,《古文观止》，222篇,其实挺多的。
+【2023-09-17 06:14:58】：你要一口气读完的话,压力很大,一开篇就《左转》的那些东西。
+【2023-09-17 06:15:02】：所以我给自己定的方法,包括我带着嘟嘟一块读。
+【2023-09-17 06:15:05】：我们俩说，一天读一篇。
+【2023-09-17 06:15:07】：一天读一篇,今天时间多,读一篇长的。
+【2023-09-17 06:15:11】：今天时间短,读一篇短的。
+【2023-09-17 06:15:13】：昨天晚上我回家九点多,他快睡觉了。
+【2023-09-17 06:15:16】：他说我要睡觉了,我说你读了吗?
+【2023-09-17 06:15:18】：他说,哎呀,今天算了,明天读两篇吧。
+【2023-09-17 06:15:20】：我说,咱们还是每天读一篇比较好。
+【2023-09-17 06:15:22】：每天读一篇啊。
+【2023-09-17 06:15:23】：他说,怎么读?我说,我给你找篇最短的。
+【2023-09-17 06:15:25】：他说,你找，我先刷牙。
+【2023-09-17 06:15:26】：哈哈哈哈。
+【2023-09-17 06:15:27】：我就一偏偏找。
+【2023-09-17 06:15:28】：对对对。
+【2023-09-17 06:15:29】：我真的帮他找了一篇汉武帝写的,这么短。
+【2023-09-17 06:15:31】：他特高兴,一分钟读完了。
+【2023-09-17 06:15:33】：但是这就持续小赢。
+【2023-09-17 06:15:35】：持续小赢。
+【2023-09-17 06:15:36】：他知道我每天都能够坚持读上一篇。
+【2023-09-17 06:15:38】：对对对。
+【2023-09-17 06:15:39】：222天后,我们就是另外一个新人。
+【2023-09-17 06:15:41】：对对对。
+【2023-09-17 06:15:42】：所以持续小赢这个方法能够给我们带来很强的回馈。
+【2023-09-17 06:15:47】：很强的回馈,而且时刻让我们保持一种行动兴奋。
+【2023-09-17 06:15:50】：你没事的时候读两篇,但是不能到明天,就是持续小赢。
+【2023-09-17 06:15:54】：所以你看各位家长整天跟那个游戏作战,
+【2023-09-17 06:15:58】：我们应该向游戏学习。
+【2023-09-17 06:16:00】：游戏所提供的东西,绝对不是说,你必须打三个小时才能够获得一次胜利。
+【2023-09-17 06:16:06】：对。
+【2023-09-17 06:16:07】：而是每隔几十秒就给你一个奖励,奖励特别多。
+【2023-09-17 06:16:10】：对。
+【2023-09-17 06:16:11】：所以小萌教授研究的是行为心理学,这就是行为心理学。
+【2023-09-17 06:16:16】：就是我们得懂得人的大脑需要经常性的分泌,多巴胺，内啡肽,
+【2023-09-17 06:16:21】：他才能够开心的坚持下去。
+【2023-09-17 06:16:23】：对,游戏其实是一件特别,我现在看游戏其实是一件特别好的事情。
+【2023-09-17 06:16:29】：就是能够找到正确的方法,他就是像樊登老师讲的这个持续小赢,
+【2023-09-17 06:16:33】：而且他在胜利这个宝物的时候,我每一次打开这个宝物,
+【2023-09-17 06:16:38】：他不是每一次都是给到你想要那个东西,对吧,
+【2023-09-17 06:16:41】：他会刺激你这种不断的要去追寻下一个目标,然后你的兴奋度要保持,
+【2023-09-17 06:16:46】：其实都是持续小赢的这么一个结果。
+【2023-09-17 06:16:49】：大家听我们讲的一些成瘾性,就是关于成瘾性的书,你就知道,逻辑都是一样的,
+【2023-09-17 06:16:54】：他就是给你不确定的回馈。
+【2023-09-17 06:16:57】：而如果我们能够把这个东西用在我们进步这件事上,他的效果是一样大的。
+【2023-09-17 06:17:03】：就是你不知道今天自己开了一个什么盲盒,得到了一个什么样的进步,
+【2023-09-17 06:17:07】：所以每天经常性的给自己一些正向的体验是很重要。
+【2023-09-17 06:17:12】：这个这点特别重要,因为大家特别熟悉一个词叫边际效应递减,对吧,我们都很熟悉。
+【2023-09-17 06:17:17】：我现在这个已经吃饱了,你再给我一个包子我不感兴趣了,边际效应递减。
+【2023-09-17 06:17:22】：但是还有一个更重要的词叫边际效应聚合,比如咱们一年365天为界限。
+【2023-09-17 06:17:28】：我每天如果改变百分之一的话,到年底365天之后,它是37倍的效应。
+【2023-09-17 06:17:33】：它是非常可观的,这就是持续小赢嘛,每天发生一点改变,
+【2023-09-17 06:17:37】：然后就像刚才樊登老师讲的要强调正向,这个太重要了。
+【2023-09-17 06:17:41】：就是一天如果要是我们总是一点点,每天负向一点点,那完了,到年底三十七倍的负向,一样的道理。
+【2023-09-17 06:17:47】：很多不会改变的人去在哪儿,我经常受到很多人的反馈,就是我读了书总是记不住。
+【2023-09-17 06:17:54】：还有一种说读书的时候明白用起来就忘了,这两句话没有任何用,这两句话肯定是对的,
+【2023-09-17 06:18:01】：但是没有任何用,它只会给你泄气,就是让你不断的觉得学习没有用,
+【2023-09-17 06:18:07】：因为它老想突然之间自己就变好了,不可能。
+【2023-09-17 06:18:12】：首先我觉得是它要是抱着一种读书有没有用的这种态度,出发点就不对。
+【2023-09-17 06:18:19】：其实有的时候比如说我们读书你不要带那么多的功利性,我不要想这本书读完了我就能怎么样了。
+【2023-09-17 06:18:25】：但是还是持续小赢嘛,你日积月累以后总有一个点,一下子就厚积薄发了,
+【2023-09-17 06:18:32】：或者你感受到了一个不一样的什么什么世界也好,其实还是同样的道理。
+【2023-09-17 06:18:38】：所以先把持续小赢搞明白,这是一个推动我们去转动这个飞轮的力量,
+【2023-09-17 06:18:43】：然后这飞轮的第一个叫做觉察,为什么觉察对于韧性很重要?
+【2023-09-17 06:18:51】：因为觉察对于打造心理韧性它是一个地基性的东西,你把地基盖牢了以后,
+【2023-09-17 06:18:57】：到后面意义，然后连接,它这个楼才能盖得会比较高比较稳,
+【2023-09-17 06:19:01】：所以就是觉察代表的是你是不是能够正确的认知到自己,
+【2023-09-17 06:19:06】：就是很多人都会觉得我应该是最了解自己那个人,但其实并不是,
+【2023-09-17 06:19:10】：每个人都会有非常强的这种盲区,
+【2023-09-17 06:19:13】：包括我们很熟悉的,像樊老师讲书也经常提到达克效应,对吧,
+【2023-09-17 06:19:17】：就每个人都会自我感觉良好,我举个最有意思的例子,
+【2023-09-17 06:19:21】：这个这个研究的结果是说,94%的教授都会认为他们的研究水平高于平均水平
+【2023-09-17 06:19:27】：70%的司机都觉得自己驾车的技术在前25%,对对对,是的是的,
+【2023-09-17 06:19:32】：所以每个人都会有这种达克效应,那么因为我们经常会犯这种错误,
+【2023-09-17 06:19:38】：这很正常,因为人都会时时的希望高估一下自己,
+【2023-09-17 06:19:42】：我们找一些对我们比较有利的条件来评判嘛,
+【2023-09-17 06:19:45】：所以当我们经常会陷入到这个达克效应,然后又不自知的时候,
+【2023-09-17 06:19:49】：那么你就不知道这种行为的改变到底是对是错,你可能会走得很远,
+【2023-09-17 06:19:54】：甚至根本不知道自己的问题在哪,对,不知道自己不知道,
+【2023-09-17 06:19:58】：你看我们在卖书的时候,大家就来咨询最多的是什么,
+【2023-09-17 06:20:02】：有没有加强自律的书,有没有时间管理的书,
+【2023-09-17 06:20:08】：有没有解决拖延症的书,为什么这些书特别好卖,
+【2023-09-17 06:20:14】：因为这些都是人们所能够想到的最表层的原因,
+【2023-09-17 06:20:17】：但实际上它真正的问题在哪,它很有可能根本不知道,
+【2023-09-17 06:20:21】：这就是您书里边讲的那个俄罗斯套娃,
+【2023-09-17 06:20:24】：每一个人是有一个俄罗斯套娃的,
+【2023-09-17 06:20:26】：那我们怎么才能够把那个套娃拨开拨开,最后看到内在的自己,
+【2023-09-17 06:20:31】：内在的那个自己,就是我们每个人都有个内核嘛,
+【2023-09-17 06:20:35】：这是你真正的,我们叫本我的,你的认知也好,行为也好,
+【2023-09-17 06:20:39】：然后每一层套娃外面的这个套，代表的是我们在平常的工作生活当中,
+【2023-09-17 06:20:45】：你有不同的角色对吧,我是一个太太,我是太太的角色,
+【2023-09-17 06:20:49】：我是一个教授是教授的角色,然后,那樊登老师他是有这个很大的影响力,
+【2023-09-17 06:20:55】：你会有社会上的角色,所以时间长了以后,
+【2023-09-17 06:20:58】：如果我们不去把这个套娃打开的话,就会潜意识里面形成一种理念,
+【2023-09-17 06:21:03】：某一个情境当中的我,就是真实的自己,
+【2023-09-17 06:21:07】：但实际上不是,人他都会在情境当中改变行为,行为是性格的外显,
+【2023-09-17 06:21:12】：但他跟性格还不太一样,我们会通过对于这个外界环境的判断,
+【2023-09-17 06:21:18】：然后来找到一些适应这个外界环境的行为改变,
+【2023-09-17 06:21:22】：以去达到我们希望达到的目的,那如果你要长期不去分解的话,那就混淆了,
+【2023-09-17 06:21:27】：混淆了以后，你就搞不清到底什么是真实的我,到底什么不是真实的我,
+【2023-09-17 06:21:32】：就像我们在企业当中经常我跟企业家聊天的时候,他们可能会说,
+【2023-09-17 06:21:36】：比如我判断你是什么什么样的人,然后我就会用这种方法,
+【2023-09-17 06:21:41】：根据我自己的判断用这种方法来激励你,
+【2023-09-17 06:21:44】：但它实际上的本核在中间,你这种方法根本激励不到我,
+【2023-09-17 06:21:48】：所以这就需要说不管是企业家也好,还是我们每一个人也好,就时不长的得进行自我认知嘛,
+【2023-09-17 06:21:54】：那自我认知怎么补漏,就是既然自己的认知会有这种盲区,
+【2023-09-17 06:21:58】：那你得通过工具的方法,客观的比如说我们在书里面给大家有这种测评,
+【2023-09-17 06:22:04】：你现在的心理状态到底是什么样子的,你可以自己去测一测,
+【2023-09-17 06:22:07】：然后你的行为模式,还有包括你的底层的解释风格到底什么样,
+【2023-09-17 06:22:12】：我们可以一定程度的在借助客观的工具。
+【2023-09-17 06:22:15】：你像对我来讲,读书是一种很好的提供觉知的方法,
+【2023-09-17 06:22:19】：因为你自己想不到,所以你只有读了这些很高的人写的这些书,
+【2023-09-17 06:22:24】：你才能够意识到原来你的内心当中还有这个问题,
+【2023-09-17 06:22:27】：然后还有一种呢,就比如说批判性思维,
+【2023-09-17 06:22:31】：我们讲过很多批判性思维,批判性思维的最主要的最难以克服的对象是自己,
+【2023-09-17 06:22:38】：我们需要对自己的想法和意识做批判性思维,
+【2023-09-17 06:22:41】：还包括与他人之间的交流,倾听这个可能都是觉知,都是觉察的部分,
+【2023-09-17 06:22:47】：那你每天早上您请做冥想的时候,是不是也在做这件事?
+【2023-09-17 06:22:51】：对,他就是觉察,应该说目前整个领域当中最推荐的一种方法,
+【2023-09-17 06:22:58】：就是你怎么样让自己的心静下来,
+【2023-09-17 06:23:01】：因为整个冥想,我是已经做了十几年的时间的冥想了,
+【2023-09-17 06:23:05】：对,我做了十几年,而且我是给自己立了一个永不为零的承诺,
+【2023-09-17 06:23:09】：就是我每天都做,一天都不会断,
+【2023-09-17 06:23:11】：就是你只要当你有想法的时候,我能找出无数个理由,
+【2023-09-17 06:23:15】：今天这15分钟我就不做了,对吧,我可以找很多理由,
+【2023-09-17 06:23:18】：但是当我给自己立下了永不为零的承诺的时候,你就不用想了,
+【2023-09-17 06:23:22】：我今天只需要想我在什么时候必须把这事完成,你反而会很轻松,
+【2023-09-17 06:23:26】：当你十几年下来以后,对于我最大的一个帮助,就是他能够告诉我你自己的状态,
+【2023-09-17 06:23:34】：当我有情绪的时候,我能够快速地把我自己从这个情绪当中拆理出来,拆解出来,
+【2023-09-17 06:23:40】：<strong>绝大多数人他是把事实跟想象分不开的</strong>,事实在这儿,
+【2023-09-17 06:23:45】：然后我所有的情绪来自于我的想法,<strong>认知融合</strong>,
+【2023-09-17 06:23:49】：所以情绪它并不是来源于事件本身,
+【2023-09-17 06:23:53】：好多人包括我在上课的时候,好多人也会觉得说,我今天特别焦虑,
+【2023-09-17 06:23:58】：我今天特别愤怒,由这种情绪所引发的我行为上的改变,
+【2023-09-17 06:24:02】：是因为我遇到了一个什么什么人,是因为一个什么什么事,
+【2023-09-17 06:24:06】：但其实不是,就是这个事件它是间接的,
+【2023-09-17 06:24:09】：就像樊登老师经常会讲这个ABC模型,对不对,
+【2023-09-17 06:24:12】：它是这个B,就是我们对于这些不利事件的解释和看法,
+【2023-09-17 06:24:16】：所以情绪源于想法。
+【2023-09-17 06:24:18】：古人有一个非常生动的例子,
+【2023-09-17 06:24:21】：就说你开着船,然后这边有一艘船撞了你一下,一般人就很生气,
+【2023-09-17 06:24:26】：结果当你非常愤怒的扭头一看,发现那船上没人,是一个空船,
+【2023-09-17 06:24:31】：你就会笑一下,空船吹过来,对吧,
+【2023-09-17 06:24:34】：实际上撞的那个动作没有任何区别,
+【2023-09-17 06:24:37】：你被空船撞和被别人驾船撞没有任何区别,
+【2023-09-17 06:24:40】：但是你的心情完全不一样,就是你的解读,
+【2023-09-17 06:24:44】：那大家肯定非常想知道,怎么才能够做一个比较像样的冥想,
+【2023-09-17 06:24:51】：就是我最先开始做冥想的时候,
+【2023-09-17 06:24:53】：实际上是跟我心理医生,我在美国读书的时候,读博士的时候,
+【2023-09-17 06:24:58】：为什么那么胖?
+【2023-09-17 06:24:59】：因为焦虑引起的,抑郁,失控,特别重要,
+【2023-09-17 06:25:03】：因为控制感对于人类是一种根深蒂固的情怀,
+【2023-09-17 06:25:06】：当你长期失控了以后,你觉得我不能够,
+【2023-09-17 06:25:10】：有一段时间就觉得你没有办法扭转这个局面,
+【2023-09-17 06:25:13】：写博士论文写不出来,
+【2023-09-17 06:25:15】：对,各种各样的意想不到,然后写博士论文怎么这么苦,
+【2023-09-17 06:25:19】：然后怎么试,我为什么要到美国读博士,当然会有很多的为什么,
+【2023-09-17 06:25:24】：所以就抑郁了以后,我就采取了一种方法去解压,叫暴饮暴食,
+【2023-09-17 06:25:29】：对,所以吃的这个好处是什么呢?
+【2023-09-17 06:25:33】：暴饮暴食是即时满足,你吃完了以后我能专心的做研究,
+【2023-09-17 06:25:38】：但是它的代价就是这个,一览众衫小,
+【2023-09-17 06:25:42】：众衫是衣服的众衫小,
+【2023-09-17 06:25:44】：一览众衫小,所有的衣服都穿不进去了,
+【2023-09-17 06:25:48】：所以非常的焦虑,然后我在跟我的心理医生斗志斗勇的过程当中,
+【2023-09-17 06:25:56】：他就跟我说你,因为我跟他斗志斗勇，不服嘛,
+【2023-09-17 06:26:00】：所以他说你回去别来了,但是我要跟你打赌,
+【2023-09-17 06:26:03】：跟我打了两个赌,一个就是说你要回去做这个呼吸训练,
+【2023-09-17 06:26:08】：但是那15年前的事情,我当时认为冥想是伪科学,
+【2023-09-17 06:26:12】：我不相信这东西,我一坐那儿就困
+【2023-09-17 06:26:15】：所以我就开始,因为跟他打赌了,所以就开始做,
+【2023-09-17 06:26:17】：刚开始我做冥想的时候,一往那儿坐,就睡着,特别奇怪,
+【2023-09-17 06:26:22】：这是第一个阶段,就睡着了,
+【2023-09-17 06:26:24】：专业术语叫昏沉,
+【2023-09-17 06:26:27】：对,就昏沉,然后昏沉到了第二个阶段,乱箭穿心,
+【2023-09-17 06:26:32】：就我觉得平常我没有那么多想法,
+【2023-09-17 06:26:35】：为什么往那儿一做,摆好姿势了,就开始各式各样的想法,
+【2023-09-17 06:26:39】：就哇哇,跟箭一样过来了,就是心不静,
+【2023-09-17 06:26:42】：而且你没有办法把自己从这种想法当中摘出来,
+【2023-09-17 06:26:46】：那后来到了真正就是尝试到了,或者感受到了冥想的这个美妙之处,
+【2023-09-17 06:26:53】：就是经过了蛮长时间的一段时间训练以后,
+【2023-09-17 06:26:56】：就能够做到说,我知道这个，我们叫念头,
+【2023-09-17 06:27:00】：就人会有很多想法叫念头,我能够看到这个念头起来了,
+【2023-09-17 06:27:04】：然后呢,我也能够看到这个念头落下去,
+【2023-09-17 06:27:06】：刚开始也会很纠结,我说为什么睡着,我为什么有这么多想法,
+【2023-09-17 06:27:10】：然后为什么我,因为我当时是读了大量的书,冥想的书,
+【2023-09-17 06:27:13】：我觉得他伪科学嘛,我也是做研究的,
+【2023-09-17 06:27:16】：我受到的所有的训练都要证伪,对吧,你这东西是不是真的,
+【2023-09-17 06:27:20】：你得首先让我相信,然后我读了大量的书,
+【2023-09-17 06:27:22】：已经有无数的确凿的证据告诉我说,这事靠谱,
+【2023-09-17 06:27:27】：正念是有用的,正念很有用,
+【2023-09-17 06:27:29】：所以当我也有了这么多的证据摆在我面前的时候,
+【2023-09-17 06:27:32】：那我就告诉自己说,我愿意去尝试,
+【2023-09-17 06:27:35】：但是他多久能够发挥作用呢,
+【2023-09-17 06:27:38】：我不知道,但我不给自己设立一个界限,
+【2023-09-17 06:27:42】：我当时其实做冥想,我跟自己讲了,不要着急,
+【2023-09-17 06:27:46】：他有没有效果,什么时间出效果都不重要,
+【2023-09-17 06:27:51】：但是我会一直做下去,因为我给自己立下了永不为零的承诺,
+【2023-09-17 06:27:55】：就是我后来告诉自己说,我要保持这种信念,
+【2023-09-17 06:27:58】：他什么时候能够给到我那种,也不能说顿悟,
+【2023-09-17 06:28:02】：但是那种非常不一样的感觉,
+【2023-09-17 06:28:04】：什么时候来,我不去刻意的追求他,
+【2023-09-17 06:28:07】：但是每一次的递进小赢,
+【2023-09-17 06:28:10】：每一次的这种冥想带给我的感受都是不一样的,
+【2023-09-17 06:28:13】：比如说我给樊老师举个例子,
+【2023-09-17 06:28:15】：我曾经是能够相对比较安静的时候,
+【2023-09-17 06:28:18】：那我就能够,我一般冥想的时候,
+【2023-09-17 06:28:20】：在早上很安静对吧,然后会点上一个香薰,
+【2023-09-17 06:28:23】：我能够感受到这个香薰的热度,
+【2023-09-17 06:28:26】：他的味道，等等,这就是当下,
+【2023-09-17 06:28:28】：他一直觉察，让你觉察,就是现实此刻,
+【2023-09-17 06:28:32】：我特别喜欢这四个字,让你不停的觉察现实此刻,
+【2023-09-17 06:28:36】：然后你经过长期训练以后,
+【2023-09-17 06:28:38】：你可能没有从冥想的这一块得到那种所谓的顿悟,
+【2023-09-17 06:28:42】：但是他会让我感觉到不一样的现实此刻,
+【2023-09-17 06:28:46】：他训练的是你现实此刻的感受力,
+【2023-09-17 06:28:49】：所以当我做了,但是我做了十年以后,
+【2023-09-17 06:28:52】：突然间就是刚开始这样的,
+【2023-09-17 06:28:54】：就是非常缓的一个线,突然间某一天,
+【2023-09-17 06:28:58】：火箭式的这种上升,
+【2023-09-17 06:29:00】：就是这种觉悟,还是不能叫顿悟,
+【2023-09-17 06:29:03】：但是我会发现,当那一刻来临的时候,
+【2023-09-17 06:29:06】：就是让我能够非常快速的从情绪当中出来,
+【2023-09-17 06:29:10】：我每天早上洗脸的时候,
+【2023-09-17 06:29:13】：在我那个洗漱台的旁边挂着一幅字,
+【2023-09-17 06:29:16】：此刻,
+【2023-09-17 06:29:17】：此刻,
+【2023-09-17 06:29:18】：我也特别喜欢,
+【2023-09-17 06:29:20】：就是这是我们在很多本书里面推荐过的,
+【2023-09-17 06:29:23】：要能够和此时此刻连接,
+【2023-09-17 06:29:26】：包括你去看一个树的纹路,
+【2023-09-17 06:29:28】：你去看那个树叶落下来的缓慢的过程,
+【2023-09-17 06:29:31】：这都是在训练我们的神经回路,
+【2023-09-17 06:29:34】：就是让我们的神经回路变得更加的平静,
+【2023-09-17 06:29:37】：更加的喜悦,
+【2023-09-17 06:29:39】：随时随地能够感受到快乐,
+【2023-09-17 06:29:41】：能够感受到快乐,
+【2023-09-17 06:29:42】：是一个人非常重要的能力,
+【2023-09-17 06:29:44】：是的,是的,
+【2023-09-17 06:29:46】：这种觉察,
+【2023-09-17 06:29:47】：就是我喜欢一个词叫什么呢,叫丰富感受度,
+【2023-09-17 06:29:50】：它跟敏感是不一样的,
+【2023-09-17 06:29:52】：因为敏感是着重于这个负面的东西,
+【2023-09-17 06:29:54】：越是负面东西,敏感的人,他越去纠结,
+【2023-09-17 06:29:57】：然后丰富感受度的这种训练,
+【2023-09-17 06:30:00】：就是通过冥想让你丰富感受度,
+【2023-09-17 06:30:02】：你就老能看到特别美好的一面,
+【2023-09-17 06:30:05】：叫做念念分明,
+【2023-09-17 06:30:07】：这个跟一般人是不一样的,
+【2023-09-17 06:30:09】：我们很多人看这个世界的时候,
+【2023-09-17 06:30:11】：忽就过去了,
+【2023-09-17 06:30:12】：其实什么都没看见,
+【2023-09-17 06:30:13】：它完全是凭惯性给这个世界拍了一个照,
+【2023-09-17 06:30:17】：但实际上你要仔细看,
+【2023-09-17 06:30:19】：它跟你的想象是不一样的,
+【2023-09-17 06:30:21】：所以您听这本书,
+【2023-09-17 06:30:22】：如果能够养成一个习惯,
+【2023-09-17 06:30:24】：每天早上稍微早起个15分钟,
+【2023-09-17 06:30:27】：坐一坐,
+【2023-09-17 06:30:28】：其实并不难,
+【2023-09-17 06:30:29】：不难不难,
+【2023-09-17 06:30:30】：就15分钟坐在那,
+【2023-09-17 06:30:31】：而且您的要求都不高了,
+【2023-09-17 06:30:33】：我听很多人都说要坐一个小时,
+【2023-09-17 06:30:35】：不用不用,真的不用,
+【2023-09-17 06:30:36】：就15分钟就够了,
+【2023-09-17 06:30:37】：要小赢,
+【2023-09-17 06:30:38】：因为你比如说我从来不做冥想,
+【2023-09-17 06:30:40】：你突然告诉我说,
+【2023-09-17 06:30:41】：从明天开始,
+【2023-09-17 06:30:42】：你每早做一个小时,
+【2023-09-17 06:30:44】：这搁谁也做不到,
+【2023-09-17 06:30:45】：除非他遇到了生活当中的,
+【2023-09-17 06:30:47】：特别想不开的这个点,
+【2023-09-17 06:30:49】：他能够进行这么大的一个180度转弯,
+【2023-09-17 06:30:52】：你否则的话,
+【2023-09-17 06:30:53】：我就说你尝试一下,
+【2023-09-17 06:30:54】：明天早上两分钟行不行,
+【2023-09-17 06:30:56】：然后两分钟之后变成五分钟,
+【2023-09-17 06:30:58】：比如说我从刚开始的一周两分钟,
+【2023-09-17 06:31:00】：变成一周五分钟,
+【2023-09-17 06:31:01】：再变成每天五分钟,
+【2023-09-17 06:31:03】：这就是慢慢滚起来的话,
+【2023-09-17 06:31:05】：你就觉得很容易,
+【2023-09-17 06:31:06】：如果大家对于冥想感兴趣,
+【2023-09-17 06:31:08】：这里面会有一些书,
+【2023-09-17 06:31:10】：也是在樊老师这边也推荐过一些书,
+【2023-09-17 06:31:12】：我这边也有几本比较,
+【2023-09-17 06:31:15】：相对来说比较容易入手的书,
+【2023-09-17 06:31:17】：然后我有一个,
+【2023-09-17 06:31:19】：在这个第五章的后面,
+【2023-09-17 06:31:21】：我有一个这个音频,
+【2023-09-17 06:31:22】：这个音频是我自己录的,
+【2023-09-17 06:31:24】：是一段二十二分钟的冥想引导音,
+【2023-09-17 06:31:26】：就是当你不知道冥想是什么的时候,
+【2023-09-17 06:31:28】：也不用有负担,
+【2023-09-17 06:31:29】：这二十二分钟是一个完整的引导,
+【2023-09-17 06:31:31】：就是你听完这二十分钟之后,
+【2023-09-17 06:31:33】：你就说冥想其实原来是干这个的,
+【2023-09-17 06:31:35】：就不用有任何的负担,
+【2023-09-17 06:31:36】：然后还有一个就是讲到觉察,
+【2023-09-17 06:31:38】：其实焦虑特别的,
+【2023-09-17 06:31:40】：就是每个人都会焦虑嘛,
+【2023-09-17 06:31:42】：所以这个里面我觉得,
+【2023-09-17 06:31:43】：蛮重要的一个工具叫焦虑拆弹,
+【2023-09-17 06:31:46】：就是怎么样通过这种,
+【2023-09-17 06:31:48】：就是正确认知,
+【2023-09-17 06:31:49】：控制感这件事情,
+【2023-09-17 06:31:50】：然后快速的把焦虑拆弹给拆开,
+【2023-09-17 06:31:53】：然后最后有一个落在一个重点,
+【2023-09-17 06:31:55】：就是我们要发现美好,
+【2023-09-17 06:31:57】：就是很多时候我们过度的去分析问题,
+【2023-09-17 06:31:59】：过度分析问题以后,
+【2023-09-17 06:32:00】：你就陷入到那个反刍的境界,
+【2023-09-17 06:32:02】：那咱拆一个弹,
+【2023-09-17 06:32:04】：这个广大的书友,
+【2023-09-17 06:32:07】：都有一个巨大的焦虑的弹,
+【2023-09-17 06:32:10】：孩子不爱学习怎么办,
+【2023-09-17 06:32:12】：孩子不爱学习,
+【2023-09-17 06:32:14】：爱玩游戏,昼夜颠倒,
+【2023-09-17 06:32:16】：现在很常见,
+【2023-09-17 06:32:18】：如果一个妈妈遇到这样的情况,
+【2023-09-17 06:32:20】：你现在教教她怎么拆这弹,
+【2023-09-17 06:32:22】：我举个我自己孩子的例子,
+【2023-09-17 06:32:24】：我女儿比如说,
+【2023-09-17 06:32:26】：她现在就是高中的最后阶段,
+【2023-09-17 06:32:29】：考试压力特别大,
+【2023-09-17 06:32:31】：然后压力特别大的时候,
+【2023-09-17 06:32:33】：我看她需要复习的这个资料,
+【2023-09-17 06:32:35】：就一摞一摞的,
+【2023-09-17 06:32:36】：然后她就坐在那儿说妈妈怎么办,
+【2023-09-17 06:32:38】：她光跟我说怎么办,
+【2023-09-17 06:32:39】：说了无数次，怎么办怎么办怎么办,
+【2023-09-17 06:32:41】：我这个还有两个星期的时间,
+【2023-09-17 06:32:43】：我还有这么多的东西,
+【2023-09-17 06:32:44】：我肯定考不好,
+【2023-09-17 06:32:46】：我这次一定怎么怎么的了,
+【2023-09-17 06:32:47】：一定是达不到我的这个预想,
+【2023-09-17 06:32:49】：然后我就开始坐下来给她拆弹,
+【2023-09-17 06:32:51】：首先拆弹就是你得告诉我,
+【2023-09-17 06:32:53】：你现在焦虑的是什么,
+【2023-09-17 06:32:55】：你把你所有的想法,
+【2023-09-17 06:32:57】：你的感受都先给我拆掉,
+【2023-09-17 06:32:59】：首先写客观事实,
+【2023-09-17 06:33:02】：我有两周的时间,
+【2023-09-17 06:33:04】：我有这么多的资料,
+【2023-09-17 06:33:05】：这是事实,
+【2023-09-17 06:33:06】：至于是说我会不会考不好,
+【2023-09-17 06:33:08】：我该怎么办,
+【2023-09-17 06:33:09】：我考试的时候都记不住,
+【2023-09-17 06:33:10】：这都是你的臆想,
+【2023-09-17 06:33:11】：那不是事实,
+【2023-09-17 06:33:12】：那不是事实,
+【2023-09-17 06:33:13】：先把这个事实放在这,
+【2023-09-17 06:33:14】：然后这个焦虑拆弹表以后,
+【2023-09-17 06:33:16】：会有几个问题引导你,
+【2023-09-17 06:33:17】：然后引导完了之后,
+【2023-09-17 06:33:19】：会有特别重要的一个,
+【2023-09-17 06:33:20】：我们叫反思弹窗,
+【2023-09-17 06:33:21】：反思弹窗里面要把掌控感,
+【2023-09-17 06:33:23】：给分成两半,
+【2023-09-17 06:33:25】：这个就是我们所有的人,
+【2023-09-17 06:33:27】：特别容易犯的一个,
+【2023-09-17 06:33:28】：认知疗法上面的错误,
+【2023-09-17 06:33:30】：就是我们所有人不是追求掌控感吗,
+【2023-09-17 06:33:32】：但是我们会试图,
+【2023-09-17 06:33:34】：全面掌控我们掌控不了的部分,
+【2023-09-17 06:33:37】：然后对于那些能够改变,
+【2023-09-17 06:33:39】：能够掌控的部分不作为,
+【2023-09-17 06:33:41】：我们特别纠结,
+【2023-09-17 06:33:42】：然后就在这个不能掌控的部分,
+【2023-09-17 06:33:44】：哇,使劲绕,使劲绕,
+【2023-09-17 06:33:45】：然后能掌控的部分,
+【2023-09-17 06:33:46】：视而不见,
+【2023-09-17 06:33:47】：所以才会焦虑,
+【2023-09-17 06:33:48】：那人为什么要这样呢,很奇怪,
+【2023-09-17 06:33:50】：这是因为我们有消极偏见,
+【2023-09-17 06:33:52】：那消极偏见就导致我们,
+【2023-09-17 06:33:54】：非常的关注一些负面的东西,
+【2023-09-17 06:33:56】：尤其是那些我们掌控不了的东西,
+【2023-09-17 06:33:58】：就大家的这个,就是自然法则这个是,
+【2023-09-17 06:34:01】：所以呢就得刻意的训练,
+【2023-09-17 06:34:03】：训练让我们把注意力,
+【2023-09-17 06:34:05】：从这些不能掌控的部分跳出来,
+【2023-09-17 06:34:08】：比如说我女儿这件事情,
+【2023-09-17 06:34:10】：我就跟她讲,
+【2023-09-17 06:34:11】：我说哪些是你不能掌控的,
+【2023-09-17 06:34:13】：比如说你能不能考的,
+【2023-09-17 06:34:15】：就是最后是不是能达到你的理想的成绩,
+【2023-09-17 06:34:17】：这个东西你,你现在想它是没有用的,
+【2023-09-17 06:34:19】：她甚至跟我想说,
+【2023-09-17 06:34:20】：如果我这个成绩考不好,
+【2023-09-17 06:34:22】：我下一个成绩又怎么样,
+【2023-09-17 06:34:23】：然后考大学怎么样了,
+【2023-09-17 06:34:24】：然后一大连串的都是她的臆想,
+【2023-09-17 06:34:26】：所以我说你先把你不能控制的部分,
+【2023-09-17 06:34:28】：先写出来,它就写出来几条,
+【2023-09-17 06:34:30】：写完了以后我就问它,
+【2023-09-17 06:34:32】：我说你这几条有用吗,
+【2023-09-17 06:34:33】：你想到你这次考不好,
+【2023-09-17 06:34:35】：跟你未来考大学,
+【2023-09-17 06:34:36】：是不是一定考不好,
+【2023-09-17 06:34:37】：有关系吗,没有必然的联系,
+【2023-09-17 06:34:39】：这是你觉得,
+【2023-09-17 06:34:40】：然后同时呢,
+【2023-09-17 06:34:42】：在能够改变,能够掌控的部分,
+【2023-09-17 06:34:44】：我就说咱们这样子,
+【2023-09-17 06:34:45】：你有多少资料,
+【2023-09-17 06:34:46】：每一科,
+【2023-09-17 06:34:47】：我当时给她带着她做了一个计划,
+【2023-09-17 06:34:49】：我说我们有两周的时间,
+【2023-09-17 06:34:50】：这两周的时间除去上学的,
+【2023-09-17 06:34:52】：交通的时间,
+【2023-09-17 06:34:53】：然后你休息的时间,
+【2023-09-17 06:34:55】：我们大概有多少的时间,
+【2023-09-17 06:34:56】：是能够集中复习的,
+【2023-09-17 06:34:57】：我们把它分成几段,
+【2023-09-17 06:34:59】：然后呢,有这么多的资料,
+【2023-09-17 06:35:00】：你一次的往里放一放,
+【2023-09-17 06:35:02】：这就是持续一小赢
+【2023-09-17 06:35:03】：我说你不要想两周以后的事情,
+【2023-09-17 06:35:05】：你先告诉我两天之后,
+【2023-09-17 06:35:07】：你能达到什么,
+【2023-09-17 06:35:08】：这个是不是合理的,
+【2023-09-17 06:35:10】：能不能达到的,
+【2023-09-17 06:35:11】：然后分解,
+【2023-09-17 06:35:12】：分解完了以后,
+【2023-09-17 06:35:13】：你知道发生什么了吗?
+【2023-09-17 06:35:15】：就说，妈妈你走吧,
+【2023-09-17 06:35:17】：就开始自己复习了,
+【2023-09-17 06:35:19】：我要干活了,
+【2023-09-17 06:35:20】：没工夫给你这样扯这个,
+【2023-09-17 06:35:21】：我是不是焦虑了,
+【2023-09-17 06:35:22】：就拆解开了,
+【2023-09-17 06:35:23】：太棒了,
+【2023-09-17 06:35:24】：拆解开了,
+【2023-09-17 06:35:25】：这个方法真好,
+【2023-09-17 06:35:26】：关于孩子不爱学习这个蛋,
+【2023-09-17 06:35:27】：你们自己拆吧,
+【2023-09-17 06:35:28】：我已经想到了,
+【2023-09-17 06:35:30】：哪些事是事实,
+【2023-09-17 06:35:31】：哪些事是你的臆想,
+【2023-09-17 06:35:33】：然后事实的部分,
+【2023-09-17 06:35:35】：你能做那些,
+【2023-09-17 06:35:36】：哪些事你控制不了,
+【2023-09-17 06:35:37】：在你能做的事上做一个计划,
+【2023-09-17 06:35:39】：赶紧去做,
+【2023-09-17 06:35:40】：比如说,
+【2023-09-17 06:35:41】：陪孩子运动一下,
+【2023-09-17 06:35:43】：给孩子一个拥抱,
+【2023-09-17 06:35:45】：告诉孩子成绩不好,
+【2023-09-17 06:35:46】：家里也能养得起你,
+【2023-09-17 06:35:47】：别害怕,
+【2023-09-17 06:35:48】：对吧,
+【2023-09-17 06:35:49】：这是我们能做的事,
+【2023-09-17 06:35:50】：但是我们很多家长,
+【2023-09-17 06:35:52】：把这些能做的事不做,
+【2023-09-17 06:35:53】：我们天天在不断的操心说,
+【2023-09-17 06:35:55】：这样下去怎么办,
+【2023-09-17 06:35:57】：所以这个就焦虑拆弹
+【2023-09-17 06:35:59】：你把这个可控不可控的部分拆完了以后,
+【2023-09-17 06:36:01】：其实最后面一块,
+【2023-09-17 06:36:02】：特别重要的是,
+【2023-09-17 06:36:03】：你要发现亮点,
+【2023-09-17 06:36:04】：就是每一个,
+【2023-09-17 06:36:05】：我们要在每一个,
+【2023-09-17 06:36:07】：所谓比较悲惨,
+【2023-09-17 06:36:08】：悲观的世界里面,
+【2023-09-17 06:36:09】：找到幸福的种子,
+【2023-09-17 06:36:11】：发现亮点特别重要,
+【2023-09-17 06:36:13】：所以我有时候跟很多家长接触,
+【2023-09-17 06:36:15】：我就觉得,
+【2023-09-17 06:36:16】：家长的烦恼,
+【2023-09-17 06:36:17】：不是来自于孩子,
+【2023-09-17 06:36:19】：家长的烦恼,
+【2023-09-17 06:36:20】：完全是来自于自己,
+【2023-09-17 06:36:21】：缺乏元认知,
+【2023-09-17 06:36:22】：对自己的元认知,
+【2023-09-17 06:36:23】：认知不清,
+【2023-09-17 06:36:24】：不知道自己的问题在哪,
+【2023-09-17 06:36:26】：使劲使错的地方,
+【2023-09-17 06:36:28】：所以导致,
+【2023-09-17 06:36:29】：搞得家长和孩子都焦虑,
+【2023-09-17 06:36:31】：预期的设定的问题,
+【2023-09-17 06:36:33】：就是对自己的认知,
+【2023-09-17 06:36:34】：对孩子的认知,
+【2023-09-17 06:36:35】：其实都不够,
+【2023-09-17 06:36:36】：导致,
+【2023-09-17 06:36:37】：所以你看,
+【2023-09-17 06:36:38】：第一个飞轮就很重要,
+【2023-09-17 06:36:40】：觉察就很重要,
+【2023-09-17 06:36:42】：那接下来,
+【2023-09-17 06:36:43】：第二个飞轮,
+【2023-09-17 06:36:44】：叫做意义,
+【2023-09-17 06:36:45】：就是,
+【2023-09-17 06:36:46】：这是您读这个意义疗法,
+【2023-09-17 06:36:48】：还是存在主义心理学的,
+【2023-09-17 06:36:50】：对,存在主义心理学意义疗法,
+【2023-09-17 06:36:53】：我是非常的,
+【2023-09-17 06:36:55】：就认同这一支的,
+【2023-09-17 06:36:57】：对,
+【2023-09-17 06:36:58】：它对于,
+【2023-09-17 06:36:59】：就是我们每一个人,
+【2023-09-17 06:37:00】：都会有很多的苦难,
+【2023-09-17 06:37:02】：就像那个,
+【2023-09-17 06:37:03】：就是法国的这个思想家,
+【2023-09-17 06:37:05】：大家也经常在,
+【2023-09-17 06:37:06】：朋友圈微信里面,
+【2023-09-17 06:37:07】：转了一句话,
+【2023-09-17 06:37:08】：罗曼.罗兰讲的,
+【2023-09-17 06:37:09】：就是真正的英雄主义,
+【2023-09-17 06:37:11】：是在认清了生活的真相之后,
+【2023-09-17 06:37:13】：依旧热爱生活,
+【2023-09-17 06:37:14】：对,
+【2023-09-17 06:37:15】：就是我们要保持,
+【2023-09-17 06:37:16】：对于生活的这样一种热爱,
+【2023-09-17 06:37:18】：然后从而去发现意义,
+【2023-09-17 06:37:20】：那我在这本书里面,
+【2023-09-17 06:37:21】：比如说的这个,
+【2023-09-17 06:37:22】：原创了一个工具,
+【2023-09-17 06:37:24】：就是怎么样去打造自己的意义树,
+【2023-09-17 06:37:26】：就是我们每做的一件事情,
+【2023-09-17 06:37:28】：你要不仅能够光看到,
+【2023-09-17 06:37:30】：时间的效能,
+【2023-09-17 06:37:31】：产出效能,
+【2023-09-17 06:37:32】：比如我们在工作当中,
+【2023-09-17 06:37:33】：我开了这个会,
+【2023-09-17 06:37:34】：它就能带来一个什么样的结果,
+【2023-09-17 06:37:36】：这个很重要,
+【2023-09-17 06:37:37】：就每天我们要做很重要,
+【2023-09-17 06:37:39】：很紧迫的事,
+【2023-09-17 06:37:40】：我们也要花时间,
+【2023-09-17 06:37:41】：做很重要,不紧迫的事,
+【2023-09-17 06:37:43】：但是呢,
+【2023-09-17 06:37:44】：不重要不紧迫的事,
+【2023-09-17 06:37:45】：是不是就一定不做呢?
+【2023-09-17 06:37:46】：其实不是,
+【2023-09-17 06:37:47】：往往就是我们在,
+【2023-09-17 06:37:48】：不重要不紧迫的事情里面,
+【2023-09-17 06:37:50】：它能够帮助你产生很多,
+【2023-09-17 06:37:52】：美好的一些元素,
+【2023-09-17 06:37:54】：它可能恰恰就成为你的热爱,
+【2023-09-17 06:37:56】：比如说运动,
+【2023-09-17 06:37:57】：我刚才跟樊老师,
+【2023-09-17 06:37:58】：分享我的运动的这个经历,
+【2023-09-17 06:37:59】：就是典型的,
+【2023-09-17 06:38:00】：在寻找意义的一个过程,
+【2023-09-17 06:38:02】：对,
+【2023-09-17 06:38:03】：就是你得有一个,
+【2023-09-17 06:38:04】：这里边您用的词,
+【2023-09-17 06:38:05】：这叫做,
+【2023-09-17 06:38:06】：专注的热爱,
+【2023-09-17 06:38:07】：对,专注的热爱,
+【2023-09-17 06:38:08】：专注的热爱,
+【2023-09-17 06:38:09】：就是我们能够找到,
+【2023-09-17 06:38:10】：意义的部分吗?
+【2023-09-17 06:38:11】：专注的热爱,
+【2023-09-17 06:38:12】：指的就是说,
+【2023-09-17 06:38:13】：比如说我们要去,
+【2023-09-17 06:38:15】：激活积极体验,
+【2023-09-17 06:38:17】：就跟你发现美好是一样的,
+【2023-09-17 06:38:19】：我尝试各种各样的美好的事,
+【2023-09-17 06:38:21】：我看一片树叶也好,
+【2023-09-17 06:38:22】：或者我做一个,
+【2023-09-17 06:38:23】：像我特别喜欢猫,
+【2023-09-17 06:38:24】：我就经常会去撸猫,
+【2023-09-17 06:38:26】：撸猫会给我减压,
+【2023-09-17 06:38:27】：所有的这些积极的体验,
+【2023-09-17 06:38:29】：只要能给你带来,
+【2023-09-17 06:38:30】：积极的行为的,
+【2023-09-17 06:38:31】：你都可以去做,
+【2023-09-17 06:38:32】：但是这只是,
+【2023-09-17 06:38:33】：喜欢的部分,
+【2023-09-17 06:38:34】：从喜欢,
+【2023-09-17 06:38:35】：喜欢过度到热爱,
+【2023-09-17 06:38:37】：它里面有一个什么,
+【2023-09-17 06:38:38】：有一个刻意训练的过程,
+【2023-09-17 06:38:39】：也就是,
+【2023-09-17 06:38:40】：兴趣,
+【2023-09-17 06:38:41】：是可以被发现的,
+【2023-09-17 06:38:43】：但是热爱需要被发展,
+【2023-09-17 06:38:45】：要培养,
+【2023-09-17 06:38:46】：要培养,
+【2023-09-17 06:38:47】：要刻意的去发展,
+【2023-09-17 06:38:48】：因为你一定会经历过,
+【2023-09-17 06:38:49】：一个,
+【2023-09-17 06:38:50】：特别无聊的起,
+【2023-09-17 06:38:51】：所以说,
+【2023-09-17 06:38:52】：专注的热爱,
+【2023-09-17 06:38:53】：就是你得持续的,
+【2023-09-17 06:38:55】：在这个事情上,
+【2023-09-17 06:38:56】：做一定时间,
+【2023-09-17 06:38:57】：刻意练习,
+【2023-09-17 06:38:58】：它才能够从一个爱好,
+【2023-09-17 06:39:00】：变成你持久的热爱,
+【2023-09-17 06:39:02】：当你找到了,
+【2023-09-17 06:39:03】：这种持久热爱的时候,
+【2023-09-17 06:39:04】：就能够不断的,
+【2023-09-17 06:39:05】：像你自己的意义树里面,
+【2023-09-17 06:39:07】：注入能量,
+【2023-09-17 06:39:08】：当我想清楚,
+【2023-09-17 06:39:09】：比如说,
+【2023-09-17 06:39:10】：我的顶层目标,
+【2023-09-17 06:39:11】：是什么的时候,
+【2023-09-17 06:39:12】：这个特别重要,
+【2023-09-17 06:39:13】：当我想清楚,
+【2023-09-17 06:39:14】：我的顶层目标,
+【2023-09-17 06:39:15】：我做的每一件事情,
+【2023-09-17 06:39:16】：都是有连接的,
+【2023-09-17 06:39:17】：那你就不再经常问,
+【2023-09-17 06:39:18】：我为啥做这个呢?
+【2023-09-17 06:39:19】：我做它的目的是什么呢?
+【2023-09-17 06:39:20】：我做它的意义是什么?
+【2023-09-17 06:39:21】：它价值是什么?
+【2023-09-17 06:39:22】：你不再问为什么,
+【2023-09-17 06:39:23】：就很清晰,很通透,
+【2023-09-17 06:39:25】：您刚举这几个例子,
+【2023-09-17 06:39:26】：鲁猫啊,
+【2023-09-17 06:39:27】：大家认为说,
+【2023-09-17 06:39:28】：这个我也行,
+【2023-09-17 06:39:29】：我只要愿意好好玩,
+【2023-09-17 06:39:30】：我也能玩得很棒,
+【2023-09-17 06:39:32】：最难的是什么呢?
+【2023-09-17 06:39:33】：就是日付一日的工作,
+【2023-09-17 06:39:35】：很多人给我留言,
+【2023-09-17 06:39:37】：就是实在不想上班,
+【2023-09-17 06:39:39】：礼拜一就是世界末日,
+【2023-09-17 06:39:40】：这受不了,
+【2023-09-17 06:39:41】：这个如何从工作当中,
+【2023-09-17 06:39:43】：去发现意义呢?
+【2023-09-17 06:39:45】：对,这个是个特别好的问题,
+【2023-09-17 06:39:47】：就比如说,
+【2023-09-17 06:39:48】：我们原来讲求,
+【2023-09-17 06:39:50】：就是工作当中,
+【2023-09-17 06:39:51】：打造什么样的人才,
+【2023-09-17 06:39:52】：我们叫T型人才,
+【2023-09-17 06:39:54】：对吧,
+【2023-09-17 06:39:55】：就是这个,
+【2023-09-17 06:39:56】：横杠代表的是,
+【2023-09-17 06:39:57】：你广泛的知识面,
+【2023-09-17 06:39:58】：然后我们这个,
+【2023-09-17 06:39:59】：一杠代表我起码有
+【2023-09-17 06:40:00】：专业技能吧,
+【2023-09-17 06:40:01】：深度,
+【2023-09-17 06:40:02】：现在说替性人才不够了,
+【2023-09-17 06:40:04】：你起码得是一个Π行人才,
+【2023-09-17 06:40:06】：你有两条腿,
+【2023-09-17 06:40:07】：一条腿代表的是你的
+【2023-09-17 06:40:08】：专业技能,
+【2023-09-17 06:40:09】：工作上的专业技能,
+【2023-09-17 06:40:10】：一条腿就代表的是,
+【2023-09-17 06:40:11】：刚才我所讲的乐趣,
+【2023-09-17 06:40:13】：然后持久的这种热爱,
+【2023-09-17 06:40:15】：最佳的状态是,
+【2023-09-17 06:40:16】：你能够把两条腿拧一块,
+【2023-09-17 06:40:18】：我比如说举一个最经典的例子,
+【2023-09-17 06:40:20】：就是樊能老师你本身,
+【2023-09-17 06:40:21】：你比如说你原来在央视,
+【2023-09-17 06:40:23】：对吧,你做这个节目,
+【2023-09-17 06:40:25】：然后你跳出来,
+【2023-09-17 06:40:26】：现在在做读书,
+【2023-09-17 06:40:28】：可能刚开始的时候,
+【2023-09-17 06:40:29】：你比如说你从你辩论的,
+【2023-09-17 06:40:30】：这么多年的这种经历里面,
+【2023-09-17 06:40:32】：你就喜欢读书,
+【2023-09-17 06:40:33】：论语什么什么都喜欢读,
+【2023-09-17 06:40:35】：然后读了这么多书以后,
+【2023-09-17 06:40:37】：你发现说,
+【2023-09-17 06:40:38】：哎,我在做我喜欢并擅长的事,
+【2023-09-17 06:40:42】：这就两条腿拧起来了,
+【2023-09-17 06:40:43】：哇,那你就是,
+【2023-09-17 06:40:44】：非常快乐的一种状态,
+【2023-09-17 06:40:46】：我们现在有很多的,
+【2023-09-17 06:40:48】：就是我们年轻人也好,
+【2023-09-17 06:40:50】：或者是在职场中人也好,
+【2023-09-17 06:40:51】：他为什么特别纠结,
+【2023-09-17 06:40:52】：他就是,
+【2023-09-17 06:40:53】：这两条腿是完全分开的,
+【2023-09-17 06:40:55】：甚至压根就没有热爱这条腿,
+【2023-09-17 06:40:57】：就每天我做这个工作,
+【2023-09-17 06:40:59】：还是功利性态度,
+【2023-09-17 06:41:00】：我得养家糊口,
+【2023-09-17 06:41:01】：我得怎么怎么样,
+【2023-09-17 06:41:02】：所以我毫无兴趣,
+【2023-09-17 06:41:03】：那也听到很多人讲说,
+【2023-09-17 06:41:05】：那我不养家糊口,
+【2023-09-17 06:41:06】：怎么办呢,
+【2023-09-17 06:41:07】：对吧,我得活下来,
+【2023-09-17 06:41:08】：就是你养家糊口,
+【2023-09-17 06:41:09】：并不耽误你,
+【2023-09-17 06:41:11】：同时去发现你的热爱,
+【2023-09-17 06:41:13】：你如果一天到晚在那抱怨的话,
+【2023-09-17 06:41:15】：你永远养家糊口,
+【2023-09-17 06:41:16】：那你一边在,
+【2023-09-17 06:41:17】：比如年轻的阶段,
+【2023-09-17 06:41:18】：我的确需要挣钱,
+【2023-09-17 06:41:19】：我需要买房子,
+【2023-09-17 06:41:20】：那你就先做着这份工作,
+【2023-09-17 06:41:22】：慢慢的让自己正面的,
+【2023-09-17 06:41:25】：在工作当中发现,
+【2023-09-17 06:41:27】：也许从工作当中,
+【2023-09-17 06:41:28】：有一些我看不到的爱好,
+【2023-09-17 06:41:29】：或者是现在,
+【2023-09-17 06:41:30】：比如说我去年跟我的研究团队,
+【2023-09-17 06:41:32】：做了一年的Z时代的研究,
+【2023-09-17 06:41:35】：就是95后的这些人,
+【2023-09-17 06:41:36】：他们的职场价值观,
+【2023-09-17 06:41:38】：他们一个特别大的特点,
+【2023-09-17 06:41:40】：就是我要在工作当中,
+【2023-09-17 06:41:42】：注入我的热爱,
+【2023-09-17 06:41:43】：这个工作如果我不敢兴趣,
+【2023-09-17 06:41:45】：他没有我的热爱的元素,
+【2023-09-17 06:41:47】：那他可能就没有办法持久的做下去,
+【2023-09-17 06:41:49】：所以叫斜杠青年,
+【2023-09-17 06:41:51】：大家会有很多多元的这种元素,
+【2023-09-17 06:41:53】：所以未来,
+【2023-09-17 06:41:54】：未来越来越得需要,
+【2023-09-17 06:41:55】：注入这种热爱的元素进去。
+【2023-09-17 06:41:57】：您是一开始就特别喜欢在讲台上讲课,
+【2023-09-17 06:42:00】：还是后来慢慢的,
+【2023-09-17 06:42:01】：越来越爱讲课这件事?
+【2023-09-17 06:42:03】：这个问题特别经典,
+【2023-09-17 06:42:05】：首先,
+【2023-09-17 06:42:06】：这个就跟我去美国,
+【2023-09-17 06:42:08】：为什么抑郁有关系?
+【2023-09-17 06:42:10】：因为,就是我当年,
+【2023-09-17 06:42:12】：大学毕业,
+【2023-09-17 06:42:13】：然后工作,
+【2023-09-17 06:42:14】：工作了以后,
+【2023-09-17 06:42:15】：我全,
+【2023-09-17 06:42:16】：就是我的所有的同学,
+【2023-09-17 06:42:18】：对于我的认知是,
+【2023-09-17 06:42:19】：你做研究,
+【2023-09-17 06:42:21】：打一个大问号,
+【2023-09-17 06:42:23】：因为他们会觉得,
+【2023-09-17 06:42:24】：我是一个特别外向,
+【2023-09-17 06:42:25】：比如我上大学的时候,
+【2023-09-17 06:42:26】：主持节目,
+【2023-09-17 06:42:27】：或者是当学生会的主席,
+【2023-09-17 06:42:29】：等等,
+【2023-09-17 06:42:30】：我是一个就是外向型的人,
+【2023-09-17 06:42:31】：然后做研究得特别的静,
+【2023-09-17 06:42:33】：所以大家就会觉得,
+【2023-09-17 06:42:34】：你怎么能做研究?
+【2023-09-17 06:42:35】：我当时去到美国,
+【2023-09-17 06:42:36】：这个去留学的时候,
+【2023-09-17 06:42:38】：也没有搞清楚读博,
+【2023-09-17 06:42:40】：是干什么的,
+【2023-09-17 06:42:41】：所以顶层目标,
+【2023-09-17 06:42:42】：就长远目标是不清晰的,
+【2023-09-17 06:42:44】：当你只是为了去读书,
+【2023-09-17 06:42:46】：而读书的时候,
+【2023-09-17 06:42:47】：这个麻烦就很大,
+【2023-09-17 06:42:48】：所以我到了美国,
+【2023-09-17 06:42:49】：发现,
+【2023-09-17 06:42:50】：这个读博是做研究的,
+【2023-09-17 06:42:52】：而且以后你的职业,
+【2023-09-17 06:42:54】：就是做教授的,
+【2023-09-17 06:42:55】：这个事儿,
+【2023-09-17 06:42:56】：让我纠结了很长一段时间,
+【2023-09-17 06:42:58】：所以才会开始,
+【2023-09-17 06:42:59】：暴饮暴食
+【2023-09-17 06:43:00】：就是当你失去了,
+【2023-09-17 06:43:01】：价值感,
+【2023-09-17 06:43:02】：我不知道我在干什么,
+【2023-09-17 06:43:03】：会有很多问号的时候,
+【2023-09-17 06:43:05】：然后我就,
+【2023-09-17 06:43:06】：想不清楚,
+【2023-09-17 06:43:07】：然后慢慢找寻,
+【2023-09-17 06:43:08】：慢慢的找寻,
+【2023-09-17 06:43:09】：这个意义在哪儿,
+【2023-09-17 06:43:10】：其实,
+【2023-09-17 06:43:11】：到后来,
+【2023-09-17 06:43:12】：我通过我的研究,
+【2023-09-17 06:43:14】：我会觉得,
+【2023-09-17 06:43:15】：用你自己的知识,
+【2023-09-17 06:43:16】：研究方法,
+【2023-09-17 06:43:17】：工具,
+【2023-09-17 06:43:18】：去能影响到别人的时候,
+【2023-09-17 06:43:21】：是一件很美好的事儿,
+【2023-09-17 06:43:23】：这个是利他,
+【2023-09-17 06:43:24】：就是第三个连接,
+【2023-09-17 06:43:25】：特别重要的一个轮儿,
+【2023-09-17 06:43:26】：我的一个心得,
+【2023-09-17 06:43:27】：就是你要看到,
+【2023-09-17 06:43:28】：你所做的这个工作,
+【2023-09-17 06:43:29】：背后的人,
+【2023-09-17 06:43:31】：这一点很重要,
+【2023-09-17 06:43:32】：如果你只看到自己,
+【2023-09-17 06:43:34】：或者只看到自己手里的活,
+【2023-09-17 06:43:36】：你把其他人都当作一个活儿,
+【2023-09-17 06:43:38】：很快就没有动力,
+【2023-09-17 06:43:39】：对对,特别认同,
+【2023-09-17 06:43:40】：你这里边还有两个工具,
+【2023-09-17 06:43:41】：很有意思,
+【2023-09-17 06:43:42】：一个叫反思弹窗,
+【2023-09-17 06:43:44】：还有一个叫意义体检,
+【2023-09-17 06:43:45】：这两个工具,
+【2023-09-17 06:43:46】：给大家解释一下,
+【2023-09-17 06:43:47】：什么叫反思弹窗?
+【2023-09-17 06:43:48】：反思弹窗的话,
+【2023-09-17 06:43:50】：就是这个是跟我第七章里面,
+【2023-09-17 06:43:52】：讲到的意义书,
+【2023-09-17 06:43:53】：这是这本书当中,
+【2023-09-17 06:43:54】：我个人觉得,
+【2023-09-17 06:43:55】：是最重要的一个工具,
+【2023-09-17 06:43:56】：就是怎么样帮你把你的目标,
+【2023-09-17 06:43:59】：全部都连贯上的,
+【2023-09-17 06:44:00】：也就是说,
+【2023-09-17 06:44:01】：现在绝大多数情况下,
+【2023-09-17 06:44:03】：大家定目标的时候,
+【2023-09-17 06:44:04】：都是单一目标,
+【2023-09-17 06:44:05】：比如说我要实现一个,
+【2023-09-17 06:44:06】：什么什么目标,
+【2023-09-17 06:44:07】：可是一旦这个目标达成了,
+【2023-09-17 06:44:09】：就一下子失去方向,
+【2023-09-17 06:44:11】：没劲了,
+【2023-09-17 06:44:12】：然后就会出现一些,
+【2023-09-17 06:44:14】：其他的问题,
+【2023-09-17 06:44:15】：所以现在整个领域,
+【2023-09-17 06:44:16】：所提倡的它是,
+【2023-09-17 06:44:17】：我们不要过度的,
+【2023-09-17 06:44:19】：去聚焦单一目标的实现,
+【2023-09-17 06:44:21】：就是我们要把所有的,
+【2023-09-17 06:44:22】：目标连成体系,
+【2023-09-17 06:44:23】：那这个就是我去做这个,
+【2023-09-17 06:44:25】：意义树这个练习的,
+【2023-09-17 06:44:27】：一个根本的这个方向,
+【2023-09-17 06:44:29】：因为过往的这些研究,
+【2023-09-17 06:44:31】：都只给我们一个理论框架,
+【2023-09-17 06:44:33】：就说你要去连贯,
+【2023-09-17 06:44:34】：你要去找这个联系,
+【2023-09-17 06:44:36】：你怎么联呢,不知道,
+【2023-09-17 06:44:37】：所以呢,在这个第七章里面,
+【2023-09-17 06:44:39】：我们就提出了这个,
+【2023-09-17 06:44:40】：意义树的工具,
+【2023-09-17 06:44:41】：你首先,
+【2023-09-17 06:44:42】：要把你工作当中的行为,
+【2023-09-17 06:44:44】：我们不要想,
+【2023-09-17 06:44:45】：就是我未来的顶层目标,
+【2023-09-17 06:44:47】：什么想不出来的,
+【2023-09-17 06:44:48】：然后呢,
+【2023-09-17 06:44:49】：先从每天做的事,
+【2023-09-17 06:44:50】：我生活当中的事,
+【2023-09-17 06:44:51】：然后呢,
+【2023-09-17 06:44:52】：我工作上的最重要的每个事,
+【2023-09-17 06:44:54】：然后先列出来,
+【2023-09-17 06:44:55】：然后我们有工具,
+【2023-09-17 06:44:56】：你要打分,
+【2023-09-17 06:44:57】：根据你打的分,
+【2023-09-17 06:44:58】：然后跟你一年之内的目标,
+【2023-09-17 06:45:01】：去连线,
+【2023-09-17 06:45:02】：那连的时候,
+【2023-09-17 06:45:03】：就梳理这个过程当中,
+【2023-09-17 06:45:04】：你就会发现,
+【2023-09-17 06:45:05】：很多人,
+【2023-09-17 06:45:06】：我现在每天做的事,
+【2023-09-17 06:45:08】：跟我一年之内,
+【2023-09-17 06:45:09】：希望实现的目标,
+【2023-09-17 06:45:10】：没关系,
+【2023-09-17 06:45:11】：它没有线,
+【2023-09-17 06:45:12】：那这个时候,
+【2023-09-17 06:45:13】：反思弹窗就蹦出来了,
+【2023-09-17 06:45:15】：就是你得去分析一下,
+【2023-09-17 06:45:16】：你现在在干什么,
+【2023-09-17 06:45:18】：如果你要是说,
+【2023-09-17 06:45:19】：我未来要实现这三个目标,
+【2023-09-17 06:45:21】：跟我现在每天的行为,
+【2023-09-17 06:45:22】：都没有连接的时候,
+【2023-09-17 06:45:24】：那你是实现不了的,
+【2023-09-17 06:45:25】：所以,
+【2023-09-17 06:45:26】：没事要经常做一些反思弹窗,
+【2023-09-17 06:45:28】：然后去给自己的意义做体检,
+【2023-09-17 06:45:30】：做体检,
+【2023-09-17 06:45:31】：对,做体检,
+【2023-09-17 06:45:32】：所以,
+【2023-09-17 06:45:33】：有时候,
+【2023-09-17 06:45:34】：为什么我们老强调，活在当下很重要,
+【2023-09-17 06:45:36】：就是因为以我们的肉眼,
+【2023-09-17 06:45:38】：和我们的感受,
+【2023-09-17 06:45:41】：我们经常看不了那么远的意义,
+【2023-09-17 06:45:44】：对,看不到,
+【2023-09-17 06:45:45】：所以,
+【2023-09-17 06:45:46】：每天坚持做一些正面的事,
+【2023-09-17 06:45:49】：每天做一些积极的事,
+【2023-09-17 06:45:50】：对,
+【2023-09-17 06:45:51】：对我们的人生的改变,
+【2023-09-17 06:45:52】：是非常强大,
+【2023-09-17 06:45:53】：就是还是回到那个持续性小赢,
+【2023-09-17 06:45:56】：你寻找意义的过程当中,
+【2023-09-17 06:45:58】：这就是刚才,
+【2023-09-17 06:45:59】：樊老师问我,
+【2023-09-17 06:46:00】：我那个心理医生,
+【2023-09-17 06:46:01】：不是跟我打了两个赌吗,
+【2023-09-17 06:46:02】：一个让我回去练呼吸,
+【2023-09-17 06:46:04】：对,
+【2023-09-17 06:46:05】：另外一个就是,
+【2023-09-17 06:46:06】：记录,
+【2023-09-17 06:46:07】：记录,
+【2023-09-17 06:46:08】：因为他当时,
+【2023-09-17 06:46:09】：我们俩在聊天的过程当中,
+【2023-09-17 06:46:10】：他问了我一个问题,
+【2023-09-17 06:46:11】：还是挺打动我的,
+【2023-09-17 06:46:12】：他就是说,
+【2023-09-17 06:46:13】：你这么多年,
+【2023-09-17 06:46:15】：特别努力的学习,
+【2023-09-17 06:46:17】：然后学习成绩也好,
+【2023-09-17 06:46:18】：然后从一个国家,
+【2023-09-17 06:46:19】：到了另外一个国家,
+【2023-09-17 06:46:20】：也在努力的学习,
+【2023-09-17 06:46:21】：也做了很多很好的研究,
+【2023-09-17 06:46:23】：然后你在追求什么,
+【2023-09-17 06:46:25】：哎,这个问题突然问到我,
+【2023-09-17 06:46:27】：就是,他说你以后读完了以后,
+【2023-09-17 06:46:29】：你是博士,
+【2023-09-17 06:46:30】：然后呢,
+【2023-09-17 06:46:31】：然后就做教授,
+【2023-09-17 06:46:32】：然后呢,
+【2023-09-17 06:46:33】：就你拿到,
+【2023-09-17 06:46:34】：后来我拿到终身教授了,
+【2023-09-17 06:46:35】：他说你拿到终身教授,
+【2023-09-17 06:46:37】：以后这就是在美国,
+【2023-09-17 06:46:38】：是个金饭碗了,对吧,
+【2023-09-17 06:46:39】：你就永远不会失业了,
+【2023-09-17 06:46:40】：你就可以躺平了,
+【2023-09-17 06:46:41】：然后呢,
+【2023-09-17 06:46:42】：你就躺平了吗,
+【2023-09-17 06:46:43】：所以当我问到,
+【2023-09-17 06:46:44】：很多然后之后,
+【2023-09-17 06:46:45】：我就开始思考这个问题,
+【2023-09-17 06:46:47】：他撬动我的一点,
+【2023-09-17 06:46:48】：是说,
+【2023-09-17 06:46:49】：他说每个人都会痛苦,
+【2023-09-17 06:46:50】：你现在很痛苦,
+【2023-09-17 06:46:51】：很正常,
+【2023-09-17 06:46:52】：如果你要是,
+【2023-09-17 06:46:53】：感受不到痛苦,
+【2023-09-17 06:46:55】：你的人生不完整,
+【2023-09-17 06:46:56】：每个人都会感受到痛苦,
+【2023-09-17 06:46:58】：但是呢,
+【2023-09-17 06:46:59】：你觉得你是一个老师,
+【2023-09-17 06:47:01】：你是一个师者,
+【2023-09-17 06:47:02】：然后你希望能够影响到,
+【2023-09-17 06:47:04】：更多的人,
+【2023-09-17 06:47:05】：你如果深陷痛苦,
+【2023-09-17 06:47:06】：你怎么能够影响别人,
+【2023-09-17 06:47:08】：这句话,
+【2023-09-17 06:47:09】：当时是把我那个,
+【2023-09-17 06:47:10】：开关打开的一个,
+【2023-09-17 06:47:11】：特别重要的点,
+【2023-09-17 06:47:12】：就是我痛苦是正常的,
+【2023-09-17 06:47:13】：每个人都可以痛苦,
+【2023-09-17 06:47:14】：但当我的人生终意义,
+【2023-09-17 06:47:16】：是我希望能够影响到,
+【2023-09-17 06:47:17】：更多的人,
+【2023-09-17 06:47:18】：我要想点亮别人,
+【2023-09-17 06:47:19】：我自己深陷痛苦的时候,
+【2023-09-17 06:47:21】：我是做不到的,
+【2023-09-17 06:47:22】：所以我就说,
+【2023-09-17 06:47:23】：OK,那我接下来,
+【2023-09-17 06:47:24】：积极的去改变,
+【2023-09-17 06:47:25】：所以他给我的第二个,
+【2023-09-17 06:47:26】：密实,
+【2023-09-17 06:47:27】：就是你回去,
+【2023-09-17 06:47:28】：每天记录三件好事,
+【2023-09-17 06:47:29】：这也是我在,
+【2023-09-17 06:47:30】：这本书当中,
+【2023-09-17 06:47:31】：所以你这个本里边,
+【2023-09-17 06:47:32】：是记录三件好事的?
+【2023-09-17 06:47:33】：记录三件好事的,
+【2023-09-17 06:47:34】：每天十几年,
+【2023-09-17 06:47:35】：就是每天的记录,
+【2023-09-17 06:47:37】：你要跟他展示一下,
+【2023-09-17 06:47:38】：可以展示一下,
+【2023-09-17 06:47:39】：然后就是内容不看就行了,
+【2023-09-17 06:47:40】：这我的小秘密,
+【2023-09-17 06:47:41】：就是每天记录,
+【2023-09-17 06:47:42】：就是十几年的时间,
+【2023-09-17 06:47:44】：每天的记录,
+【2023-09-17 06:47:45】：就是每天,
+【2023-09-17 06:47:46】：记着多少本了现在?
+【2023-09-17 06:47:47】：那就是一年一本呗,
+【2023-09-17 06:47:48】：我天,
+【2023-09-17 06:47:49】：一年一本,
+【2023-09-17 06:47:50】：又学会一招,
+【2023-09-17 06:47:51】：每天记三件好事,
+【2023-09-17 06:47:52】：对吧,
+【2023-09-17 06:47:53】：你让我今天,
+【2023-09-17 06:47:54】：上午讲了一本书,
+【2023-09-17 06:47:56】：下午跟小萌教授,
+【2023-09-17 06:47:57】：聊天聊得很开心,
+【2023-09-17 06:47:59】：他们给我免费,
+【2023-09-17 06:48:00】：喝了一杯,
+【2023-09-17 06:48:01】：拿铁咖啡,
+【2023-09-17 06:48:02】：对吧?
+【2023-09-17 06:48:03】：齐活了今天,
+【2023-09-17 06:48:04】：三件好事,
+【2023-09-17 06:48:05】：待会回家还能再跑五公里,
+【2023-09-17 06:48:06】：我一天记个五件都行,
+【2023-09-17 06:48:08】：这是个很好的方法,
+【2023-09-17 06:48:10】：让你的大脑能够训练得,
+【2023-09-17 06:48:11】：越来越积极,
+【2023-09-17 06:48:12】：对对对,
+【2023-09-17 06:48:13】：好了,第三个飞轮,
+【2023-09-17 06:48:14】：第三个飞轮叫连接,
+【2023-09-17 06:48:16】：就是你不能一个人,
+【2023-09-17 06:48:17】：孤独的生活,
+【2023-09-17 06:48:18】：你需要跟其他人之间,
+【2023-09-17 06:48:19】：找到联系,
+【2023-09-17 06:48:20】：社会性,
+【2023-09-17 06:48:21】：为什么这个飞轮很重要?
+【2023-09-17 06:48:23】：这个飞轮,
+【2023-09-17 06:48:25】：就是因为我们所有的人,
+【2023-09-17 06:48:26】：会有这种社会性,
+【2023-09-17 06:48:28】：就是我们发现自己的,
+【2023-09-17 06:48:29】：这种价值感也好,
+【2023-09-17 06:48:30】：归属感也好,
+【2023-09-17 06:48:31】：都是在人和人之间的,
+【2023-09-17 06:48:33】：连接当中产生的,
+【2023-09-17 06:48:34】：所以韧性的打造,
+【2023-09-17 06:48:36】：也是在人和人之间的,
+【2023-09-17 06:48:38】：连接当中产生的,
+【2023-09-17 06:48:39】：比如说,
+【2023-09-17 06:48:40】：比如说从,
+【2023-09-17 06:48:41】：这个连接的角度,
+【2023-09-17 06:48:43】：特别重要的,
+【2023-09-17 06:48:44】：我们怎么样去建立信任,
+【2023-09-17 06:48:45】：因为当你有了信任以后,
+【2023-09-17 06:48:47】：你就会有这种安全感,
+【2023-09-17 06:48:48】：因为人不得需要掌控感吗?
+【2023-09-17 06:48:49】：那其实,
+【2023-09-17 06:48:50】：两个人之间的,
+【2023-09-17 06:48:51】：建立信任,
+【2023-09-17 06:48:52】：它是有公式的,
+【2023-09-17 06:48:54】：它不是说,
+【2023-09-17 06:48:55】：我对你的一种观感,
+【2023-09-17 06:48:56】：它是在一件事,
+【2023-09-17 06:48:58】：一件事的累积上的,
+【2023-09-17 06:49:00】：一种结果,
+【2023-09-17 06:49:01】：它有元素,
+【2023-09-17 06:49:02】：比如说,
+【2023-09-17 06:49:03】：你是不是有胜任力,
+【2023-09-17 06:49:04】：你是不是可靠,
+【2023-09-17 06:49:05】：然后你是,
+【2023-09-17 06:49:06】：我们俩之间是不是熟知,
+【2023-09-17 06:49:07】：以及你这个人是不是自私,
+【2023-09-17 06:49:09】：是由这四个元素,
+【2023-09-17 06:49:10】：前面三个相承,
+【2023-09-17 06:49:12】：除于最后的自私度,
+【2023-09-17 06:49:13】：等于信任,
+【2023-09-17 06:49:14】：它是有公式的,
+【2023-09-17 06:49:15】：这么复杂
+【2023-09-17 06:49:16】：就是说,
+【2023-09-17 06:49:17】：这个东西,
+【2023-09-17 06:49:18】：它也是一种拆解,
+【2023-09-17 06:49:19】：或者包括亲子也是一样的,
+【2023-09-17 06:49:21】：你比如说,
+【2023-09-17 06:49:22】：我跟我女儿有非常好的信任度,
+【2023-09-17 06:49:24】：那也是因为,
+【2023-09-17 06:49:25】：首先这个,
+【2023-09-17 06:49:27】：她认为我是可靠的,
+【2023-09-17 06:49:30】：然后第二的,
+【2023-09-17 06:49:31】：我是有能力帮助她解决问题的,
+【2023-09-17 06:49:33】：第三,
+【2023-09-17 06:49:34】：我们很亲密,
+【2023-09-17 06:49:35】：然后再处理最下面这个,
+【2023-09-17 06:49:36】：我肯定是无私的嘛,对吧,
+【2023-09-17 06:49:38】：所以我们的信任度很高,
+【2023-09-17 06:49:39】：但是在企业里面,
+【2023-09-17 06:49:40】：这个公式同样好用嘛,
+【2023-09-17 06:49:42】：当你就是,
+【2023-09-17 06:49:43】：你没有能力去完成这件事,
+【2023-09-17 06:49:45】：你不可靠,
+【2023-09-17 06:49:46】：或者我们俩压根就不熟知,
+【2023-09-17 06:49:47】：比如有的时候,
+【2023-09-17 06:49:48】：我们到企业里面,
+【2023-09-17 06:49:49】：会听到员工说,
+【2023-09-17 06:49:51】：我跟我老板的信任度很高,
+【2023-09-17 06:49:53】：然后我首先会问一个问题,
+【2023-09-17 06:49:55】：你跟你老板有过几次单独交流,
+【2023-09-17 06:49:57】：他说我只在大会上听过他讲话,
+【2023-09-17 06:50:00】：这就不叫亲密度,
+【2023-09-17 06:50:01】：这是单向的,对不对?
+【2023-09-17 06:50:02】：那是崇拜,
+【2023-09-17 06:50:03】：对,那是崇拜,
+【2023-09-17 06:50:04】：就没有,
+【2023-09-17 06:50:05】：就这里面就谈不上信任,
+【2023-09-17 06:50:07】：所以他并不是我的一种虚幻的感觉,
+【2023-09-17 06:50:09】：他是有科学依据的,
+【2023-09-17 06:50:11】：这也是包括我为什么要,
+【2023-09-17 06:50:13】：最后写这本书,
+【2023-09-17 06:50:14】：其实也是受到了,
+【2023-09-17 06:50:15】：就是长江有很多同学在鼓励我,
+【2023-09-17 06:50:18】：我有很长一段时间,
+【2023-09-17 06:50:19】：我觉得好像,
+【2023-09-17 06:50:20】：我理解说会很远,
+【2023-09-17 06:50:21】：我没有去想这件事,
+【2023-09-17 06:50:22】：但是呢,
+【2023-09-17 06:50:23】：我们每上完一堂课,
+【2023-09-17 06:50:25】：我们很多的校友就会跟我讲说,
+【2023-09-17 06:50:27】：每天就觉得人很感性,
+【2023-09-17 06:50:30】：我们的行为有感性的成分,
+【2023-09-17 06:50:32】：但是没有想到说,
+【2023-09-17 06:50:33】：原来感性的行为背后,
+【2023-09-17 06:50:35】：有如此强大的理性的行为科学作为支撑,
+【2023-09-17 06:50:39】：那你为什么不愿意把,
+【2023-09-17 06:50:41】：准备了这么长,
+【2023-09-17 06:50:42】：因为我每堂课会准备很久,
+【2023-09-17 06:50:44】：会不停的迭代,
+【2023-09-17 06:50:45】：会不停的新的数据,
+【2023-09-17 06:50:47】：但是你为什么不愿意把,
+【2023-09-17 06:50:48】：准备了这么长时间的,
+【2023-09-17 06:50:50】：这么精彩的内容,
+【2023-09-17 06:50:51】：写成一本书,
+【2023-09-17 06:50:52】：你这样子的话,
+【2023-09-17 06:50:53】：能够也许影响到更多的人,
+【2023-09-17 06:50:56】：所以这是我写这本书的一个缘由,
+【2023-09-17 06:50:59】：包括这里面的很多的工具,
+【2023-09-17 06:51:01】：我都会自己实践了十几年的时间,
+【2023-09-17 06:51:04】：但是就是给我自己吧,
+【2023-09-17 06:51:06】：最大的收获在于说,
+【2023-09-17 06:51:08】：我的初衷是希望写这本书,
+【2023-09-17 06:51:10】：去影响别人,
+【2023-09-17 06:51:11】：但是最终,
+【2023-09-17 06:51:13】：我会发现这两年的时间,
+【2023-09-17 06:51:15】：让我自己把自己书里的通透了,
+【2023-09-17 06:51:18】：就是你会把自己过往的很多的点,
+【2023-09-17 06:51:21】：通过这个系统性的书里,
+【2023-09-17 06:51:24】：全部这些点是散落在不同的面上的,
+【2023-09-17 06:51:26】：你只不过自己不觉察,不认知,
+【2023-09-17 06:51:29】：然后通过这样一个方法,
+【2023-09-17 06:51:30】：把这些散落在各个面上的点,
+【2023-09-17 06:51:32】：全部连成了线,面
+【2023-09-17 06:51:34】：立体了以后,
+【2023-09-17 06:51:35】：就觉得认知的高度不一样了吧,
+【2023-09-17 06:51:38】：就对自己过往人生的一个书里,
+【2023-09-17 06:51:40】：所以我觉得还是挺感恩这个过程,
+【2023-09-17 06:51:42】：所以这不是一本,
+【2023-09-17 06:51:44】：是普通的工具书,
+【2023-09-17 06:51:46】：这是一个我们人生底层的工具书,
+【2023-09-17 06:51:48】：这等于是通过它能够实现,
+【2023-09-17 06:51:50】：我们对于人生认知的一个升维,
+【2023-09-17 06:51:53】：让很多我们过去觉得,
+【2023-09-17 06:51:55】：难以解决的问题不再成为问题,
+【2023-09-17 06:51:57】：就解决困难问题的方法,
+【2023-09-17 06:51:59】：就是使它不再成为问题,
+【2023-09-17 06:52:01】：而这个要来自于你看待问题的方法变,
+【2023-09-17 06:52:04】：所以韧性不仅仅是用来调节自己,
+【2023-09-17 06:52:08】：我觉得你看最后一章,
+【2023-09-17 06:52:09】：写的是组织的韧性,
+【2023-09-17 06:52:10】：就是怎么样让一个组织,
+【2023-09-17 06:52:12】：能够变得韧性更强,
+【2023-09-17 06:52:13】：同样也是这几个飞轮,
+【2023-09-17 06:52:15】：同样也是要持续小赢,
+【2023-09-17 06:52:17】：然后我们聊天的过程当中,
+【2023-09-17 06:52:19】：经常会谈到孩子,
+【2023-09-17 06:52:20】：你会发现你在教育孩子的过程当中,
+【2023-09-17 06:52:23】：需不需要觉知,让他能觉知,
+【2023-09-17 06:52:26】：需不需要让它寻找意义,
+【2023-09-17 06:52:29】：需不需要让它跟你和其他人建立连接,
+【2023-09-17 06:52:32】：其实都是同样的一个道理,
+【2023-09-17 06:52:34】：我们这个作者光临,
+【2023-09-17 06:52:35】：现在有一个新的栏目叫快问快答,
+【2023-09-17 06:52:37】：从网友那儿征集来的问题,
+【2023-09-17 06:52:39】：我挑三个,
+【2023-09-17 06:52:41】：你就简短的回答一下就好了,
+【2023-09-17 06:52:44】：这个,我是一名快毕业的大学生,
+【2023-09-17 06:52:47】：身边的同学不是即将去大厂卷,
+【2023-09-17 06:52:50】：就是要回老家躺平,
+【2023-09-17 06:52:52】：我想在这两种状态之间,
+【2023-09-17 06:52:54】：找到一个适中的节奏,
+【2023-09-17 06:52:55】：该怎么办呢?
+【2023-09-17 06:52:56】：希望老师给我一点建议,
+【2023-09-17 06:52:58】：就是要不然去大厂卷,
+【2023-09-17 06:53:00】：要不然就是回到老家躺平,
+【2023-09-17 06:53:02】：他想找到一个适中的方案,
+【2023-09-17 06:53:04】：那就是还是这三个轮吗?
+【2023-09-17 06:53:06】：我觉得,
+【2023-09-17 06:53:07】：第一就是我个人的建议,
+【2023-09-17 06:53:10】：就是先想一想,
+【2023-09-17 06:53:12】：当你自己找不到方向的时候,
+【2023-09-17 06:53:14】：先花点时间,抬头看看天,
+【2023-09-17 06:53:17】：先给自己找找方向,
+【2023-09-17 06:53:19】：就是想的长远一点,
+【2023-09-17 06:53:20】：你不要想这一年我到底去大厂卷,
+【2023-09-17 06:53:23】：还是回家,
+【2023-09-17 06:53:24】：未来更长远的我到底想干什么,
+【2023-09-17 06:53:26】：想的更长远一点,
+【2023-09-17 06:53:28】：然后也许能够给自己点方向,
+【2023-09-17 06:53:30】：然后第二的话呢,
+【2023-09-17 06:53:31】：我觉得不要太着急,
+【2023-09-17 06:53:33】：去给自己做一个定义,
+【2023-09-17 06:53:34】：我到底是卷也好,
+【2023-09-17 06:53:35】：还是回家躺平也好,
+【2023-09-17 06:53:37】：用行动兴奋的方式,
+【2023-09-17 06:53:38】：就是先干起来,
+【2023-09-17 06:53:39】：任何一件事情先干起来,
+【2023-09-17 06:53:41】：我觉得,
+【2023-09-17 06:53:42】：就慢慢慢慢你就会找到自己的长远的目标,
+【2023-09-17 06:53:45】：找到这种意义,
+【2023-09-17 06:53:46】：就是先行动起来,
+【2023-09-17 06:53:47】：千万不要跟那儿呆着想,
+【2023-09-17 06:53:49】：想是没有任何作用的,
+【2023-09-17 06:53:51】：就是我们所有的行为改变,
+【2023-09-17 06:53:52】：都不是靠想出来,
+【2023-09-17 06:53:53】：都是靠做出来,
+【2023-09-17 06:53:54】：所以行动,
+【2023-09-17 06:53:55】：用我的话讲叫折腾,
+【2023-09-17 06:53:57】：就是你生命来自于折腾,
+【2023-09-17 06:53:59】：对,就是这个同学不是刚刚毕业吗?
+【2023-09-17 06:54:01】：我送给他一句话,
+【2023-09-17 06:54:02】：我最近因为做了很多的思考,
+【2023-09-17 06:54:04】：也就是这本书,
+【2023-09-17 06:54:05】：然后回顾我自己的人生,
+【2023-09-17 06:54:06】：我觉得这个,
+【2023-09-17 06:54:08】：当你有些问题暂时想不清楚的时候,
+【2023-09-17 06:54:11】：那么我们就在生命当中,
+【2023-09-17 06:54:13】：先去发现美好,
+【2023-09-17 06:54:14】：也就是说,
+【2023-09-17 06:54:15】：什么叫现实此刻,
+【2023-09-17 06:54:16】：把快乐留给今天,
+【2023-09-17 06:54:19】：把问题暂时留给时间,
+【2023-09-17 06:54:21】：就当你想不清楚的时候,
+【2023-09-17 06:54:22】：先不要纠结,
+【2023-09-17 06:54:23】：那么随着时间的推,
+【2023-09-17 06:54:25】：因为我发现了美好,
+【2023-09-17 06:54:26】：找到了快乐,
+【2023-09-17 06:54:27】：说不定很快,
+【2023-09-17 06:54:28】：你的这些问题就不再是问题了。
+【2023-09-17 06:54:30】：好,第二个问题说,
+【2023-09-17 06:54:32】：年近40,
+【2023-09-17 06:54:33】：突然觉得自己工作,
+【2023-09-17 06:54:35】：没有太大意义,
+【2023-09-17 06:54:36】：陷入中年危机,
+【2023-09-17 06:54:37】：想到自己年轻的时候,
+【2023-09-17 06:54:39】：很喜欢话剧表演,
+【2023-09-17 06:54:40】：一方面想去逐梦,
+【2023-09-17 06:54:41】：另一方面家里有老有小,
+【2023-09-17 06:54:43】：似乎我的这个梦想,
+【2023-09-17 06:54:45】：显得很不切实际,
+【2023-09-17 06:54:46】：我该怎么办?
+【2023-09-17 06:54:47】：这个就是刚才咱们谈到的问题,
+【2023-09-17 06:54:49】：大家永远都会觉得,
+【2023-09-17 06:54:51】：我得需要养家糊口,
+【2023-09-17 06:54:53】：所以我没有办法去打造另外一条腿,
+【2023-09-17 06:54:55】：不是,
+【2023-09-17 06:54:56】：就是你继续做你该做的事情,
+【2023-09-17 06:54:58】：这不影响你去逐梦,
+【2023-09-17 06:55:00】：你可以去参加俱乐部,
+【2023-09-17 06:55:02】：你可以,
+【2023-09-17 06:55:03】：比如说你非常忙,
+【2023-09-17 06:55:04】：一周一次,
+【2023-09-17 06:55:05】：我一个月一次,
+【2023-09-17 06:55:06】：发现美好,
+【2023-09-17 06:55:07】：我每天记录三件好事,
+【2023-09-17 06:55:08】：我还有一个工具呢,
+【2023-09-17 06:55:10】：就是每个月有一个灵动瞬间,
+【2023-09-17 06:55:12】：包括在这个笔记本里面,
+【2023-09-17 06:55:13】：设计的,
+【2023-09-17 06:55:14】：我每个月到月底的时候,
+【2023-09-17 06:55:16】：我会发一个朋友圈,
+【2023-09-17 06:55:18】：这个朋友圈里面,
+【2023-09-17 06:55:19】：不是九宫格吗?
+【2023-09-17 06:55:20】：就是我要抓住,
+【2023-09-17 06:55:21】：这个月所发生的九件小事,
+【2023-09-17 06:55:24】：特别小的事,
+【2023-09-17 06:55:25】：我在训练自己这种本事,
+【2023-09-17 06:55:26】：就这种能力,
+【2023-09-17 06:55:27】：你如果一个月过去了,
+【2023-09-17 06:55:29】：连九个瞬间都没有,
+【2023-09-17 06:55:31】：你是不会生活的,
+【2023-09-17 06:55:32】：像我原来我就觉得,
+【2023-09-17 06:55:33】：比如说我希望能够自己,
+【2023-09-17 06:55:35】：学跳舞,学水采,
+【2023-09-17 06:55:37】：然后去品红酒,
+【2023-09-17 06:55:38】：这些事都不是等到我要退休以后,
+【2023-09-17 06:55:40】：我也很忙,
+【2023-09-17 06:55:41】：我现在每天出差量,
+【2023-09-17 06:55:42】：上课量也很大,
+【2023-09-17 06:55:43】：但我依旧可以,
+【2023-09-17 06:55:44】：留出来一部分时间,
+【2023-09-17 06:55:46】：去做我认为美好的事情,
+【2023-09-17 06:55:48】：激活美好体验嘛,
+【2023-09-17 06:55:49】：其实一样的道理。
+【2023-09-17 06:55:50】：这个问题很重要,
+【2023-09-17 06:55:52】：这个孩子读书很努力,
+【2023-09-17 06:55:55】：但是成绩上不去,
+【2023-09-17 06:55:57】：孩子自己挫败感很强,
+【2023-09-17 06:55:58】：我们做家长的,
+【2023-09-17 06:55:59】：应该怎么帮助他?
+【2023-09-17 06:56:01】：这个问题可能大家,
+【2023-09-17 06:56:03】：所谓挫败感很强的这件事情,
+【2023-09-17 06:56:06】：是因为,
+【2023-09-17 06:56:07】：我的认知是因为,
+【2023-09-17 06:56:09】：我们已经给孩子附加上了,
+【2023-09-17 06:56:11】：一定的大人的标准,
+【2023-09-17 06:56:13】：孩子心目当中,
+【2023-09-17 06:56:15】：我不够好,
+【2023-09-17 06:56:16】：是因为大人给了我这样的标准,
+【2023-09-17 06:56:18】：那你得想一想,
+【2023-09-17 06:56:19】：你得把这个事往长远了想,
+【2023-09-17 06:56:21】：比如说我自己也经历过这样的过程,
+【2023-09-17 06:56:23】：我觉得就是说,
+【2023-09-17 06:56:24】：以后孩子怎么着急得上个常春藤吧,
+【2023-09-17 06:56:28】：对吧,怎么着急得这样,
+【2023-09-17 06:56:30】：怎么着那样吧,
+【2023-09-17 06:56:31】：我现在就不,
+【2023-09-17 06:56:32】：我现在跟他们所有的对话,
+【2023-09-17 06:56:34】：就是说,
+【2023-09-17 06:56:35】：你要,
+【2023-09-17 06:56:36】：我们因为每一年,
+【2023-09-17 06:56:37】：要定这个连贯性的目标,
+【2023-09-17 06:56:39】：你千万不要说我上什么大学,
+【2023-09-17 06:56:41】：这个是那么重要的事,
+【2023-09-17 06:56:42】：你能够上,
+【2023-09-17 06:56:43】：特别好,
+【2023-09-17 06:56:44】：你如果不能够上,
+【2023-09-17 06:56:45】：没关系,
+【2023-09-17 06:56:46】：我们想的更远一步,
+【2023-09-17 06:56:47】：我未来要做什么,
+【2023-09-17 06:56:48】：什么东西是能够让你在未来长大以后,
+【2023-09-17 06:56:51】：是既快乐又擅长的,
+【2023-09-17 06:56:54】：这个事情是我给他们注入更多的,
+【2023-09-17 06:56:56】：这种思维模式,
+【2023-09-17 06:56:57】：首先家长得改变,
+【2023-09-17 06:56:58】：家长改变特别重要,
+【2023-09-17 06:57:00】：所以我觉得要把目光放长远一点,
+【2023-09-17 06:57:02】：未来孩子,
+【2023-09-17 06:57:03】：他追求的是什么,
+【2023-09-17 06:57:04】：能不能做有意义的快乐的事情,
+【2023-09-17 06:57:06】：擅长并喜爱的事情,
+【2023-09-17 06:57:07】：我觉得比现在,
+【2023-09-17 06:57:08】：你给他注一个,
+【2023-09-17 06:57:09】：我要考多少名,
+【2023-09-17 06:57:10】：多少分重要,
+【2023-09-17 06:57:11】：顺便我也想提醒各位家长一句话,
+【2023-09-17 06:57:14】：就是不要抢占了孩子的梦想,
+【2023-09-17 06:57:17】：好多家长喜欢抢占孩子的梦想,
+【2023-09-17 06:57:20】：就首先告诉他,
+【2023-09-17 06:57:21】：你得上清华,
+【2023-09-17 06:57:22】：把爸爸没考上,
+【2023-09-17 06:57:23】：所以这是你的责任,
+【2023-09-17 06:57:24】：你一旦把这个东西,
+【2023-09-17 06:57:26】：抢占了以后,
+【2023-09-17 06:57:27】：孩子是不愿意跟你实现同一个梦想,
+【2023-09-17 06:57:30】：因为这没有成就的,
+【2023-09-17 06:57:31】：这是你的梦想,
+【2023-09-17 06:57:32】：你做了半天,
+【2023-09-17 06:57:33】：做了一个你爸让你做的事,
+【2023-09-17 06:57:34】：这太没有个性了,
+【2023-09-17 06:57:35】：所以你一旦抢占他这个确定梦想的机会,
+【2023-09-17 06:57:39】：他反而就不要这个梦想,
+【2023-09-17 06:57:40】：没劲儿,
+【2023-09-17 06:57:41】：但是反过来,
+【2023-09-17 06:57:42】：如果你告诉孩子说,
+【2023-09-17 06:57:44】：你不上大学也没事儿,
+【2023-09-17 06:57:45】：不上大学,
+【2023-09-17 06:57:46】：咱家也能养得起你,
+【2023-09-17 06:57:47】：你最多得在家啃老,
+【2023-09-17 06:57:48】：我不怕,
+【2023-09-17 06:57:49】：孩子的梦想会生发出来,
+【2023-09-17 06:57:53】：你让他找到一个目标,
+【2023-09-17 06:57:55】：而不是我们硬塞给他一个目标,
+【2023-09-17 06:57:57】：同时也推荐大家能够读一读这本书,
+【2023-09-17 06:58:00】：能够给自己的生活注入一些韧性,
+【2023-09-17 06:58:03】：韧性是生命力,
+【2023-09-17 06:58:05】：只有生命才会有这种坚韧的感觉,
+【2023-09-17 06:58:08】：它不是一个矿物质,
+【2023-09-17 06:58:10】：不是一个钢铁,
+【2023-09-17 06:58:11】：所以希望这本书能够让大家喜欢,
+【2023-09-17 06:58:14】：多读书,
+【2023-09-17 06:58:15】：读书能够点亮生活,
+【2023-09-17 06:58:17】：谢谢小萌教授,
+【2023-09-17 06:58:18】：也谢谢大家,
+【2023-09-17 06:58:19】：我们下本书再见,
+【2023-09-17 06:58:20】：谢谢,
+【2023-09-17 06:58:22】：现在我们能够看到很多孩子在很小的时候,
+【2023-09-17 06:58:26】：就出现了焦虑的状况,
+【2023-09-17 06:58:28】：很多家长拜托我说,
+【2023-09-17 06:58:30】：能不能找一本关于缓解孩子焦虑的书,
+【2023-09-17 06:58:33】：我找到了这本,
+【2023-09-17 06:58:34】：叫做帮孩子摆脱焦虑,
+【2023-09-17 06:58:36】：我们读这本书的目的,
+【2023-09-17 06:58:37】：就是希望能够帮助更多的家长自己,
+【2023-09-17 06:58:40】：成为至少半个心理治疗师,
+【2023-09-17 06:58:43】：能够有效地去缓解孩子的焦虑症状,
+【2023-09-17 06:58:47】：帮助孩子能够过上一个更加健康,
+【2023-09-17 06:58:49】：正常的童年,
+【2023-09-17 06:58:50】：下周一起来学习。</p>
+<ul>
+<li>达克效应，全称为邓宁-克鲁格效应，上世纪90年代由邓宁和克鲁格开展研究的心理学效应名称，简单描述即：<strong>完成特定领域的任务时个体对自己的能力作出不准确的评价的现象——能力低者会高估自己的能力，甚至显著超过平均水平，能力高者会低估自己的能力。</strong></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+<hr>
+<h2 align="center">  <a href="mailto:xiaopch@163.com">Copyright@Xiaopch 2023</a></h2>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      
+    
+  </body>
+</html>
