@@ -7,8 +7,8 @@ import requests,re
 from datetime import datetime
 import pandas as pd
 import os
-file_name = '0513 观念的跃升_ASR_2023_09_18_114850.md'
-new_file_name = '观念的跃升_ASR_2023_09_18_114850.md'
+file_name = '10.8-消除压力，从大脑开始_ASR_2023_10_02_184354.md'
+new_file_name = '10.8-消除压力，从大脑开始.md'
 with open(file=new_file_name,mode='w',encoding='utf-8') as fh:
     for line in open(file=file_name,mode='r',encoding='utf-8').readlines():
         print(line)
